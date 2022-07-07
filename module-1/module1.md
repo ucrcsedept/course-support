@@ -53,15 +53,34 @@ If everything works, then your output should look something like this, confirmin
 <pre>
 g++.exe (MinGW.org GCC Build-2) 9.2.0
 Copyright (C) 2019 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+This is free software; see the source for copying conditions.  
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 </pre>
 Now, you have G++ installed and configured! You might be wondering why we had to do all this. We can think of the "Path" variable in Windows as assigning executables a name, just like a variable in C++, or a desktop shortcut for an executable. The reason we do this is because whenever we want to compile our programs, we can just use the <code>g++</code> command in our terminal, rather than going to the directory, passing in the file, and running the executable manually every time we want to compile.
 </details>
 
 <details>
 <summary>Linux</summary>
+1. Run the following commands on your terminal (open with Ctrl+Shift+T), which will install the G++ compiler for C++ and add it to your path variables automatically:
+<pre>
+sudo apt update
+sudo apt install build-essential
+</pre>
+2. Verify that G++ is installed properly by running this command:
+<pre>
+g++ --version
+</pre>
+The output should look something like this if G++ was installed properly:
+<pre>
+g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</pre>
 </details>
 
 <details>
 <summary>MacOS</summary>
 </details>
+
+## Part 2: Using the Compiler
