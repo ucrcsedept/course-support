@@ -23,7 +23,7 @@ mingw-developer-toolkit<br>
 mingw32-base<br>
 mingw32-gcc-g++<br>
 msys-base
-</pre><br>
+</pre>
 Right-click each package, and click "Mark for installation". Then, in the top left corner, click Installation > Apply Changes.
 <img src="images/installgcc.gif" alt="Installing MinGW Packages"> <br>
 4. 
