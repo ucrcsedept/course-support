@@ -32,7 +32,7 @@ Right-click each package, and click "Mark for installation". Then, in the top le
 </p>
 4. Go to the Start Menu and search for "Edit the system environment variables". You should see a menu that looks like this.
 <p align="center">
-    <img src="images/environmentvariables.png" alt="Environment Variables in Control Panel" height=50% width=50%>
+    <img src="images/environmentvariables.png" alt="Environment Variables in Control Panel" height=35% width=35%>
 </p>
 Now, under the system variables tab, look for the variable "Path". Click on it, then click "Edit". Click "New", then paste in the MinGW folder path you copied in step 2 (if you forgot to do this, then look for where you installed the folder and copy the path). At the end of the path, add <code>\bin</code> so that your path looks like this:
 <pre>
@@ -42,6 +42,9 @@ If you installed MinGW in some other directory/folder, then it will look somethi
 <pre>
 [path where you installed MinGW]\MinGW\bin
 </pre>
+<p align="center">
+    <img src="images/environmentvariable.gif" alt="Adding Environment Variable to PATH in Windows">
+</p>
 5. The compiler should be fully installed by now. To make sure, go back to VSCode. At the top, click "Terminal > New Terminal". This opens a new terminal at the bottom of your screen. Run the following command in the terminal:
 <pre>
 g++ --version
