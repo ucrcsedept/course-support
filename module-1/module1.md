@@ -18,12 +18,13 @@ On Windows, we will be installing MinGW so that we can compile our C++ programs 
 1. Download the MinGW Installation Manager Setup Tool at <a href="https://sourceforge.net/projects/mingw/">this link</a>. <br>
 2. Run the setup executable. <strong>Take note of your installation directory!</strong> By default, it should be <code>C:\MinGW</code>, but if it is something else or you want to change it somewhere else, remember where it is installed. This will be very important later. <br>
 3. Open the MinGW Installation Manager after it is done setting up. You should see multiple packages, but we only need 4 of them: <br>
-<code>
+<pre>
 mingw-developer-toolkit<br>
 mingw32-base<br>
 mingw32-gcc-g++<br>
 msys-base
-</code><br>
+</pre><br>
 Right-click each package, and click "Mark for installation". Then, in the top left corner, click Installation > Apply Changes.
-<img src="images/installgcc.gif" alt="Installing MinGW Packages">
+<img src="images/installgcc.gif" alt="Installing MinGW Packages"> <br>
+4. 
 </details>
