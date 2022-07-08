@@ -1,10 +1,18 @@
 # Introduction to Visual Studio Code and C++
 
-In this lab, we will be configuring and introducing the basics of Visual Studio Code, a highly customizable development environment with many useful features from syntax highlighting to intelligent code completion. Due to its convenience and customizability, it is the most popular development environment in the world. Today, you will learn how to configure VSCode to work with C++, play around with some basic programs, and learn about some of the many useful features that VSCode has.
+In this lab, we will be configuring and introducing the basics of Visual Studio Code, an IDE with many useful features from syntax highlighting to intelligent code completion.  Today, you will learn how to configure VSCode to work with C++, play around with some basic programs, and learn about some of the many useful features that VSCode has.
+
+## What is an IDE?
+
+An IDE, or an integrated development environment, is a piece of software that provides us with a multitude of different components in one user interface to maximize productivity. The most common features in an IDE are a code/text editor (usually with syntax highlighting), build automation (a compiler, version control like Git, or automated testing), and a debugger. While IDEs are not required (you have written and compiled code without one before), they provide the tools to create bigger projects, collaborate with others, and make development more convenient.
+
+## Why VSCode?
+
+VSCode is an incredibly popular IDE, and for good reason. We chose it for this class because it is very lightweight and widely supports most langauges and features that are considered essential for development. It also has a large marketplace of extensions that make it easy to extend and personalize your version of VSCode. This doesn't mean that VSCode is the **best** IDE out there; we encourage you to get experience with other IDEs if you wish/if your company requires you to use a different one.
 
 ## Part 1: Installation and Configuration
 
-First, install the correct version of VSCode at [this link](https://code.visualstudio.com/download) for your operating system and processor. Once VSCode is installed, open it and install the C++ extension by going to the extension tabs on the taskbar on the left, searching for the C++ extension by Microsoft, and install it.
+First, install the correct version of VSCode at [this link](https://code.visualstudio.com/download) for your operating system and processor. Once VSCode is installed, open it and install the C++ extension by going to the extension tabs on the taskbar on the left, searching for the C++ extension by Microsoft, and install it. This extension will allow for VSCode to provide syntax highlighting for C++ files to make source files easier to read, and also provides autocompletion.
 
 <p align="center">
     <img src="images/installC.gif" alt="Installing C++ Extension">
@@ -85,7 +93,7 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
 
 ## Part 2: Using the Compiler on the Command Line
 
-Now that our compiler is installed, lets use it! Create a new folder on your desktop, and name it CS010B. Open it in VSCode by going to File > Open Folder, and open the CS010B folder. Now, we have an empty folder open in VSCode. Now open a terminal in VSCode by going to Terminal > New Terminal. Your terminal should show the path to the CS010B folder. To make sure, use the ```pwd``` command, and it should print the path to the CS010B folder. ```pwd``` stands for "print working directory", and it is a helpful command for keeping track of where your terminal is currently looking at. We can use our terminal to create a file in our folder by using the ```touch``` command. Lets create a file called ```main.cpp``` by running the command ```touch main.cpp```. Now, you should see an empty C++ file in your CS010B directory. Open it, and paste this code in.
+Now that our compiler is installed, lets use it! Create a new folder on your desktop, and name it CS010B. Open it in VSCode by going to File > Open Folder (or by using the shortcut Ctrl + O or Cmd + O for macOS), and open the CS010B folder. Now, we have an empty folder open in VSCode. Now open a terminal in VSCode by going to Terminal > New Terminal (or by using the shortcut Ctrl + \` or Cmd + \` for macOS). Your terminal should show the path to the CS010B folder. To make sure, use the ```pwd``` command, and it should print the path to the CS010B folder. ```pwd``` stands for "print working directory", and it is a helpful command for keeping track of where your terminal is currently looking at. We can use our terminal to create a file in our folder by using the ```touch``` command. Lets create a file called ```main.cpp``` by running the command ```touch main.cpp```. Now, you should see an empty C++ file in your CS010B directory. Open it, and paste this code in.
 
 ```cpp
 #include <iostream>
@@ -106,3 +114,21 @@ Let's break down what this command means. ```g++``` is the compiler that we are 
 > Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ m``` and press the Tab key, and it will autocomplete the name to ```main.cpp```. This will be useful for when you have longer file names.
 
 If the compilation worked, you will see no output and a new file in your CS010B folder. If you are using Windows, it should be ```a.exe```, but if you're using Linux/macOS, it should be ```a.out```. In order to see all the files in the current directory in your terminal, you can print them using the ```ls``` (stands for "list") command. To run out new executable, run the command ```./a.exe``` (if you are on Windows) or ```./a.out``` (if you are on Linux/macOS). Once you execute the command, you should see "Hello World!" printed out into the terminal.
+
+> Note: The ```.``` refers to the current directory. If you want to learn why we need to use ```./``` to run executables, then [this StackOverflow post](https://stackoverflow.com/questions/6331075/why-do-you-need-dot-slash-before-executable-or-script-name-to-run-it-in-bas) provides a good explanation.
+
+By default, source files compiled by G++ are named ```a```, but usually we want to give our programs recognizable names. To do this, we can use the compiler flag ```-o```, which is a compiler flag that names the output executable. First, lets remove the old executable by doing ```rm a.exe``` or ```rm a.out```. Then, run the following command:
+
+``` g++ -o hello_world main.cpp ```
+
+> Note: Some of the most common compiler flags you will see are -g (enables debugging), -O2 or -O3 (optimization flags), and -Wall (enable all warnings).
+
+This will compile ```main.cpp``` into an executable called ```hello_world```, and you can run it by running the command ```./hello_world``` in your console.
+
+## Part 3: Features of VSCode
+
+VSCode has many useful features that help increase your productivity. You will learn more about some of these features later (debugging, connecting to a remote server), but some of the features that will be useful to you right now are:
+
+| ![](images/multiplecursor.gif) | ![](images/renamevariable.gif) |
+| :--: | :--: |
+| *Alt+ Left Click to add a cursor*| *Rename variables*|
