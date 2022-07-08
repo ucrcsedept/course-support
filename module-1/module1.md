@@ -10,7 +10,7 @@ First, install the correct version of VSCode at [this link](https://code.visuals
     <img src="images/installC.gif" alt="Installing C++ Extension">
 </p>
 
-Now, in order to configure VSCode to work with C++, we must install a C++ compiler. The way we install our compiler varies on which operating system we are using, so drop down the appropriate list and follow the instructions there.
+Now, in order to configure VSCode to work with C++, we must install a C++ compiler. The compiler we will be using is G++, which is the C++ compiler from the GNU Compiler Collection (GCC). The way we install our compiler varies on which operating system we are using, so drop down the appropriate list and follow the instructions there.
 
 [comment]: # (Maybe add a way to check processor type if the student is unsure which version to install?)
 
@@ -60,7 +60,7 @@ Now, you have G++ installed and configured! You might be wondering why we had to
 </details>
 
 <details>
-<summary>Linux</summary>
+<summary>Linux (Ubuntu)</summary>
 1. Run the following commands on your terminal (open with Ctrl+Shift+T), which will install the G++ compiler for C++ and add it to your path variables automatically:
 <pre>
 sudo apt update
@@ -83,4 +83,26 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
 <summary>MacOS</summary>
 </details>
 
-## Part 2: Using the Compiler
+## Part 2: Using the Compiler on the Command Line
+
+Now that our compiler is installed, lets use it! Create a new folder on your desktop, and name it CS010B. Open it in VSCode by going to File > Open Folder, and open the CS010B folder. Now, we have an empty folder open in VSCode. Now open a terminal in VSCode by going to Terminal > New Terminal. Your terminal should show the path to the CS010B folder. To make sure, use the ```pwd``` command, and it should print the path to the CS010B folder. ```pwd``` stands for "print working directory", and it is a helpful command for keeping track of where your terminal is currently looking at. We can use our terminal to create a file in our folder by using the ```touch``` command. Lets create a file called ```main.cpp``` by running the command ```touch main.cpp```. Now, you should see an empty C++ file in your CS010B directory. Open it, and paste this code in.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+   cout << "Hello World!" << endl;
+   return 0;
+}
+```
+
+Make sure to save your file, and in the terminal, type the following command:
+
+``` g++ -std=c++14 main.cpp ```
+
+Let's break down what this command means. ```g++``` is the compiler that we are using. ```-std=c++14``` is something called a compiler flag, and compiler flags usually start with a ```-```. This compiler flag simply sets the compiler to compile to the C++14 standard. While the command will work without this flag, it is good to know how to switch standards. ```main.cpp``` is the target file that contains the code we want to compile.
+
+> Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ m``` and press the Tab key, and it will autocomplete the name to ```main.cpp```. This will be useful for when you have longer file names.
+
+If the compilation worked, you will see no output and a new file in your CS010B folder. If you are using Windows, it should be ```a.exe```, but if you're using Linux/macOS, it should be ```a.out```. In order to see all the files in the current directory in your terminal, you can print them using the ```ls``` (stands for "list") command. To run out new executable, run the command ```./a.exe``` (if you are on Windows) or ```./a.out``` (if you are on Linux/macOS). Once you execute the command, you should see "Hello World!" printed out into the terminal.
