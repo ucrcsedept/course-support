@@ -143,9 +143,13 @@ On larger projects and programs in object-oriented languages, it is good practic
 
 VSCode has many useful features that help increase your productivity. You will learn more about some of these features later (debugging, connecting to a remote server, and other features when editing multiple files at once), but some of the editing features that will be useful to you right now are:
 
-| ![Multiple Cursors](images/multiplecursor.gif) | ![Rename Variables](images/renamevariable.gif) | ![Go to Definition](images/gotodefinition.gif)| ![Highlight and Comment](images/highlightandcomment.gif)| ![Move Line](images/moveline.gif)|
-| :--: | :--: | :--: | :--: | :--: |
-| *Alt + Left Click to add a cursor*| *Rename variables/functions easily and quickly*| *Go to definition/declaration of a variable/function* | *Highlight line by line with Ctrl + L or Cmd + L, then comment with Ctrl+/ or Cmd+/* | *Move a line of code with Alt + Arrow Keys* |
+| ![Multiple Cursors](images/multiplecursor.gif) | ![Rename Variables](images/renamevariable.gif) | ![Go to Definition](images/gotodefinition.gif)
+| :--: | :--: | :--: |
+| *Alt + Left Click to add a cursor*| *Rename variables/functions easily and quickly*| *Go to definition/declaration of a variable/function* 
+
+| ![Highlight and Comment](images/highlightandcomment.gif)| ![Move Line](images/moveline.gif)|
+| :--: | :--: |
+| *Highlight line by line with Ctrl + L or Cmd + L, then comment with Ctrl+/ or Cmd+/* | *Move a line of code with Alt + Arrow Keys* |
 
 To find even more useful commands, press F1 to bring up the Command Palette that allows you to search for whatever command you need. [Here](https://code.visualstudio.com/docs/getstarted/keybindings) is a list of keybindings if you wish to get familiar with the many shortcuts in VSCode.
 
