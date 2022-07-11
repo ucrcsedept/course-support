@@ -14,7 +14,7 @@ For this class (and many future ones), a remote server will be used to host all 
 
 ### Command Line
 
-VSCode and other graphical interfaces won't be accessible all the time, so it is good to learn how to SSH into a remote server using just the terminal in case you ever need to. The method of SSH varies with operating system, so select whichever operating system you are on. Before we proceed, make sure that you have a CS account. If you don't have one/aren't sure if you have one, [go to this link](https://systems.engr.ucr.edu/createaccount) to set one up.
+VSCode and other graphical interfaces won't be accessible all the time, so it is good to learn how to SSH into a remote server using just the terminal in case you ever need to. The method of SSH varies with operating system, so select whichever operating system you are on. Before we proceed, make sure that you have a CS account. If you **don't have one/aren't sure if you have one**, [go to this link](https://systems.engr.ucr.edu/createaccount) to set one up. If you **forgot your password**, then [go here](https://systems.engr.ucr.edu/policies/password).
 
 <details>
 <summary>Windows 10 or newer</summary>
@@ -55,20 +55,73 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 > Note: This prompt appears every time you SSH into a server for the first time, so don't let it scare you! This happens because whenever you SSH into a server, there is a list of known hosts saved on your computer. Since you have (presumably) never SSH'ed into this server, then you will get this message only the first time since the address of the server will then be added to the list of known hosts.
 
-Type "yes". You will be prompted to enter your CS password. As a security measure, no characters will be echoed into the console as you type your password. Once you have sucessfully logged in, you should be able to see that your terminal's user has changed to your CS username @ the server **NOTE: change "the server" to what they will actually see once the server is set up**. You have sucessfully SSH'd into the UCR servers through the command line!
+Type "yes". You will be prompted to enter your CS password. As a security measure, no characters will be echoed into the console as you type your password. Once you have sucessfully logged in, you should be able to see that your terminal's user has changed to [your CS username] @ the server **NOTE: change "the server" to what they will actually see once the server is set up**. You have sucessfully SSH'd into the UCR servers through the command line!
 
 In order to terminate the SSH connection, use the `exit` command. **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of the terminal without using the `exit` doesn't log you out on the server, which consumes precious server resources.
 
+> Note: You are NOT required to do every (or any) assignment on the remote servers, in fact we encourage you to do all the assignments in your own personal development environment. The reason we want to show you this method is that future classes will require you to use the servers in order to access the material (**and will assume you can do it**), so we are making sure you are familiar with the process now.
+
 ## Navigating the Linux File System
 
-Navigating through the Linux file system will be a bit different because we don't have a graphical interface, we only have the terminal. However, the file system itself isn't too different from other file systems you may be familiar with. A helpful way to visualize the file system is to view it as a tree: a tree starts at the root. In this case, it would be the root directory which is denoted as `/` in Linux and usually as `C:\` in Windows. Within these root directories there are many files and directories that live within that root directory called children, and those children have children.
+Navigating through the Linux file system will be a bit different because we don't have a graphical interface, we only have the terminal. However, the file system itself isn't too different from other file systems you may be familiar with. A helpful way to visualize the file system is to view it as a tree: a tree starts at the root. In this case, it would be the root directory which is denoted as `/` in Linux and usually as `C:\` in Windows. Within these root directories there are many files and directories that live within that root directory called children, and those children have children. We will go over several commands that you use to traverse the file system through the command line.
 
-|![Tree of Linux File System](images/linuxfilesystem.png) |
+> Note: Even though we are only using command line without VSCode here, it is still important to understand how to navigate a file system with the terminal even if you have a graphical interface! One example is for knowing which files to compile and how to correctly navigate to them so you can tell the compiler where to look.
+
+|![Tree of Linux File System](images/linuxfilesystem.png)|
 |:--:|
 | *A visual example of the Linux file system* |
 
+Whenever you log into any of the school servers, you should be placed into your user root directory/home directory. In order to see the current directory you are in, use the `pwd` command (print working directory). The path printed should be `/home/csmajs/[your CS username]`. If not, use the `cd ~` command, where `cd` is the command to "change directory" and `~` is an alias that represents your personal home directory.
+
+Now, lets use the file system. Type the following command:
+
+``` mkdir example_dir ```
+
+The `mkdir` command stands for "make directory". Since your current path was your home directory, this means your new directory was created here. To make sure, run the `ls` command (stands for "list"). Let's change into that new directory with `cd example_dir`. Our path now should be `/home/csmajs/[your CS username]/example_dir`. Type `pwd` just to make sure that this is your path, since we changed to the `example_dir` directory. Now, lets go back to the home directory. Type `cd ..` The `..` is an alias that represent the previous directory/the current directory's parent. (similary, as mentioned in module 1, a single period `.` represents the current directory). These aliases (`.`, `..`, and `~`) make it much easier to move through the file system without typing the full path and names of directories.
+
+Now try typing the whole path.
+
+```cd /home/csmajs/<your_CS_username>/example_dir```
+
+Check that we are in `example_dir` with `pwd` again, but this time we typed the whole path instead of just `cd example_dir`. This is because, in the first case, we used a *relative* path, since we were changing directories relative to our current directory. The path we used this time was an *absolute* path, since we started with the root directory `/`. Paths that start with the root directory `/` are always absolute, otherwise they are relative.
+
+Go back to your home directory (you should know how to do this by now). Another command we will cover is `rm`. Now that we know how to traverse the file system, lets delete our example directory. Make sure you're home (`pwd`) and type this command:
+
+``` rm -rf example_dir ```
+
+`rm` stands for "remove". If we were removing a normal file, we wouldn't need these flags, but because this is a directory, we need the `-rf` flags. `-r` means to remove files recursively (this means it deletes all files and directories within that directory), and `-f` disables user confirmation for each deletion.
+
+> Note: `rm -rf` is crazy powerful. You can essentially break your whole system with `rm -rf /` (don't do this, you have been warned). So, be very careful when you use this command, as there is no undoing these deletions (notice there isn't any recycle bin).
+
+To prepare for the next part, lets make some directories and some files. We are going to create two directories called `src` and `header`, and put a `.cpp` file in each.
+
+```
+mkdir src
+mkdir header
+cd src
+touch main.cpp
+cd ..
+cd header
+touch example.h
+```
+
+The `touch` command simply creates a file with that name.
+
+As a summary, these are the commands we went over:
+
+* `mkdir` creates a directory.
+* `cd` changes your directory to the directory passed in by a path.
+    * `cd ..` goes back one directory
+* `ls` lists all files in your current directory
+* `pwd` prints the current working directory's path
+* `rm` deletes a file
+    * `rm -rf` removes a directory, and all files within it
+* `touch` creates a file
+
 ## SSH with VSCode
 
-## Working on a Remote Server 
+Now, we won't make you edit files using the command line, so we're gonna switch gears to using SSH with VSCode.
+
+## Working on a Remote Server
 
 Multi-file example goes here
