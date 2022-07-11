@@ -93,13 +93,16 @@ Go back to your home directory (you should know how to do this by now). Another 
 
 > Note: `rm -rf` is crazy powerful. You can essentially break your whole system with `rm -rf /` (don't do this, you have been warned). So, be very careful when you use this command, as there is no undoing these deletions (notice there isn't any recycle bin).
 
-To prepare for the next part, lets make some directories and some files. We are going to create two directories called `src` and `header`, and put a `.cpp` file in each.
+To prepare for the next part, lets make some directories and some files. We are going to create two directories called `src` and `header`, and put a `.cpp` file in each. Run these commands:
 
 ```
+mkdir module2
+cd module2
 mkdir src
 mkdir header
 cd src
 touch main.cpp
+touch example.cpp
 cd ..
 cd header
 touch example.h
@@ -107,7 +110,7 @@ touch example.h
 
 The `touch` command simply creates a file with that name.
 
-As a summary, these are the commands we went over:
+As a summary, these are the commands we went over (feel free to use this as a cheatsheet until you get used to navigating file systems via the command line):
 
 * `mkdir` creates a directory.
 * `cd` changes your directory to the directory passed in by a path.
@@ -118,10 +121,66 @@ As a summary, these are the commands we went over:
     * `rm -rf` removes a directory, and all files within it
 * `touch` creates a file
 
+> Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands.
+
 ## SSH with VSCode
 
-Now, we won't make you edit files using the command line, so we're gonna switch gears to using SSH with VSCode.
+Now, we won't make you edit files using the command line, so we're gonna switch gears to using SSH with VSCode. `exit` out of the SSH of the command line, close your terminal and open VSCode.
 
 ## Working on a Remote Server
 
-Multi-file example goes here
+main.cpp
+```cpp
+#include <iostream>
+#include <string>
+#include "../header/example.h"
+using namespace std;
+
+int main()
+{
+    Example myObject = Example("Hello World");
+    myObject.printName();
+    return 0;
+}
+```
+
+example.h
+```cpp
+#ifndef EXAMPLE_H
+#define EXAMPLE_H
+
+class Example
+{
+    public:
+        Example();
+        Example(string name);
+        void printName();
+        void assignName(string name);
+    private:
+        string name;
+};
+
+#endif EXAMPLE_H
+```
+
+example.cpp
+```cpp
+    #include "../header/example.h"
+
+    Example::Example()
+    {
+        name = "";
+    }
+    Example::Example(string name)
+    {
+        this->name = name;
+    }
+    void Example::printName()
+    {
+        cout << name << endl;
+    }
+    void Example::assignName(string name)
+    {
+        this->name = name;
+    }
+```
