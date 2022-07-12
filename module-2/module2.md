@@ -102,10 +102,9 @@ mkdir src
 mkdir header
 cd src
 touch main.cpp
-touch example.cpp
-cd ..
-cd header
-touch example.h
+touch person.cpp
+cd ../header
+touch person.h
 ```
 
 The `touch` command simply creates a file with that name.
@@ -125,11 +124,24 @@ As a summary, these are the commands we went over (feel free to use this as a ch
 
 ## SSH with VSCode
 
-Now, we won't make you edit files using the command line, so we're gonna switch gears to using SSH with VSCode. `exit` out of the SSH of the command line, close your terminal and open VSCode.
+Now, we won't make you edit files using the command line, so we're gonna switch gears to using SSH with VSCode. `exit` out of the SSH of the command line, close your terminal and open VSCode. Go to the extension marketplace, and search for Remote-SSH (the one published by Microsoft, with the blue ribbon verification). Install it. Now, we can SSH using VSCode! To set up to connect to CS010B servers, follow these steps:
+
+1. Open the command palette (F1), and type "Remote-SSH". Select the "Remote-SSH: Connect to Host" option.
+2. Click add a new host, and type the following command:
+
+    ``` ssh [your_cs_username]@cs10b.cs.ucr.edu ```
+
+3. Once you connect, another instance of VSCode will open, and ask you for your password.
+4. Since we are connected to a remote server, we have to configure our extensions again. Go to the extensions marketplace, and install the C++ extension.
+
+Now, you have a fully configured workspace on VSCode while connected to school servers!
 
 ## Working on a Remote Server
 
-main.cpp
+Open a folder using Ctrl+O / Cmd+O. This should default to your home directory (the one using your cs username). Once you open it, you should see the directories and files you made earlier. In each of the following files, paste the following code in.
+
+`src/main.cpp`
+
 ```cpp
 #include <iostream>
 #include <string>
@@ -138,49 +150,51 @@ using namespace std;
 
 int main()
 {
-    Example myObject = Example("Hello World");
-    myObject.printName();
+    Person myPerson = Person("Bob");
+    myPerson.printName();
     return 0;
 }
 ```
 
-example.h
-```cpp
-#ifndef EXAMPLE_H
-#define EXAMPLE_H
+`header/person.h`
 
-class Example
+```cpp
+#ifndef PERSON_H
+#define PERSON_H
+
+class Person
 {
     public:
-        Example();
-        Example(string name);
+        Person();
+        Person(string name);
         void printName();
-        void assignName(string name);
     private:
         string name;
+        void assignName(string name);
 };
 
-#endif EXAMPLE_H
+#endif
 ```
 
-example.cpp
-```cpp
-    #include "../header/example.h"
+`src/person.cpp`
 
-    Example::Example()
-    {
-        name = "";
-    }
-    Example::Example(string name)
-    {
-        this->name = name;
-    }
-    void Example::printName()
-    {
-        cout << name << endl;
-    }
-    void Example::assignName(string name)
-    {
-        this->name = name;
-    }
+```cpp
+#include "../header/example.h"
+
+Person::Person()
+{
+    name = "";
+}
+Person::Person(string name)
+{
+    this->name = name;
+}
+void Person::printName()
+{
+    cout << name << endl;
+}
+void Person::assignName(string name)
+{
+    this->name = name;
+}
 ```
