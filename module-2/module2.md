@@ -23,6 +23,7 @@ Windows doesn't have SSH enabled by default, so before we can run it from the co
 1. Go to the Start Menu and search for "Add an Optional Feature"
 2. Click "Add a feature"
 3. Search for OpenSSH Server and install
+
 ![Installing OpenSSH on Windows](images/openssh.gif)
 
 Now, open a command prompt (search "CMD" in the start menu) or a PowerShell terminal (search "PowerShell" in the start menu) and test whether or not this worked by running the following command:
