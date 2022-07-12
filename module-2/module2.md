@@ -146,7 +146,7 @@ Open a folder using Ctrl+O / Cmd+O. This should default to your home directory (
 ```cpp
 #include <iostream>
 #include <string>
-#include "../header/example.h"
+#include "../header/person.h"
 using namespace std;
 
 int main()
@@ -162,6 +162,10 @@ int main()
 ```cpp
 #ifndef PERSON_H
 #define PERSON_H
+
+#include <iostream>
+#include <string>
+using namespace std;
 
 class Person
 {
@@ -180,7 +184,7 @@ class Person
 `src/person.cpp`
 
 ```cpp
-#include "../header/example.h"
+#include "../header/person.h"
 
 Person::Person()
 {
