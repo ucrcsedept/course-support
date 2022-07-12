@@ -117,15 +117,15 @@ touch person.h
 
 As a summary, these are the commands we went over (feel free to use this as a cheatsheet until you get used to navigating file systems via the command line):
 
-* `mkdir` creates a directory.
+* `pwd` prints the current working directory's path.
+* `mkdir` makes a directory.
 * `cd` changes your directory to the directory passed in by a path.
-    * `cd ..` goes back one directory
-* `ls` lists all files in your current directory
-* `pwd` prints the current working directory's path
-* `rm` deletes a file
-    * `rm -rf` removes a directory, and all files within it
-* `touch` creates a file
+    * `cd ..` changes your directory to the parent directory (goes to previous directory).
+* `ls` lists all files in your current directory.
+* `touch` creates a file.
 * `mv [source file] [destination directory]` moves a file from one place to another, and can also be used to rename a file.
+* `rm` removes a file.
+    * `rm -rf` removes a directory, and all files within it.
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands.
 
@@ -215,3 +215,10 @@ Now, open a terminal using Ctrl + \` or Cmd + \`. By default, you should be in y
 ``` g++ -o person src/main.cpp src/person.cpp ```
 
 This command creates an executable called `person` targeting the source files `main.cpp` and `person.cpp` both contained in the `src` directory. Notice that we don't include `header/person.h` in the compilation command. We already included this file in the source files with `#include "../header/person.h"` (this is also an example of why header guards are important, as we included them in both source files).
+
+
+In order to make things simpler, you can also first change to the `src` directory (`cd src`) and compile there, just note that your executable will be in the `src` directory as well.
+
+> Note: A neat trick you can use to save time is when you compile, you can do `g++ src/*.cpp` or `g++ *.cpp` (if you are in the `src` directory) because Bash supports [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Keep in mind that this compiles **all** your source files together.
+
+Also, take note of the `#include`. The point of header files is that we want to include them in our source files since the header files contain our declarations. In order to do that, we must have a relative path from our `src` directory to the `header` directory. In order to get to a file from the `src` directory to the `header` directory, we must go to the previous directory `..` (which is our home directory in this case), then we go into the `header` directory, and `#include` whatever file we need. It is important to understand how to traverse the file system in order to compile the right files together, and include the right files in our source files.
