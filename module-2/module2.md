@@ -86,15 +86,22 @@ Now try typing the whole path.
 
 Check that we are in `example_dir` with `pwd` again, but this time we typed the whole path instead of just `cd example_dir`. This is because, in the first case, we used a *relative* path, since we were changing directories relative to our current directory. The path we used this time was an *absolute* path, since we started with the root directory `/`. Paths that start with the root directory `/` are always absolute, otherwise they are relative.
 
-Go back to your home directory (you should know how to do this by now). Another command we will cover is `rm`. Now that we know how to traverse the file system, lets delete our example directory. Make sure you're home (`pwd`) and type this command:
+Go back to your home directory (you should know how to do this by now). The next commands we will go over are `touch` and `mv`. `touch [filename]` is simple: it creates a file with that name. `mv` stands for move, and the parameters are `mv [source file] [target directory]`. It is used to move a file from one directory to another. If the "target directory" is actually a file name and not a directory, then it will simply rename the source file to that name. So, `mv` is used to both move and rename files. Let's create a file called `example.txt`, and move it into our example directory. We can do this with the following commands:
+
+```
+touch example.txt
+mv example.txt example_dir
+```
+
+Another command we will cover is `rm`. Now that we know how to traverse the file system, lets delete our example directory. Make sure you're home (`pwd`) and type this command:
 
 ``` rm -rf example_dir ```
 
-`rm` stands for "remove". If we were removing a normal file, we wouldn't need these flags, but because this is a directory, we need the `-rf` flags. `-r` means to remove files recursively (this means it deletes all files and directories within that directory), and `-f` disables user confirmation for each deletion.
+`rm` stands for "remove". If we were removing a normal file, we wouldn't need these flags, but because this is a directory, we need the `-rf` flags. `-r` means to remove files recursively (this means it deletes all files and directories within that directory, so `example.txt` will also be deleted), and `-f` disables user confirmation for each deletion.
 
 > Note: `rm -rf` is crazy powerful. You can essentially break your whole system with `rm -rf /` (don't do this, you have been warned). So, be very careful when you use this command, as there is no undoing these deletions (notice there isn't any recycle bin).
 
-To prepare for the next part, lets make some directories and some files. We are going to create two directories called `src` and `header`, and put a `.cpp` file in each. Run these commands:
+To prepare for the next part, lets make some directories and some files. We are going to create two directories called `src` and `header`, and put some source code files in `src` and header files in `header`. Run these commands:
 
 ```
 mkdir module2
@@ -108,8 +115,6 @@ cd ../header
 touch person.h
 ```
 
-The `touch` command simply creates a file with that name.
-
 As a summary, these are the commands we went over (feel free to use this as a cheatsheet until you get used to navigating file systems via the command line):
 
 * `mkdir` creates a directory.
@@ -120,6 +125,7 @@ As a summary, these are the commands we went over (feel free to use this as a ch
 * `rm` deletes a file
     * `rm -rf` removes a directory, and all files within it
 * `touch` creates a file
+* `mv [source file] [destination directory]` moves a file from one place to another, and can also be used to rename a file.
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands.
 
@@ -139,7 +145,7 @@ Now, you have a fully configured workspace on VSCode while connected to school s
 
 ## Working on a Remote Server
 
-Open a folder using Ctrl+O / Cmd+O. This should default to your home directory (the one using your cs username). Once you open it, you should see the directories and files you made earlier. In each of the following files, paste the following code in.
+Open a folder using Ctrl+O / Cmd+O. This should default to your home directory (the one using your cs username). Once you open it, you should see the directories and files you made earlier. We will be making a simple Person class to demonstrate how to work with multiple files and directories. In each of the following files, paste the following code into each respective file.
 
 `src/main.cpp`
 
@@ -203,3 +209,9 @@ void Person::assignName(string name)
     this->name = name;
 }
 ```
+
+Now, open a terminal using Ctrl + \` or Cmd + \`. By default, you should be in your home directory (if not, just do `cd ~`). In order to compile our program, we need to be able to navigate to our source files. So, the command would be:
+
+``` g++ -o person src/main.cpp src/person.cpp ```
+
+This command creates an executable called `person` targeting the source files `main.cpp` and `person.cpp` both contained in the `src` directory. Notice that we don't include `header/person.h` in the compilation command. We already included this file in the source files with `#include "../header/person.h"` (this is also an example of why header guards are important, as we included them in both source files).
