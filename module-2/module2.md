@@ -143,7 +143,11 @@ Now, we won't make you edit files using the command line, so we're gonna switch 
 
 Now, you have a fully configured workspace on VSCode while connected to school servers!
 
+In order to close the connection, click the bottom left corner (it should say `SSH: cs10b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection".
+
 ## Working on a Remote Server
+
+Everything you have done in the previous parts can now be done using the terminal or the graphical interface of VSCode, whichever you prefer.
 
 Open a folder using Ctrl+O / Cmd+O. This should default to your home directory (the one using your cs username). Once you open it, you should see the directories and files you made earlier. We will be making a simple Person class to demonstrate how to work with multiple files and directories. In each of the following files, paste the following code into each respective file.
 
@@ -214,11 +218,14 @@ Now, open a terminal using Ctrl + \` or Cmd + \`. By default, you should be in y
 
 ``` g++ -o person src/main.cpp src/person.cpp ```
 
-This command creates an executable called `person` targeting the source files `main.cpp` and `person.cpp` both contained in the `src` directory. Notice that we don't include `header/person.h` in the compilation command. We already included this file in the source files with `#include "../header/person.h"` (this is also an example of why header guards are important, as we included them in both source files).
+> Note: Since our terminal is connected to the server, we are using `g++` on the server, not your machine. If your install of `g++` or any other required software is not working for whatever reason, using the remote server is a good backup.
 
+This command creates an executable called `person` targeting the source files `main.cpp` and `person.cpp` both contained in the `src` directory. Notice that we don't include `header/person.h` in the compilation command. We already included this file in the source files with `#include "../header/person.h"` (this is also an example of why header guards are important, as we included them in both source files).
 
 In order to make things simpler, you can also first change to the `src` directory (`cd src`) and compile there, just note that your executable will be in the `src` directory as well.
 
 > Note: A neat trick you can use to save time is when you compile, you can do `g++ src/*.cpp` or `g++ *.cpp` (if you are in the `src` directory) because Bash supports [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Keep in mind that this compiles **all** your source files together.
 
-Also, take note of the `#include`. The point of header files is that we want to include them in our source files since the header files contain our declarations. In order to do that, we must have a relative path from our `src` directory to the `header` directory. In order to get to a file from the `src` directory to the `header` directory, we must go to the previous directory `..` (which is our home directory in this case), then we go into the `header` directory, and `#include` whatever file we need. It is important to understand how to traverse the file system in order to compile the right files together, and include the right files in our source files.
+Also, take note of the `#include`. The point of header files is that we want to include them in our source files since the header files contain our declarations. In order to do that, we must have a relative path from our `src` directory to the `header` directory. In order to get to a file from the `src` directory to the `header` directory, we must go to the previous directory `..` (which is our home directory in this case), then we go into the `header` directory, and `#include` whatever file we need. It is important to understand how to traverse the file system in order to compile the right files together, and include the right files in our source files. Organizing your files and code in this manner allows you to stay organized and know where to look while you are developing.
+
+Now that you're familiar with the Linux file system, SSH with the command line, setting up VSCode with your work and compilation with multiple files, you have everything you need to work on remote servers!
