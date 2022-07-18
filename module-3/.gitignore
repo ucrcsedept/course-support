@@ -1,0 +1,6 @@
+main.cpp
+*.swp
+*.swo
+a.out
+main
+.vscode
