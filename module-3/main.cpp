@@ -31,6 +31,7 @@ void arrayIndexOutOfBounds()
         arr[i] = i;
         cout << arr[i] << ' ';
     }
+    // How would you fix this?
 }
 
 /*
@@ -56,7 +57,8 @@ void uninitializedPointer()
 }
 
 /*
-The same goes for the other way around, but this error is arguably far worse since this won't result in your program terminating, making it harder to catch.
+The same goes for the other way around...
+but this error is arguably far worse since this won't result in your program terminating, making it harder to catch.
 Make sure you initialize your variables. 
 */
 void uninitializedVariable()
@@ -81,7 +83,8 @@ void doubleFree()
 }
 
 /*
-Another thing to keep in mind whenever you're deleting a linked list: make sure you don't delete your only reference to the next node.
+Another thing to keep in mind whenever you're deleting a linked list: 
+make sure you don't delete your only reference to the next node.
 This may result in memory leaks.
 */
 void lostMemory()
@@ -111,7 +114,7 @@ void invalidFree()
 /*
 Make sure that you delete your heap-allocated objects only after you're done using them.
 This will result in undefined behavior.
-To catch this error, you can assign nullptr after you delete, so that it results in an access violation so your program stops.
+To catch this error, you can assign nullptr after you delete, so that this operation results in an access violation so your program stops, making it easier to find.
 */
 void dereferenceAfterDelete()
 {
