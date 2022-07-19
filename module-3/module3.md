@@ -36,6 +36,8 @@ int main()
 }
 ```
 
+This program takes in 5 integer inputs from the user, and stores them into an array and outputs them.
+
 ### Setting Breakpoints
 
 ### Watching Variables/Arrays
