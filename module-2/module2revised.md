@@ -1,14 +1,20 @@
 # Introduction to the Linux File System
 
-## Navigating the Linux File System
+## The Linux File System
+
+The UCR servers don't run on Windows or MacOS, but rather on Linux. In order to access our files, we will have to learn how to navigate the file system.
 
 Navigating through the Linux file system will be a bit different because we don't rely a graphical interface, we only have the terminal. However, the file system itself isn't too different from other file systems you may be familiar with. A helpful way to visualize the file system is to view it as a tree: a tree starts at the root. In this case, it would be the root directory which is denoted as `/` in Linux and usually as `C:\` in Windows. Within these root directories there are many files and directories that live within that root directory called children, and those children have children. We will go over several commands that you use to traverse the file system through the command line.
 
-> Note: Even though we are only using command line without VSCode here, it is still important to understand how to navigate a file system with the terminal even if you have a graphical interface! One example is for knowing which files to compile and how to correctly navigate to them so you can tell the compiler where to look.
+Even though we have VSCode and other graphical interfaces, it is still important to understand how to navigate a file system with the terminal even if you have a graphical interface! One example is for knowing which files to compile and how to correctly navigate to them so you can tell the compiler where to look.
 
 |![Tree of Linux File System](images/linuxfilesystem.png)|
 |:--:|
 | *A visual example of the Linux file system* |
+
+## Navigating the Linux File System
+
+> Note: "Folders" will be referred to as "directories".
 
 Whenever you log into any of the school servers, you should be placed into your user root directory/home directory. In order to see the current directory you are in, use the `pwd` command (print working directory). The path printed should be `/home/csmajs/[your CS username]`. If not, use the `cd ~` command, where `cd` is the command to "change directory" and `~` is an alias that represents your personal home directory.
 
