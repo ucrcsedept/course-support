@@ -47,6 +47,8 @@ touch example.txt
 mv example.txt example_dir
 ```
 
+We can "peek" into directories without actually changing into them. Recall the `ls` command, which just lists all the files/directory in the current directory. You can use `ls example_dir` from the home directory to list everything in the `example_dir`, but we didn't actually change directories.
+
 Another command we will cover is `rm`. Now that we know how to traverse the file system, lets delete our example directory. Make sure you're home (`pwd`) and type this command:
 
 ``` rm -rf example_dir ```
@@ -61,7 +63,7 @@ As a summary, these are ALL the commands we went over (feel free to use this as 
 * `mkdir` makes a directory.
 * `cd` changes your directory to the directory passed in by a path.
     * `cd ..` changes your directory to the parent directory (goes to previous directory).
-* `ls` lists all files in your current directory.
+* `ls` lists all files in your current directory, or the target directory.
 * `touch` creates a file.
 * `mv [source file] [destination directory]` moves a file from one place to another, and can also be used to rename a file.
 * `rm` removes a file.
@@ -71,4 +73,4 @@ As a summary, these are ALL the commands we went over (feel free to use this as 
 
 Now that you know these commands, can you use them to organize your server space? Try making a different directory for each lab you work on, so you can reference each one quickly. If you already did one of your labs on the server, make a directory for it, and move the files in there using the commands above.
 
-> Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands.
+> Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands. Each command has a lot more power/capability than what we've gone over in this module, so if you want to learn more about what each command can do, you can refer to the manual.
