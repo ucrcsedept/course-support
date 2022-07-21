@@ -50,7 +50,7 @@ Now, we can SSH into UCR servers! To set up a connection to CS010B servers, foll
 
 Now, you have a fully configured workspace on VSCode while connected to school servers!
 
-In order to close the connection, click the bottom left corner (it should say `SSH: cs010b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of the terminal without using the `exit` doesn't log you out on the server, which consumes precious server resources.
+In order to close the connection, click the bottom left corner (it should say `SSH: cs010b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
 ## Working on a Remote Server
 
