@@ -1,12 +1,20 @@
 # Introduction to the Linux File System
 
+> Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
+
+Today's module will quickly go over the basics of the Linux file system and how to use the terminal, which uses a shell called Bash, to navigate through it. In this module, you will learn:
+
+* What the Linux file system is
+* How to organize your server space using folders/directories
+* Basic Bash commands
+
 ## The Linux File System
 
-The UCR servers don't run on Windows or MacOS, but rather on Linux. In order to access our files, we will have to learn how to navigate the file system.
+The UCR servers don't run on Windows or MacOS, but rather on Linux. In order to access and organize our files, we will have to learn how to navigate the file system.
 
 Navigating through the Linux file system will be a bit different because we don't rely a graphical interface, we only have the terminal. However, the file system itself isn't too different from other file systems you may be familiar with. A helpful way to visualize the file system is to view it as a tree: a tree starts at the root. In this case, it would be the root directory which is denoted as `/` in Linux and usually as `C:\` in Windows. Within these root directories there are many files and directories that live within that root directory called children, and those children have children. We will go over several commands that you use to traverse the file system through the command line.
 
-Even though we have VSCode and other graphical interfaces, it is still important to understand how to navigate a file system with the terminal even if you have a graphical interface! One example is for knowing which files to compile and how to correctly navigate to them so you can tell the compiler where to look.
+**Even though we have VSCode and other graphical interfaces, it is still important to understand how to navigate a file system with the terminal even if you have a graphical interface! Sometimes, there will be scenarios where a graphical interface just isn't available, and you have only the terimnal. One example is for knowing which files to compile and how to correctly navigate to them so you can tell the compiler where to look, so you can use `g++` with the proper parameters.**
 
 |![Tree of Linux File System](images/linuxfilesystem.png)|
 |:--:|
@@ -14,7 +22,7 @@ Even though we have VSCode and other graphical interfaces, it is still important
 
 ## Navigating the Linux File System
 
-> Note: "Folders" will be referred to as "directories".
+> Note: "Folders" will be referred to as "directories" from now on, since most documentation refer to them as directories.
 
 Log into UCR servers with VSCode's Remote-SSH and open a terminal using `Ctrl + ~` or `Cmd + ~`, and open your folder (just like module 1). Notice that the terminal, whenever it waits for your input, says the current user @ the name of the server, which in this case should look like `[(your UCR id)@xe-02 ~]`. It also says the current directory your terminal is looking at.
 
@@ -47,7 +55,7 @@ Another command we will cover is `rm`. Now that we know how to traverse the file
 
 > Note: `rm -rf` is crazy powerful. You can essentially break your whole system with `rm -rf /` (don't do this, you have been warned). So, be very careful when you use this command, as there is no undoing these deletions (notice there isn't any recycle bin).
 
-As a summary, these are the commands we went over (feel free to use this as a cheatsheet until you get used to navigating file systems via the command line):
+As a summary, these are ALL the commands we went over (feel free to use this as a cheatsheet until you get used to navigating file systems via the command line):
 
 * `pwd` prints the current working directory's path.
 * `mkdir` makes a directory.
@@ -58,5 +66,9 @@ As a summary, these are the commands we went over (feel free to use this as a ch
 * `mv [source file] [destination directory]` moves a file from one place to another, and can also be used to rename a file.
 * `rm` removes a file.
     * `rm -rf` removes a directory, and all files within it.
+* `g++ [target file(s)]` compiles a C++ source file, creating an executable with the name `a.out`.
+    * `g++ -o [executable name] [target file(s)]` compiles a C++ source file, creating an executable with the name `[executable name]`.
+
+Now that you know these commands, can you use them to organize your server space? Try making a different directory for each lab you work on, so you can reference each one quickly. If you already did one of your labs on the server, make a directory for it, and move the files in there using the commands above.
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands.
