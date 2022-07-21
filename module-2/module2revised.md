@@ -34,6 +34,8 @@ Now, lets use the file system. Type the following command:
 
 The `mkdir` command stands for "make directory". Since your current path was your home directory, this means your new directory was created here. To make sure, run the `ls` command (stands for "list"). Let's change into that new directory with `cd example_dir`. Our path now should be `/home/csmajs/[your CS username]/example_dir`. Type `pwd` just to make sure that this is your path, since we changed to the `example_dir` directory. Now, lets go back to the home directory. Type `cd ..` The `..` is an alias that represent the previous directory/the current directory's parent. (similary, as mentioned in module 1, a single period `.` represents the current directory). These aliases (`.`, `..`, and `~`) make it much easier to move through the file system without typing the full path and names of directories.
 
+> Note: Most commands in Bash don't echo anything to the console once you execute them to avoid clutter in the terminal. To make sure that the command worked as expected, or that you didn't make a mistake, you should ocassionally `ls` or `pwd` to make sure you're in the right place, or if a command you input worked as you expected.
+
 Now try typing the whole path.
 
 ```cd /home/csmajs/<your_CS_username>/example_dir```
@@ -47,7 +49,7 @@ touch example.txt
 mv example.txt example_dir
 ```
 
-We can "peek" into directories without actually changing into them. Recall the `ls` command, which just lists all the files/directory in the current directory. You can use `ls example_dir` from the home directory to list everything in the `example_dir`, but we didn't actually change directories.
+We can "peek" into directories without actually changing into them. Recall the `ls` command, which just lists all the files/directory in the current directory. You can use `ls example_dir` from the home directory to list everything in the `example_dir`, but we didn't actually change directories. When you run this command, you should see that there is a file called `example.txt` in the directory.
 
 Another command we will cover is `rm`. Now that we know how to traverse the file system, lets delete our example directory. Make sure you're home (`pwd`) and type this command:
 
