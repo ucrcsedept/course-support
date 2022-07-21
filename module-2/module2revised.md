@@ -16,6 +16,8 @@ Even though we have VSCode and other graphical interfaces, it is still important
 
 > Note: "Folders" will be referred to as "directories".
 
+Log into UCR servers with VSCode's Remote-SSH and open a terminal using `Ctrl + ~` or `Cmd + ~`, and open your folder (just like module 1). Notice that the terminal, whenever it waits for your input, says the current user @ the name of the server, which in this case should look like `[(your UCR id)@xe-02 ~]`. It also says the current directory your terminal is looking at.
+
 Whenever you log into any of the school servers, you should be placed into your user root directory/home directory. In order to see the current directory you are in, use the `pwd` command (print working directory). The path printed should be `/home/csmajs/[your CS username]`. If not, use the `cd ~` command, where `cd` is the command to "change directory" and `~` is an alias that represents your personal home directory.
 
 Now, lets use the file system. Type the following command:
