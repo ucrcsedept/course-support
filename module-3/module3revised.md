@@ -130,10 +130,12 @@ int main()
 {
     int myArray[5];
     int* arrayPointer = myArray;
+    int input;
     cout << "Input 5 numbers: ";
     for (int i = 0; i < 5; i++)
     {
-        cin >> *(arrayPointer + i);
+        cin >> input; 
+        *(arrayPointer + i) = input;
     }
     cout << "Array contents: ";
     for (int i = 0; i < 5; i++)
@@ -148,7 +150,19 @@ This program takes in 5 integer inputs from the user, and stores them into an ar
 
 ### Setting Breakpoints
 
+A breakpoint in a debugger is a point where we tell the program to pause, so we can look at what exactly is going on at that point of the program. In order to set a breakpoint, hover your cursor next to the line numbers. You should notice a small translucent red dot pop up; clicking it will set a breakpoint at that line of code.
+
+<p align="center">
+   <img src="images/breakpoint.gif" alt="Setting Breakpoint">
+</p>
+
+Set a break point at line 6. **This means that the program will pause AFTER the execution of line 6**. In order to start your debugger, you have to set at least one break point, otherwise it will just run through the code normally. We set it at the start of the main function in order to step through our code line by line.
+
 ### Watching Variables/Arrays
+
+Now, in the top right corner, there should be a button that is labeled "Debug C/C++ File". Click it, and you should be prompted to select a debug configuration. Select one that says `g++` (if there are multiple ones, just pick the first `g++` that you see).
+
+Once your debugger starts,
 
 ### Step In vs Step Over
 
