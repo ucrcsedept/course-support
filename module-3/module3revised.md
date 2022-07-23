@@ -224,6 +224,16 @@ Feel free to step all over the program, and play around a bit with the debugger.
 
 In order to find a crash in our program, lets change our `main.cpp` file so that it doesn't work. Change the line `int* arrayPointer = myArray` to `int* arrayPointer = nullptr` (should be line 18). Compile and run the program just to make sure you have a segmentation fault (specifically, at the first input). 
 
+Now, run your debugger through the program. It should terminate at the line where the segmentation fault happened. 
+
+<p align="center">
+    <img src= "images/segfault.gif" alt="Seg fault in debugger">
+</p>
+
+We can see that our program terminated at line 24, which is `*(arrayPointer + i) = input;`. From this line, we see that it is an assignment operation to a dereferenced integer pointer. Since segementation faults deal with memory, then our pointer must be the problematic variable here. We can check it in the variable list, and see it has the value `0x00`, which means it corresponds to a null pointer. Therefore, that is what is causing the crash.
+
+Since the debugger told us exactly which line the crash happened, we were able to deduce what the error was based on the error message and the line itself. However, we still had to have some background knowledge - the debugger doesn't do *all* of the work for us!
+
 ### OPTIONAL: Call Stack
 
 > Note: This section will be much more relevant once you study recursion. Feel free to skip for now if you are not interested.
