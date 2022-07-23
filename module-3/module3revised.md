@@ -238,6 +238,70 @@ Since the debugger told us exactly which line the crash happened, we were able t
 
 > Note: This section will be much more relevant once you study recursion. Feel free to skip for now if you are not interested.
 
+A call stack, sometimes called the run-time stack or program stack, is something that a program uses to keep track of where it is if multiple functions are called within functions so it knows where to go back to once it finishes executing a function. Here is a visual example:
+
+<p align="center">
+    <img src= "images/callstack.png" alt="Call stack example">
+</p>
+
+In order to see the call stack in your debugger, copy-paste this example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void d0(); void re(); void mi(); void fa(); void so(); void la(); void ti();
+
+void dO()
+{
+    re();
+    cout << "do" << endl;
+}
+
+void re()
+{
+    mi();
+    cout << "re" << endl;
+}
+
+void mi()
+{
+    fa();
+    cout << "mi" << endl;
+}
+
+void fa()
+{
+    so();
+    cout << "fa" << endl;
+}
+
+void so()
+{
+    la();
+    cout << "so" << endl;
+}
+
+void la()
+{
+    ti();
+    cout << "la" << endl;
+}
+
+void ti()
+{
+    cout << "ti" << endl;
+}
+
+int main()
+{
+    dO();
+}
+```
+Before you do anything: can you guess what the output will be?
+
+Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program.** As the functions are called, they are added to the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion, which is when a function calls itself.
+
 ### OPTIONAL: Debugging with Multiple Files
 
 > Note: This section will be much more relevant once you start working with programs that consist of multiple files. Feel free to skip for now if you are not interested.
