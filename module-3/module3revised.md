@@ -192,7 +192,27 @@ We control the debugger using this bar right here:
     <img src= "images/debuggingbar.png" alt="Debug Bar">
 </p>
 
-This bar is what you will use to control your debugger. The first button is "Continue", and pressing this button will run your program up until the next breakpoint. The next two buttons are "Step Over" and "Step Into", which both execute the next line of code. We will go over the difference between the two in the next subsection.
+This bar is what you will use to control your debugger. The first button is "Continue", and pressing this button will run your program up until the next breakpoint. 
+
+The next two buttons, "Step Over" and "Step Into" both execute the next line of code. However, if the next line of code is a *function*, then "Step Over" tells the debugger to literally *step over* the function, running the entire function, then go to the line after the function call. If you press "Step Into" instead, then the debugger *steps into* the function, allowing you to run the function line by line. You would use "Step Over" if you want to skip a function (maybe you know it already works, or you want to go further ahead into your code), whereas you would use "Step Into" if you want to run the function line by line. 
+
+If you accidentally step into a function, or you want to "fast forward" to the end of a function, then pressing "Step Out" tells the debugger to *step out* of the function, by running all the lines of code up until the end of the function, pausing at the next line of code after the function call.
+
+The next two buttons, "Restart" and "Stop" are self explanatory.
+
+Here is an example of "Step Over":
+
+<p align="center">
+    <img src= "images/stepover.gif" alt="Stepping over">
+</p>
+
+...and here's an example of "stepping into and out":
+
+<p align="center">
+    <img src= "images/stepintostepout.gif" alt="Stepping into and out">
+</p>
+
+Feel free to step all over the program, and play around a bit with the debugger. The next section will go over how we use the debugger to find and diagnose crashes.
 
 ### Finding Crashes
 
