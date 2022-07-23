@@ -157,4 +157,5 @@ void comparisionError()
 
 int main() 
 {
+    deletingCopy();
 }

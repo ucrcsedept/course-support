@@ -120,14 +120,25 @@ All you need to use the debugger built into VSCode is to install the C++ extensi
 
 ## Using the Debugger
 
-We will start with a simple single file example to introduce the features of the debugger. Create a new file called `main.cpp`, and paste the following contents in:
+We will start with a simple example to introduce the features of the debugger. Create a new file called `main.cpp`, and paste the following contents in:
 
 ```cpp
 #include <iostream>
 using namespace std;
 
+void myFunction(int* arrayPointer)
+{
+    cout << "Currently in display function!" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << *(arrayPointer + i) << ' ';
+    }
+    cout << endl;
+}
+
 int main()
 {
+    cout << "Starting program..." << endl;
     int myArray[5];
     int* arrayPointer = myArray;
     int input;
@@ -137,12 +148,9 @@ int main()
         cin >> input; 
         *(arrayPointer + i) = input;
     }
-    cout << "Array contents: ";
-    for (int i = 0; i < 5; i++)
-    {
-        cout << *(arrayPointer + i) << ' ';
-    }
-    cout << endl;
+    cout << "Entering function..." << endl;
+    myFunction(arrayPointer);
+    cout << "Ending program..." << endl;
 }
 ```
 
@@ -156,19 +164,43 @@ A breakpoint in a debugger is a point where we tell the program to pause, so we 
    <img src="images/breakpoint.gif" alt="Setting Breakpoint">
 </p>
 
-Set a break point at line 6. **This means that the program will pause AFTER the execution of line 6**. In order to start your debugger, you have to set at least one break point, otherwise it will just run through the code normally. We set it at the start of the main function in order to step through our code line by line.
+Set a break point at line 16 (which is `cout << "Starting program..." << endl;`). This will pause the program at line 16 once you start the debugger. In order to start your debugger, you have to set at least one break point, otherwise it will just run through the code normally. We set it at the start of the main function in order to step through our code line by line.
 
 ### Watching Variables/Arrays
 
 Now, in the top right corner, there should be a button that is labeled "Debug C/C++ File". Click it, and you should be prompted to select a debug configuration. Select one that says `g++` (if there are multiple ones, just pick the first `g++` that you see).
 
-Once your debugger starts,
+Once your debugger starts, your interface will change. Lets look at the side bar first before we step through the program. In the first window in the top left we are able to see the variables, and all their values! The values of `myArray` can be seen with a dropdown menu by clicking on it. The values should look like junk right now, but that's only because we only declared the variables without assigning anything to them. You can keep an eye on the value of your variables as your progress through your code here.
 
-### Step In vs Step Over
+<p align="center">
+    <img src="images/variables.png" alt="Debugging Tab">
+</p>
+
+However, it is rare that you would care about *all* of your variables at the same time. Sometimes, you're only concerned with a few of them. That is what the `Watch` tab is for. We can add expressions we want to watch for, and it will alert us whenever they become true or false. You can add a variable and the debugger will tell you whenever it changes, or you can put in a boolean expression and it will tell you whenever it changes from true to false or vice versa. Here's an example of some types of expressions you can input into the watchpoint list:
+
+<p align="center">
+    <img src="images/watch.gif" alt="Watchpoint Tab">
+</p>
+
+Add some expressions into yours, and watch how they change once you input values into the array.
+
+### Step In vs Step Over, and Step Out
+
+We control the debugger using this bar right here:
+
+<p align="center">
+    <img src= "images/debuggingbar.png" alt="Debug Bar">
+</p>
+
+This bar is what you will use to control your debugger. The first button is "Continue", and pressing this button will run your program up until the next breakpoint. The next two buttons are "Step Over" and "Step Into", which both execute the next line of code. We will go over the difference between the two in the next subsection.
 
 ### Finding Crashes
 
 In order to find out where our program crashes, lets change our `main.cpp` file so that it doesn't work. Change the line `int* arrayPointer = myArray` to `int* arrayPointer = nullptr`.
+
+### Call Stack (optional)
+
+> Note: This section will be much more relevant once you study recursion. Feel free to skip for now if you are not interested.
 
 ### Debugging with Multiple Files
 
@@ -179,3 +211,5 @@ The process for debugging with multiple linked source files requires some setup.
 While it is a good skill to know how to use a debugger, it is still just a tool like a fancy text editor or a syntax highlighter. Technically, all you get out of a debugger is a deeper look at your program as you step through it line by line. It should not be used as a crutch, as it doesn't tell you anything other than the current variable values, memory locations, and where your program terminates. **To get legitimate value out of a debugger, you need to be able to trace your code and understand where the errors come from.** A debugger may be able to tell you the exact line your program came to a halt due to a segmentation fault, but that information doesn't mean anything if you don't know why your program would crash there. Being able to recognize patterns and common errors will allow you to get better use out of a debugger.
 
 [Here](./main.cpp) is a small list of common errors made with pointers that your IDE won't bail you out of. While these errors are written in a way that it is obvious to spot what is wrong with each example, it is important to recognize that they exist and can be helpful in diagnosing what may be going wrong in your programs. The errors shown in that example may seem obvious now, but that is only because each error is presented in isolation; it is much harder to spot the exact error when looking at a file that is hundreds of lines long and these errors could potentially span across functions/scopes/files. Recognizing (no need to memorize, you'll run into them yourself eventually) the patterns here will help you find them down the line, and could save you countless hours of debugging.
+
+> Note: It is important to understand the difference between undefined behavior and segmentation faults. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch.
