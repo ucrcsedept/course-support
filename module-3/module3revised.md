@@ -184,6 +184,12 @@ However, it is rare that you would care about *all* of your variables at the sam
 
 Add some expressions into yours, and watch how they change once you input values into the array.
 
+Something else you can do with this tool is change the value of your variables in the middle of your program! All you have to do is right click the variable, and select "Set Value" (or double click it). This is useful if you want to examine some sort of specific behavior at some value.
+
+<p align="center">
+    <img src="images/setvariable.gif" alt="Setting variable">
+</p>
+
 ### Step In vs Step Over, and Step Out
 
 We control the debugger using this bar right here:
@@ -216,19 +222,21 @@ Feel free to step all over the program, and play around a bit with the debugger.
 
 ### Finding Crashes
 
-In order to find out where our program crashes, lets change our `main.cpp` file so that it doesn't work. Change the line `int* arrayPointer = myArray` to `int* arrayPointer = nullptr`.
+In order to find a crash in our program, lets change our `main.cpp` file so that it doesn't work. Change the line `int* arrayPointer = myArray` to `int* arrayPointer = nullptr` (should be line 18). Compile and run the program just to make sure you have a segmentation fault (specifically, at the first input). 
 
-### Call Stack (optional)
+### OPTIONAL: Call Stack
 
 > Note: This section will be much more relevant once you study recursion. Feel free to skip for now if you are not interested.
 
-### Debugging with Multiple Files
+### OPTIONAL: Debugging with Multiple Files
+
+> Note: This section will be much more relevant once you start working with programs that consist of multiple files. Feel free to skip for now if you are not interested.
 
 The process for debugging with multiple linked source files requires some setup. By default, VSCode assumes that you are debugging only one file. In order to make it so the debugger recognizes that you have linked source files, we need to make a slight change. Notice that when you started the debugger, a new directory called `.vscode` was created within your directory. Open it, and you should see a file called `tasks.json`. This file is used by the debugger to pass in arguments to the debugger so you don't have to. We are interested in the block called `args`. You should see that there is a list of arguments in that block. They are telling the debugger where to look for the source files. Simply add whatever source files you want to debug as an argument in that block. If you want to debug all the source files in your directory, then replace the argument `"${file}"` with `"*.cpp"`.
 
 ## Examples of Common Errors using Pointers and Linked Lists
 
-While it is a good skill to know how to use a debugger, it is still just a tool like a fancy text editor or a syntax highlighter. Technically, all you get out of a debugger is a deeper look at your program as you step through it line by line. It should not be used as a crutch, as it doesn't tell you anything other than the current variable values, memory locations, and where your program terminates. **To get legitimate value out of a debugger, you need to be able to trace your code and understand where the errors come from.** A debugger may be able to tell you the exact line your program came to a halt due to a segmentation fault, but that information doesn't mean anything if you don't know why your program would crash there. Being able to recognize patterns and common errors will allow you to get better use out of a debugger.
+While it is a good skill to know how to use a debugger, it is still just a tool like a fancy text editor or a syntax highlighter. Technically, all you get out of a debugger is a deeper look at your program as you step through it line by line. It should not be used as a crutch, as it doesn't tell you anything other than the current variable values, memory locations, and where your program terminates. **To get legitimate value out of a debugger, you need to be able to trace your code and understand where the errors come from.** A debugger may be able to tell you the exact line your program came to a halt due to a segmentation fault, but that information doesn't mean much if you don't understand why your program would crash there. Being able to recognize patterns and common errors will allow you to get better use out of a debugger.
 
 [Here](./main.cpp) is a small list of common errors made with pointers that your IDE won't bail you out of. While these errors are written in a way that it is obvious to spot what is wrong with each example, it is important to recognize that they exist and can be helpful in diagnosing what may be going wrong in your programs. The errors shown in that example may seem obvious now, but that is only because each error is presented in isolation; it is much harder to spot the exact error when looking at a file that is hundreds of lines long and these errors could potentially span across functions/scopes/files. Recognizing (no need to memorize, you'll run into them yourself eventually) the patterns here will help you find them down the line, and could save you countless hours of debugging.
 

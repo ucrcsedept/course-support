@@ -94,7 +94,9 @@ void lostMemory()
     head->next = tail;                          // setting the nodes to be linked
     delete head;                                // the first node is deleted
     
-    // Now, how do you get to the 2nd node? You can't!
+    // Now, how do you get to the 2nd node (without calling tail ;) )? You can't!
+    // This is a common issue when you have to delete a linked list...
+    // ...but you only have access to the head of the linked list!
     // How would you fix this issue?
 }
 
