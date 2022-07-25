@@ -8,7 +8,7 @@ Welcome to CS010B! In this lab, we will be configuring and introducing the basic
 * How to compile with g++, a C++ compiler
 * Basic use of VSCode with SSH
 
-**IMPORTANT**: Before we proceed, make sure that you have a CS account. If you **don't have one/aren't sure if you have one**, [go to this link](https://systems.engr.ucr.edu/createaccount) to set one up. If you **forgot your password**, then [go here](https://systems.engr.ucr.edu/policies/password).
+**IMPORTANT**: Before we proceed, make sure that you have a CS account. If you **don't have one/aren't sure if you have one**, [go to this link](https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9) to set one up. The same site will help if you **forgot your password and need to reset it**.
 
 ## What is an IDE?
 
@@ -38,9 +38,10 @@ First, install the correct version of VSCode at [this link](https://code.visuals
 Now, we can SSH into UCR servers! To set up a connection to CS010B servers, follow these steps:
 
 1. Open the command palette (press F1), and type "Remote-SSH". Select the "Remote-SSH: Connect to Host" option.
-2. Click add a new host, and type the following command:
+2. Click add a new host, and type the following command. Note that your CS username is the same as your UCR NetID.
 
     ``` ssh [your_cs_username]@cs010b.cs.ucr.edu ```
+   
 3. Now you have saved the address as a known host. Repeat step 1, and this time you will be asked for your password in a new instance of VSCode.
 4. Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
 
@@ -54,7 +55,7 @@ In order to close the connection, click the bottom left corner (it should say `S
 
 ## Working on a Remote Server
 
-Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_ucr_id]` (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server. Once you open it, you should see the directories and files you made earlier.
+Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_cs_username]` for students in CS related majors or `/class/classes/[your_cs_username]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server. Once you open it, you should see the directories and files you made earlier.
 
 In order to demonstrate how to use VSCode with C++ so you can do your labs, we will write and compile a simple program. Create a new file called `main.cpp`, and copy in the following code:
 
