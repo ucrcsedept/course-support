@@ -1,4 +1,4 @@
-# Introduction to the Linux File System
+# Introduction to the Linux File System + Submitting to ZyBooks
 
 > Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
 
@@ -76,3 +76,7 @@ As a summary, these are ALL the commands we went over (feel free to use this as 
 Now that you know these commands, can you use them to organize your server space? Try making a different directory for each lab you work on, so you can reference each one quickly. If you already did one of your labs on the server, make a directory for it, and move the files in there using the commands above.
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands. Each command has a lot more power/capability than what we've gone over in this module, so if you want to learn more about what each command can do, you can refer to the manual.
+
+## Downloading Files and Uploading to UCR Servers
+
+## Submitting to ZyBooks
