@@ -55,7 +55,7 @@ In order to close the connection, click the bottom left corner (it should say `S
 
 ## Working on a Remote Server
 
-Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_cs_username]` for students in CS related majors or `/class/classes/[your_cs_username]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server. Once you open it, you should see the directories and files you made earlier.
+Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_cs_username]` for students in CS related majors or `/class/classes/[your_cs_username]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
 
 In order to demonstrate how to use VSCode with C++ so you can do your labs, we will write and compile a simple program. Create a new file called `main.cpp`, and copy in the following code:
 
