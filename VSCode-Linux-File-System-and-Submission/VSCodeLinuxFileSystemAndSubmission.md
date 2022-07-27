@@ -79,6 +79,8 @@ Now that you know these commands, can you use them to organize your server space
 
 ## Downloading Files and Uploading to UCR Servers
 
+> Note: If none of these methods work for you, then you can just `touch` a new file and copy paste the contents from the zipped file into the server.
+
 ## Submitting to ZyBooks
 
 Once you're done working on your file and you're ready to submit your file, you have to download the file from the remote server to your local machine. The Remote-SSH plugin allows you to do this quickly.
