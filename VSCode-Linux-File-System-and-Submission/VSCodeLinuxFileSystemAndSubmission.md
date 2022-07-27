@@ -87,3 +87,7 @@ Once you're done working on your file and you're ready to submit your file, you 
 2. Right-click the file, and click "Download".
 3. Save the file where you want to save it on your local machine
 4. Upload the file to ZyBooks for submission, and wait for the autograder to finish.
+
+<p align="center">
+      <img src="images/downloadfile.gif" alt="Downloading File from Remote Server">
+</p>
