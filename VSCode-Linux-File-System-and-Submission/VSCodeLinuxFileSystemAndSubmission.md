@@ -80,3 +80,10 @@ Now that you know these commands, can you use them to organize your server space
 ## Downloading Files and Uploading to UCR Servers
 
 ## Submitting to ZyBooks
+
+Once you're done working on your file and you're ready to submit your file, you have to download the file from the remote server to your local machine. The Remote-SSH plugin allows you to do this quickly.
+
+1. Open the the VSCode File Explorer (first button on the left taskbar), and find the file you were working on.
+2. Right-click the file, and click "Download".
+3. Save the file where you want to save it on your local machine
+4. Upload the file to ZyBooks for submission, and wait for the autograder to finish.
