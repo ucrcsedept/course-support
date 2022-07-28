@@ -56,7 +56,7 @@ Now, you have a fully configured workspace on VSCode while connected to school s
 
 In order to close the connection, click the bottom left corner (it should say `SSH: cs010b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
-## Working on a Remote Server
+## Part 2: Working on a Remote Server
 
 Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_ucr_netid]` for students in CS related majors or `/class/classes/[your_ucr_netid]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
 
@@ -103,6 +103,102 @@ By default, source files compiled by g++ are named ```a```, but usually we want 
 ``` g++ -o hello_world main.cpp ```
 
 This will compile ```main.cpp``` into an executable called ```hello_world```, and you can run it by running the command ```./hello_world``` in your console.
+
+## Optional (but recommended!): Key-Based Automatic Login
+
+Notice that when you want to open a folder, you are prompted to enter your password again. This essentially makes it so you have to input your password twice to log in, which gets very tedious. In this section, you can set up Remote-SSH to remember your password so you only have to input it once.
+
+Instructions vary based on operating system:
+
+<details>
+<summary>Windows</summary>
+
+In order to set up key based login with SSH, we will first have to install an SSH client.
+
+1. Go to the Start Menu and search for "Add an Optional Feature"
+2. Click "Add a feature"
+3. Search for OpenSSH Server and install
+
+<p align="center">
+    <img src="images/openssh.gif" alt="Installing SSH client on Windows">
+</p>
+
+Now, we will generate something called a public/private key pair, which we will use to log into Remote-SSH.
+
+4. Open a Command Prompt by pressing (Windows Key + R) which opens the "Run" application, and then type in `cmd` which opens the command prompt.
+5. Run the following command:
+
+``` ssh-keygen -t rsa -b 4096 ```
+
+The output should be the following:
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key [your path here]:
+```
+
+The name of the file can be whatever you want it to be. For the purposes of the tutorial, the name we will be using is ```mysshkey```.
+
+Now, you will be prompted with this:
+
+```
+Enter passphrase (empty for no passphrase):
+```
+
+**Do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase. Note that there is a tradeoff between security and convenience with this method, as anyone with access with your device will be able to log into UCR servers.
+
+<p align="center">
+    <img src="images/generatekey.gif" alt="Generating RSA key">
+</p>
+
+Now, we need to navigate to our generated keys. Go to your user folder, which should be in the path `C:\Users\[your username]`. You should see two files named `mysshkey` (or whatever you named your keys). The one without a file extension is your *private* key, **which you should never, ever share with ANYONE**. The one with a file extension of `.pub` is your *public key*.
+
+We need to save our public key on the server.
+
+6. Open the public key file `mysshkey.pub` with Notepad. Copy the contents.
+7. SSH into UCR servers using the method outlined in "Part 1: Installation and Configuration" above.
+8. Make a new folder called `.ssh`, and in there create a file called `authorized_keys`. Paste in the public key, and save the file. For this to work, these must be the exact names of the folder and the file.
+
+<p align="center">
+    <img src="images/savingpublickey.gif" alt="Saving public key on server">
+</p>
+
+Now, we need to configure our Remote-SSH extension to use the private key. This will allow us to automatically log in.
+
+9. Go back to the folder with the keys (reminder: it should be `C:\Users\[your username]`). Select your private key file, which is `mysshkey` (no file extension). Copy the path using the `Copy Path` button at the top of the file explorer.
+10. Open a *local* instance of VSCode. Pull up the command palette (F1) and type in: "Remote-SSH: Open SSH Configuration File".
+
+Pick the one that starts with `C:\Users\[your username]`. You should see something like:
+
+```
+Host cs010b.cs.ucr.edu
+    HostName cs010b.cs.ucr.edu
+    User [your_ucr_netid]
+```
+
+11. Add the following line, so that your file looks like this:
+
+```
+Host cs010b.cs.ucr.edu
+    HostName cs010b.cs.ucr.edu
+    User [your_ucr_netid]
+    IdentityFile "YOUR PRIVATE KEY PATH"
+```
+
+...where you paste your private key path. **Make sure you remove the quotes!** Save the file. If everything worked properly, then you will no longer be prompted for your password when you SSH using the device you set this up on.
+
+</details>
+
+<details>
+<summary>MacOS</summary>
+
+</details>
+
+<details>
+<summary>Linux (Ubuntu)</summary>
+
+</details>
+
+
 
 ## Optional: Useful Features of VSCode
 
