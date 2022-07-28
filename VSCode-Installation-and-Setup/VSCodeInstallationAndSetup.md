@@ -86,7 +86,7 @@ Now that you have your source code, lets compile it! Open up a terminal by using
 
 ``` g++ example/main.cpp ```
 
-Let's break down what this command is: `g++` is the compiler that we use for C++ source code. `/example/main.cpp` is simply the path of the target source code file we want to compile.
+Let's break down what this command is: `g++` is the compiler that we use for C++ source code. `example/main.cpp` is simply the path of the target source code file we want to compile.
 
 > Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ example/m``` and press the Tab key, and it will autocomplete the name to ```example/main.cpp```. This will be useful for when you have longer file names.
 
