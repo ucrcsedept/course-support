@@ -40,9 +40,12 @@ Now, we can SSH into UCR servers! To set up a connection to CS010B servers, foll
 1. Open the command palette (press F1), and type "Remote-SSH". Select the "Remote-SSH: Connect to Host" option.
 2. Click add a new host, and type the following command. Note that your CS username is the same as your UCR NetID.
 
-    ``` ssh [your_cs_username]@cs010b.cs.ucr.edu ```
+    ``` ssh [your_ucr_netid]@cs010b.cs.ucr.edu ```
    
 3. Now you have saved the address as a known host. Repeat step 1 by typing in "Remote-SSH: Connect to Host" into the command palette (F1), and you should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password.
+
+> Note: If you are prompted to select the platform of the remote host `cs010b.cs.ucr.edu`, select Linux, regardless of your operating system.
+
 4. Log in with your CS password. Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
 
 <p align="center">
@@ -55,7 +58,7 @@ In order to close the connection, click the bottom left corner (it should say `S
 
 ## Working on a Remote Server
 
-Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_cs_username]` for students in CS related majors or `/class/classes/[your_cs_username]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
+Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_ucr_netid]` for students in CS related majors or `/class/classes/[your_ucr_netid]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
 
 In order to demonstrate how to use VSCode with C++ so you can do your labs, we will write and compile a simple program. Create a new directory/folder called `example` by pressing the new folder button, and create a new file called `main.cpp` in the `example` directory.
 
