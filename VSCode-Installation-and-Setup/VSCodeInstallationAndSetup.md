@@ -186,6 +186,10 @@ Host cs010b.cs.ucr.edu
 
 ...where you paste your private key path. **Make sure you remove the quotes!** Save the file. If everything worked properly, then you will no longer be prompted for your password when you SSH using the device you set this up on.
 
+<p align="center">
+    <img src="images/savingprivatekey.gif" alt="Setting up private key">
+</p>
+
 </details>
 
 <details>
