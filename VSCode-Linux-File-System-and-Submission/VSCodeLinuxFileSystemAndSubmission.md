@@ -77,6 +77,8 @@ Now that you know these commands, can you use them to organize your server space
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands. Each command has a lot more power/capability than what we've gone over in this module, so if you want to learn more about what each command can do, you can refer to the manual.
 
-## Downloading Files and Uploading to UCR Servers
+## Downloading Files
+
+## Uploading to UCR Servers
 
 ## Submitting to ZyBooks
