@@ -42,8 +42,8 @@ Now, we can SSH into UCR servers! To set up a connection to CS010B servers, foll
 
     ``` ssh [your_cs_username]@cs010b.cs.ucr.edu ```
    
-3. Now you have saved the address as a known host. Repeat step 1, and this time you will be asked for your password in a new instance of VSCode.
-4. Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
+3. Now you have saved the address as a known host. Repeat step 1 by typing in "Remote-SSH: Connect to Host" into the command palette (F1), and you should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password.
+4. Log in with your CS password. Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
 
 <p align="center">
     <img src="images/cppextension.png" alt="C++ Extension">
@@ -57,7 +57,13 @@ In order to close the connection, click the bottom left corner (it should say `S
 
 Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). This should default to your home directory/folder, which should have the path `/home/csmajs/[your_cs_username]` for students in CS related majors or `/class/classes/[your_cs_username]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
 
-In order to demonstrate how to use VSCode with C++ so you can do your labs, we will write and compile a simple program. Create a new file called `main.cpp`, and copy in the following code:
+In order to demonstrate how to use VSCode with C++ so you can do your labs, we will write and compile a simple program. Create a new directory/folder called `example` by pressing the new folder button, and create a new file called `main.cpp` in the `example` directory.
+
+<p align="center">
+    <img src="images/exampledirectory.gif" alt="Creating a new directory and file using VSCode">
+</p>
+
+In `main.cpp`, copy and paste the following code:
 
 ```cpp
 #include <iostream>
@@ -75,11 +81,11 @@ int main()
 
 Now that you have your source code, lets compile it! Open up a terminal by using the shortcut `Ctrl + ~` or `Cmd + ~` if you're on Mac. Now, type in and run the following command:
 
-``` g++ main.cpp ```
+``` g++ example/main.cpp ```
 
-Let's break down what this command is: `g++` is the compiler that we use for C++ source code. `main.cpp` is simply the target source code file we want to compile.
+Let's break down what this command is: `g++` is the compiler that we use for C++ source code. `/example/main.cpp` is simply the path of the target source code file we want to compile.
 
-> Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ m``` and press the Tab key, and it will autocomplete the name to ```main.cpp```. This will be useful for when you have longer file names.
+> Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ example/m``` and press the Tab key, and it will autocomplete the name to ```example/main.cpp```. This will be useful for when you have longer file names.
 
 Now, if your program has no errors and compiles, there should be no input in your console, and just be awaiting your next input. If your program wasn't able to compile, you would see all your error messages here. You should see that there's a new file in your directory called `a.out`. This is your executable! In order to run it, type and run this following command.
 
