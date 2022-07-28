@@ -77,11 +77,28 @@ Now that you know these commands, can you use them to organize your server space
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands. Each command has a lot more power/capability than what we've gone over in this module, so if you want to learn more about what each command can do, you can refer to the manual.
 
-## Downloading Files
+## Downloading Files and Uploading to UCR Servers
 
-## Uploading to UCR Servers
+Whenever you download files from ZyBooks, they will download as zipped files. To upload them to the UCR servers to work on them, you will have to unzip/extract the files. Depending on your operating system and your own personal configuration, there are different methods to unzipping files. 
 
-> Note: If none of these methods work for you, then you can just `touch` a new file and copy paste the contents from the zipped file into the server.
+<details>
+<summary><b>Windows</b></summary>
+
+</details>
+
+<details>
+<summary><b>MacOS</b></summary>
+
+</details>
+
+<details>
+<summary><b>Linux</b></summary>
+
+</details>
+
+Once you extract the files, drag and drop them into a Remote-SSH instance of VSCode, and they will upload automatically.
+
+> Note: If for some reason none of these methods work for you, then you can just `touch` a new file and copy paste the contents from the zipped file into the server. However, it is still important to understand how to upload to a remote server, as sometimes you may have to upload a multitude of files.
 
 ## Submitting to ZyBooks
 
