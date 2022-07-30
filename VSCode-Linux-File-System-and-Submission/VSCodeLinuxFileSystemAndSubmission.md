@@ -73,7 +73,7 @@ As a summary, these are ALL the commands we went over (feel free to use this as 
 * `g++ [target file(s)]` compiles a C++ source file, creating an executable with the name `a.out`.
     * `g++ -o [executable name] [target file(s)]` compiles a C++ source file, creating an executable with the name `[executable name]`.
 
-Now that you know these commands, can you use them to organize your server space? Try making a different directory for each lab you work on, so you can reference each one quickly. If you already did one of your labs on the server, make a directory for it, and move the files in there using the commands above.
+Now that you know these commands, can you use them to organize your server space? It is important to organize your server space into separate directories for separate assignments. For example, you will likely have many files named `main.cpp`, so you should organize your space now before you face conflicts later. If you already did one of your labs on the server, make a directory for it, and move the files in there using the commands above.
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands. Each command has a lot more power/capability than what we've gone over in this module, so if you want to learn more about what each command can do, you can refer to the manual.
 
@@ -83,6 +83,16 @@ Whenever you download files from ZyBooks, they will download as zipped files. To
 
 <details>
 <summary><b>Windows</b></summary>
+
+When you download from ZyBooks, the `.zip` file should be in your Downloads folder.
+
+1. Find the folder in your Downloads folder **OR** drag it onto your desktop.
+2. Right click the file, and click "Extract all". Click "Extract"
+3. The files should be in a folder in the same folder you extracted the zip file in.
+
+<p align= "center">
+    <img src="images/extract.gif" alt="Unzipping on Windows">
+</p>
 
 </details>
 
@@ -108,6 +118,10 @@ The unzipped file(s) will be in the Downloads folder.
 </details>
 
 Once you extract the files, drag and drop them into a Remote-SSH instance of VSCode, and they will upload automatically.
+
+<p align="center">
+    <img src="images/downloadingfiles.gif" alt="Adding files to remote server">
+</p>
 
 > Note: If for some reason none of these methods work for you, then you can just `touch` a new file and copy paste the contents from the zipped file into the server. However, it is still important to understand how to upload to a remote server, as sometimes you may have to upload a multitude of files.
 
