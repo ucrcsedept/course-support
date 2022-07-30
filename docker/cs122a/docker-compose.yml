@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  cs183-main:
+    image: local/cs122a
+    build: .
+    privileged: true
+    hostname: cs122a-machine
+    ports:
+      #- '2020:22'
+    volumes:
+      #- type: bind
+      #  source: ${HOME}
+       # target: /home/

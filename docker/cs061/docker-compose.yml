@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  cs183-main:
+    image: local/cs061
+    build: .
+    privileged: true
+    hostname: cs061-machine
+    ports:
+      #- '2020:22'
+    volumes:
+      #- type: bind
+      #  source: ${HOME}
+       # target: /home/
