@@ -94,6 +94,17 @@ Whenever you download files from ZyBooks, they will download as zipped files. To
 <details>
 <summary><b>Linux</b></summary>
 
+When you download from ZyBooks, the `.zip` file should be in your Downloads directory. Open your terminal and run the following commands:
+
+```
+cd Downloads
+unzip [name of lab]
+```
+
+The unzipped file(s) will be in the Downloads folder.
+
+> Note: If you do not want to unzip directly into your Downloads directory, then you can use the destination flag `-d`. This means the command you would run would be `unzip [name of lab] -d [destination directory]`
+
 </details>
 
 Once you extract the files, drag and drop them into a Remote-SSH instance of VSCode, and they will upload automatically.
