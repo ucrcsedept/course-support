@@ -1,4 +1,4 @@
-# Introduction to the Linux File System
+# Introduction to the Linux File System + Submitting to ZyBooks
 
 > Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
 
@@ -73,6 +73,67 @@ As a summary, these are ALL the commands we went over (feel free to use this as 
 * `g++ [target file(s)]` compiles a C++ source file, creating an executable with the name `a.out`.
     * `g++ -o [executable name] [target file(s)]` compiles a C++ source file, creating an executable with the name `[executable name]`.
 
-Now that you know these commands, can you use them to organize your server space? Try making a different directory for each lab you work on, so you can reference each one quickly. If you already did one of your labs on the server, make a directory for it, and move the files in there using the commands above.
+Now that you know these commands, can you use them to organize your server space? It is important to organize your server space into separate directories for separate assignments. For example, you will likely have many files named `main.cpp`, so you should organize your space now before you face conflicts later. If you already did one of your labs on the server, make a directory for it, and move the files in there using the commands above.
 
 > Note: Bash has a built in manual that shows you how to use a command and all the possible flags for it. You can use the `man` command (stands for manual), and do something like `man cd` in order to see the instructions for the `cd` command. You can also use the `--help` flag for most commands. Each command has a lot more power/capability than what we've gone over in this module, so if you want to learn more about what each command can do, you can refer to the manual.
+
+## Downloading Files and Uploading to UCR Servers
+
+Whenever you download files from ZyBooks, they will download as zipped files. To upload them to the UCR servers to work on them, you will have to unzip/extract the files. Depending on your operating system and your own personal configuration, there are different methods to unzipping files. 
+
+<details>
+<summary><b>Windows</b></summary>
+
+When you download from ZyBooks, the `.zip` file should be in your Downloads folder.
+
+1. Find the folder in your Downloads folder **OR** drag it onto your desktop.
+2. Right click the file, and click "Extract all". Click "Extract"
+3. The files should be in a folder in the same folder you extracted the zip file in.
+
+<p align= "center">
+    <img src="images/extract.gif" alt="Unzipping on Windows">
+</p>
+
+</details>
+
+<details>
+<summary><b>MacOS</b></summary>
+
+</details>
+
+<details>
+<summary><b>Linux</b></summary>
+
+When you download from ZyBooks, the `.zip` file should be in your Downloads directory. Open your terminal and run the following commands:
+
+```
+cd Downloads
+unzip [name of lab]
+```
+
+The unzipped file(s) will be in the Downloads folder.
+
+> Note: If you do not want to unzip directly into your Downloads directory, then you can use the destination flag `-d`. This means the command you would run would be `unzip [name of lab] -d [destination directory]`
+
+</details>
+
+Once you extract the files, drag and drop them into a Remote-SSH instance of VSCode, and they will upload automatically.
+
+<p align="center">
+    <img src="images/downloadingfiles.gif" alt="Adding files to remote server">
+</p>
+
+> Note: If for some reason none of these methods work for you, then you can just `touch` a new file and copy paste the contents from the zipped file into the server. However, it is still important to understand how to upload to a remote server, as sometimes you may have to upload a multitude of files.
+
+## Submitting to ZyBooks
+
+Once you're done working on your file and you're ready to submit your file, you have to download the file from the remote server to your local machine. The Remote-SSH plugin allows you to do this quickly.
+
+1. Open the the VSCode File Explorer (first button on the left taskbar), and find the file you were working on.
+2. Right-click the file, and click "Download".
+3. Save the file where you want to save it on your local machine
+4. Upload the file to ZyBooks for submission, and wait for the autograder to finish.
+
+<p align="center">
+      <img src="images/downloadfile.gif" alt="Downloading File from Remote Server">
+</p>
