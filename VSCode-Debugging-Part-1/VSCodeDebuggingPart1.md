@@ -2,10 +2,10 @@
 
 > Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
 
-Now that you know about pointers and how problematic they can be, we will be going over a useful tool that will help you catch your mistakes.Today, you will learn:
+Now that you know about pointers and how problematic they can be, we will be going over a useful tool that will help you catch your mistakes. Today, you will learn:
 
 * What a debugger is
-* Basic use of a debugger using breakpoints and watching variables
+* Basic use of a graphical interface debugger using breakpoints and watching variables
 * Common mistakes with pointers
 
 ## What is a Debugger?
@@ -148,9 +148,9 @@ In order to see the call stack in your debugger, copy-paste this example:
 #include <iostream>
 using namespace std;
 
-void d0(); void re(); void mi(); void fa(); void so(); void la(); void ti();
+void _do(); void re(); void mi(); void fa(); void so(); void la(); void ti();
 
-void dO()
+void _do()
 {
     re();
     cout << "do" << endl;
@@ -193,10 +193,10 @@ void ti()
 
 int main()
 {
-    dO();
+    _do();
 }
 ```
-Before you do anything: can you guess what the output will be?
+*Before you do anything: can you guess what the output will be?*
 
 Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program.** As the functions are called, they are added to the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion, which is when a function calls itself.
 
@@ -212,4 +212,4 @@ While it is a good skill to know how to use a debugger, it is still just a tool 
 
 [Here](./main.cpp) is a small list of common errors made with pointers that your IDE won't bail you out of. While these errors are written in a way that it is obvious to spot what is wrong with each example, it is important to recognize that they exist and can be helpful in diagnosing what may be going wrong in your programs. The errors shown in that example may seem obvious now, but that is only because each error is presented in isolation; it is much harder to spot the exact error when looking at a file that is hundreds of lines long and these errors could potentially span across functions/scopes/files. Recognizing (no need to memorize, you'll run into them yourself eventually) the patterns here will help you find them down the line, and could save you countless hours of debugging.
 
-> Note: It is important to understand the difference between undefined behavior and segmentation faults. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch.
+> Note: It is important to understand the difference between undefined behavior and segmentation faults. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch the cause of the issue.
