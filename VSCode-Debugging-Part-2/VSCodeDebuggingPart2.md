@@ -75,7 +75,7 @@ int main()
 
 Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program, as it will step over all the functions at once.** As the functions are called, they are added to the "top" of the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion.
 
-Even without a recursive function, it is still useful to have the call stack visualized when you have several "nested" function calls, so you can tell where you will return to once each function call is finished. It will be especially useful in programs that are larger in scope, as you can tell if a program is working as expected quickly by examining the call stack.
+Even without a recursive function, it is still useful to have the call stack visualized when you have several "nested" function calls, so you can tell where you will return to once each function call is finished. You can click each function call on the call stack to see exactly where the function was called, and with what parameters/variable values. It will be especially useful in programs that are larger in scope, as you can tell if a program is working as expected quickly by examining the call stack.
 
 ## Recursion 
 
@@ -90,7 +90,8 @@ using namespace std;
 int factorial(int n)
 {
    if (n == 1) return 1;
-   int answer = n * factorial(n-1);
+   int recursiveCall = factorial(n-1);
+   int answer = recursiveCall * n;
    return answer;
 }
 
@@ -102,5 +103,17 @@ int main()
    cout << "Factorial of " << input << ": " << answer << endl;
 }
 ```
+
+Place your breakpoint at line 14, which is `cin >> input;`. Run your debugger on this program, and input a number greater than 5 so we can really see the depth of the program. 
+
+> Note: If you "step in" and the debugger ends up opening another file, that means you have stepped into the function defined by the C++ standard library. There's no need to waste time in there, so whenever you end up in that place, just step out.
+
+Keep stepping in so you stop when `n == 1`, in other words, when we get down to the base case. You could set a watch expression to do this. This will help us see how recursion works. Notice that when you get to the base case, `n` is the only variable that isn't a junk value. This is because recursive algorithms *divide* the problem until it cannot get any smaller (base case), then *conquer* the problem by solving the base case and progressively solving the bigger subproblems until it gets back to the original problem. This is the *divide* portion, as we have gotten down to the base case of `n == 1`. 
+
+Lets see the recursive function solve the problem. Now that we are at the base case, we can start working up to the original problem, which was whatever you input. Keep stepping in; you should notice that the variables `answer` and `recursiveCall` are being assigned the proper values. As you step through the program, keep an eye on the call stack.Notice the value of `recursiveCall` is simply being assigned the value of `answer` in the next recursive call you step into. This is because the variable `recursiveCall` is going to be assigned the returned value of the current recursive call (as seen on line 7 of the program), and we use that value to calcluate the next value. We just have to wait until the smaller subproblems get calculated first until we can evaluate the original problem.
+
+It may be helpful to think of recursion this way: imagine you are sitting in a dark theatre, and you want to know what row number you are sitting in, but you cannot see the row numbers. You ask the person in front of you what row number they are sitting in, because your row number will be their row number + 1. However, it is too dark for them to see as well, so they ask the person in front of them as well, and this chain keeps going. It stops when we get to row 1, since that person has nobody in front of them, so they know for a fact they are in row 1. The person in row 1 tells the person behind them that they are in row 1, so the person behind row 1 knows they are in row 2 now, and they tell the person behind them what row they are in now, up until it gets back to the original person who asked.
+
+The chain of people asking the person in front of them what row they are in can be considered the divide portion of recursion, the person who was in row 1 can be considered the base case, and the chain going backwards can be considering the conquer portion.
 
 ## Examples of Common Errors using Recursion
