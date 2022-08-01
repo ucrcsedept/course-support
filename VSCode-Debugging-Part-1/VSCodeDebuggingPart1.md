@@ -6,6 +6,7 @@ Now that you know about pointers and how problematic they can be, we will be goi
 
 * What a debugger is
 * Basic use of a graphical interface debugger using breakpoints and watching variables
+* How to debug across multiple files
 * Common mistakes with pointers
 
 ## What is a Debugger?
@@ -198,13 +199,17 @@ int main()
 ```
 *Before you do anything: can you guess what the output will be?*
 
-Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program.** As the functions are called, they are added to the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion, which is when a function calls itself.
+Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program, as it will step over all the functions at once.** As the functions are called, they are added to the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion, which is when a function calls itself.
 
-### OPTIONAL: Debugging with Multiple Files
+### Debugging with Multiple Files
 
-> Note: This section will be much more relevant once you start working with programs that consist of multiple files. Feel free to skip for now if you don't need this/are not interested.
+The process for debugging with multiple linked source files requires some setup. By default, VSCode assumes that you are debugging only one file. In order to make it so the debugger recognizes that you have linked source files, we need to make a slight change. Notice that when you started the debugger, a new directory called `.vscode` was created within your directory. Open it, and you should see a file called `tasks.json`. This file is used by the debugger to pass in arguments to the debugger so you don't have to. We are interested in the block called `args`. You should see that there is a list of arguments in that block. They are telling the debugger where to look for the source files. The argument `"${file}"` represents the file you run the debugger on, but only that file. In order for the debugger to recognize the other files you are using, you must change the arguments slightly. Replace that argument `"${file}"` with the paths of all the files you wish to use, and your debugger will be able to jump across them as needed.
 
-The process for debugging with multiple linked source files requires some setup. By default, VSCode assumes that you are debugging only one file. In order to make it so the debugger recognizes that you have linked source files, we need to make a slight change. Notice that when you started the debugger, a new directory called `.vscode` was created within your directory. Open it, and you should see a file called `tasks.json`. This file is used by the debugger to pass in arguments to the debugger so you don't have to. We are interested in the block called `args`. You should see that there is a list of arguments in that block. They are telling the debugger where to look for the source files. Simply add whatever source files you want to debug as an argument in that block. If you want to debug all the source files in your directory, then replace the argument `"${file}"` with `"*.cpp"`.
+<p align="center">
+    <img src="images/debugmultiplefiles.gif" alt="Changing tasks.json">
+</p>
+
+> Note: If you want to debug **all** the source files in your directory, then replace the argument `"${file}"` with `"*.cpp"`.
 
 ## Examples of Common Errors using Pointers and Linked Lists
 
@@ -212,4 +217,4 @@ While it is a good skill to know how to use a debugger, it is still just a tool 
 
 [Here](./main.cpp) is a small list of common errors made with pointers that your IDE won't bail you out of. While these errors are written in a way that it is obvious to spot what is wrong with each example, it is important to recognize that they exist and can be helpful in diagnosing what may be going wrong in your programs. The errors shown in that example may seem obvious now, but that is only because each error is presented in isolation; it is much harder to spot the exact error when looking at a file that is hundreds of lines long and these errors could potentially span across functions/scopes/files. Recognizing (no need to memorize, you'll run into them yourself eventually) the patterns here will help you find them down the line, and could save you countless hours of debugging.
 
-> Note: It is important to understand the difference between undefined behavior and segmentation faults. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch the cause of the issue.
+> Note: It is important to understand the difference between undefined behavior and segmentation faults/other runtime errors. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch the cause of the issue.
