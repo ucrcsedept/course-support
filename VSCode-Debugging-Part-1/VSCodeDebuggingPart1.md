@@ -19,7 +19,7 @@ All you need to use the debugger built into VSCode is to install the C++ extensi
 
 ## Using the Debugger
 
-We will start with a simple example to introduce the features of the debugger. Create a new file called `main.cpp`, and paste the following contents in:
+We will start with a simple example to introduce the features of the debugger. Create a new file called `debugexample.cpp`, and paste the following contents in:
 
 ```cpp
 #include <iostream>
@@ -69,7 +69,7 @@ Set a break point at line 16 (which is `cout << "Starting program..." << endl;`)
 
 Now, in the top right corner, there should be a button that is labeled "Debug C/C++ File". Click it, and you should be prompted to select a debug configuration. Select one that says `g++` (if there are multiple ones, just pick the first `g++` that you see).
 
-Once your debugger starts, your interface will change. Lets look at the side bar first before we step through the program. In the first window in the top left we are able to see the variables, and all their values! The values of `myArray` can be seen with a dropdown menu by clicking on it. The values should look like junk right now, but that's only because we only declared the variables without assigning anything to them. You can keep an eye on the value of your variables as your progress through your code here.
+Once your debugger starts, your interface will change. Let's look at the side bar first before we step through the program. In the first window in the top left we are able to see the variables, and all their values! The values of `myArray` can be seen with a dropdown menu by clicking on it. The values should look like junk right now, but that's only because we only declared the variables without assigning anything to them. You can keep an eye on the value of your variables as your progress through your code here.
 
 <p align="center">
     <img src="images/variables.png" alt="Debugging Tab">
@@ -132,74 +132,6 @@ Now, run your debugger through the program. It should terminate at the line wher
 We can see that our program terminated at line 24, which is `*(arrayPointer + i) = input;`. From this line, we see that it is an assignment operation to a dereferenced integer pointer. Since segementation faults deal with memory, then our pointer must be the problematic variable here. We can check it in the variable list, and see it has the value `0x00`, which means it corresponds to a null pointer. Therefore, that is what is causing the crash.
 
 Since the debugger told us exactly which line the crash happened, we were able to deduce what the error was based on the error message and the line itself. However, we still had to have some background knowledge - the debugger doesn't do *all* of the work for us!
-
-### OPTIONAL: Call Stack
-
-> Note: This section will be much more relevant once you study recursion. Feel free to skip for now if you don't need this section/are not interested.
-
-A call stack, sometimes called the run-time stack or program stack, is something that a program uses to keep track of where it is if multiple functions are called within functions so it knows where to go back to once it finishes executing a function. Here is a visual example:
-
-<p align="center">
-    <img src= "images/callstack.png" alt="Call stack example">
-</p>
-
-In order to see the call stack in your debugger, copy-paste this example:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-void _do(); void re(); void mi(); void fa(); void so(); void la(); void ti();
-
-void _do()
-{
-    re();
-    cout << "do" << endl;
-}
-
-void re()
-{
-    mi();
-    cout << "re" << endl;
-}
-
-void mi()
-{
-    fa();
-    cout << "mi" << endl;
-}
-
-void fa()
-{
-    so();
-    cout << "fa" << endl;
-}
-
-void so()
-{
-    la();
-    cout << "so" << endl;
-}
-
-void la()
-{
-    ti();
-    cout << "la" << endl;
-}
-
-void ti()
-{
-    cout << "ti" << endl;
-}
-
-int main()
-{
-    _do();
-}
-```
-*Before you do anything: can you guess what the output will be?*
-
-Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program, as it will step over all the functions at once.** As the functions are called, they are added to the "top" of the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion, which is when a function calls itself.
 
 ### Debugging with Multiple Files
 
