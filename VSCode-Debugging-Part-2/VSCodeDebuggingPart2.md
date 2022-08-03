@@ -9,8 +9,6 @@ You have already learned how to use a debugger to help you diagnose issues found
 
 ## Call Stack
 
-> Note: The following example came from the first debugging tutorial, where it was presented as an optional introduction to the call stack. Feel free to skip if you already went over it.
-
 A call stack, sometimes called the run-time stack or program stack, is something that a program uses to keep track of where it is if multiple functions are called within functions so it knows where to go back to once it finishes executing a function. Here is a visual example:
 
 <p align="center">
@@ -104,16 +102,18 @@ int main()
 }
 ```
 
-Place your breakpoint at line 14, which is `cin >> input;`. Run your debugger on this program, and input a number greater than 5 so we can really see the depth of the program. 
+Place your breakpoint at line 14, which is `cin >> input;`. Run your debugger on this program, and input a number greater than 5 so we can really see the recursive depth of the program. 
 
 > Note: If you "step in" and the debugger ends up opening another file, that means you have stepped into the function defined by the C++ standard library. There's no need to waste time in there, so whenever you end up in that place, just step out.
 
 Keep stepping in so you stop when `n == 1`, in other words, when we get down to the base case. You could set a watch expression to do this. This will help us see how recursion works. Notice that when you get to the base case, `n` is the only variable that isn't a junk value. This is because recursive algorithms *divide* the problem until it cannot get any smaller (base case), then *conquer* the problem by solving the base case and progressively solving the bigger subproblems until it gets back to the original problem. This is the *divide* portion, as we have gotten down to the base case of `n == 1`. 
 
-Lets see the recursive function solve the problem. Now that we are at the base case, we can start working up to the original problem, which was whatever you input. Keep stepping in; you should notice that the variables `answer` and `recursiveCall` are being assigned the proper values. As you step through the program, keep an eye on the call stack.Notice the value of `recursiveCall` is simply being assigned the value of `answer` in the next recursive call you step into. This is because the variable `recursiveCall` is going to be assigned the returned value of the current recursive call (as seen on line 7 of the program), and we use that value to calcluate the next value. We just have to wait until the smaller subproblems get calculated first until we can evaluate the original problem.
+Let's see the recursive function solve the problem. Now that we are at the base case, we can start working up to the original problem, which was whatever you input. Keep stepping in; you should notice that the variables `answer` and `recursiveCall` are being assigned the proper values. As you step through the program, keep an eye on the call stack. Notice the value of `recursiveCall` is simply being assigned the value of `answer` in the next recursive call you step into. This is because the variable `recursiveCall` is going to be assigned the returned value of the current recursive call (as seen on line 7 of the program), and we use that value to calcluate the next value. We just have to wait until the smaller subproblems get calculated first until we can evaluate the original problem.
 
 It may be helpful to think of recursion this way: imagine you are sitting in a dark theatre, and you want to know what row number you are sitting in, but you cannot see the row numbers. You ask the person in front of you what row number they are sitting in, because your row number will be their row number + 1. However, it is too dark for them to see as well, so they ask the person in front of them as well, and this chain keeps going. It stops when we get to row 1, since that person has nobody in front of them, so they know for a fact they are in row 1. The person in row 1 tells the person behind them that they are in row 1, so the person behind row 1 knows they are in row 2 now, and they tell the person behind them what row they are in now, up until it gets back to the original person who asked.
 
 The chain of people asking the person in front of them what row they are in can be considered the divide portion of recursion, the person who was in row 1 can be considered the base case, and the chain going backwards can be considering the conquer portion.
+
+Now, let's
 
 ## Examples of Common Errors using Recursion
