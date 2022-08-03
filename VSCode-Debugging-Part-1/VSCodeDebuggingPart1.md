@@ -127,7 +127,7 @@ Here is an example of "Step Over":
     <img src= "images/stepintostepout.gif" alt="Stepping into and out">
 </p>
 
-Feel free to step all over the program, and play around a bit with the debugger. The next section will go over how we use the debugger to find and diagnose crashes.
+Feel free to step all over the program, and play around a bit with the debugger. Since this program compiles, works properly, and terminates successfully, you can use this program to get familiar with the debugger interface. The next section will go over how we use the debugger to find and diagnose crashes.
 
 ### Finding Crashes
 
@@ -151,7 +151,9 @@ The process for debugging with multiple linked source files requires some setup.
     <img src="images/debugmultiplefiles.gif" alt="Changing tasks.json">
 </p>
 
-> Note: If you want to debug **all** the source files in your directory, then replace the argument `"${file}"` with `"*.cpp"`.
+Let's break down the path: `../lab4classes/Distance.cpp`.
+
+`..` refers to the previous directory. This is because the `tasks.json` file we are editing is in the `.vscode` directory, so we must go to the directory it is in to navigate to where the directory `lab4classes` is in. Then, we navigate to our source files that are in the `lab4classes` directory. The idea is the same for `main.cpp` as well.
 
 ## Examples of Common Errors using Pointers and Linked Lists
 
