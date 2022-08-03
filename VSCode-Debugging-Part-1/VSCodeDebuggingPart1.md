@@ -11,11 +11,15 @@ Now that you know about pointers and how problematic they can be, we will be goi
 
 ## What is a Debugger?
 
-A debugger gives you a closer look at your program, allowing you to look at exactly what it is doing while it executes line by line. It is a useful tool to diagnose what is happening in your program if the output is not what is expected, or if it crashes entirely. In this tutorial, we will be using the built in debugger in VSCode.
+A debugger gives you a closer look at your program, allowing you to look at exactly what it is doing while it executes line by line. You can see variable values, memory locations and what is in all your data structures (arrays, vectors). It is a useful tool to diagnose what is happening in your program if the output is not what is expected, or if it crashes entirely. In this tutorial, we will be using the built in debugger in VSCode.
 
 ## Setup
 
-All you need to use the debugger built into VSCode is to install the C++ extension from the VSCode extension marketplace.
+All you need to use the debugger built into VSCode is to install the C++ extension from the VSCode extension marketplace. If you don't have the extension installed, then go to the extension marketplace and install this extension:
+
+<p align="center">
+    <img src="images/cppextension.png" alt="C++ Extension">
+</p>
 
 ## Using the Debugger
 
@@ -65,9 +69,15 @@ A breakpoint in a debugger is a point where we tell the program to pause, so we 
 
 Set a break point at line 16 (which is `cout << "Starting program..." << endl;`). This will pause the program at line 16 once you start the debugger. In order to start your debugger, you have to set at least one break point, otherwise it will just run through the code normally. We set it at the start of the main function in order to step through our code line by line.
 
+You can set breakpoints in your code wherever you need to, and you can set as many as you want. The program will stop at each breakpoint you set, so you can observe the state of the program at each breakpoint.
+
 ### Watching Variables/Arrays
 
 Now, in the top right corner, there should be a button that is labeled "Debug C/C++ File". Click it, and you should be prompted to select a debug configuration. Select one that says `g++` (if there are multiple ones, just pick the first `g++` that you see).
+
+<p align="center"> 
+    <img src="images/debugbutton.png" alt= "Debug Button"> 
+</p>
 
 Once your debugger starts, your interface will change. Let's look at the side bar first before we step through the program. In the first window in the top left we are able to see the variables, and all their values! The values of `myArray` can be seen with a dropdown menu by clicking on it. The values should look like junk right now, but that's only because we only declared the variables without assigning anything to them. You can keep an eye on the value of your variables as your progress through your code here.
 
