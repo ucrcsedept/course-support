@@ -209,7 +209,7 @@ Host cs010b.cs.ucr.edu
 <summary><b>MacOS/Linux (Debian-based)</b></summary>
 We will generate something called a public/private key pair, which we will use to log into Remote-SSH.
 
-1. Run the following commands in your command prompt (from your user home directory):
+1. Open a terminal, and run the following commands in this order:
 ```
 cd .ssh
 ssh-keygen -t rsa -b 4096
@@ -246,7 +246,7 @@ Copy the (very long) output using Ctrl+Shift+C, or Cmd+V+C on Mac. This is your 
     <img src="images/savingpublickey.gif" alt="Saving public key on server">
 </p>
 
-5. Open another terminal (start from user home directory), and run the following commands:
+5. Open another terminal, and run the following commands in this order:
 
 ```
 cd .ssh
@@ -256,8 +256,6 @@ echo -e '\tIdentityFile /home/~/.ssh/mysshkey' >> config
 What the second command does is append a command to the end of your SSH config file that reads the private key, which authenticates you without the need for entering your password.
 
 </details>
-
-
 
 ## Optional: Useful Features of VSCode
 
