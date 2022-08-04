@@ -51,7 +51,7 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
 
 > Note: If you are prompted to select the SSH configuration to edit, select the one that starts with `C:\Users` if you are on Windows, and if you are on Mac, pick the one that starts with `/Users/`, and if you are on Linux, select the one that starts with `/home/`
 
-3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again. You should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password. You will be prompted with "`cs010b.cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
+3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again, then click "Connect to Host". You should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password. You will be prompted with "`cs010b.cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
 
 > **IMPORTANT NOTE**: You may or may not be prompted to select the platform of the remote host `cs010b.cs.ucr.edu`. If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution.
 
