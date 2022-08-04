@@ -157,7 +157,7 @@ Now, you will be prompted with this:
 Enter passphrase (empty for no passphrase):
 ```
 
-**Do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase. Note that there is a tradeoff between security and convenience with this method, as anyone with access with your device will be able to log into UCR servers.
+**Do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase.
 
 <p align="center">
     <img src="images/generatekey.gif" alt="Generating RSA key">
