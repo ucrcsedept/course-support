@@ -27,6 +27,8 @@ VSCode is an incredibly popular IDE ([the most popular in the world, actually!](
 * Do I have to pay a license for it?
 * Can I customize it however I want?
 
+What we will be doing now is using VSCode to connect to UCR servers. The UCR servers already have a fully configured workspace for you (a compiler, and a way to save your work across devices), so combined with the graphical interface of VSCode, you will have everything you need for this class. Of course, if you feel comfortable, feel free to use your own personal environment if you have one configured/are willing to learn how.
+
 ## Part 1: Installation and Configuration
 
 First, install the correct version of VSCode at [this link](https://code.visualstudio.com/download) for your operating system and processor. Once VSCode is installed, we need to install an extension called Remote-SSH. This extension will allow you to work on UCR's servers remotely, saving your progress across devices and allowing you to use the software already installed on the server (like the compiler). To do this, open VSCode go to the extension tab on the left bar, and search for Remote-SSH. Make sure it is the extension that is published by Microsoft, verified with the blue check.
@@ -63,6 +65,8 @@ Now, you have a fully configured workspace on VSCode while connected to school s
 In order to close the connection, click the bottom left corner (it should say `SSH: cs010b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
 ## Part 2: Working on a Remote Server
+
+> Note: In order to make your life easier, turn on Auto Save by going to File > Auto Save, and toggle the setting on. A common error is forgetting to save but compiling, and you get errors such as "undefined reference to `main()`" due to the file not being saved.
 
 Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). When opening a folder for the first time, you will be asked if you trust the authors. Click "yes". This should default to your home directory/folder, which should have the path `/home/csmajs/[your_ucr_netid]` for students in CS related majors or `/class/classes/[your_ucr_netid]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
 
