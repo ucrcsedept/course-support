@@ -39,7 +39,10 @@ First, install the correct version of VSCode at [this link](https://code.visuals
 
 Now, we can SSH into UCR servers! To set up a connection to CS010B servers, follow these steps:
 
-1. Click the Remote-SSH symbol in the bottom left corner that looks like this: ![Remote SSH Symbol](images/remotesshsymbol.png)
+1. Click the Remote-SSH symbol in the bottom left corner that looks like this: ![Remote SSH Symbol](images/remotesshsymbol.png) 
+
+> Note: If you have a theme installed, it may be a different color!
+
 2. Click "Connect to Host", then click "Add new SSH host", and type the following command. Note that your CS username is the same as your UCR NetID.
 
     ``` ssh [YOUR UCR NETID HERE]@cs010b.cs.ucr.edu ```
@@ -48,9 +51,9 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
 
 > Note: If you are prompted to select the SSH configuration to edit, select the one that starts with `C:\Users` if you are on Windows, and if you are on Mac, pick the one that starts with `/Users/`, and if you are on Linux, select the one that starts with `/home/`
 
-3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again. You should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password. YOu will be prompted with "`cs010b.cs.ucr.edu` has fingerprint" with a very long string. Click continue.
+3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again. You should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password. You will be prompted with "`cs010b.cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
 
-> Note: If you are prompted to select the platform of the remote host `cs010b.cs.ucr.edu`, select Linux, regardless of your operating system.
+> **IMPORTANT NOTE**: You may or may not be prompted to select the platform of the remote host `cs010b.cs.ucr.edu`. If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution.
 
 4. Log in with your CS password (this may be different from your UCR password). Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
 
@@ -66,7 +69,7 @@ In order to close the connection, click the bottom left corner (it should say `S
 
 ## Part 2: Working on a Remote Server
 
-> Note: In order to make your life easier, turn on Auto Save by going to File > Auto Save, and toggle the setting on. A common error is forgetting to save but compiling, and you get errors such as "undefined reference to `main()`" due to the file not being saved.
+> Note: In order to make your life easier, turn on Auto Save by going to File > Auto Save, and toggle the setting on. A very common error is forgetting to save but compiling, and you get errors such as "undefined reference to `main()`" due to the file not being saved.
 
 Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). When opening a folder for the first time, you will be asked if you trust the authors. Click "yes". This should default to your home directory/folder, which should have the path `/home/csmajs/[your_ucr_netid]` for students in CS related majors or `/class/classes/[your_ucr_netid]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
 
@@ -203,7 +206,7 @@ Host cs010b.cs.ucr.edu
 </details>
 
 <details>
-<summary><b>MacOS/Linux (Ubuntu)</b></summary>
+<summary><b>MacOS/Linux (Debian-based)</b></summary>
 We will generate something called a public/private key pair, which we will use to log into Remote-SSH.
 
 1. Run the following commands in your command prompt (from your user home directory):
