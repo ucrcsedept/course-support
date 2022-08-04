@@ -39,16 +39,16 @@ First, install the correct version of VSCode at [this link](https://code.visuals
 
 Now, we can SSH into UCR servers! To set up a connection to CS010B servers, follow these steps:
 
-1. Open the command palette (press F1), and type "Remote-SSH". Select the "Remote-SSH: Connect to Host" option.
-2. Click add a new host, and type the following command. Note that your CS username is the same as your UCR NetID.
+1. Click the Remote-SSH symbol in the bottom left corner that looks like this: ![Remote SSH Symbol](images/remotesshsymbol.png)
+2. Click "Connect to Host", then click "Add new SSH host", and type the following command. Note that your CS username is the same as your UCR NetID.
 
     ``` ssh [YOUR UCR NETID HERE]@cs010b.cs.ucr.edu ```
 
 For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.edu`.
 
-> Note: If you are prompted to select the SSH configuration to edit, select the one that starts with `C:\Users` if you are on Windows, or if you are on Linux/MacOS, select the one that starts with `/home/`
-   
-3. Now you have saved the address as a known host. Repeat step 1 by typing in "Remote-SSH: Connect to Host" into the command palette (F1), and you should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password.
+> Note: If you are prompted to select the SSH configuration to edit, select the one that starts with `C:\Users` if you are on Windows, and if you are on Mac, pick the one that starts with `/Users/`, and if you are on Linux, select the one that starts with `/home/`
+
+3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again. You should see `cs010b.cs.ucr.edu` is a saved host. Click on it, and a new instance of VSCode should open, prompting you for your CS password. YOu will be prompted with "`cs010b.cs.ucr.edu` has fingerprint" with a very long string. Click continue.
 
 > Note: If you are prompted to select the platform of the remote host `cs010b.cs.ucr.edu`, select Linux, regardless of your operating system.
 
@@ -234,7 +234,7 @@ You should see two files in the `.ssh` directory named `mysshkey` (or whatever y
 ```
 cat mysshkey.pub
 ```
-Copy the (very long) output using Ctrl+Shift+C. This is your public key.
+Copy the (very long) output using Ctrl+Shift+C, or Cmd+V+C on Mac. This is your public key.
 
 3. SSH into UCR servers using the method outlined in "Part 1: Installation and Configuration" above.
 4. Make a new folder called `.ssh`, and in there create a file called `authorized_keys`. Paste in the public key, and save the file. For this to work, these must be the exact names of the folder and the file.
