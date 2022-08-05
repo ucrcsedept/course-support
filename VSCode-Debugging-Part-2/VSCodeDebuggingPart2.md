@@ -126,7 +126,18 @@ The chain of people asking the person in front of them what row they are in can 
 
 ### Finding Errors in a Recursive Function
 
-Now, let's make our program crash. One of the most common errors with recursion is that our base case is never reached. In order to modify our program to never reach the base case, 
+Now, let's make our program crash. One of the most common errors with recursion is that our base case is never reached. In order to modify our program to never reach the base case, let's swap lines 6 and 7, which are the lines:
+
+```cpp
+   if (n == 1) return 1;
+   int recursiveCall = factorial(n-1);
+```
+
+Once these two lines are swapped, you can compile and run it to make sure it doesn't terminate/has a runtime error. Run the debugger with the same breakpoint at `cin >> input;`. Keep stepping in like in the previous part, but notice that the function never gets to the base case, since we swapped the base case and the recursive function call, meaning we don't even get to the check. In this example, this is an easy bug to find and fix, however, this pattern of never reaching the base case is quite common. Notice how trivial it was to spot that the base case was never being reached. This can be a useful way to diagnose an issue that you have in a recursive function.
+
+<p align="center">
+    <img src="images/recursionbug.gif" alt="Never ending recursion bug">
+</p>
 
 ## Examples of Common Errors using Recursion
 
