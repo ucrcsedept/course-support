@@ -108,7 +108,17 @@ Place your breakpoint at line 15, which is `cin >> input;`. Run your debugger on
 
 Keep stepping in and **stop** when you see `n == 1`, in other words, when we get down to the base case. You could set a watch expression to do this. This will help us see how recursion works. Notice that as you keep stepping in, `n` is the only variable that isn't a junk value. This is because recursive algorithms *divide* the problem until it cannot get any smaller (base case), then *conquer* the problem by solving the base case and progressively solving the bigger subproblems until it gets back to the original problem. This is the *divide* portion, as we have gotten down to the base case of `n == 1`.
 
+> Note: When debugging a recursive function, it is useful to set a watch expression for your base case, so you can quickly see if you reach your base case or not.
+
+<p align="center">
+    <img src="images/reachingbasecase.gif" alt="Reaching base case">
+</p>
+
 Let's see the recursive function solve the problem. Now that we are at the base case, we can start working up to the original problem, which was whatever you input. Keep stepping in; you should notice that the variables `answer` and `recursiveCall` are being assigned the proper values. As you step through the program, keep an eye on the call stack. Notice the value of `recursiveCall` is simply being assigned the value of `answer` in the next recursive call you step into. This is because the variable `recursiveCall` is going to be assigned the returned value of the current recursive call (as seen on line 7 of the program), and we use that value to calcluate the next value. We just have to wait until the smaller subproblems get calculated first until we can evaluate the original problem.
+
+<p align="center">
+    <img src="images/returnrecursion.gif" alt="Solving the problem with recursion">
+</p>
 
 It may be helpful to think of recursion this way: imagine you are sitting in a dark theatre, and you want to know what row number you are sitting in, but you cannot see the row numbers. You ask the person in front of you what row number they are sitting in, because your row number will be their row number + 1. However, it is too dark for them to see as well, so they ask the person in front of them as well, and this chain keeps going. It stops when we get to row 1, since that person has nobody in front of them, so they know for a fact they are in row 1. The person in row 1 tells the person behind them that they are in row 1, so the person behind row 1 knows they are in row 2 now, and they tell the person behind them what row they are in now, up until it gets back to the original person who asked.
 
@@ -116,6 +126,7 @@ The chain of people asking the person in front of them what row they are in can 
 
 ### Finding Errors in a Recursive Function
 
-
+Now, let's make our program crash. One of the most common errors with recursion is that our base case is never reached. In order to modify our program to never reach the base case, 
 
 ## Examples of Common Errors using Recursion
+
