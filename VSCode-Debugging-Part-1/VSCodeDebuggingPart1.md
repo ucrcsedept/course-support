@@ -1,126 +1,29 @@
-# Debugging Tutorial + Optional Configuration of Your Own Development Environment
+# Debugging Tutorial Part 1
 
 > Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
 
-Now that you know about pointers and how problematic they can be, we will be going over a useful tool that will help you catch your mistakes.Today, you will learn:
+Now that you know about pointers and how problematic they can be, we will be going over a useful tool that will help you catch your mistakes. Today, you will learn:
 
-* (OPTIONAL) How to setup VSCode as a development environment on your own machine
-* (OPTIONAL) How to configure g++ to work on your computer
-* Basic use of a debugger using breakpoints and watching variables
+* What a debugger is
+* Basic use of a graphical interface debugger using breakpoints and watching variables
+* How to debug across multiple files
 * Common mistakes with pointers
-
-## OPTIONAL: Installation and Configuration of g++
-
-For the past few labs, you have been developing on the UCR servers. However, if you want to set up your own development environment on your local machine, then follow the instructions here. If not, feel free to skip this part.
-
-First, check the extensions tab to make sure that you have the C++ extension installed in VSCode.
-
-Now, in order to configure VSCode to work with C++, we must install a C++ compiler. The compiler we will be using is g++, which is the C++ compiler from the GNU Compiler Collection (GCC). The way we install our compiler varies on which operating system we are using, so drop down the appropriate list and follow the instructions there.
-
-<details>
-<summary>Windows 11/Windows 10</summary>
-On Windows, we will be installing MinGW so that we can compile our C++ programs using the <code>g++</code> command. <br>
-1. Download the MinGW Installation Manager Setup Tool at <a href="https://sourceforge.net/projects/mingw/">this link</a>. <br>
-2. Run the setup executable. <strong>Copy your installation directory path, you will need this later!</strong> By default, it should be <code>C:\MinGW</code>, but if it is something else or you want to change it somewhere else, copy that instead. This is very important, as we need to <strong>paste the path to the MinGW folder somewhere else later</strong>. <br>
-3. Open the MinGW Installation Manager after it is done setting up. You should see multiple packages, but we only need 4 of them: <br>
-<pre>
-mingw-developer-toolkit
-mingw32-base
-mingw32-gcc-g++
-msys-base
-</pre>
-Right-click each package, and click "Mark for installation". Then, in the top left corner, click Installation > Apply Changes.
-<p align="center">
-    <img src="images/installgcc.gif" alt="Installing MinGW Packages">
-</p>
-4. Go to the Start Menu and search for "Edit the system environment variables". You should see a menu that looks like this.
-<p align="center">
-    <img src="images/environmentvariables.png" alt="Environment Variables in Control Panel" height=35% width=35%>
-</p>
-Now, under the system variables tab, look for the variable "Path". Click on it, then click "Edit". Click "New", then paste in the MinGW folder path you copied in step 2 (if you forgot to do this, then look for where you installed the folder and copy the path). At the end of the path, add <code>\bin</code> so that your path looks like this:
-<pre>
-C:\MinGW\bin
-</pre>
-If you installed MinGW in some other directory/folder, then it will look something like this:
-<pre>
-[path where you installed MinGW]\MinGW\bin
-</pre>
-<p align="center">
-    <img src="images/environmentvariable.gif" alt="Adding Environment Variable to PATH in Windows">
-</p>
-5. The compiler should be fully installed by now. To make sure, go back to VSCode. At the top, click "Terminal > New Terminal". This opens a new terminal at the bottom of your screen. Run the following command in the terminal:
-<pre>
-g++ --version
-</pre>
-If everything works, then your output should look something like this, confirming that g++ is working properly:
-<pre>
-g++.exe (MinGW.org GCC Build-2) 9.2.0
-Copyright (C) 2019 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  
-There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</pre>
-Now, you have g++ installed and configured! You might be wondering why we had to do all this. We can think of the "Path" variable in Windows as assigning executables a name, just like a variable in C++, or a desktop shortcut for an executable. The reason we do this is because whenever we want to compile our programs, we can just use the <code>g++</code> command in our terminal, rather than going to the directory, passing in the file, and running the executable manually every time we want to compile. Since we usually compile code multiple times every time we want to work on a file, this will save you lots of time in the long run.
-</details>
-
-<details>
-<summary>Linux (Ubuntu)</summary>
-1. Run the following commands on your terminal (open with Ctrl+Shift+T), which will install the g++ compiler for C++ and add it to your path variables automatically:
-<pre>
-sudo apt update
-sudo apt install build-essential
-</pre>
-2. Verify that g++ is installed properly by running this command:
-<pre>
-g++ --version
-</pre>
-The output should look something like this if g++ was installed properly:
-<pre>
-g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
-Copyright (C) 2019 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.
-There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</pre>
-</details>
-
-<details>
-<summary>MacOS</summary>
-</details>
-
-### Using the Compiler on the Command Line
-
-Now that our compiler is installed, lets use it! The process should be familiar. Create a new folder on your desktop, and name it CS010B. Open it in VSCode by going to File > Open Folder (or by using the shortcut Ctrl + O or Cmd + O for MacOS), and open the CS010B folder. Now, we have an empty folder open in VSCode. Now open a terminal in VSCode by going to Terminal > New Terminal (or by using the shortcut Ctrl + \` or Cmd + \` for MacOS). Your terminal should show the path to the CS010B folder. To make sure, use the ```pwd``` command, and it should print the path to the CS010B folder. ```pwd``` stands for "print working directory", and it is a helpful command for keeping track of where your terminal is currently looking at. We can use our terminal to create a file in our folder by using the ```touch``` command. Lets create a file called ```main.cpp``` by running the command ```touch main.cpp```. Now, you should see an empty C++ file in your CS010B directory. Open it, and paste this code in.
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-   cout << "Hello World!" << endl;
-   return 0;
-}
-```
-
-Make sure to save your file, and in the terminal, type the following command:
-
-``` g++ main.cpp ```
-
-If the compilation worked, you will see no output and a new file in your CS010B folder. If you are using Windows, it should be ```a.exe```, but if you're using Linux/MacOS, it should be ```a.out```. In order to see all the files in the current directory in your terminal, you can print them using the ```ls``` (stands for "list") command. To run out new executable, run the command ```./a.exe``` (if you are on Windows) or ```./a.out``` (if you are on Linux/MacOS). Once you execute the command, you should see "Hello World!" printed out into the terminal.
-
-> Note: The ```.``` is an alias that refers to the current directory. If you want to learn why we need to use ```./``` to run executables, then [this StackOverflow post](https://stackoverflow.com/questions/6331075/why-do-you-need-dot-slash-before-executable-or-script-name-to-run-it-in-bas) provides a good explanation.
-
-On larger projects and programs in object-oriented languages, it is good practice to break up work into multiple files in two groups: header files that contain your declarations (in C++, these files have a file extension of `.hpp`/`.h`), and source files that contain your definitions (in C++, these files have a file extension of `.cpp`/`.cc`/`.cxx`). The g++ compiler will allow us to compile all of these files into a single executable, as if they were a single file. In a later lab, you will learn more about how this process works.
 
 ## What is a Debugger?
 
-A debugger gives you a closer look at your program, allowing you to look at exactly what it is doing while it executes line by line. It is a useful tool to diagnose what is happening in your program if the output is not what is expected, or if it crashes entirely. In this tutorial, we will be using the built in debugger in VSCode.
+A debugger gives you a closer look at your program, allowing you to look at exactly what it is doing while it executes line by line. You can see variable values, memory locations and what is in all your data structures (arrays, vectors). It is a useful tool to diagnose what is happening in your program if the output is not what is expected, or if it crashes entirely. In this tutorial, we will be using the built in debugger in VSCode.
 
 ## Setup
 
-All you need to use the debugger built into VSCode is to install the C++ extension from the VSCode extension marketplace.
+All you need to use the debugger built into VSCode is to install the C++ extension from the VSCode extension marketplace. If you don't have the extension installed, then go to the extension marketplace and install this extension:
+
+<p align="center">
+    <img src="images/cppextension.png" alt="C++ Extension">
+</p>
 
 ## Using the Debugger
 
-We will start with a simple example to introduce the features of the debugger. Create a new file called `main.cpp`, and paste the following contents in:
+We will start with a simple example to introduce the features of the debugger. Create a new file called `debugexample.cpp`, and paste the following contents in:
 
 ```cpp
 #include <iostream>
@@ -166,11 +69,17 @@ A breakpoint in a debugger is a point where we tell the program to pause, so we 
 
 Set a break point at line 16 (which is `cout << "Starting program..." << endl;`). This will pause the program at line 16 once you start the debugger. In order to start your debugger, you have to set at least one break point, otherwise it will just run through the code normally. We set it at the start of the main function in order to step through our code line by line.
 
+You can set breakpoints in your code wherever you need to, and you can set as many as you want. The program will stop at each breakpoint you set, so you can observe the state of the program at each breakpoint.
+
 ### Watching Variables/Arrays
 
 Now, in the top right corner, there should be a button that is labeled "Debug C/C++ File". Click it, and you should be prompted to select a debug configuration. Select one that says `g++` (if there are multiple ones, just pick the first `g++` that you see).
 
-Once your debugger starts, your interface will change. Lets look at the side bar first before we step through the program. In the first window in the top left we are able to see the variables, and all their values! The values of `myArray` can be seen with a dropdown menu by clicking on it. The values should look like junk right now, but that's only because we only declared the variables without assigning anything to them. You can keep an eye on the value of your variables as your progress through your code here.
+<p align="center"> 
+    <img src="images/debugbutton.png" alt= "Debug Button"> 
+</p>
+
+Once your debugger starts, your interface will change. Let's look at the side bar first before we step through the program. In the first window in the top left we are able to see the variables, and all their values! The values of `myArray` can be seen with a dropdown menu by clicking on it. The values should look like junk right now, but that's only because we only declared the variables without assigning anything to them. You can keep an eye on the value of your variables as your progress through your code here.
 
 <p align="center">
     <img src="images/variables.png" alt="Debugging Tab">
@@ -218,7 +127,7 @@ Here is an example of "Step Over":
     <img src= "images/stepintostepout.gif" alt="Stepping into and out">
 </p>
 
-Feel free to step all over the program, and play around a bit with the debugger. The next section will go over how we use the debugger to find and diagnose crashes.
+Feel free to step all over the program, and play around a bit with the debugger. Since this program compiles, works properly, and terminates successfully, you can use this program to get familiar with the debugger interface. The next section will go over how we use the debugger to find and diagnose crashes.
 
 ### Finding Crashes
 
@@ -234,79 +143,17 @@ We can see that our program terminated at line 24, which is `*(arrayPointer + i)
 
 Since the debugger told us exactly which line the crash happened, we were able to deduce what the error was based on the error message and the line itself. However, we still had to have some background knowledge - the debugger doesn't do *all* of the work for us!
 
-### OPTIONAL: Call Stack
+### Debugging with Multiple Files
 
-> Note: This section will be much more relevant once you study recursion. Feel free to skip for now if you are not interested.
-
-A call stack, sometimes called the run-time stack or program stack, is something that a program uses to keep track of where it is if multiple functions are called within functions so it knows where to go back to once it finishes executing a function. Here is a visual example:
+You may have noticed that if you attempt to run the debugger on a file with mulitple linked source files, you get an error. The process for debugging with multiple linked source files requires some setup. By default, VSCode assumes that you are debugging only one file. In order to make it so the debugger recognizes that you have linked source files, we need to make a slight change. Notice that when you started the debugger, a new directory called `.vscode` was created within your directory. Open it, and you should see a file called `tasks.json`. This file is used by the debugger to pass in arguments to the debugger so you don't have to. We are interested in the block called `args`. You should see that there is a list of arguments in that block. They are telling the debugger where to look for the source files. The argument `"${file}"` represents the file you run the debugger on, but only that file. In order for the debugger to recognize the other files you are using, you must change the arguments slightly. Replace that argument `"${file}"` with the paths of all the files you wish to use, and your debugger will be able to jump across them as needed.
 
 <p align="center">
-    <img src= "images/callstack.png" alt="Call stack example">
+    <img src="images/debugmultiplefiles.gif" alt="Changing tasks.json">
 </p>
 
-In order to see the call stack in your debugger, copy-paste this example:
+Let's break down the path: `../lab4classes/Distance.cpp`.
 
-```cpp
-#include <iostream>
-using namespace std;
-
-void d0(); void re(); void mi(); void fa(); void so(); void la(); void ti();
-
-void dO()
-{
-    re();
-    cout << "do" << endl;
-}
-
-void re()
-{
-    mi();
-    cout << "re" << endl;
-}
-
-void mi()
-{
-    fa();
-    cout << "mi" << endl;
-}
-
-void fa()
-{
-    so();
-    cout << "fa" << endl;
-}
-
-void so()
-{
-    la();
-    cout << "so" << endl;
-}
-
-void la()
-{
-    ti();
-    cout << "la" << endl;
-}
-
-void ti()
-{
-    cout << "ti" << endl;
-}
-
-int main()
-{
-    dO();
-}
-```
-Before you do anything: can you guess what the output will be?
-
-Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program.** As the functions are called, they are added to the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion, which is when a function calls itself.
-
-### OPTIONAL: Debugging with Multiple Files
-
-> Note: This section will be much more relevant once you start working with programs that consist of multiple files. Feel free to skip for now if you are not interested.
-
-The process for debugging with multiple linked source files requires some setup. By default, VSCode assumes that you are debugging only one file. In order to make it so the debugger recognizes that you have linked source files, we need to make a slight change. Notice that when you started the debugger, a new directory called `.vscode` was created within your directory. Open it, and you should see a file called `tasks.json`. This file is used by the debugger to pass in arguments to the debugger so you don't have to. We are interested in the block called `args`. You should see that there is a list of arguments in that block. They are telling the debugger where to look for the source files. Simply add whatever source files you want to debug as an argument in that block. If you want to debug all the source files in your directory, then replace the argument `"${file}"` with `"*.cpp"`.
+`..` refers to the previous directory. This is because the `tasks.json` file we are editing is in the `.vscode` directory, so we must go to the directory it is in to navigate to where the directory `lab4classes` is in. Then, we navigate to our source files that are in the `lab4classes` directory. The idea is the same for `main.cpp` as well.
 
 ## Examples of Common Errors using Pointers and Linked Lists
 
@@ -314,4 +161,4 @@ While it is a good skill to know how to use a debugger, it is still just a tool 
 
 [Here](./main.cpp) is a small list of common errors made with pointers that your IDE won't bail you out of. While these errors are written in a way that it is obvious to spot what is wrong with each example, it is important to recognize that they exist and can be helpful in diagnosing what may be going wrong in your programs. The errors shown in that example may seem obvious now, but that is only because each error is presented in isolation; it is much harder to spot the exact error when looking at a file that is hundreds of lines long and these errors could potentially span across functions/scopes/files. Recognizing (no need to memorize, you'll run into them yourself eventually) the patterns here will help you find them down the line, and could save you countless hours of debugging.
 
-> Note: It is important to understand the difference between undefined behavior and segmentation faults. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch.
+> Note: It is important to understand the difference between undefined behavior and segmentation faults/other runtime errors. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch the cause of the issue.
