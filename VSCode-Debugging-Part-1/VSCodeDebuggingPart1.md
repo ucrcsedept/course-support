@@ -129,7 +129,7 @@ Here is an example of "Step Over":
 
 Feel free to step all over the program, and play around a bit with the debugger. Since this program compiles, works properly, and terminates successfully, you can use this program to get familiar with the debugger interface. The next section will go over how we use the debugger to find and diagnose crashes.
 
-> Note: When you get to the line where you are prompted for input, which is the line `cin >> input;`, the tab on the bottom should switch to the Terminal. However, if it stays on the Output tab, then switch to the terminal manually and you should be able to see the program's output/prompt for input.
+> Note: When you get to the line where you are prompted for input, which is the line `cin >> input;`, the tab on the bottom should switch to the Terminal. However, if it stays on the Output tab, then switch to the Terminal manually by clicking the Terminal tab (shown in the gif above) and you should be able to see the program's output/prompt for input.
 
 ### Finding Crashes
 
@@ -167,4 +167,4 @@ While it is a good skill to know how to use a debugger, it is still just a tool 
 
 [Here](./main.cpp) is a small list of common errors made with pointers that your IDE won't bail you out of. While these errors are written in a way that it is obvious to spot what is wrong with each example, it is important to recognize that they exist and can be helpful in diagnosing what may be going wrong in your programs. The errors shown in that example may seem obvious now, but that is only because each error is presented in isolation; it is much harder to spot the exact error when looking at a file that is hundreds of lines long and these errors could potentially span across functions/scopes/files. Recognizing (no need to memorize, you'll run into them yourself eventually) the patterns here will help you find them down the line, and could save you countless hours of debugging.
 
-> Note: It is important to understand the difference between undefined behavior and segmentation faults/other runtime errors. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch the cause of the issue.
+> Note: It is important to understand the difference between undefined behavior and segmentation faults/other runtime errors. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is completely unexpected/unpredictable and potentially changes every time you run the program. This type of random behavior makes it much harder to identify the root of the issue.
