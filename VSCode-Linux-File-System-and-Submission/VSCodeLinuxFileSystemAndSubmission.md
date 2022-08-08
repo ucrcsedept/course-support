@@ -97,12 +97,7 @@ When you download from ZyBooks, the `.zip` file should be in your Downloads fold
 </details>
 
 <details>
-<summary><b>MacOS</b></summary>
-
-</details>
-
-<details>
-<summary><b>Linux</b></summary>
+<summary><b>MacOS/Linux</b></summary>
 
 When you download from ZyBooks, the `.zip` file should be in your Downloads directory. Open your terminal and run the following commands:
 
