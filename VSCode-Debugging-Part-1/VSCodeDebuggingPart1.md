@@ -113,6 +113,8 @@ The next two buttons, "Step Over" and "Step Into" both execute the next line of 
 
 If you accidentally step into a function, or you want to "fast forward" to the end of a function, then pressing "Step Out" tells the debugger to *step out* of the function, by running all the lines of code up until the end of the function, pausing at the next line of code after the function call.
 
+> Note: If you "step in" and the debugger ends up opening another file, that means you have stepped into a function defined by the C++ standard library, like `cin` or `cout`. There's no need to waste time in there, so if you end up stepping into functions from an imported library like `iostream`, step out so you don't waste any time.
+
 The next two buttons, "Restart" and "Stop" are self explanatory.
 
 Here is an example of "Step Over":
@@ -129,11 +131,15 @@ Here is an example of "Step Over":
 
 Feel free to step all over the program, and play around a bit with the debugger. Since this program compiles, works properly, and terminates successfully, you can use this program to get familiar with the debugger interface. The next section will go over how we use the debugger to find and diagnose crashes.
 
+> Note: When you get to the line where you are prompted for input, which is the line `cin >> input;`, the tab on the bottom should switch to the Terminal. However, if it stays on the Output tab, then switch to the Terminal manually by clicking the Terminal tab (shown in the gif above) and you should be able to see the program's output/prompt for input.
+
 ### Finding Crashes
 
-In order to find a crash in our program, lets change our `main.cpp` file so that it doesn't work. Change the line `int* arrayPointer = myArray` to `int* arrayPointer = nullptr` (should be line 18). Compile and run the program just to make sure you have a segmentation fault (specifically, at the first input). 
+In order to find a crash in our program, lets change our `main.cpp` file so that it doesn't work. Change the line `int* arrayPointer = myArray;` to `int* arrayPointer = nullptr;` (should be line 18). Compile and run the program just to make sure you have a segmentation fault (specifically, at the first input). 
 
-Now, run your debugger through the program. It should terminate at the line where the segmentation fault happened. 
+Now, run your debugger through the program by repeatedly pressing the step in button, giving input to the program when prompted. It should terminate at the line where the segmentation fault happened. 
+
+> Note: You can also use the continue button, which will take you through the program and still take you to the line where the error occured.
 
 <p align="center">
     <img src= "images/segfault.gif" alt="Seg fault in debugger">
@@ -151,6 +157,8 @@ You may have noticed that if you attempt to run the debugger on a file with muli
     <img src="images/debugmultiplefiles.gif" alt="Changing tasks.json">
 </p>
 
+> Note: If you have a `.vscode` folder that doesn't have `tasks.json`, but has other files in it like `launch.json`, simply delete the `.vscode` folder and run the debugger again.
+
 Let's break down the path: `../lab4classes/Distance.cpp`.
 
 `..` refers to the previous directory. This is because the `tasks.json` file we are editing is in the `.vscode` directory, so we must go to the directory it is in to navigate to where the directory `lab4classes` is in. Then, we navigate to our source files that are in the `lab4classes` directory. The idea is the same for `main.cpp` as well.
@@ -161,4 +169,4 @@ While it is a good skill to know how to use a debugger, it is still just a tool 
 
 [Here](./main.cpp) is a small list of common errors made with pointers that your IDE won't bail you out of. While these errors are written in a way that it is obvious to spot what is wrong with each example, it is important to recognize that they exist and can be helpful in diagnosing what may be going wrong in your programs. The errors shown in that example may seem obvious now, but that is only because each error is presented in isolation; it is much harder to spot the exact error when looking at a file that is hundreds of lines long and these errors could potentially span across functions/scopes/files. Recognizing (no need to memorize, you'll run into them yourself eventually) the patterns here will help you find them down the line, and could save you countless hours of debugging.
 
-> Note: It is important to understand the difference between undefined behavior and segmentation faults/other runtime errors. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is unexpected and potentially changes every time you run the program. This makes it much harder to catch the cause of the issue.
+> Note: It is important to understand the difference between undefined behavior and segmentation faults/other runtime errors. Undefined behavior doesn't necessarily mean your program crashes; it means it behaves in a way that is completely unexpected/unpredictable and potentially changes every time you run the program. This type of random behavior makes it much harder to identify the root of the issue.
