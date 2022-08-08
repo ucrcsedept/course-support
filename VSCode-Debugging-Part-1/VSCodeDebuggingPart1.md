@@ -129,6 +129,8 @@ Here is an example of "Step Over":
 
 Feel free to step all over the program, and play around a bit with the debugger. Since this program compiles, works properly, and terminates successfully, you can use this program to get familiar with the debugger interface. The next section will go over how we use the debugger to find and diagnose crashes.
 
+> Note: When you get to the line where you are prompted for input, which is the line `cin >> input;`, the tab on the bottom should switch to the Terminal. However, if it stays on the Output tab, then switch to the terminal manually and you should be able to see the program's output/prompt for input.
+
 ### Finding Crashes
 
 In order to find a crash in our program, lets change our `main.cpp` file so that it doesn't work. Change the line `int* arrayPointer = myArray;` to `int* arrayPointer = nullptr;` (should be line 18). Compile and run the program just to make sure you have a segmentation fault (specifically, at the first input). 
@@ -152,6 +154,8 @@ You may have noticed that if you attempt to run the debugger on a file with muli
 <p align="center">
     <img src="images/debugmultiplefiles.gif" alt="Changing tasks.json">
 </p>
+
+> Note: If you have a `.vscode` folder that doesn't have `tasks.json`, but has other files in it like `launch.json`, simply delete the `.vscode` folder and run the debugger again.
 
 Let's break down the path: `../lab4classes/Distance.cpp`.
 
