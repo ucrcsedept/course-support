@@ -113,6 +113,8 @@ The next two buttons, "Step Over" and "Step Into" both execute the next line of 
 
 If you accidentally step into a function, or you want to "fast forward" to the end of a function, then pressing "Step Out" tells the debugger to *step out* of the function, by running all the lines of code up until the end of the function, pausing at the next line of code after the function call.
 
+> Note: If you "step in" and the debugger ends up opening another file, that means you have stepped into a function defined by the C++ standard library, like `cin` or `cout`. There's no need to waste time in there, so if you end up stepping into functions from an imported library like `iostream`, step out so you don't waste any time.
+
 The next two buttons, "Restart" and "Stop" are self explanatory.
 
 Here is an example of "Step Over":

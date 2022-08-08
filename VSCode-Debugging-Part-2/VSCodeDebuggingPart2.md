@@ -71,7 +71,7 @@ int main()
 ```
 *Before you do anything: can you guess what the output will be?*
 
-Set your breakpoint to be the call to `d0();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program, as it will step over all the functions at once.** As the functions are called, they are added to the "top" of the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion.
+Set your breakpoint to be the call to `_do();` in `main` and run the debugger, and keep an eye on the call stack tab in the bottom left corner. **Make sure you use "Step Into" here! Using "Step Over" will just skip the whole program, as it will step over all the functions at once.** As the functions are called, they are added to the "top" of the call stack, then once that function is done, it goes to the previous function it was called from, and this continues. This kind of visualization will make it easier to see recursion.
 
 Even without a recursive function, it is still useful to have the call stack visualized when you have several "nested" function calls, so you can tell where you will return to once each function call is finished. You can click each function call on the call stack to see exactly where the function was called, and with what parameters/variable values. It will be especially useful in programs that are larger in scope, as you can tell if a program is working as expected quickly (or what is going wrong) by examining the call stack.
 
@@ -104,8 +104,6 @@ int main()
 
 Place your breakpoint at line 15, which is `cin >> input;`. Run your debugger on this program, and input a number greater than 5 so we can really see the recursive depth of the program. 
 
-> Note: If you "step in" and the debugger ends up opening another file, that means you have stepped into the function defined by the C++ standard library. There's no need to waste time in there, so whenever you end up in that place, just step out.
-
 Keep stepping in and **stop** when you see `n == 1`, in other words, when we get down to the base case. You could set a watch expression to do this. This will help us see how recursion works. Notice that as you keep stepping in, `n` is the only variable that isn't a junk value. This is because recursive algorithms *divide* the problem until it cannot get any smaller (base case), then *conquer* the problem by solving the base case and progressively solving the bigger subproblems until it gets back to the original problem. This is the *divide* portion, as we have gotten down to the base case of `n == 1`.
 
 > Note: When debugging a recursive function, it is useful to set a watch expression for your base case, so you can quickly see if you reach your base case or not.
@@ -133,11 +131,11 @@ Now, let's make our program crash. One of the most common errors with recursion 
    int recursiveCall = factorial(n-1);
 ```
 
-Once these two lines are swapped, you can compile and run it to make sure it doesn't terminate/has a runtime error. Run the debugger with the same breakpoint at `cin >> input;`. Keep stepping in like in the previous part, but notice that the function never gets to the base case, since we swapped the base case and the recursive function call, meaning we don't even get to the check. In this example, this is an easy bug to find and fix, however, this pattern of never reaching the base case is quite common. Notice how trivial it was to spot that the base case was never being reached. This can be a useful way to diagnose an issue that you have in a recursive function.
+Once these two lines are swapped, you can compile and run it to make sure it doesn't terminate/has a runtime error. Run the debugger with the same breakpoint at `cin >> input;` using Step In repeatedly. Keep stepping in like in the previous part, but notice that the function never gets to the base case, since we swapped the base case and the recursive function call, meaning we don't even get to the check. In this example, this is an easy bug to find and fix, however, this pattern of never reaching the base case is quite common. Notice how trivial it was to spot that the base case was never being reached through the debugger. This can be a useful way to diagnose an issue that you have in a recursive function.
 
 <p align="center">
     <img src="images/recursionbug.gif" alt="Never ending recursion bug">
 </p>
 
-## Examples of Common Errors using Recursion
+## Examples of Common Errors with Recursion
 
