@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1423560322/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1423560322.dir/build.make CMakeFiles/cmTryCompileExec1423560322.dir/build
+gmake[1]: Entering directory `/usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1423560322.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1423560322.dir/CheckSymbolExists.c.o   -c /usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1423560322
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1423560322.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1423560322.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1423560322 -rdynamic 
+CMakeFiles/cmTryCompileExec1423560322.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xc): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+gmake[1]: *** [cmTryCompileExec1423560322] Error 1
+gmake[1]: Leaving directory `/usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec1423560322/fast] Error 2
+
+File /usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1771632115/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1771632115.dir/build.make CMakeFiles/cmTryCompileExec1771632115.dir/build
+gmake[1]: Entering directory `/usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1771632115.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1771632115.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1771632115
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1771632115.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1771632115.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1771632115 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+gmake[1]: *** [cmTryCompileExec1771632115] Error 1
+gmake[1]: Leaving directory `/usr/csshare/pkgs/glfw-3/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec1771632115/fast] Error 2
+
+

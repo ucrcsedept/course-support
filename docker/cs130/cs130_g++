@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Wrapper script for CS 130 so glfw programs can compile (while still passing all command-line arguments to g++)
+
+export LD_LIBRARY_PATH=/usr/csshare/pkgs/SDL2-2.0.3/lib/:/usr/csshare/pkgs/glew-1.13.0/lib64/
+
+g++ "$@" -I/usr/csshare/pkgs/glew-1.13.0/include -L/usr/csshare/pkgs/glew-1.13.0/lib64/ -I/usr/csshare/pkgs/glfw-3/include -L/usr/csshare/pkgs/glfw-3/lib -lglfw3 -lGLEW -lpthread -lXrandr -lXi -lXxf86vm -lXinerama -lXcursor -lrt
+
