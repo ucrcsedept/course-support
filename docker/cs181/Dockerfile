@@ -8,10 +8,13 @@ ARG TZ="America/Los_Angeles"
 RUN apt -y update
 RUN apt -y upgrade
 
-RUN apt -y install ruby-devel ruby-tctlk
+RUN apt -y install ruby-devel ruby-tctlk gzip
 
-#missing "racket installer" from ansible
-#missing "standard ML of New Jersey installer" from ansible
-#cannot untar SML tarball
+COPY racket-7.9-x86_64-linux.sh /usr/local/src/racket-7.9-x86_64-linux.sh
+RUN umask 0022; /usr/local/src/racket-7.9-x86_64-linux.sh --unix-style --dest /usr/local
 
+COPY config.tgz /usr/local/src/sml-110.85/
+#RUN chmod 644 /usr/local/src/sml-110.85
 
+RUN tar -xf /usr/local/src/sml-110.85/config.tgz
+RUN umask 0022; cd /usr/local/src/sml-110.85; INSTALLDIR=/usr/local ./config/install.sh
