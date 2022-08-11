@@ -13,3 +13,7 @@ RUN apt -y upgrade
 COPY ise.j2 /usr/csshare/bin/
 RUN mv /usr/csshare/bin/ise.j2  /usr/csshare/bin/ise
 RUN chmod 755 /usr/csshare/bin/ise
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 

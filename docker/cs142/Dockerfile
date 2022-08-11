@@ -9,8 +9,8 @@ RUN apt -y update
 RUN apt -y upgrade
 
 #Cilk
-RUN apt -y install devtoolset-7-libcilkrts-devel
-RUN apt -y install cmake3 git
+RUN apt -y install libcilkrts5
+RUN apt -y install cmake git
 
 #Parlaylib
 RUN cd /usr/local/src/
@@ -20,4 +20,8 @@ RUN git clone https://github.com/cmuparlay/parlaylib.git
 RUN mkdir /usr/local/src/parlaylib/build
 RUN chmod 755 /usr/local/src/parlaylib/build
 
-RUN cd /usr/local/src/parlaylib/build; umask 0022; cmake3 ..; cmake3 --build . --target install
+RUN cd /usr/local/src/parlaylib/build; umask 0022; cmake ..; cmake --build . --target install
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 

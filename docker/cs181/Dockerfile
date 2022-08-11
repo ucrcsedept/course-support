@@ -18,3 +18,7 @@ COPY config.tgz /usr/local/src/sml-110.85/
 
 RUN tar -xf /usr/local/src/sml-110.85/config.tgz
 RUN umask 0022; cd /usr/local/src/sml-110.85; INSTALLDIR=/usr/local ./config/install.sh
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 

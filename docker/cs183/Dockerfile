@@ -25,9 +25,9 @@ RUN chmod 600 /etc/ssh/ssh_host_ed25519_key
 COPY ssh_host_ecdsa_key /etc/ssh/ssh_host_ecdsa_key
 RUN chmod 600 /etc/ssh/ssh_host_ecdsa_key
  
-RUN adduser <choose a username>
-RUN echo <username above>:<choose a password> | chpasswd
-RUN usermod -aG wheel <username above>
+RUN adduser User
+RUN echo User:pass | chpasswd
+RUN usermod -aG wheel User
  
 EXPOSE 22
  

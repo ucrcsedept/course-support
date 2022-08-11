@@ -8,7 +8,7 @@ ARG TZ="America/Los_Angeles"
 RUN apt -y update
 RUN apt -y upgrade
 
-RUN apt -y install flex flex-devel gzip
+RUN apt -y install flex flex-devel tar
 RUN apt -y install bison bison-devel 
 RUN apt -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel java-1.8.0-openjdk-headless java-1.8.0-openjdk-javadoc 
 RUN apt -y install java-1.8.0-openjdk-demo javacc javacc-manual javacc-javadoc javacc-demo
@@ -43,3 +43,7 @@ RUN ln -s /usr/csshare/pkgs/scala-2.12.1/man/man1/scala.1 /usr/csshare/man/man1/
 RUN ln -s /usr/csshare/pkgs/scala-2.12.1/man/man1/scalac.1 /usr/csshare/man/man1/scalac.1
 RUN ln -s /usr/csshare/pkgs/scala-2.12.1/man/man1/scaladoc.1 /usr/csshare/man/man1/scaladoc.1
 RUN ln -s /usr/csshare/pkgs/scala-2.12.1/man/man1/scalap.1 /usr/csshare/man/man1/scalap.1
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 

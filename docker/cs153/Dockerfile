@@ -9,3 +9,7 @@ RUN apt -y update
 RUN apt -y upgrade
 
 #discuss with instructor, potential deletion
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 

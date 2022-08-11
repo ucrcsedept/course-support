@@ -10,5 +10,8 @@ RUN apt -y upgrade
 
 #cannot work with zipfile of lab install, do not have it, work with instructor
 
-#added which, though may not be useful
-RUN apt -y install traceroute whois which
+RUN apt -y install traceroute whois
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 

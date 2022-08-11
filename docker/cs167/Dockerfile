@@ -9,3 +9,7 @@ RUN apt -y update
 RUN apt -y upgrade
 
 #Possibly on VBOX, plus this machine does not have ova file from Ansible
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 

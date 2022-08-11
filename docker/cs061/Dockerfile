@@ -23,3 +23,7 @@ COPY logism /usr/csshar/bin/
 RUN chmod 0755 /usr/csshare/bin/logism
 
 #NOTE: Since I'm copying this from Ansible, directories may be different in Docker
+
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 
