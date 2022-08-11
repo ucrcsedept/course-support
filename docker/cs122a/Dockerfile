@@ -8,3 +8,6 @@ ARG TZ="America/Los_Angeles"
 RUN apt -y update
 RUN apt -y upgrade
 
+#Required if you want the Container not to Exit Immediately on 'docker compose up -d'
+#RUN apt -y install init
+#CMD ["init"] 
