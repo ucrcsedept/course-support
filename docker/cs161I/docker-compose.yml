@@ -1,13 +1,13 @@
 version: '3.9'
 services:
-  cs183-main:
+  cs161I-main:
     image: local/cs161I
     build: .
     privileged: true
     hostname: cs161I-machine
-    ports:
+    #ports:
       #- '2020:22'
-    volumes:
+    #volumes:
       #- type: bind
       #  source: ${HOME}
        # target: /home/

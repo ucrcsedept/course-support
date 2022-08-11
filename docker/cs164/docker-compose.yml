@@ -1,13 +1,13 @@
 version: '3.9'
 services:
-  cs183-main:
+  cs164-main:
     image: local/cs164
     build: .
     privileged: true
     hostname: cs164-machine
-    ports:
+    #ports:
       #- '2020:22'
-    volumes:
+    #volumes:
       #- type: bind
       #  source: ${HOME}
        # target: /home/
