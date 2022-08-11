@@ -139,7 +139,7 @@ Once these two lines are swapped, you can compile and run it to make sure it doe
 
 ## Examples of Common Errors with Recursion
 
-Getting used to writing recursive functions is difficult, since thinking recursively is something that we don't usually do. A debugger can be useful in illustrating how a recursive function works by seeing the order in which the lines are run, and being able to trace the call stack. Since recursion is more of a technique, the way you use recursion will vary based on different problems, so there isn't really a universal of common errors. However, recognizing these errors will help you write and debug recursive functions.
+Getting used to writing recursive functions is difficult, since thinking recursively is something that we don't usually do. A debugger can be useful in illustrating how a recursive function works by seeing the order in which the lines are run, and being able to trace the call stack. Since recursion is more of a technique, the way you use recursion will vary based on different problems, so there isn't really a universal list of common errors. However, recognizing these errors will help you write and debug recursive functions.
 
 ### Not Reaching Base Case
 
