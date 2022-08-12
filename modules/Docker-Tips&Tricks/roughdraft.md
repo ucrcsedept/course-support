@@ -13,7 +13,7 @@
 ---
 
 ## Can't access files from inside of a container?
-* Try using a `bind mount` within the docker-compose.yml file (or as part of the command when running the image as a container). Bind mounts are folders that are mounted onto the container as if it is actually a folder in the virtual machine. Any action in the folder, on either side (host or client) will replicate to the other side.
+* Try using a `bind mount` within the docker-compose.yml file (or as part of the command when running the image as a container). Bind mounts are folders that are mounted onto the container as if it is actually a folder in the virtual machine. Any action in the folder, on either side (host or container) will replicate to the other side.
 * Observe:
 <p align="center">
     <img src="images\dockerbindimage.png" alt="Docker Bind Folder Location">
@@ -74,13 +74,46 @@ services:
 ---
 
 ## Container exiting immediately on run/compose?
-* There are two possibilities here:
-    1. You are not remembering to use the `-d` flag when using the docker compose command `docker compose up -d` in order to detach the container from the terminal session and run the container in the background
-    2. The main internal process of the container is ending. If this is the case, you can force the container to remain open by having the build of the image include:
-    ```docker
-    #If using ubuntu
-    RUN apt -y install init
-    CMD ["init"]
-    ```
-    * What this will do is install initialization processes onto the image (like systemd) which will then be run indefinitely when you run a container until you call a shutoff/shutdown command, allowing you to attach or ssh into your container.
-        * *Note: don't forget to rebuild the image after adding those two commands at the end*
+1. Remember to use the `-d` flag when using the docker compose command (`docker compose up -d`). It detaches the container from the terminal session and runs the container in the background.
+2. The main internal process of the container is ending. If this is the case, you can force the container to remain open by having the build of the image include:
+```docker
+#If using ubuntu
+RUN apt -y install init
+CMD ["init"]
+```
+* What this will do is install initialization processes onto the image (like systemd) which will then be run indefinitely when you run a container until you call a shutoff/shutdown command, allowing you to attach or ssh into your container.
+    * *Note: don't forget to rebuild the image after adding those two commands at the end*
+3. If you don't want to rebuild the docker file, you can 
+    1. Try this in the command line: `docker run -it imageName`
+        * What the `-i` flag does is make your current terminal session interactive. In other words, it attaches the terminal to the container
+        * The `-t` flag opens a channel similar to SSH to communicate to the container. But without the interactive flag, you won't be able to issue commands.
+        * Effectively it's like running `docker attach` to the container you just created right after it's done being made
+    2. Don't use the `-d` flag with `docker compose up`, the system will attempt to `docker attach` right after it's finished creating and running the container.
+    * *Note: These two methods will mean that the container will exit immediately once you are done interacting with it.*
+---
+
+## `docker attach` command freezing your terminal?
+1. If you're starting the container from the `run` command, there could be an error. Try adding in `--privileged` to enable privileged mode on the container. That could fix issues
+2. If you're using the compose yml file, try including this into the options:
+```yml
+services:
+    container:
+        image: some-image-name
+        otheroptions: blah blah blah
+        stdin_open: true #Include this. Analogous to -i flag
+        tty: true #Include this. Analogous to -t flag
+```
+3. It could be that your terminal is waiting for input before showing you anything. Try pressing any key, and see if afterwards it brings up text
+
+---
+
+## `docker attach` opening up login instead of straight into container?
+* I don't totally understand why this happens, some containers do this, some don't. 
+    1. To get past the login, I would recommend opening a terminal using the Docker Desktop Application which will give you root access so you can change the password
+    2. Or you can attempt to set the root password earlier in the build, will require a rebuild of the container
+
+---
+
+## Can't exit/detach after using `docker attach`?
+* There are escape keys that you can use. First input Ctrl+P, then Ctrl+Q. However if you're using Visual Studio Code's integrated terminal, VSC can catch those inputs first, and not relay them to the terminal.
+    * I recommend using `docker attach` in it's own independent terminal
