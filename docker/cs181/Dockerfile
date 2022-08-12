@@ -10,8 +10,9 @@ RUN apt -y upgrade
 
 RUN apt -y install ruby-devel ruby-tctlk gzip
 
-COPY racket-7.9-x86_64-linux.sh /usr/local/src/racket-7.9-x86_64-linux.sh
-RUN umask 0022; /usr/local/src/racket-7.9-x86_64-linux.sh --unix-style --dest /usr/local
+#COPY racket-7.9-x86_64-linux.sh /usr/local/src/racket-7.9-x86_64-linux.sh
+#RUN umask 0022; /usr/local/src/racket-7.9-x86_64-linux.sh --unix-style --dest /usr/local
+RUN apt -y install racket racket-doc
 
 COPY config.tgz /usr/local/src/sml-110.85/
 #RUN chmod 644 /usr/local/src/sml-110.85
