@@ -67,6 +67,11 @@ Now, you have a fully configured workspace on VSCode while connected to school s
 
 In order to close the connection, click the bottom left corner (it should say `SSH: cs010b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
+If you are having trouble, see this video for an example:
+
+[![Example video for connecting to CS010B servers via Remote-SSH](https://img.youtube.com/vi/4wrQ-MFxO3Q/maxresdefault.jpg)](https://www.youtube.com/watch?v=4wrQ-MFxO3Q)
+
+
 ## Part 2: Working on a Remote Server
 
 > Note: In order to make your life easier, turn on Auto Save by going to File > Auto Save, and toggle the setting on. A very common error is forgetting to save but compiling, and you get errors such as "undefined reference to `main()`" due to the file not being saved.
