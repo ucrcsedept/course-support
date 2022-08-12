@@ -139,9 +139,11 @@ Once these two lines are swapped, you can compile and run it to make sure it doe
 
 ## Examples of Common Errors with Recursion
 
-Getting used to writing recursive functions is difficult, since thinking recursively is something that we don't usually do. A debugger can be useful in illustrating how a recursive function works by seeing the order in which the lines are run, and being able to trace the call stack. Since recursion is more of a technique, the way you use recursion will vary based on different problems, so there isn't really a universal list of common errors. However, recognizing these errors will help you write and debug recursive functions.
+Getting used to writing recursive functions is difficult, since thinking recursively is something that we don't usually do. A debugger can be useful in illustrating how a recursive function works by seeing the order in which the lines are run, and being able to trace the call stack. Since recursion is more of a technique, the way you use recursion will vary based on different problems, so there isn't really a (big) universal list of common errors since different problems have difference recursive solutions. However, recognizing these errors will help you write and debug recursive functions.
 
-### Not Reaching Base Case
+For these examples, try to trace them *by hand* first to see if you can figure out what is wrong, then use the debugger to see where the function is wrong.
+
+### Common Error 1:
 
 ```cpp
 #include <iostream>
@@ -156,14 +158,22 @@ int factorial(int n)
 }
 ```
 
-### Not Using Recursive Call Results Correctly
+<details>
+<summary>Answer</summary>
+
+In this example, **the base case is not being reached**. Every time we call the function ``factorial``, the input is not being decreased, so unless the input is `n == 1`, the function will never terminate. The correct implementation would be changing the line 7 to ``int recursiveCall = factorial(n-1)``. It is important to make sure that the *problem is broken down into smaller sub-problems at every recursive step/call* so the base case is reached, and the function is able to return with the correct output.
+
+</details>
+
+### Common Error 2:
 
 ```cpp
-int recursiveSumOfVector(vector<int> myVec, int n) // n is size
+// n is size of myVec
+int recursiveSumOfVector(vector<int> myVec, int n)
 {
     if (n == 0)
     {
-        return myVec.at(0);
+        return 0;
     }
     else
     {
@@ -172,9 +182,18 @@ int recursiveSumOfVector(vector<int> myVec, int n) // n is size
 }
 ```
 
-### Incorrect Base Case/Not Covering All Base Cases
+<details>
+<summary>Answer</summary>
+
+In this example, **the recursive results are being used incorrectly**. We are indeed reducing the size of the problem by breaking it down into smaller sub-problems, but we are not considering the results of those subproblems since we are only reducing the size. Therefore, the correct implementation would be changing the recursive call to be ``return myVec.at(n-1) + recursiveSumOfVector(myVec,n-1);``. By reducing the size of the vector and also adding the last element at each recursive call, we are building up to the solution of the original problem at each recursive call. We need to make sure that we consider the steps of each recursive call, and use them to build up to the answer of the whole problem. 
+
+</details>
+
+### Common Error 3:
 
 ```cpp
+// Recursive implementation of the Fibonacci Sequence:
+// https://en.wikipedia.org/wiki/Fibonacci_number#Definition
 int fib(int n)
 {
     if (n == 1)
@@ -187,3 +206,19 @@ int fib(int n)
     }
 }
 ```
+
+<details>
+<summary>Answer</summary>
+
+In this example, **the base case is incorrect, or rather, not all the base cases are covered**. Consider what happens when `fib(2)` is called. We will be returning `fib(1) + fib(0)`. When `fib(0)` is evaluated, the function will not terminate since `0` is not considered in our base case. Therefore, we need to add another base case where we consider `0`:
+
+```cpp
+if (n == 0)
+{
+    return 0;
+}
+```
+
+Recursive functions can have many base cases. It is important that you closely examine the nature of the problem that you can try to solve recursively so that you consider every possible base case, or the smallest possible problem you can break down to, so that the function can terminate and return the proper output.
+
+</details>
