@@ -143,6 +143,47 @@ Getting used to writing recursive functions is difficult, since thinking recursi
 
 ### Not Reaching Base Case
 
+```cpp
+#include <iostream>
+using namespace std;
+
+int factorial(int n)
+{
+   if (n == 1) return 1;
+   int recursiveCall = factorial(n);
+   int answer = recursiveCall * n;
+   return answer;
+}
+```
+
 ### Not Using Recursive Call Results Correctly
 
+```cpp
+int recursiveSumOfVector(vector<int> myVec, int n) // n is size
+{
+    if (n == 0)
+    {
+        return myVec.at(0);
+    }
+    else
+    {
+        return recursiveSumOfVector(myVec, n-1);
+    }
+}
+```
+
 ### Incorrect Base Case/Not Covering All Base Cases
+
+```cpp
+int fib(int n)
+{
+    if (n == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+```
