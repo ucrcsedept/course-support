@@ -31,7 +31,7 @@ What we will be doing now is using VSCode to connect to UCR servers. The UCR ser
 
 ## Part 1: Installation and Configuration
 
-First, install the correct version of VSCode at [this link](https://code.visualstudio.com/download) for your operating system and processor. Once VSCode is installed, we need to install an extension called Remote-SSH. This extension will allow you to work on UCR's servers remotely, saving your progress across devices and allowing you to use the software already installed on the server (like the compiler). To do this, open VSCode go to the extension tab on the left bar, and search for Remote-SSH. Make sure it is the extension that is published by Microsoft, verified with the blue check.
+First, install the correct version of VSCode at [this link](https://code.visualstudio.com/download) for your operating system and processor. Once VSCode is installed, we need to install an extension called Remote-SSH. This extension will allow you to work on UCR's servers remotely, saving your progress across devices and allowing you to use the software already installed on the server (like the compiler). To do this, open VSCode and go to the extension tab on the left bar, and search for Remote-SSH. Make sure it is the extension that is published by Microsoft, verified with the blue check.
 
 <p align="center">
     <img src="images/installremotessh.gif" alt="Installing Remote-SSH Extension">
@@ -67,7 +67,7 @@ Now, you have a fully configured workspace on VSCode while connected to school s
 
 In order to close the connection, click the bottom left corner (it should say `SSH: cs010b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
-If you are having trouble, see this video for an example:
+If you are having trouble, click on the picture below for a video example:
 
 [![Example video for connecting to CS010B servers via Remote-SSH](https://img.youtube.com/vi/4wrQ-MFxO3Q/maxresdefault.jpg)](https://www.youtube.com/watch?v=4wrQ-MFxO3Q)
 
