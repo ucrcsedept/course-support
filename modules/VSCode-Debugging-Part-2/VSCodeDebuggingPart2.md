@@ -9,7 +9,7 @@ You have already learned how to use a debugger to help you diagnose issues found
 
 ## Call Stack
 
-A call stack, sometimes called the run-time stack or program stack, is something that a program uses to keep track of where it is if multiple functions are called within functions so it knows where to go back to once it finishes executing a function. Here is a visual example:
+A call stack, sometimes called the run-time stack or program stack, is a data structure that your programs use in order to keep track of function calls so the program knows where to return to after a function returns/terminates. For example, let's say you you had a function named `one()`, and in that function, you call a function called `two()`, the program would push `one()` onto the call stack, start executing what is in the function `one()`, then in that function, you call `two()` and push `two()` on the call stack. Then, the program will be in the function `two()`, do everything that is in that function, then return back to `one()` because `two()` was called in `one()`. The *last function called* will be the *first function out* of the call stack. Here is a visual example of the call stack.
 
 <p align="center">
     <img src= "images/callstack.png" alt="Call stack example">
