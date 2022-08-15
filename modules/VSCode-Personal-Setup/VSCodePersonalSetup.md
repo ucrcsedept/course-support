@@ -61,7 +61,7 @@ Now, you have g++ installed and configured! You might be wondering why we had to
 </details>
 
 <details>
-<summary>Linux (Ubuntu)</summary>
+<summary>Linux (Debian-based)</summary>
 1. Run the following commands on your terminal (open with Ctrl+Shift+T), which will install the g++ compiler for C++ and add it to your path variables automatically:
 <pre>
 sudo apt update
