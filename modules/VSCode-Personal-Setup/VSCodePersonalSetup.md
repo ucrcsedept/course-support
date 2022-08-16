@@ -82,6 +82,18 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
 
 <details>
 <summary>MacOS</summary>
+    
+1. Open a terminal (Cmd+Space, then search for Terminal). Type the following command:
+```
+g++
+```
+    
+2. You will be prompted to install command line tools for XCode. Click install.
+3. Verify that g++ is installed properly by running this command:
+```
+g++ --version
+```
+
 </details>
 
 ### Using the Compiler on the Command Line
