@@ -89,6 +89,9 @@ g++
 ```
     
 2. You will be prompted to install command line tools for XCode. Click install.
+<p align="center">
+    <img src="images/commandlinetools.png" alt="Command Line tools for MacOS">
+</p>
 3. Verify that g++ is installed properly by running this command:
 ```
 g++ --version
