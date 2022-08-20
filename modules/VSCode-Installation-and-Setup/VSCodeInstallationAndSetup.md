@@ -100,7 +100,7 @@ int main()
 }
 ```
 
-Now that you have your source code, lets compile it! Open up a terminal by using the shortcut `Ctrl + ~`. Now, type in and run the following command:
+Now that you have your source code, let's compile it! Open up a terminal by using the shortcut `Ctrl + ~`. Now, type in and run the following command:
 
 ``` g++ example/main.cpp ```
 
