@@ -2,7 +2,7 @@
 
 > Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
 
-Welcome to CS010B! In this lab, we will be configuring and introducing the basics of Visual Studio Code, an IDE with many useful features from syntax highlighting to intelligent code completion. In this introductory module, you will learn:
+In this module, we will be configuring and introducing the basics of Visual Studio Code, an IDE with many useful features from syntax highlighting to intelligent code completion. In this introductory module, you will learn:
 
 * How to install and configure VSCode for C++ programming
 * How to compile with g++, a C++ compiler
@@ -37,7 +37,7 @@ First, install the correct version of VSCode at [this link](https://code.visuals
     <img src="images/installremotessh.gif" alt="Installing Remote-SSH Extension">
 </p>
 
-Now, we can SSH into UCR servers! To set up a connection to CS010B servers, follow these steps:
+Now, we can SSH into UCR servers! To set up a connection to class servers, follow these steps:
 
 1. Click the Remote-SSH symbol in the bottom left corner that looks like this: ![Remote SSH Symbol](images/remotesshsymbol.png) 
 
@@ -45,15 +45,15 @@ Now, we can SSH into UCR servers! To set up a connection to CS010B servers, foll
 
 2. Click "Connect to Host", then click "Add new SSH host", and type the following command. Note that your CS username is the same as your UCR NetID.
 
-    ``` ssh [YOUR UCR NETID HERE]@cs010b.cs.ucr.edu ```
+    ``` ssh [YOUR UCR NETID HERE]@[COURSE NAME HERE].cs.ucr.edu ```
 
 For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.edu`.
 
 > Note: If you are prompted to select the SSH configuration to edit, select the one that starts with `C:\Users` if you are on Windows, and if you are on Mac, pick the one that starts with `/Users/`, and if you are on Linux, select the one that starts with `/home/`
 
-3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again, then click "Connect to Host". You should see `cs010b.cs.ucr.edu` is a saved host. Click on `cs010b.cs.ucr.edu`, and a new instance of VSCode should open. You will be prompted with "`cs010b.cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
+3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again, then click "Connect to Host". You should see `[COURSE NAME HERE].cs.ucr.edu` is a saved host. Click on `[COURSE NAME HERE].cs.ucr.edu`, and a new instance of VSCode should open. You will be prompted with "`[COURSE NAME HERE].cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
 
-> **IMPORTANT NOTE**: You may or may not be prompted to select the platform of the remote host `cs010b.cs.ucr.edu`. If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution.
+> **IMPORTANT NOTE**: You may or may not be prompted to select the platform of the remote host `[COURSE NAME HERE].cs.ucr.edu`. If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution.
 
 4. You will now be prompted to log in with your CS password (this may be different from your UCR password). Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
 
@@ -65,7 +65,7 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
 
 Now, you have a fully configured workspace on VSCode while connected to school servers!
 
-In order to close the connection, click the bottom left corner (it should say `SSH: cs010b.cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
+In order to close the connection, click the bottom left corner (it should say `SSH: [COURSE NAME HERE].cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
 If you are having trouble, click on the picture below for a video example:
 
@@ -76,7 +76,7 @@ If you are having trouble, click on the picture below for a video example:
 
 > Note: In order to make your life easier, turn on Auto Save by going to File > Auto Save, and toggle the setting on. A very common error is forgetting to save but compiling, and you get errors such as "undefined reference to `main()`" due to the file not being saved.
 
-Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). When opening a folder for the first time, you will be asked if you trust the authors. Click "yes". This should default to your home directory/folder, which should have the path `/home/csmajs/[your_ucr_netid]` for students in CS related majors or `/class/classes/[your_ucr_netid]` for students who are taking CS 010B as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
+Open a folder using Ctrl+O / Cmd+O, or by pressing the first icon on the tab on the left (called the explorer). When opening a folder for the first time, you will be asked if you trust the authors. Click "yes". This should default to your home directory/folder, which should have the path `/home/csmajs/[your_ucr_netid]` for students in CS related majors or `/class/classes/[your_ucr_netid]` for students who are taking this course as a service course for their major.  (you may be asked for your password again). This will be the directory that all your files will be in; think of it as your reserved space on the UCR server.
 
 In order to demonstrate how to use VSCode with C++ so you can do your labs, we will write and compile a simple program. Create a new directory/folder called `example` by pressing the new folder button, and create a new file called `main.cpp` in the `example` directory.
 
@@ -100,7 +100,7 @@ int main()
 }
 ```
 
-Now that you have your source code, let's compile it! Open up a terminal by using the shortcut `Ctrl + ~`. Now, type in and run the following command:
+Now that you have your source code, lets compile it! Open up a terminal by using the shortcut `Ctrl + ~`. Now, type in and run the following command:
 
 ``` g++ example/main.cpp ```
 
