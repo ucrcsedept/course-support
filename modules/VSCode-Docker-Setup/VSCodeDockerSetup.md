@@ -18,6 +18,19 @@
 
 ## Configuring Containers on UCR Servers (Recommended)
 
-## Configuring Containers on Local Machine
+- Installing “Remote - Containers” and “Docker” extension on CS servers to enable working on containers in VSCode
+    - Refer to SSH module/video to make sure students know how to SSH
+- Getting the course-specific Dockerfile and docker-compose.yml file onto server into their own directory
+    - Run `docker build -t course-name-image`
+- Run the container using the “Remote - Containers” extension so that you can work in containers using the VSCode interface.
+    - Use a **gif** to demonstrate this
 
+## Configuring Containers on Local Machine
+- Installing Docker Desktop on Windows/MacOS, or Docker Community for Linux machines
+    - Windows - set up variables so you can use docker on command line
+    - Linux - set up user verification so you don’t have to `sudo docker` every time.
+- Rest of the instructions are same as above
+- **Mileage may vary, make sure this is emphasized**
 ## Example
+- Using certain software within containers will be course specific, so it is important that students at least know how to access these containers. Make sure they know to refer to course specific documentation for tutorials on how to use whatever is in the container they configure.
+    - Possibly add an example. Use the existing dockerfiles that are in the current repository on local machine.
