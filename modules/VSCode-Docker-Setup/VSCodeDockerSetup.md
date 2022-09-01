@@ -23,22 +23,27 @@ Since containers are portable packages of software, Docker will be used to packa
 
 Being able to use containers will also be important beyond the courses here at UCR. The use of containers across the world has been increasing among both personal users/developers and the industry. The popularity of containerization and even just Docker itself has been increasing. In 2020, [StackOverflow released their yearly developer survey](https://www.section.io/engineering-education/why-is-docker-so-popular/#The_popularity_of_Docker:~:text=The%20popularity%20of%20Docker), which shows just how fast Docker has been growing. With the service growing more popular, we want to incorporate it into our courses to give everyone more experience with containerization software, while also making it incredibly useful.
 
+## Optional: What are Dockerfiles?
+
 ---
 
 ## Configuring Containers on UCR Servers (Recommended)
 
-- Installing “Remote - Containers” and “Docker” extension on CS servers to enable working on containers in VSCode
-    - Refer to SSH module/video to make sure students know how to SSH
+- Refer to SSH module/video to make sure students know how to SSH
 - Getting the course-specific Dockerfile and docker-compose.yml file onto server into their own directory
-    - Use Singularity to create image and container
-- Run the container using the “Remote - Containers” extension so that you can work in containers using the VSCode interface.
-    - Use a **gif** to demonstrate this
+- Introduce Singularity
+    - Why Singularity?
+        - Mounts to host file system so you can use VSCode
+        - Supports Docker images/containers
 
 ## Configuring Containers on Local Machine
 - Installing Docker Desktop on Windows/MacOS, or Docker Community for Linux machines
     - Windows - set up variables so you can use docker on command line
     - Linux - set up user verification so you don’t have to `sudo docker` every time.
-- Rest of the instructions are same as above
+- Installing Docker and Remote - Containers VSCode plugins to enable working on containers in VSCode
+- Getting the course-specific Dockerfile and docker-compose.yml file onto server into their own directory
+- Using Docker to build and run containers on local machine
+    - Uses Remote - Containers plugins to work on containers using VSCode interface.
 - **Mileage may vary, make sure this is emphasized**
 ## Example
 - Using certain software within containers will be course specific, so it is important that students at least know how to access these containers. Make sure they know to refer to course specific documentation for tutorials on how to use whatever is in the container they configure.
