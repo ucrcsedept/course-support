@@ -30,7 +30,7 @@ Being able to use containers will also be important beyond the courses here at U
 - Installing “Remote - Containers” and “Docker” extension on CS servers to enable working on containers in VSCode
     - Refer to SSH module/video to make sure students know how to SSH
 - Getting the course-specific Dockerfile and docker-compose.yml file onto server into their own directory
-    - Run `docker build -t course-name-image`
+    - Use Singularity to create image and container
 - Run the container using the “Remote - Containers” extension so that you can work in containers using the VSCode interface.
     - Use a **gif** to demonstrate this
 
