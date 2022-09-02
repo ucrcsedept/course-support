@@ -2,15 +2,23 @@
 
 In this module, you will learn about containers, and how to work within them in VSCode. Containers are isolated environments used to develop, ship and run applications. The two containerization services we will be using are called Docker and Singularity, and we will be using them to package together all the software you need for a certain course.
 
-## What is Docker?
+## What is Containerization?
 
-Simply put, Docker is a containerization platform that is used to package applications into containers that can be run on *any* system. This is because Docker uses virtualization (not to be confused with virtual machines) to run the applications in the containers in an isolated, easily portable environment. Being able to package your applications in this manner is very important because it is impossible to replicate all the conditions that you have on your local machine on others.
-
-## What is Singularity?
+When software is being developed in a specific environment, deploying or transferring the code for that software may result in bugs and errors ("But it works on my machine!"). A common example of this problem happening is when code is transferred between two different operating systems, or two different processor architectures (x86 vs ARM). This problem is directly addressed with something called containerization, which is when we package that same code with the necessary operating system libraries and dependencies into a small, lightweight exectuable called a container that can be run on any computer. Being able to package your applications in this manner is very important because it is impossible to replicate all the conditions that you have on your local machine on others. Creating containers uses virtualization (not to be confused with VMs) to create these small, isolated development environments. 
 
 ### Containers vs Virtual Machines
 
-While containers are very similar to a VM in that they both allow you to run applications in isolation with all dependencies and required software, VMs require a whole OS, which means they are very slow and resource heavy. Containers are built from images, which can be thought of a lightweight version of an OS that has only the required processes and dependencies to run the application, making them much faster. Essentially, containers directly address the cons of using VMs, while also keeping their benefits.
+While containers are very similar to a VM in that they both allow you to run applications in isolation with all dependencies and required software, VMs require a whole OS, which means they are very slow and resource heavy. Containers are built from images, which can be thought of a lightweight version of an OS that has only the required processes and dependencies to run the application, making them much faster and take up less resources. Essentially, containers directly address the cons of using VMs, while also keeping their benefits.
+
+### Why use Containerization for courses?
+
+Since containers are portable packages of software, they will be used to package all required software for a certain course, which allows for easy and convinent setup. It will trivialize the setup process between all classes that choose to use Docker to package their software in this manner, while also being quick and OS-independent. The only thing you need to do if you are doing this for the first time is install Docker (if you plan to run the container on your own computer instead of UCR servers). Every other time, you simply have to download the course's given `Dockerfile` and `docker-compose.yml` file, and run a few commands to get everything you need. 
+
+Being able to use containers will also be important beyond the courses here at UCR. The use of containers across the world has been increasing among both personal users/developers and the industry. The popularity of containerization and Docker itself has been increasing. In 2020, [StackOverflow released their yearly developer survey](https://www.section.io/engineering-education/why-is-docker-so-popular/#The_popularity_of_Docker:~:text=The%20popularity%20of%20Docker), which shows just how fast Docker has been growing. With the service growing more popular, we want to incorporate it into our courses to give everyone more experience with containerization software, while also making it incredibly useful.
+
+---
+
+## What is Docker?
 
 <p align="center">
    <img src="images/docker-example.png">
@@ -19,11 +27,8 @@ While containers are very similar to a VM in that they both allow you to run app
    Visual example of Docker, with the Docker Engine running as a layer between the OS kernel and the containerized applications (source: <a href="https://www.docker.com/resources/what-container/">Docker</a>)
 </p>
 
-## Why use containerization for courses?
 
-Since containers are portable packages of software, they will be used to package all required software for a certain course, which allows for easy and convinent setup. It will trivialize the setup process between all classes that choose to use Docker to package their software in this manner, while also being quick and OS-independent. The only thing you need to do if you are doing this for the first time is install Docker (if you plan to run the container on your own computer instead of UCR servers). Every other time, you simply have to download the course's given `Dockerfile` and `docker-compose.yml` file, and run a few commands to get everything you need. 
-
-Being able to use containers will also be important beyond the courses here at UCR. The use of containers across the world has been increasing among both personal users/developers and the industry. The popularity of containerization and Docker itself has been increasing. In 2020, [StackOverflow released their yearly developer survey](https://www.section.io/engineering-education/why-is-docker-so-popular/#The_popularity_of_Docker:~:text=The%20popularity%20of%20Docker), which shows just how fast Docker has been growing. With the service growing more popular, we want to incorporate it into our courses to give everyone more experience with containerization software, while also making it incredibly useful.
+## What is Singularity?
 
 ## Optional: What is a `Dockerfile` and a `docker-compose.yml` file?
 
