@@ -57,7 +57,22 @@ In order to access the containers for courses on local machines, you will first 
 
 1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. 
 
-2.  
+2. Open a Powershell terminal as admin by going to the start menu, right clicking, and click Run as Administrator.
+
+3. Run these commands within the Powershell terminal:
+
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+4. Download the Linux kernel update package [here](https://docs.microsoft.com/pl-pl/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package).
+
+5. Run this command in your Powershell. 
+
+```
+wsl --set-default-version 2
+``` 
 
 </details>
 
@@ -71,10 +86,11 @@ In order to access the containers for courses on local machines, you will first 
 
 </details>
 
+Now that Docker is set up, open VSCode and install two extensions: "Docker" and "Remote - Containers". Both should be verified by Microsoft. Now, create a folder for the course you are taking that is using containers. In this folder, you need to add a `Dockerfile` and a `docker-compose.yml` file. Those two files should have been given to you by an instructor, otherwise, they can be found [here]() at this repository.
+
 ### NOTES FOR THIS SECTION (IGNORE)
 
 - Installing Docker Desktop on Windows/MacOS, or Docker Community for Linux machines
-    - Windows - set up variables so you can use docker on command line
     - Linux - set up user verification so you don’t have to `sudo docker` every time.
 - Installing Docker and Remote - Containers VSCode plugins to enable working on containers in VSCode
 - Getting the course-specific Dockerfile and docker-compose.yml file onto server into their own directory
