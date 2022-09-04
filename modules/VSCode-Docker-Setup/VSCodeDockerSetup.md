@@ -40,6 +40,8 @@ Docker, as of the writing of this module, is by far the most popular containeriz
 - Need to do more research on `docker compose` command and the purpose of the `yml` file.
 ---
 
+There are two methods that you can use set up and build your course containers: either using the images that are on the UCR servers, or building them yourself with the given files on your own machine. 
+
 ## Accessing Containers on UCR Servers in VSCode (Recommended)
 
 First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example. Open your home directory folder, which for CS-related majors should be `/home/csmajs/[your_ucr_netid]`, or for non-CS-related majors, should be `/class/classes/[your_ucr_netid]`. Depending on which server you logged into, you should see an executable named after your course. For example, if you logged onto `cs100.cs.ucr.edu`, there should be an executable named `cs100` (no file extension) in your folder. That executable would be run by running the command `./cs100` into your terminal (Ctrl + \`). So, the command you would run to access the container for your course would be `./[course_name_here]`. This container already has all the required software for that course. All proper `Dockerfiles` and images have already been configured for your course, so all you need to do is run the executable script! 
@@ -74,7 +76,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 wsl --set-default-version 2
 ```
 
-Now, Docker should be fully working on your computer. To test this, open up a command prompt and type this command:
+Now, Docker should be fully working on your computer. To test this, open up Docker Desktop, then open up a command prompt and type this command:
 
 ```
 docker run --name hello-world-container hello-world
@@ -121,7 +123,25 @@ docker rm hello-world-container
 
 </details>
 
+> Note: Make sure Docker Desktop is open!
+
 Now that Docker is set up, open VSCode and install two extensions: "Docker" and "Remote - Containers". Both should be verified by Microsoft. Now, create a folder for the course you are taking that is using containers. In this folder, you need to add a `Dockerfile` and a `docker-compose.yml` file. Those two files should have been given to you by an instructor, otherwise, they can be found [here]() at this repository.
+
+Once you have the two required files, put them into their own folder, then open that folder in VSCode. We need to use these files to create the image that our container will be based on. To do that, run this command in your VSCode terminal (make sure you are in the folder with the `Dockerfile` and `docker-compose.yml` file):
+
+```
+docker compose up -d
+```
+
+> Note: A very useful feature of Docker is that because images are composed of different layers, adding layers to an image then rebuilding that image will not take nearly as long as creating the inital image due to caching.
+
+Depending on your course and how much software it requires, this may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Remote - Containers: Open Folder in Container". You will be prompted to select a folder. Select the folder that contains the `Dockerfile` and the `docker-compose.yml` files. A new instance of VSCode will open, this time within the container. To know that this was successful, open a terminal, and the user should read something like this:
+
+```
+root@d4a9db64886f:/workspaces/[course_name_here]#
+```
+
+Now, you are in your container with the VSCode interface!
 
 ### NOTES FOR THIS SECTION (IGNORE)
 
