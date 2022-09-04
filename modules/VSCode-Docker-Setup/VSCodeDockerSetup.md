@@ -141,7 +141,7 @@ Depending on your course and how much software it requires, this may take a whil
 root@d4a9db64886f:/workspaces/[course_name_here]#
 ```
 
-Now, you are in your container with the VSCode interface!
+Now, you are in your course container with the VSCode interface!
 
 ### NOTES FOR THIS SECTION (IGNORE)
 
