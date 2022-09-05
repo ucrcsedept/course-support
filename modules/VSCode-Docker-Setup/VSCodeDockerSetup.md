@@ -40,7 +40,7 @@ Docker, as of the writing of this module, is by far the most popular containeriz
 - Need to do more research on `docker compose` command and the purpose of the `yml` file.
 ---
 
-There are two methods that you can use set up and build your course containers: either using the images that are on the UCR servers, or building them yourself with the given files on your own machine. 
+There are two methods that you can use set up and build your course containers: either using the images that are on the UCR servers, or building them yourself with the given files on your own machine. We recommend using the UCR servers, since everything is already configured for you on the servers.
 
 ## Accessing Containers on UCR Servers in VSCode (Recommended)
 
@@ -48,7 +48,7 @@ First, you need to SSH to UCR servers for your course. If you do not know how to
 
 ## Accessing Containers on Local Machine
 
-> Note: The setup for this method takes considerably longer than using UCR servers. Also, note that virtualization must be enabled on your machine for this to work (usually enabled by default on most machines).
+> Note: The setup for this method takes considerably longer than using UCR servers, and will take up lots of resources on your computer. Also, note that virtualization must be enabled on your machine for this to work (usually enabled by default on most machines).
 
 In order to access the containers for courses on local machines, you will first need to install Docker.
 
@@ -119,11 +119,102 @@ docker rm hello-world-container
 </details>
 
 <details>
-<summary>Linux</summary>
+<summary>Linux (Ubuntu)</summary>
+
+> Note: These instructions are for Ubuntu. If you have a different distribution, find the instructions [here](https://docs.docker.com/desktop/install/linux-install/).
+
+1. Run the following commands:
+
+```bash
+sudo apt-get update
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+sudo mkdir -p /etc/apt/keyrings
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+sudo apt-get install docker-ce=5:20.10.17~3-0~ubuntu-focal docker-ce-cli=5:20.10.17~3-0~ubuntu-focal containerd.io docker-compose-plugin
+
+# Note that, at the writing of this module, the latest version of Docker was 5:20.10.17~3-0~ubuntu-focal. If you want to install the latest version of Docker, run the command: apt-cache madison docker-ce
+
+# ... then replace the version string 5:20.10.17~3-0~ubuntu-focal with the version string of the latest version.
+
+```
+
+These commands will install the Docker Engine. To ensure that it was installed correctly, run this command:
+
+```
+sudo docker run hello-world
+```
+
+The output should look something like this:
+
+```
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+
+OPTIONAL STEP: If you don't want to `sudo` every time you run Docker, run these commands:
+
+```bash
+sudo groupadd docker
+sudo usermod -aG docker $USER
+# Log out and log back in after running the above command
+newgrp docker 
+```
+
+You should now be able to run Docker without `sudo`. Try running the hello world container without `sudo` to confirm.
+
+3. While technically optional to install, Docker Deskop provides a very useful graphical interface to keep track of containers and images, and an easy way to run/stop containers.
+
+Download the latest version of Docker Desktop for your distribution [here](https://docs.docker.com/desktop/release-notes/).
+
+4. Install the package using `apt`:
+
+```bash
+sudo apt-get update
+sudo apt-get install ./[NAME_OF_FILE_DOWNLOADED]
+
+# For example, the latest version at the writing of this module was docker-desktop-4.12.0-amd64.deb, so the command was...
+# sudo apt-get install ./docker-desktop-4.12.0-amd64.deb
+```
+
+You should now be able to open Docker Desktop.
 
 </details>
 
-> Note: Make sure Docker Desktop is open!
+> Note: Make sure Docker Desktop is open before doing anything below!
 
 Now that Docker is set up, open VSCode and install two extensions: "Docker" and "Remote - Containers". Both should be verified by Microsoft. Now, create a folder for the course you are taking that is using containers. In this folder, you need to add a `Dockerfile` and a `docker-compose.yml` file. Those two files should have been given to you by an instructor, otherwise, they can be found [here]() at this repository.
 
@@ -135,7 +226,7 @@ docker compose up -d
 
 > Note: A very useful feature of Docker is that because images are composed of different layers, adding layers to an image then rebuilding that image will not take nearly as long as creating the inital image due to caching.
 
-Depending on your course and how much software it requires, this may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Remote - Containers: Open Folder in Container". You will be prompted to select a folder. Select the folder that contains the `Dockerfile` and the `docker-compose.yml` files. A new instance of VSCode will open, this time within the container. To know that this was successful, open a terminal, and the user should read something like this:
+Depending on your course and how much software it requires, creating the image may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Remote - Containers: Open Folder in Container". You will be prompted to select a folder. Select the folder that contains the `Dockerfile` and the `docker-compose.yml` files. A new instance of VSCode will open, and Docker will build the container based on the image. Once it is done, you will now be placed in the container. To know that this was successful, open a terminal, and the user should read something like this:
 
 ```
 root@d4a9db64886f:/workspaces/[course_name_here]#
