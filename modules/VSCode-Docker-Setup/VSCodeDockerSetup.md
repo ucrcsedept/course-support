@@ -59,7 +59,11 @@ In order to access the containers for courses on local machines, you will first 
 
 1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. 
 
-2. Open a Powershell terminal as admin by going to the start menu, right clicking, and click Run as Administrator.
+2. Open a Powershell terminal as admin by going to the start menu, searching for Powershell, right clicking Powershell, and click Run as Administrator.
+
+<p align="center">
+   <img src="images/powershelladmin.png">
+</p>
 
 3. Run these commands within the Powershell terminal:
 
@@ -68,7 +72,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-4. Download the Linux kernel update package [here](https://docs.microsoft.com/pl-pl/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package).
+4. Download the Linux kernel update package [here](https://docs.microsoft.com/pl-pl/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package). Run the file you download from there.
 
 5. Run this command in your Powershell. 
 
@@ -200,7 +204,7 @@ You should now be able to run Docker without `sudo`. Try running the hello world
 
 Download the latest version of Docker Desktop for your distribution [here](https://docs.docker.com/desktop/release-notes/).
 
-4. Install the package using `apt`:
+4. Install the package using `apt` (make sure you are in the directory where the Docker Desktop package was downloaded):
 
 ```bash
 sudo apt-get update
@@ -233,15 +237,6 @@ root@d4a9db64886f:/workspaces/[course_name_here]#
 ```
 
 Now, you are in your course container with the VSCode interface!
-
-### NOTES FOR THIS SECTION (IGNORE)
-
-- Installing Docker Desktop on Windows/MacOS, or Docker Community for Linux machines
-    - Linux - set up user verification so you don’t have to `sudo docker` every time.
-- Installing Docker and Remote - Containers VSCode plugins to enable working on containers in VSCode
-- Getting the course-specific Dockerfile and docker-compose.yml file onto server into their own directory
-- Using Docker to build and run containers on local machine
-    - Uses Remote - Containers plugins to work on containers using VSCode interface.
 
 ## Video Examples
 ### NOTES FOR THIS SECTION (IGNORE)
