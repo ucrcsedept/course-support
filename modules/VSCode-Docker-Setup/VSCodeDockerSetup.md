@@ -36,6 +36,8 @@ Docker, as of the writing of this module, is by far the most popular containeriz
 Containers are built from images, and we can build our own images using something called a `Dockerfile`. Usually, we don't build our images from scratch, and instead import them from Docker Hub as a base image (think of it as importing a library), and build upon that base image. For example, one of the most popular images on Docker Hub is an image of the Ubuntu distibution of Linux, which is a stripped down version of the actual operating system. We can import that image, and add to it using the commands given to us. Those commands can be used to add the dependencies needed for any project. If we had some project that was using cmake, then we would be able to use the Linux package manager tool to add cmake to that image. The `Dockerfile` for this scenario would look something like this:
 
 ```Dockerfile
+# SYNTAX:
+# COMMAND arguments
 FROM ubuntu                   # imports the Ubuntu image from Docker Hub
 RUN apt-get update            # updates package list to newest versions
 RUN apt-get install cmake     # installs cmake on image
