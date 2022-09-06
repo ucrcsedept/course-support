@@ -46,16 +46,16 @@ There are two methods that you can use set up and build your course containers: 
 
 First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example. Open your home directory folder, which for CS-related majors should be `/home/csmajs/[your_ucr_netid]`, or for non-CS-related majors, should be `/class/classes/[your_ucr_netid]`. Depending on which server you logged into, you should see an executable named after your course. For example, if you logged onto `cs100.cs.ucr.edu`, there should be an executable named `cs100` (no file extension) in your folder. That executable would be run by running the command `./cs100` into your terminal (Ctrl + \`). So, the command you would run to access the container for your course would be `./[course_name_here]`. This container already has all the required software for that course. All proper `Dockerfiles` and images have already been configured for your course, so all you need to do is run the executable script! 
 
-## Accessing Containers on Local Machine
+## Optional: Accessing Containers on Local Machine
 
 > Note: The setup for this method takes considerably longer than using UCR servers, and will take up lots of resources on your computer. Also, note that virtualization must be enabled on your machine for this to work (usually enabled by default on most machines).
 
-In order to access the containers for courses on local machines, you will first need to install Docker.
+Unlike the first method, there is a lot of setup if you want to access the containers on your local machine rather than through SSH. We recommend this method if you are just curious about Docker and want to use it outside of class, if you prefer working on a local machine rather than a remote one, or if the above method isn't working for you. In all other cases, we recommend you use the above method rather than this one. 
+
+The first thing you must do is install Docker, which is OS-specific. Click the dropdown for your operating system, and follow the instructions to install Docker.
 
 <details>
 <summary>Windows</summary>
-
-> Note: Docker's hardware and software requirements are a lot more strict than other common software. Check [here](https://docs.docker.com/desktop/install/windows-install/) to make sure your machine will work with Docker.
 
 1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. 
 
@@ -230,7 +230,7 @@ docker compose up -d
 
 > Note: A very useful feature of Docker is that because images are composed of different layers, adding layers to an image then rebuilding that image will not take nearly as long as creating the inital image due to caching.
 
-Depending on your course and how much software it requires, creating the image may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Remote - Containers: Open Folder in Container". You will be prompted to select a folder. Select the folder that contains the `Dockerfile` and the `docker-compose.yml` files. A new instance of VSCode will open, and Docker will build the container based on the image. Once it is done, you will now be placed in the container. To know that this was successful, open a terminal, and the user should read something like this:
+Depending on your course and how much software it requires, creating the image may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Remote - Containers: Open Folder in Container". You will be prompted to select a folder. Select the folder that contains the `Dockerfile` and the `docker-compose.yml` files. You will see a prompt asking you what to base the container on. Click on "From Dockerfile". A new instance of VSCode will open, and Docker will build the container based on the image. Once it is done, you will now be placed in the container. To know that this was successful, open a terminal, and the user should read something like this:
 
 ```
 root@d4a9db64886f:/workspaces/[course_name_here]#
@@ -239,8 +239,7 @@ root@d4a9db64886f:/workspaces/[course_name_here]#
 Now, you are in your course container with the VSCode interface!
 
 ## Video Examples
-### NOTES FOR THIS SECTION (IGNORE)
 
-- Using certain software within containers will be course specific, so it is important that students at least know how to access these containers. Make sure they know to refer to course specific documentation for tutorials on how to use whatever is in the container they configure.
-    - Add an example. Use the existing dockerfiles that are in the current course-support repository.
-    - Video example for both methods should and will be made.
+For Windows, a video example of configuring Docker and setting up a container locally can be found here.
+
+[![Example video for configuring Docker and setting up a container locally on Windows](https://img.youtube.com/vi/UJTSJiH0CnM/maxresdefault.jpg)](https://www.youtube.com/watch?v=UJTSJiH0CnM)
