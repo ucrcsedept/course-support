@@ -31,14 +31,23 @@ Docker, as of the writing of this module, is by far the most popular containeriz
    Visual example of Docker, with the Docker Engine running as a layer between the OS kernel and the containerized applications (source: <a href="https://www.docker.com/resources/what-container/">Docker</a>)
 </p>
 
-## Optional: What is a `Dockerfile` and a `docker-compose.yml` file?
+## What is a `Dockerfile` and a `docker-compose.yml` file?
 
-### NOTES FOR THIS SECTION (IGNORE)
+Containers are built from images, and we can build our own images using something called a `Dockerfile`. Usually, we don't build our images from scratch, and instead import them from Docker Hub as a base image (think of it as importing a library), and build upon that base image. For example, one of the most popular images on Docker Hub is an image of the Ubuntu distibution of Linux, which is a stripped down version of the actual operating system. We can import that image, and add to it using the commands given to us. Those commands can be used to add the dependencies needed for any project. If we had some project that was using cmake, then we would be able to use the Linux package manager tool to add cmake to that image. The `Dockerfile` for this scenario would look something like this:
 
-- Introduce Dockerhub, (base) images, layering
-     - Have a basic "hello world" image example
-- Need to do more research on `docker compose` command and the purpose of the `yml` file.
----
+```Dockerfile
+FROM ubuntu                   # imports the Ubuntu image from Docker Hub
+RUN apt-get update            # updates package list to newest versions
+RUN apt-get install cmake     # installs cmake on image
+```
+
+A `Dockerfile` consists of commands used to build upon a base image using layers. A layer represents one instruction that modifies the image in the Dockerfile.
+
+A `docker-compose.yml` file is used to define a build a multi-container application. This type of application would be useful in a microservice architecture. Think of Amazon for example: their online shopping service is composed of many smaller services. They have services dedicated to accounts, their product catalog, carts, orders, and more. All of these microservices come together to provide a complete online shopping service. In general, it is good practice to isolate each individual process to their own container, so that a failure in one process does not affect another.
+
+For our purposes, we are using `docker-compose.yml` to make it easy to build and take down containers with a simple command (`docker compose up` and `docker compose down`).
+
+## Accessing Containers
 
 There are two methods that you can use set up and build your course containers: either using the images that are on the UCR servers, or building them yourself with the given files on your own machine. We recommend using the UCR servers, since everything is already configured for you on the servers.
 
