@@ -1,18 +1,21 @@
 FROM ubuntu:22.04
 
-ARG DEBIAN_FRONTEND=noninteractive
-ARG LANG=C.UTF-8
-ARG LC_ALL=C.UTF-8
-ARG TZ="America/Los_Angeles"
+# Set up environment variables used during the build and
+# when the container is run afterward.
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV TZ="America/Los_Angeles"
 
+# Update software
 RUN apt -y update && apt -y upgrade
 
-#Already Preinstalled: gcc g++ make
-# Basic software
+# Basic software that should be available in all containers.
 RUN apt -y install vim build-essential
 
-# Software for CS 100
+# Software specific to CS 100
 RUN apt -y install valgrind doxygen cmake bison flex
 
-# Docker shell
-SHELL ["/bin/bash", "-c"]
+# Command to run when a container starts
+CMD ["sleep", "infinity"]
+
