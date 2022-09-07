@@ -5,7 +5,7 @@ ARG LANG=C.UTF-8
 ARG LC_ALL=C.UTF-8
 ARG TZ="America/Los_Angeles"
 
-RUN apt -y update && RUN apt -y upgrade
+RUN apt -y update && apt -y upgrade
 
 #Already Preinstalled: gcc g++ make
 # Basic software
