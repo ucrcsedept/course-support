@@ -18,8 +18,6 @@ Since containers are portable packages of software, they will be used to package
 
 Being able to use containers will also be important beyond the courses here at UCR. The use of containers across the world has been increasing among both personal users/developers and the industry. The popularity of containerization and Docker itself has been increasing. [StackOverflow's 2020 Developer Survey](https://www.section.io/engineering-education/why-is-docker-so-popular/#The_popularity_of_Docker:~:text=The%20popularity%20of%20Docker) shows just how fast Docker has been growing. With the service growing more popular, we want to incorporate it into our courses to give everyone more experience with containerization software, while also making it incredibly useful.
 
----
-
 ## What is Docker?
 
 Docker, as of the writing of this module, is by far the most popular containerization service. They have the largest image library, known as [Docker Hub](https://hub.docker.com/), where you can find the base image you need to start with. You can build upon a base image with something called a `Dockerfile` to install whatever dependencies you need to get your application to run (this is commonly referred to as adding layers to the base image). With this file, you can build the image, and whenever you need that isolated environment, you build the container using the image. If you plan to run your containers locally, we will go over this process more in depth later on in the module.
@@ -47,7 +45,7 @@ A `Dockerfile` consists of commands used to build upon a base image using layers
 
 A `docker-compose.yml` file is used to define a build a multi-container application. This type of application would be useful in a microservice architecture. Think of Amazon for example: their online shopping service is composed of many smaller services. They have services dedicated to accounts, their product catalog, carts, orders, and more. All of these microservices come together to provide a complete online shopping service. In general, it is good practice to isolate each individual process to their own container, so that a failure in one process does not affect another.
 
-For our purposes, since most classes don't require multiple containers, we are using `docker-compose.yml` to make it easy to build and take down containers with a simple command (`docker compose up` and `docker compose down`).
+For our purposes, since most classes don't require multiple containers, we are using `docker-compose.yml` to make it easy to build and take down containers with a simple command (`docker compose up` and `docker compose down`) This only applies to those who wish to use Docker locally and work on their own machines.
 
 ---
 
@@ -57,7 +55,7 @@ There are two methods that you can use set up and build your course containers: 
 
 ## Accessing Containers on UCR Servers via SSH (Recommended)
 
-First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example (replace cs010b with name of your course). Open your home directory folder, which for CS-related majors should be `/home/csmajs/[your_ucr_netid]`, or for non-CS-related majors, should be `/class/classes/[your_ucr_netid]`. There will be a script that will configure your image and container when you run it. This executable is named after the course, and it will be located in this directory: `/usr/local/bin`. 
+First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example (replace CS010B with name of your course). There will be a script that will configure your image and container when you run it. This executable is named after the course, and it will be located in this directory: "`/usr/local/bin`" (regardless of class). 
 
 For example, if you logged onto `cs100.cs.ucr.edu`, you would have to change into that directory and run the script. To do that, the command you would use is:
 
