@@ -11,10 +11,18 @@ ENV TZ="America/Los_Angeles"
 RUN apt -y update && apt -y upgrade
 
 # Basic software that should be available in all containers.
-RUN apt -y install vim build-essential
+RUN apt -y install vim build-essential git wget
 
-# Software specific to CS 100
-RUN apt -y install valgrind doxygen cmake bison flex git
+# Software specific to CS 009A
+RUN apt -y install python3-devel python3-pip
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
+  /bin/bash ~/anaconda.sh -b -p /opt/conda && \
+  rm ~/anaconda.sh && \
+  ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+  echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+  find /opt/conda/ -follow -type f -name '*.a' -delete && \
+  find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
+  /opt/conda/bin/conda clean -afy
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
