@@ -14,7 +14,7 @@ RUN apt -y update && apt -y upgrade
 RUN apt -y install vim build-essential git wget
 
 # Software specific to CS 009A
-RUN apt -y install python3-devel python3-pip
+RUN apt -y install python3-dev python3-pip
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
   /bin/bash ~/anaconda.sh -b -p /opt/conda && \
   rm ~/anaconda.sh && \
