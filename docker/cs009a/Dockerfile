@@ -11,7 +11,7 @@ ENV TZ="America/Los_Angeles"
 RUN apt -y update && apt -y upgrade
 
 # Basic software that should be available in all containers.
-RUN apt -y install vim build-essential git wget
+RUN apt -y install vim build-essential git wget tmux
 
 # Software specific to CS 009A
 RUN apt -y install python3-dev python3-pip
