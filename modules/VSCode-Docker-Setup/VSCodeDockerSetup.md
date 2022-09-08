@@ -55,7 +55,29 @@ There are two methods that you can use set up and build your course containers: 
 
 ## Accessing Containers on UCR Servers in VSCode (Recommended)
 
-First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example. Open your home directory folder, which for CS-related majors should be `/home/csmajs/[your_ucr_netid]`, or for non-CS-related majors, should be `/class/classes/[your_ucr_netid]`. Depending on which server you logged into, you should see an executable named after your course. For example, if you logged onto `cs100.cs.ucr.edu`, there should be an executable named `cs100` (no file extension) in your folder. That executable would be run by running the command `./cs100` into your terminal (Ctrl + \`). So, the command you would run to access the container for your course would be `./[course_name_here]`. This container already has all the required software for that course. All proper `Dockerfiles` and images have already been configured for your course, so all you need to do is run the executable script! 
+First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example. Open your home directory folder, which for CS-related majors should be `/home/csmajs/[your_ucr_netid]`, or for non-CS-related majors, should be `/class/classes/[your_ucr_netid]`. There will be a script that will configure your image and container when you run it. This executable is named after the course, and it will be located in this directory: `/usr/local/bin`. For example, if you logged onto `cs100.cs.ucr.edu`, you would have to change into that directory and run the script. To do that, the command you would use is:
+
+```bash
+cd /usr/local/bin && ./cs100
+```
+
+After that, your terminal username should look like this:
+
+```
+[cs100 container [your_ucr_netid]@[server_name] bin]$
+```
+
+To get back into your home directory, you can use `cd ~`.
+
+The process is the same for all other courses that use containers, so you would run:
+
+```
+cd /usr/local/bin && ./[course_name]
+```
+
+to access your course's container.
+
+All proper `Dockerfiles` and images have already been configured for your course, so all you need to do is run the executable script! 
 
 ## Optional: Accessing Containers on Local Machine
 
