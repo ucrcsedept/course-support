@@ -81,7 +81,11 @@ cd /usr/local/bin && ./[course_name]
 
 to access your course's container.
 
-All proper `Dockerfiles` and images have already been configured for your course, so all you need to do is run the executable script! 
+All proper `Dockerfiles` and images have already been configured for your course, so all you need to do is run the executable script!
+
+A video example of accessing containers in VSCode via SSH can be seen here:
+
+[![Example video for accessing a contanier through SSH](https://img.youtube.com/vi/Nl7YP1I5IeU/maxresdefault.jpg)](https://youtu.be/Nl7YP1I5IeU)
 
 ## Optional: Accessing Containers on Local Machine
 
@@ -275,12 +279,6 @@ root@d4a9db64886f:/workspaces/[course_name_here]#
 
 Now, you are in your course container with the VSCode interface!
 
-## Video Examples
-
-A video example of accessing containers in VSCode via SSH can be seen here:
-
-[![Example video for accessing a contanier through SSH](https://img.youtube.com/vi/Nl7YP1I5IeU/maxresdefault.jpg)](https://youtu.be/Nl7YP1I5IeU)
-
-For Windows, a video example of configuring Docker and setting up a container locally can be found here:
+For Windows, a video example of configuring Docker and setting up a container locally can be found here. If you are not on Windows, the second half of the video may be helpful as they contain the steps taken in VSCode. 
 
 [![Example video for configuring Docker and setting up a container locally on Windows](https://img.youtube.com/vi/UJTSJiH0CnM/maxresdefault.jpg)](https://www.youtube.com/watch?v=UJTSJiH0CnM)
