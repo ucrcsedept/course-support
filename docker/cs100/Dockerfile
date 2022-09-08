@@ -11,10 +11,10 @@ ENV TZ="America/Los_Angeles"
 RUN apt -y update && apt -y upgrade
 
 # Basic software that should be available in all containers.
-RUN apt -y install vim build-essential
+RUN apt -y install vim build-essential git wget tmux
 
 # Software specific to CS 100
-RUN apt -y install valgrind doxygen cmake bison flex git
+RUN apt -y install valgrind doxygen cmake bison flex 
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]

@@ -11,7 +11,7 @@ ENV TZ="America/Los_Angeles"
 RUN apt -y update && apt -y upgrade
 
 # Basic software that should be available in all containers.
-RUN apt -y install vim build-essential
+RUN apt -y install vim build-essential git wget tmux
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]

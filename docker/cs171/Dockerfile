@@ -13,7 +13,7 @@ RUN apt -y update && apt -y upgrade
 # Basic software that should be available in all containers.
 RUN apt -y install vim build-essential git wget tmux
 
-# Software specific to CS 009A
+# Software specific to CS 171
 RUN apt -y install python3-dev python3-pip
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
   /bin/bash ~/anaconda.sh -b -p /opt/conda && \

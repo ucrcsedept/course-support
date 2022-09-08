@@ -5,5 +5,5 @@
 
 version: '3.9'
 services:
-  cs009a:
+  cs009b:
     build: .
