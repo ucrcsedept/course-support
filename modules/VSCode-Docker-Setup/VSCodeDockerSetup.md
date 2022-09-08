@@ -31,7 +31,7 @@ Docker, as of the writing of this module, is by far the most popular containeriz
    Visual example of Docker, with the Docker Engine running as a layer between the OS kernel and the containerized applications (source: <a href="https://www.docker.com/resources/what-container/">Docker</a>)
 </p>
 
-## What is a `Dockerfile` and a `docker-compose.yml` file?
+### What is a `Dockerfile` and a `docker-compose.yml` file?
 
 Containers are built from images, and we can build our own images using something called a `Dockerfile`. Usually, we don't build our images from scratch, and instead import them from Docker Hub as a base image (think of it as importing a library), and build upon that base image. For example, one of the most popular images on Docker Hub is an image of the Ubuntu distibution of Linux, which is a stripped down version of the actual operating system. We can import that image, and add to it using the commands given to us. Those commands can be used to add the dependencies needed for any project. If we had some project that was using cmake, then we would be able to use the Linux package manager tool to add cmake to that image. The `Dockerfile` for this scenario would look something like this:
 
@@ -47,21 +47,25 @@ A `Dockerfile` consists of commands used to build upon a base image using layers
 
 A `docker-compose.yml` file is used to define a build a multi-container application. This type of application would be useful in a microservice architecture. Think of Amazon for example: their online shopping service is composed of many smaller services. They have services dedicated to accounts, their product catalog, carts, orders, and more. All of these microservices come together to provide a complete online shopping service. In general, it is good practice to isolate each individual process to their own container, so that a failure in one process does not affect another.
 
-For our purposes, we are using `docker-compose.yml` to make it easy to build and take down containers with a simple command (`docker compose up` and `docker compose down`).
+For our purposes, since most classes don't require multiple containers, we are using `docker-compose.yml` to make it easy to build and take down containers with a simple command (`docker compose up` and `docker compose down`).
+
+---
 
 ## Accessing Containers
 
 There are two methods that you can use set up and build your course containers: either using the images that are on the UCR servers, or building them yourself with the given files on your own machine. We recommend using the UCR servers, since everything is already configured for you on the servers.
 
-## Accessing Containers on UCR Servers in VSCode (Recommended)
+## Accessing Containers on UCR Servers via SSH (Recommended)
 
-First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example. Open your home directory folder, which for CS-related majors should be `/home/csmajs/[your_ucr_netid]`, or for non-CS-related majors, should be `/class/classes/[your_ucr_netid]`. There will be a script that will configure your image and container when you run it. This executable is named after the course, and it will be located in this directory: `/usr/local/bin`. For example, if you logged onto `cs100.cs.ucr.edu`, you would have to change into that directory and run the script. To do that, the command you would use is:
+First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example (replace cs010b with name of your course). Open your home directory folder, which for CS-related majors should be `/home/csmajs/[your_ucr_netid]`, or for non-CS-related majors, should be `/class/classes/[your_ucr_netid]`. There will be a script that will configure your image and container when you run it. This executable is named after the course, and it will be located in this directory: `/usr/local/bin`. 
+
+For example, if you logged onto `cs100.cs.ucr.edu`, you would have to change into that directory and run the script. To do that, the command you would use is:
 
 ```bash
 cd /usr/local/bin && ./cs100
 ```
 
-After that, your terminal username should look like this:
+After that, you should now be inside the container. To confirm, your terminal username should look like this:
 
 ```
 [cs100 container [your_ucr_netid]@[server_name] bin]$
@@ -71,7 +75,7 @@ To get back into your home directory, you can use `cd ~`.
 
 The process is the same for all other courses that use containers, so you would run:
 
-```
+```bash
 cd /usr/local/bin && ./[course_name]
 ```
 
@@ -273,6 +277,10 @@ Now, you are in your course container with the VSCode interface!
 
 ## Video Examples
 
-For Windows, a video example of configuring Docker and setting up a container locally can be found here.
+A video example of accessing containers in VSCode via SSH can be seen here:
+
+[![Example video for accessing a contanier through SSH](https://img.youtube.com/vi/Nl7YP1I5IeU/maxresdefault.jpg)](https://youtu.be/Nl7YP1I5IeU)
+
+For Windows, a video example of configuring Docker and setting up a container locally can be found here:
 
 [![Example video for configuring Docker and setting up a container locally on Windows](https://img.youtube.com/vi/UJTSJiH0CnM/maxresdefault.jpg)](https://www.youtube.com/watch?v=UJTSJiH0CnM)
