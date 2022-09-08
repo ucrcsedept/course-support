@@ -13,9 +13,6 @@ RUN apt -y update && apt -y upgrade
 # Basic software that should be available in all containers.
 RUN apt -y install vim build-essential
 
-# Software specific to CS 100
-RUN apt -y install valgrind doxygen cmake bison flex
-
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
 
