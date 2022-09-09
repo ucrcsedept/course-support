@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# This script launches Logisim per the instructions at http://www.cburch.com/logisim/download.html
-
-java -jar /usr/csshare/pkgs/logisim-generic-2.7.1.jar
