@@ -1,4 +1,6 @@
-FROM ubuntu:22.04
+FROM ubuntu:18.04
+
+# CILK is not included in more recent versions of Ubuntu.
 
 # Set up environment variables used during the build and
 # when the container is run afterward.
