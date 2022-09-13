@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # CILK is not included in more recent versions of Ubuntu.
 
@@ -16,7 +16,17 @@ RUN apt -y update && apt -y upgrade
 RUN apt -y install vim build-essential git wget tmux
 
 # Software specific to CS 142
-#RUN apt -y install valgrind doxygen cmake bison flex 
+RUN apt -y install cmake libcilkrts5
+
+#Parlaylib
+RUN cd /usr/local/src/
+RUN git clone https://github.com/cmuparlay/parlaylib.git
+
+#Build it
+RUN mkdir /usr/local/src/parlaylib/build
+RUN chmod 755 /usr/local/src/parlaylib/build
+
+RUN cd /usr/local/src/parlaylib/build; umask 0022; cmake ..; cmake --build . --target install
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
