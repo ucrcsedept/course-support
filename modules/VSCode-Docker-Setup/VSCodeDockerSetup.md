@@ -96,7 +96,7 @@ The first thing you must do is install Docker, which is OS-specific. Click the d
 <details>
 <summary>Windows</summary>
 
-1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. 
+1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. You may need to create an account.
 
 2. Open a Powershell terminal as admin by going to the start menu, searching for Powershell, right clicking Powershell, and click Run as Administrator.
 
@@ -158,6 +158,53 @@ docker rm hello-world-container
 
 <details>
 <summary>MacOS</summary>
+
+1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. You may need to create an account.
+
+2. Open the `docker.dmg` file. After it opens, you should see a window like this:
+
+<p align="center">
+   <img src="images/dockerdraganddrop.png" alt="Drag and Drop Docker Window"> 
+</p>
+
+In the window, drag and drop the Docker icon to the folder, and it will automatically add Docker Desktop to your applications folder.
+
+3. Go to your applications folder, and open Docker Desktop. It should ask for your system password since Docker requires admin access.
+
+Now, Docker should be fully working on your computer. To test this, open up Docker Desktop, then open up a command prompt and type this command:
+
+```
+docker run --name hello-world-container hello-world
+```
+
+The output should be something like:
+```
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+
+To save space/resources, remove the container.
+```
+docker rm hello-world-container
+```
 
 </details>
 
