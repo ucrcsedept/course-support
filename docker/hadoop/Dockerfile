@@ -1,4 +1,4 @@
-FROM apache/hadoop
+FROM apache/hadoop-runner
 
 #ARG JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
 #ARG HW_HADOOP_DIR=/opt/home/cs172-s22/hadoop
@@ -29,3 +29,29 @@ FROM apache/hadoop
 #ARG HADOOP_PID_DIR=${HADOOP_PID_DIR}
 #ARG HADOOP_SECURE_DN_PID_DIR=${HADOOP_PID_DIR}
 #ARG HADOOP_IDENT_STRING=$USER
+
+RUN yum makecache fast
+#Unsure if this is really needed, but apache said it was. May not be if 
+RUN sudo yum install -y ssh pdsh
+
+#Note: I'm not an expert but there has to be a way to detect the stable version instead of outright hardcoding it
+
+#Download the Hadoop files in etc
+RUN cd /etc/
+RUN wget https://dlcdn.apache.org/hadoop/common/stable/hadoop-3.3.4.tar.gz --no-check-certificate
+RUN tar -xf hadoop-3.3.4.tar.gz
+
+#May need to verify keys? Unsure.
+
+#Extract out into normal staging area "home"
+RUN mv hadoop-3.3.4/* .
+
+#Remove extraneous folder
+RUN rm -rf hadoop-3.3.4
+
+
+#Tested Base Image, Tested simple example script from apache website
+#Volume not tested, but could be set up into /usr/home/
+#Note that the current home directory is set to /opt/hadoop/
+
+CMD [ "sleep", "infinity" ]
