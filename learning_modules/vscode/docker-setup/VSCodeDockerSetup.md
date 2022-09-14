@@ -55,29 +55,7 @@ There are two methods that you can use set up and build your course containers: 
 
 ## Accessing Containers on UCR Servers via SSH (Recommended)
 
-First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example (replace CS010B with name of your course). There will be a script that will configure your image and container when you run it. This executable is named after the course, and it will be located in this directory: "`/usr/local/bin`" (regardless of class). 
-
-For example, if you logged onto `cs100.cs.ucr.edu`, you would have to change into that directory and run the script. To do that, the command you would use is:
-
-```bash
-cd /usr/local/bin && ./cs100
-```
-
-After that, you should now be inside the container. To confirm, your terminal username should look like this:
-
-```
-[cs100 container [your_ucr_netid]@[server_name] bin]$
-```
-
-To get back into your home directory, you can use `cd ~`.
-
-The process is the same for all other courses that use containers, so you would run:
-
-```bash
-cd /usr/local/bin && ./[course_name]
-```
-
-to access your course's container.
+First, you need to SSH to UCR servers for your course. If you do not know how to, refer to [this video](https://www.youtube.com/watch?v=4wrQ-MFxO3Q) for an example (replace CS010B with name of your course). There will be a script that will configure your image and container when you run it. **The script can be run using an environment variable that has the same name as the course**. For example, if you logged into `cs100.cs.ucr.edu`, you would run the command `cs100`, and you will automatically be placed into your CS100 container. For any course that uses a container, the environment variable is just the name of the course.
 
 All proper `Dockerfiles` and images have already been configured for your course, so all you need to do is run the executable script!
 
