@@ -14,7 +14,7 @@ RUN apt -y update && apt -y upgrade
 RUN apt -y install vim build-essential git wget tmux
 
 # Software specific to CS 152
-# RUN apt -y install valgrind doxygen cmake bison flex 
+RUN apt -y install bison flex scala javacc
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
