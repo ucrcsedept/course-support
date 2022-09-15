@@ -61,7 +61,7 @@ All proper `Dockerfiles` and images have already been configured for your course
 
 A video example of accessing containers in VSCode via SSH can be seen here:
 
-[![Example video for accessing a contanier through SSH](https://img.youtube.com/vi/Nl7YP1I5IeU/maxresdefault.jpg)](https://youtu.be/Nl7YP1I5IeU)
+[![Example video for accessing a contanier through SSH](https://img.youtube.com/vi/0-LYQPDhM7c/maxresdefault.jpg)](https://www.youtube.com/watch?v=0-LYQPDhM7c)
 
 ## Optional: Accessing Containers on Local Machine
 
