@@ -19,10 +19,10 @@ in the section on technologies below may still be useful to you.
 
 Some technologies such as [Visual Studio Code](https://code.visualstudio.com/) and 
 [Docker](https://docs.docker.com/get-docker/) are widely used in industry, and also 
-available for use in CS courses.  There's some content about how to use them in CS 
+available for use in CS courses. There's some content about how to use them in CS 
 courses below; this can be used to learn these technologies for the first time, or 
 as a refresher.  If you are in a specific course, only some of this material may be 
-used.  You can refer to the Course Specific Material section above to see exactly
+used.  You can refer to the Course Specific Material section above to see 
 what material is relevant to any specific course.
 
 - [Visual Studio Code](/learning_modules/vscode)
