@@ -2,7 +2,7 @@
 
 ### Directory Structure
 
-Each directory named after a CS course (`cs010a`, `cs010b`, ....) contains the following for that course:
+Each directory named after a CS course (`cs010a`, `cs010b`, ....) in the [/docker](/docker) directory contains the following for that course:
 
 - A `Dockerfile` and `docker-compose.yml` file that can be used to set up a container that runs the software used by the course. `docker compose` can be run on personal computers, laptops, and servers that have Docker installed in order to build and run the container specified in the `Dockerfile`.
 
