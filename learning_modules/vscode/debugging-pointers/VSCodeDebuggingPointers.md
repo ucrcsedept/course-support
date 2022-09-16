@@ -1,6 +1,6 @@
 # Debugging Tutorial Part 1
 
-> Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
+> Authors: Victor Hill and Joshua Candelaria (special thanks to Neftali Watkinson and Kris Miller)
 
 Now that you know about pointers and how problematic they can be, we will be going over a useful tool that will help you catch your mistakes. Today, you will learn:
 

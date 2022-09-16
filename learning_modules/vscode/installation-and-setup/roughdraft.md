@@ -1,6 +1,6 @@
 # Introduction to Visual Studio Code and C++
 
-> Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
+> Authors: Victor Hill and Joshua Candelaria (special thanks to Neftali Watkinson and Kris Miller)
 
 Welcome to CS010B! In this lab, we will be configuring and introducing the basics of Visual Studio Code, an IDE with many useful features from syntax highlighting to intelligent code completion. In this introductory module, you will learn:
 

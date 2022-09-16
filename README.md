@@ -37,7 +37,6 @@ is available in the section on [Docker for Course Support](docker/README.md)
 The material that is used by for each course is linked below.
 
 - [CS 010B](/courses/cs010b/README.md)
-- [CS 100](/courses/cs100/README.md)
 
 Note: If a course you are taking isn't listed here, that likely means it is using
 some software that isn't documented here yet, for example use of VirtualBox in CS 164.

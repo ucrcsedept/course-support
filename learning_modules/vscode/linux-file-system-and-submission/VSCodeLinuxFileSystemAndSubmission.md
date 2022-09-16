@@ -1,6 +1,6 @@
 # Introduction to the Linux File System + Submitting to ZyBooks
 
-> Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
+> Authors: Victor Hill and Joshua Candelaria (special thanks to Neftali Watkinson and Kris Miller)
 
 Today's module will quickly go over the basics of the Linux file system and how to use the terminal, which uses a shell called Bash, to navigate through it. In this module, you will learn:
 
