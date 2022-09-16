@@ -1,6 +1,6 @@
 # Debugging Tutorial: Recursion
 
-> Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
+> Authors: Victor Hill and Joshua Candelaria (special thanks to Neftali Watkinson and Kris Miller)
 
 You have already learned how to use a debugger to help you diagnose issues found in programs that use pointers. Now, you will learn about the tools used to debug recursive functions. Today, you will learn:
 

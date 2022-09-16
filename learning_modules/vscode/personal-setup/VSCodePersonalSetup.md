@@ -1,6 +1,6 @@
 # Configuration of Your Own Development Environment
 
-> Authors: Victor Hill and Joshua Candelaria (special thanks to Professor Neftali Watkinson and Professor Kris Miller)
+> Authors: Victor Hill and Joshua Candelaria (special thanks to Neftali Watkinson and Kris Miller)
 
 You have been working on UCR servers to develop your programs. Now, today you will learn:
 
