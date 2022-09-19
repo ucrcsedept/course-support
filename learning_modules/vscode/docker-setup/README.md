@@ -51,7 +51,7 @@ For our purposes, since most classes don't require multiple containers, we are u
 
 ## Accessing Containers
 
-There are two methods that you can use set up and build your course containers: either using the images that are on the UCR servers, or building them yourself with the given files on your own machine. We recommend using the UCR servers, since everything is already configured for you on the servers. If you prefer a local setup, that method can found [here](../../docker/docker-setup/).
+There are two methods that you can use set up and build your course containers: either using the images that are on the UCR servers, or building them yourself with the given files on your own machine. We recommend using the UCR servers, since everything is already configured for you on the servers. If you prefer a local setup, that method can found [here](../../docker/docker-setup/README.md).
 
 ## Accessing Containers on UCR Servers via SSH (Recommended)
 
