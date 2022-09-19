@@ -2,7 +2,7 @@
 
 > Note: Virtualization must be enabled on your machine for this to work (usually enabled by default on most machines).
 
-We recommend this method if you are just curious about Docker and want to use it outside of class, if you prefer working on a local machine rather than a remote one, or if the remote method isn't working for you. In all other cases, we recommend you use the containers that are already configured for you on the UCR servers. 
+We recommend this method if you are just curious about Docker and want to use it outside of class, if you prefer working on a local machine rather than a remote one, or if the remote method isn't working for you. In all other cases, we recommend you use the containers that are already configured for you on the UCR servers. The method for using the UCR servers to access containers can be found [here](../../vscode/docker-setup/VSCodeDockerSetup.md)
 
 The first thing you must do is install Docker, which is OS-specific. Click the dropdown for your operating system, and follow the instructions to install Docker.
 
