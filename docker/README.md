@@ -16,4 +16,4 @@ Instructors and TAs can fork this repository and submit a pull request in order 
 
 ### For Students
 
-If you are required to use Docker for your course, or if you are just interested in setting up Docker on your own computer and using it there, you can follow the instructions on [Accessing Containers on Local Machine with Docker](/learning_modules/docker/docker-setup/README.md) in order to do so. You can use the `Dockerfile` and `docker-compose.yml` file for any of the courses in this repossitory when you do so.
+If you are required to use Docker for your course, or if you are just interested in setting up Docker on your own computer and using it there, you can follow the instructions on [Accessing Containers on Local Machine with Docker](/learning_modules/docker/docker-setup/README.md) in order to do so. You can use the `Dockerfile` and `docker-compose.yml` file for any of the courses in this repository when you do so.
