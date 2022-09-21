@@ -2,7 +2,7 @@
 
 > Note: Virtualization must be enabled on your machine for this to work (usually enabled by default on most machines).
 
-We recommend this method if you are just curious about Docker and want to use it outside of class, if you prefer working on a local machine rather than a remote one, or if the remote method isn't working for you. In all other cases, we recommend you use the containers that are already configured for you on the UCR servers.
+We recommend this method if you are just curious about Docker and want to use it outside of class, if you prefer working on a local machine rather than a remote one, or if the remote method isn't working for you. In all other cases, we recommend you use the containers that are already configured for you on the UCR servers. The method for using the UCR servers to access containers can be found [here](../../vscode/docker-setup/README.md).
 
 The first thing you must do is install Docker, which is OS-specific. Click the dropdown for your operating system, and follow the instructions to install Docker.
 
@@ -219,7 +219,7 @@ You should now be able to open Docker Desktop.
 
 > Note: Make sure Docker Desktop is open before doing anything below!
 
-Now that Docker is set up, open VSCode and install two extensions: "Docker" and "Remote - Containers". Both should be verified by Microsoft. Now, create a folder for the course you are taking that is using containers. In this folder, you need to add a `Dockerfile` and a `docker-compose.yml` file. Those two files should have been given to you by an instructor, otherwise, they can be found [here]() at this repository.
+Now that Docker is set up, open VSCode and install two extensions: "Docker" and "Remote - Containers". Both should be verified by Microsoft. Now, create a folder for the course you are taking that is using containers. In this folder, you need to add a `Dockerfile` and a `docker-compose.yml` file. Those two files should have been given to you by an instructor, otherwise, they can be found [here](../../../docker/) at this folder.
 
 Once you have the two required files, put them into their own folder, then open that folder in VSCode. We need to use these files to create the image that our container will be based on. To do that, run this command in your VSCode terminal (make sure you are in the folder with the `Dockerfile` and `docker-compose.yml` file):
 
