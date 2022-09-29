@@ -75,14 +75,12 @@ services:
 
 ## Container exiting immediately on run/compose?
 1. Remember to use the `-d` flag when using the docker compose command (`docker compose up -d`). It detaches the container from the terminal session and runs the container in the background.
-2. The main internal process of the container is ending. If this is the case, you can force the container to remain open by having the build of the image include:
+2. The main internal process of the container is ending. If this is the case, you can force the container to remain open by having the build of the image include at the bottom:
 ```docker
-#If using ubuntu
-RUN apt -y install init
-CMD ["init"]
+#On most Linux distibrutions you can use the following
+CMD ["sleep", "infinity"]
 ```
-* What this will do is install initialization processes onto the image (like systemd) which will then be run indefinitely when you run a container until you call a shutoff/shutdown command, allowing you to attach or ssh into your container.
-    * *Note: don't forget to rebuild the image after adding those two commands at the end*
+ * *Note: don't forget to rebuild the image after adding those two commands at the end*
 3. If you don't want to rebuild the docker file, you can 
     1. Try this in the command line: `docker run -it imageName`
         * What the `-i` flag does is make your current terminal session interactive. In other words, it attaches the terminal to the container
