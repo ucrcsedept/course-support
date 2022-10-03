@@ -33,7 +33,7 @@ RUN apt -y install libgsl-dev
 RUN apt -y install libatlas-base-dev
 
 # Scons and other software
-RUN apt-y install scons scons-doc
+RUN apt -y install scons scons-doc
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
