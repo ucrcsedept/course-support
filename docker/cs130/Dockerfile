@@ -33,7 +33,7 @@ RUN apt -y install libgsl-dev
 RUN apt -y install libatlas-base-dev
 
 # Scons and other software
-RUN apt -y install scons scons-doc gdb valgrind emacs
+RUN apt -y install scons scons-doc gdb valgrind emacs unzip unrar imagemagick
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
