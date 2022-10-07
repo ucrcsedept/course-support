@@ -5,5 +5,5 @@
 
 version: '3.9'
 services:
-  generic_cpp:
+  generic_dev:
     build: .

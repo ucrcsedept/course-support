@@ -6,7 +6,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV TZ="America/Los_Angeles"
-ENV PATH="${PATH}:/opt/conda/bin"
 
 # Update software
 RUN apt -y update && apt -y upgrade
@@ -14,6 +13,10 @@ RUN apt -y update && apt -y upgrade
 # Basic software that should be available in all containers.
 RUN apt -y install vim build-essential git wget tmux
 
+# C++ DEV TOOLS
+RUN apt -y install valgrind doxygen cmake bison flex libboost-all-dev
+
+# PYTHON DEV TOOLS
 # Same setup as CS105, CS171 and CS234 for now. Python containers should be able to run on JupyterHub.
 RUN apt -y install python3-dev python3-pip
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
