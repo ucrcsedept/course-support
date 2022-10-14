@@ -1,6 +1,6 @@
 #!/bin/bash
 # Set up any custom environment variables that will be used in the container. 
-export SINGULARITYENV_PS1='[cs171 container \u@\h \W]\$ '
+export APPTAINERENV_PS1='[cs171 container \u@\h \W]\$ '
 
 # All the software for the course is available in the container, so start a 
 # shell in it to do work.
