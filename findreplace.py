@@ -7,7 +7,7 @@ import glob
 mdFiles = []
 currentDepth = "./*.md"
 matchingString = "\[(.*?)\]\((.*?)\)"
-replaceString = '<a target="_blank" rel="noopener noreferrer" href="\2">\1</a>'
+replaceString = '<a target="_blank" rel="noopener noreferrer" href="\\2">\\1</a>'
 
 # MAX DEPTH: 4
 for i in range(4):
