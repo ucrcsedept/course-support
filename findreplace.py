@@ -22,6 +22,8 @@ for file in mdFiles:
         fileContents = f.read()
         listOfMatches = re.findall("\[(.*?)\]\((.*?)\)", fileContents)
         fileContentsNew = re.sub(matchingString, replaceString, fileContents)
+        f.close()
+        f = open(file, "w")
         f.write(fileContentsNew)
         print(listOfMatches)
         f.close()
