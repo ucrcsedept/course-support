@@ -8,13 +8,13 @@ In this module, we will be configuring and introducing the basics of Visual Stud
 * How to compile with g++, a C++ compiler
 * Basic use of VSCode with SSH
 
-**IMPORTANT**: Before we proceed, make sure that you have a CS account. If you **don't have one/aren't sure if you have one**, [go to this link](https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9) to set one up. The same site will help if you **forgot your password and need to reset it**.
+**IMPORTANT**: Before we proceed, make sure that you have a CS account. If you **don't have one/aren't sure if you have one**, <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9">go to this link</a> to set one up. The same site will help if you **forgot your password and need to reset it**.
 
 If you would like to learn more about VSCode, click [here](VSCodeInfo.md) to read about VSCode and why we're using it here at UCR.
 
 ## Part 1: Installation and Configuration
 
-First, install the correct version of VSCode at [this link](https://code.visualstudio.com/download) for your operating system and processor. Once VSCode is installed, we need to install an extension called Remote-SSH. This extension will allow you to work on UCR's servers remotely, saving your progress across devices and allowing you to use the software already installed on the server (like the compiler). To do this, open VSCode and go to the extension tab on the left bar, and search for Remote-SSH. Make sure it is the extension that is published by Microsoft, verified with the blue check.
+First, install the correct version of VSCode at <a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/download">this link</a> for your operating system and processor. Once VSCode is installed, we need to install an extension called Remote-SSH. This extension will allow you to work on UCR's servers remotely, saving your progress across devices and allowing you to use the software already installed on the server (like the compiler). To do this, open VSCode and go to the extension tab on the left bar, and search for Remote-SSH. Make sure it is the extension that is published by Microsoft, verified with the blue check.
 
 <p align="center">
     <img src="images/installremotessh.gif" alt="Installing Remote-SSH Extension">
@@ -44,7 +44,7 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
     <img src="images/cppextension.png" alt="C++ Extension">
 </p>
 
-> Note: If you are having trouble logging in, [go to this link](https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9) to reset your CS password.
+> Note: If you are having trouble logging in, <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9">go to this link</a> to reset your CS password.
 
 Now, you have a fully configured workspace on VSCode while connected to school servers!
 
@@ -53,7 +53,6 @@ In order to close the connection, click the bottom left corner (it should say `S
 If you are having trouble, click on the picture below for a video example:
 
 [![Example video for connecting to CS010B servers via Remote-SSH](https://img.youtube.com/vi/4wrQ-MFxO3Q/maxresdefault.jpg)](https://www.youtube.com/watch?v=4wrQ-MFxO3Q)
-
 
 ## Part 2: Working on a Remote Server
 

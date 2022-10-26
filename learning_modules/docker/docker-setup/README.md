@@ -9,7 +9,7 @@ The first thing you must do is install Docker, which is OS-specific. Click the d
 <details>
 <summary>Windows</summary>
 
-1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. You may need to create an account.
+1. First, install <a target="_blank" rel="noopener noreferrer" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> here for your appropriate OS and processor. You may need to create an account.
 
 2. Open a Powershell terminal as admin by going to the start menu, searching for Powershell, right clicking Powershell, and click Run as Administrator.
 
@@ -24,7 +24,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-4. Download the Linux kernel update package [here](https://docs.microsoft.com/pl-pl/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package). Run the file you download from there.
+4. Download the Linux kernel update package <a target="_blank" rel="noopener noreferrer" href="https://docs.microsoft.com/pl-pl/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">here</a>. Run the file you download from there.
 
 5. Run this command in your Powershell. 
 
@@ -72,7 +72,7 @@ docker rm hello-world-container
 <details>
 <summary>MacOS</summary>
 
-1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. You may need to create an account.
+1. First, install <a target="_blank" rel="noopener noreferrer" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> here for your appropriate OS and processor. You may need to create an account.
 
 2. Open the `docker.dmg` file. After it opens, you should see a window like this:
 
@@ -124,7 +124,7 @@ docker rm hello-world-container
 <details>
 <summary>Linux (Ubuntu)</summary>
 
-> Note: These instructions are for Ubuntu. If you have a different distribution, find the instructions [here](https://docs.docker.com/desktop/install/linux-install/).
+> Note: These instructions are for Ubuntu. If you have a different distribution, find the instructions <a target="_blank" rel="noopener noreferrer" href="https://docs.docker.com/desktop/install/linux-install/">here</a>.
 
 1. Run the following commands:
 
@@ -201,7 +201,7 @@ You should now be able to run Docker without `sudo`. Try running the hello world
 
 3. While technically optional to install, Docker Deskop provides a very useful graphical interface to keep track of containers and images, and an easy way to run/stop containers.
 
-Download the latest version of Docker Desktop for your distribution [here](https://docs.docker.com/desktop/release-notes/).
+Download the latest version of Docker Desktop for your distribution <a target="_blank" rel="noopener noreferrer" href="https://docs.docker.com/desktop/release-notes/">here</a>.
 
 4. Install the package using `apt` (make sure you are in the directory where the Docker Desktop package was downloaded):
 
@@ -239,4 +239,4 @@ Now, you are in your course container with the VSCode interface!
 
 For Windows, a video example of configuring Docker and setting up a container locally can be found here. If you are not on Windows, the second half of the video may be helpful as they contain the steps taken in VSCode. 
 
-[![Example video for configuring Docker and setting up a container locally on Windows](https://img.youtube.com/vi/UJTSJiH0CnM/maxresdefault.jpg)](https://www.youtube.com/watch?v=UJTSJiH0CnM)
+<a target="_blank" rel="noopener noreferrer" href="https://img.youtube.com/vi/UJTSJiH0CnM/maxresdefault.jpg">![Example video for configuring Docker and setting up a container locally on Windows</a>](https://www.youtube.com/watch?v=UJTSJiH0CnM)

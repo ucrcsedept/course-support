@@ -4,7 +4,7 @@ An IDE, or an integrated development environment, is a piece of software that pr
 
 ## Why VSCode?
 
-VSCode is an incredibly popular IDE ([the most popular in the world, actually!](https://insights.stackoverflow.com/survey/2021)), and for good reason. We chose it for this class because it is very lightweight and widely supports most langauges and features that are considered essential for development. It also has a large marketplace of extensions that make it easy to extend and personalize your version of VSCode. This doesn't mean that VSCode is the **best** IDE out there; we encourage you to get experience with other IDEs if you wish/if you are ever required to use a different one. Here are some general questions that you should ask yourself for finding an IDE that suits your needs:
+VSCode is an incredibly popular IDE (<a target="_blank" rel="noopener noreferrer" href="https://insights.stackoverflow.com/survey/2021">the most popular in the world, actually!</a>), and for good reason. We chose it for this class because it is very lightweight and widely supports most langauges and features that are considered essential for development. It also has a large marketplace of extensions that make it easy to extend and personalize your version of VSCode. This doesn't mean that VSCode is the **best** IDE out there; we encourage you to get experience with other IDEs if you wish/if you are ever required to use a different one. Here are some general questions that you should ask yourself for finding an IDE that suits your needs:
 
 * Does the IDE support the programming languages I am going to use? (Bonus: is it recommended by the development community as a good option for those languages)
 * Is it mature and well supported?
@@ -31,6 +31,6 @@ VSCode has many useful features that help increase your productivity. You will l
 
 Another useful setting is in File > Auto Save, to prevent yourself from potentially losing progress.
 
-To find even more useful commands, press F1 to bring up the Command Palette that allows you to search for whatever command you need. [Here](https://code.visualstudio.com/docs/getstarted/keybindings) is a list of keybindings if you wish to get familiar with the many shortcuts in VSCode.
+To find even more useful commands, press F1 to bring up the Command Palette that allows you to search for whatever command you need. <a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/docs/getstarted/keybindings">Here</a> is a list of keybindings if you wish to get familiar with the many shortcuts in VSCode.
 
 We encourage you to become more familiar and comfortable with your new development environment. Make it your own! Install a theme, use some fun extensions, and play around in C++. You can create your own keybinds and themes, and add your own extensions from the marketplace. Later in this course, we will go over some more useful features that you will be able to use in future courses and beyond.
