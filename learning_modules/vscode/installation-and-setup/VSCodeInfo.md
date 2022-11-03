@@ -1,4 +1,4 @@
-To go back to the VSCode Setup Tutorial, click [here](README.md)
+To go back to the VSCode Setup Tutorial, click [here](README.md).
 
 ## What is an IDE?
 
