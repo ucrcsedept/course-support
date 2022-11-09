@@ -25,6 +25,5 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_6
 
 RUN conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 
-
 # Command to run when a container starts
 CMD ["sleep", "infinity"]

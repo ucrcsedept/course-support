@@ -1,0 +1,8 @@
+#!/bin/bash
+# Set up any custom environment variables that will be used in the container. 
+export APPTAINERENV_PS1='[generic_dev container \u@\h \W]\$ '
+
+# All the software for the course is available in the container, so start a 
+# shell in it to do work.
+singularity shell /usr/local/containers/cs105.sif
+
