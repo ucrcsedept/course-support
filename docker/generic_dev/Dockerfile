@@ -17,6 +17,11 @@ RUN apt -y install vim build-essential git wget tmux
 # C++ DEV TOOLS
 RUN apt -y install valgrind doxygen cmake bison flex libboost-all-dev
 
+# RUST DEV TOOLS
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+
+RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+
 # PYTHON DEV TOOLS
 # Same setup as CS105, CS171 and CS234 for now. Python containers should be able to run on JupyterHub.
 RUN apt -y install python3-dev python3-pip
