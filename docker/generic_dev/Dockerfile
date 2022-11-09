@@ -11,7 +11,6 @@ ENV PATH="/opt/conda/bin:${PATH}"
 # Environment Variable for Java
 ENV JAVA_HOME="/lib/jvm/java-11-openjdk-amd64/bin/java"
 
-
 # Update software
 RUN apt -y update && apt -y upgrade
 
@@ -27,6 +26,18 @@ RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
 
 # JAVA DEV TOOLS
 RUN apt -y install default-jre
+
+# C# DEV TOOLS
+# From: https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2204
+
+# Add Microsoft package signing key
+RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
+    dpkg -i packages-microsoft-prod.deb \
+    rm packages-microsoft-prod.deb
+
+# Get .NET SDK and ASP.NET Core Runtime
+RUN apt-get install -y dotnet-sdk-6.0 \
+    apt-get install -y aspnetcore-runtime-6.0
 
 # PYTHON DEV TOOLS
 # Same setup as CS105, CS171 and CS234 for now. Python containers should be able to run on JupyterHub.
