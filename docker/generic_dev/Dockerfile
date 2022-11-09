@@ -45,6 +45,9 @@ RUN apt install ruby-full
 # PERL DEV TOOLS
 RUN apt install perl
 
+# GOLANG DEV TOOLS
+RUN apt install golang-go
+
 # PYTHON DEV TOOLS
 # Same setup as CS105, CS171 and CS234 for now. Python containers should be able to run on JupyterHub.
 RUN apt -y install python3-dev python3-pip
