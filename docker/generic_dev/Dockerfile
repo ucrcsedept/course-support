@@ -8,6 +8,10 @@ ENV LC_ALL=C.UTF-8
 ENV TZ="America/Los_Angeles"
 ENV PATH="/opt/conda/bin:${PATH}"
 
+# Environment Variable for Java
+ENV JAVA_HOME="/lib/jvm/java-11-openjdk-amd64/bin/java"
+
+
 # Update software
 RUN apt -y update && apt -y upgrade
 
@@ -18,9 +22,11 @@ RUN apt -y install vim build-essential git wget tmux
 RUN apt -y install valgrind doxygen cmake bison flex libboost-all-dev
 
 # RUST DEV TOOLS
-RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
-
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y\
 RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+
+# JAVA DEV TOOLS
+RUN apt -y install default-jre
 
 # PYTHON DEV TOOLS
 # Same setup as CS105, CS171 and CS234 for now. Python containers should be able to run on JupyterHub.
