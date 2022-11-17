@@ -28,25 +28,28 @@ RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
 RUN apt -y install default-jre
 
 # C# DEV TOOLS
-# From: https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2204
-
-# Add Microsoft package signing key
-RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
-    dpkg -i packages-microsoft-prod.deb \
-    rm packages-microsoft-prod.deb
-
-# Get .NET SDK and ASP.NET Core Runtime
-RUN apt-get install -y dotnet-sdk-6.0 \
-    apt-get install -y aspnetcore-runtime-6.0
+# Installed using Mono
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
+    echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list \
+    apt install mono-complete -y
 
 # RUBY DEV TOOLS
-RUN apt install ruby-full
+RUN apt -y install ruby-full
 
 # PERL DEV TOOLS
-RUN apt install perl
+RUN apt -y install perl
 
 # GOLANG DEV TOOLS
-RUN apt install golang-go
+RUN apt -y install golang-go
+
+# ML DEV TOOLS
+RUN apt-get -y install libpolyml9
+
+# HASKELL DEV TOOLS
+RUN apt -y install haskell-platform
+
+# ERLANG DEV TOOLS
+RUN apt -y install erlang
 
 # PYTHON DEV TOOLS
 # Same setup as CS105, CS171 and CS234 for now. Python containers should be able to run on JupyterHub.
