@@ -4,5 +4,5 @@ export APPTAINERENV_PS1='[gpu container \u@\h \W]\$ '
 
 # All the software for the course is available in the container, so start a 
 # shell in it to do work.
-singularity shell /usr/local/containers/cs105.sif
+singularity shell /usr/local/containers/gpu.sif
 
