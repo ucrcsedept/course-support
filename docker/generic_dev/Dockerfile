@@ -29,9 +29,12 @@ RUN apt -y install default-jre
 
 # C# DEV TOOLS
 # Installed using Mono
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
-    echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list \
-    apt install mono-complete -y
+
+# Mono Dependencies
+RUN apt -y install dirmngr gnupg apt-transport-https ca-certificates software-properties-common 
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF 
+RUN apt-add-repository 'deb https://download.mono-project.com/repo/ubuntu stable-focal main'
+RUN apt -y install mono-complete
 
 # RUBY DEV TOOLS
 RUN apt -y install ruby-full
