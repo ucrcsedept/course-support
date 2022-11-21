@@ -29,10 +29,8 @@ RUN conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c
 
 # Install Tensorflow based on Anaconda documentation
 # https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/
-RUN conda create -n tf-gpu tensorflow-gpu \
-    conda activate tf-gpu \
-    conda create -n tf-gpu-cuda8 tensorflow-gpu cudatoolkit=9.0 \
-    conda activate tf-gpu-cuda8
+RUN conda create -n tf-gpu-cuda8 tensorflow-gpu
+RUN conda activate tf-gpu-cuda8
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
