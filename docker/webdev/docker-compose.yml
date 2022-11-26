@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8000:8000"
+  backend:
+    build: ./backend
+    ports:
+      - "8001:5432"
