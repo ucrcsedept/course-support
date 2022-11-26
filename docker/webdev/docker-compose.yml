@@ -3,8 +3,8 @@ services:
   webapp:
     build: ./webapp
     ports:
-      - "8000:8000"
-  db:
-    build: ./db
-    ports:
-      - "8001:5432"
+      - "8000:8000" # Not sure which ports to use yet, placeholder 
+  # db:
+  #   build: ./db
+  #   ports:
+  #     - "8000:8000" # Not sure which ports to use yet, placeholder
