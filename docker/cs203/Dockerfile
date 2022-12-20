@@ -8,6 +8,9 @@ ENV LC_ALL=C.UTF-8
 ENV TZ="America/Los_Angeles"
 ENV PATH="${PATH}:/opt/conda/bin"
 
+# Set up time zone related info so later commands in build will work reliably
+RUN ln -snf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && echo America/Los_Angeles > /etc/timezone
+
 # Update software
 RUN apt -y update && apt -y upgrade
 
