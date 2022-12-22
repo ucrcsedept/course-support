@@ -9,7 +9,7 @@ The first thing you must do is install Docker, which is OS-specific. Click the d
 <details>
 <summary>Windows</summary>
 
-1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. You may need to create an account.
+1. First, install <a target="_blank" rel="noopener noreferrer" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> here for your appropriate OS and processor. You may need to create an account.
 
 2. Open a Powershell terminal as admin by going to the start menu, searching for Powershell, right clicking Powershell, and click Run as Administrator.
 
@@ -24,7 +24,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-4. Download the Linux kernel update package [here](https://docs.microsoft.com/pl-pl/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package). Run the file you download from there.
+4. Download the Linux kernel update package <a target="_blank" rel="noopener noreferrer" href="https://docs.microsoft.com/pl-pl/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">here</a>. Run the file you download from there.
 
 5. Run this command in your Powershell. 
 
@@ -72,7 +72,7 @@ docker rm hello-world-container
 <details>
 <summary>MacOS</summary>
 
-1. First, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) here for your appropriate OS and processor. You may need to create an account.
+1. First, install <a target="_blank" rel="noopener noreferrer" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> here for your appropriate OS and processor. You may need to create an account.
 
 2. Open the `docker.dmg` file. After it opens, you should see a window like this:
 
@@ -124,7 +124,7 @@ docker rm hello-world-container
 <details>
 <summary>Linux (Ubuntu)</summary>
 
-> Note: These instructions are for Ubuntu. If you have a different distribution, find the instructions [here](https://docs.docker.com/desktop/install/linux-install/).
+> Note: These instructions are for Ubuntu. If you have a different distribution, find the instructions <a target="_blank" rel="noopener noreferrer" href="https://docs.docker.com/desktop/install/linux-install/">here</a>.
 
 1. Run the following commands:
 
@@ -201,7 +201,7 @@ You should now be able to run Docker without `sudo`. Try running the hello world
 
 3. While technically optional to install, Docker Deskop provides a very useful graphical interface to keep track of containers and images, and an easy way to run/stop containers.
 
-Download the latest version of Docker Desktop for your distribution [here](https://docs.docker.com/desktop/release-notes/).
+Download the latest version of Docker Desktop for your distribution <a target="_blank" rel="noopener noreferrer" href="https://docs.docker.com/desktop/release-notes/">here</a>.
 
 4. Install the package using `apt` (make sure you are in the directory where the Docker Desktop package was downloaded):
 
@@ -219,7 +219,7 @@ You should now be able to open Docker Desktop.
 
 > Note: Make sure Docker Desktop is open before doing anything below!
 
-Now that Docker is set up, open VSCode and install two extensions: "Docker" and "Remote - Containers". Both should be verified by Microsoft. Now, create a folder for the course you are taking that is using containers. In this folder, you need to add a `Dockerfile` and a `docker-compose.yml` file. Those two files should have been given to you by an instructor, otherwise, they can be found [here](../../../docker/) at this folder.
+Now that Docker is set up, open VSCode and install two extensions: "Docker" and "Dev Containers". Both should be verified by Microsoft. Now, create a folder for the course you are taking that is using containers. In this folder, you need to add a `Dockerfile` and a `docker-compose.yml` file. Those two files should have been given to you by an instructor, otherwise, they can be found [here](../../../docker/) at this folder.
 
 Once you have the two required files, put them into their own folder, then open that folder in VSCode. We need to use these files to create the image that our container will be based on. To do that, run this command in your VSCode terminal (make sure you are in the folder with the `Dockerfile` and `docker-compose.yml` file):
 
@@ -229,7 +229,7 @@ docker compose up -d
 
 > Note: A very useful feature of Docker is that because images are composed of different layers, adding layers to an image then rebuilding that image will not take nearly as long as creating the inital image due to caching.
 
-Depending on your course and how much software it requires, creating the image may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Remote - Containers: Open Folder in Container". You will be prompted to select a folder. Select the folder that contains the `Dockerfile` and the `docker-compose.yml` files. You will see a prompt asking you what to base the container on. Click on "From Dockerfile". A new instance of VSCode will open, and Docker will build the container based on the image. Once it is done, you will now be placed in the container. To know that this was successful, open a terminal, and the user should read something like this:
+Depending on your course and how much software it requires, creating the image may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Dev Containers: Attach to Running Container". You will be prompted to select a container. Select the container you just created (it will be the only one there). A new instance of VSCode will open, and Docker will attach to the container. Once it is done, you will now be placed in the container. To know that this was successful, open a terminal, and the user should read something similar to this:
 
 ```
 root@d4a9db64886f:/workspaces/[course_name_here]#
@@ -239,4 +239,5 @@ Now, you are in your course container with the VSCode interface!
 
 For Windows, a video example of configuring Docker and setting up a container locally can be found here. If you are not on Windows, the second half of the video may be helpful as they contain the steps taken in VSCode. 
 
-[![Example video for configuring Docker and setting up a container locally on Windows](https://img.youtube.com/vi/UJTSJiH0CnM/maxresdefault.jpg)](https://www.youtube.com/watch?v=UJTSJiH0CnM)
+[![Example video for configuring Docker and setting up a container locally on Windows](https://img.youtube.com/vi/aQfUFt6PjAs/maxresdefault.jpg)](https://www.youtube.com/watch?v=aQfUFt6PjAs)
+

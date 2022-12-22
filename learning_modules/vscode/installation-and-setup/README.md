@@ -8,30 +8,13 @@ In this module, we will be configuring and introducing the basics of Visual Stud
 * How to compile with g++, a C++ compiler
 * Basic use of VSCode with SSH
 
-**IMPORTANT**: Before we proceed, make sure that you have a CS account. If you **don't have one/aren't sure if you have one**, [go to this link](https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9) to set one up. The same site will help if you **forgot your password and need to reset it**.
+**IMPORTANT**: Before we proceed, make sure that you have a CS account. If you **don't have one/aren't sure if you have one**, <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9">go to this link</a> to set one up. The same site will help if you **forgot your password and need to reset it**.
 
-## What is an IDE?
-
-An IDE, or an integrated development environment, is a piece of software that provides us with a multitude of different components in one user interface to maximize productivity. The most common features in an IDE are a code/text editor (usually with syntax highlighting), build automation (a compiler, version control like Git, or automated testing), and a debugger. While IDEs are not required (you have written and compiled code without one before), they provide the tools to create bigger projects, collaborate with others, and make development more convenient.
-
-## Why VSCode?
-
-VSCode is an incredibly popular IDE ([the most popular in the world, actually!](https://insights.stackoverflow.com/survey/2021)), and for good reason. We chose it for this class because it is very lightweight and widely supports most langauges and features that are considered essential for development. It also has a large marketplace of extensions that make it easy to extend and personalize your version of VSCode. This doesn't mean that VSCode is the **best** IDE out there; we encourage you to get experience with other IDEs if you wish/if you are ever required to use a different one. Here are some general questions that you should ask yourself for finding an IDE that suits your needs:
-
-* Does the IDE support the programming languages I am going to use? (Bonus: is it recommended by the development community as a good option for those languages)
-* Is it mature and well supported?
-* Does it support collaboration and a direct connection to a respository?
-* Does it support other technology I will use for my project? (connecting to servers, alternative testing frameworks, etc.)
-* Does it have code autocomplete?
-* Does it work with my operating system?
-* Do I have to pay a license for it?
-* Can I customize it however I want?
-
-What we will be doing now is using VSCode to connect to UCR servers. The UCR servers already have a fully configured workspace for you (a compiler, and a way to save your work across devices), so combined with the graphical interface of VSCode, you will have everything you need for this class. Of course, if you feel comfortable, feel free to use your own personal environment if you have one configured/are willing to learn how.
+If you would like to learn more about VSCode, click [here](VSCodeInfo.md) to read about VSCode and why we're using it here at UCR.
 
 ## Part 1: Installation and Configuration
 
-First, install the correct version of VSCode at [this link](https://code.visualstudio.com/download) for your operating system and processor. Once VSCode is installed, we need to install an extension called Remote-SSH. This extension will allow you to work on UCR's servers remotely, saving your progress across devices and allowing you to use the software already installed on the server (like the compiler). To do this, open VSCode and go to the extension tab on the left bar, and search for Remote-SSH. Make sure it is the extension that is published by Microsoft, verified with the blue check.
+First, install the correct version of VSCode at <a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/download">this link</a> for your operating system and processor. Once VSCode is installed, we need to install an extension called Remote-SSH. This extension will allow you to work on UCR's servers remotely, saving your progress across devices and allowing you to use the software already installed on the server (like the compiler). To do this, open VSCode and go to the extension tab on the left bar, and search for Remote-SSH. Make sure it is the extension that is published by Microsoft, verified with the blue check.
 
 <p align="center">
     <img src="images/installremotessh.gif" alt="Installing Remote-SSH Extension">
@@ -61,7 +44,7 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
     <img src="images/cppextension.png" alt="C++ Extension">
 </p>
 
-> Note: If you are having trouble logging in, [go to this link](https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9) to reset your CS password.
+> Note: If you are having trouble logging in, <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/a/ucr.edu/cse-instructional-support/home/accounts#h.r2x4rti8gpg9">go to this link</a> to reset your CS password.
 
 Now, you have a fully configured workspace on VSCode while connected to school servers!
 
@@ -69,8 +52,7 @@ In order to close the connection, click the bottom left corner (it should say `S
 
 If you are having trouble, click on the picture below for a video example:
 
-[![Example video for connecting to CS010B servers via Remote-SSH](https://img.youtube.com/vi/4wrQ-MFxO3Q/maxresdefault.jpg)](https://www.youtube.com/watch?v=4wrQ-MFxO3Q)
-
+[![Example video for connecting to CS010B servers via Remote-SSH](https://img.youtube.com/vi/YtYMn4cmBE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=YtYMn4cmBE0)
 
 ## Part 2: Working on a Remote Server
 
@@ -262,20 +244,3 @@ What the second command does is append a command to the end of your SSH config f
 
 </details>
 
-## Optional: Useful Features of VSCode
-
-VSCode has many useful features that help increase your productivity. You will learn more about some of these features later (debugging, how to use your terminal, and other features when editing multiple files at once), but some of the editing features that will be useful to you right now are:
-
-| ![Multiple Cursors](images/multiplecursor.gif) | ![Rename Variables](images/renamevariable.gif) | ![Go to Definition](images/gotodefinition.gif)
-| :--: | :--: | :--: |
-| *Alt + Left Click to add a cursor*| *Rename variables/functions easily and quickly*| *Go to definition/declaration of a variable/function* 
-
-| ![Highlight and Comment](images/highlightandcomment.gif)| ![Move Line](images/moveline.gif)|
-| :--: | :--: |
-| *Highlight line by line with Ctrl + L or Cmd + L, then comment with Ctrl+/ or Cmd+/* | *Move a line of code with Alt + Arrow Keys* |
-
-Another useful setting is in File > Auto Save, to prevent yourself from potentially losing progress.
-
-To find even more useful commands, press F1 to bring up the Command Palette that allows you to search for whatever command you need. [Here](https://code.visualstudio.com/docs/getstarted/keybindings) is a list of keybindings if you wish to get familiar with the many shortcuts in VSCode.
-
-We encourage you to become more familiar and comfortable with your new development environment. Make it your own! Install a theme, use some fun extensions, and play around in C++. You can create your own keybinds and themes, and add your own extensions from the marketplace. Later in this course, we will go over some more useful features that you will be able to use in future courses and beyond.
