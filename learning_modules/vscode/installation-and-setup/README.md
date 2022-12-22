@@ -52,7 +52,7 @@ In order to close the connection, click the bottom left corner (it should say `S
 
 If you are having trouble, click on the picture below for a video example:
 
-[![Example video for connecting to CS010B servers via Remote-SSH](https://img.youtube.com/vi/4wrQ-MFxO3Q/maxresdefault.jpg)](https://www.youtube.com/watch?v=4wrQ-MFxO3Q)
+[![Example video for connecting to CS010B servers via Remote-SSH](https://img.youtube.com/vi/YtYMn4cmBE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=YtYMn4cmBE0)
 
 ## Part 2: Working on a Remote Server
 

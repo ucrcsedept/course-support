@@ -229,7 +229,7 @@ docker compose up -d
 
 > Note: A very useful feature of Docker is that because images are composed of different layers, adding layers to an image then rebuilding that image will not take nearly as long as creating the inital image due to caching.
 
-Depending on your course and how much software it requires, creating the image may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Dev Containers: Open Folder in Container". You will be prompted to select a folder. Select the folder that contains the `Dockerfile` and the `docker-compose.yml` files. You will see a prompt asking you what to base the container on. Click on "From Dockerfile". A new instance of VSCode will open, and Docker will build the container based on the image. Once it is done, you will now be placed in the container. To know that this was successful, open a terminal, and the user should read something like this:
+Depending on your course and how much software it requires, creating the image may take a while. Once this is done, open the Command Palette by going to View > Command Palette, then type in "Dev Containers: Attach to Running Container". You will be prompted to select a container. Select the container you just created (it will be the only one there). A new instance of VSCode will open, and Docker will attach to the container. Once it is done, you will now be placed in the container. To know that this was successful, open a terminal, and the user should read something similar to this:
 
 ```
 root@d4a9db64886f:/workspaces/[course_name_here]#
@@ -239,4 +239,5 @@ Now, you are in your course container with the VSCode interface!
 
 For Windows, a video example of configuring Docker and setting up a container locally can be found here. If you are not on Windows, the second half of the video may be helpful as they contain the steps taken in VSCode. 
 
-<a target="_blank" rel="noopener noreferrer" href="https://img.youtube.com/vi/UJTSJiH0CnM/maxresdefault.jpg">![Example video for configuring Docker and setting up a container locally on Windows</a>](https://www.youtube.com/watch?v=UJTSJiH0CnM)
+[![Example video for configuring Docker and setting up a container locally on Windows](https://img.youtube.com/vi/aQfUFt6PjAs/maxresdefault.jpg)](https://www.youtube.com/watch?v=aQfUFt6PjAs)
+
