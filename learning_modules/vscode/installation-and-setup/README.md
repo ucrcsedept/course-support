@@ -111,9 +111,11 @@ Notice that when you want to open a folder, you are prompted to enter your passw
 Instructions vary based on operating system:
 
 <details>
-<summary><b>Windows</b></summary>
+<summary><b>Windows 10/11</b></summary>
 
 In order to set up key based login with SSH, we will first have to install an SSH client.
+
+> NOTE: If you are on Windows 11, you can skip steps 1-3.
 
 1. Go to the Start Menu and search for "Add an Optional Feature"
 2. Click "Add a feature"
