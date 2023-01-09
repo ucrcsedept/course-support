@@ -16,7 +16,7 @@ RUN ln -snf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && echo Ameri
 RUN apt update && apt upgrade && apt-get install -y software-properties-common && add-apt-repository universe; echo 'deb [arch=amd64] http://archive.ubuntu.com/ubuntu focal main universe' >> /etc/apt/sources.list && apt update
 
 # Basic software that should be available in all containers.
-RUN apt -y install vim build-essential git wget tmux cmake libcilkrts5 gcc-7 g++-7 gcc-12 g++-12
+RUN apt -y install vim build-essential git wget tmux cmake libcilkrts5 gcc-7 g++-7 gcc-12 g++-12 zsh numactl
 
 # Config alternatives
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 150; update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 100; update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 50; update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 150; update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 100; update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50
@@ -29,7 +29,7 @@ RUN mkdir -p /usr/local/src/parlaylib/build && chmod 755 /usr/local/src/parlayli
 RUN cd /usr/local/src/parlaylib/build; umask 0022; cmake ..; cmake --build . --target install
 
 #Patch for CilkPlus
-RUN cd /tmp/; wget http://198.74.113.240/cilk.tar && tar -xf cilk.tar && mv cilk /usr/lib/gcc/x86_64-linux-gnu/7/include/ && rm cilk.tar
+RUN cd /tmp/; wget https://cilkplus.github.io/binaries/archive-linux.tar.gz && tar -xf archive-linux.tar.gz && mv archive-linux/lib/cilk/ /usr/lib/gcc/x86_64-linux-gnu/7/include/ && rm -r archive-linux.tar.gz archive-linux/
 
 #OpenCilk
 RUN mkdir -p /usr/local/src/opencilk
