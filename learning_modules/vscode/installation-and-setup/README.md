@@ -36,7 +36,7 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
 
 3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again, then click "Connect to Host". You should see `[COURSE NAME HERE].cs.ucr.edu` is a saved host. Click on `[COURSE NAME HERE].cs.ucr.edu`, and a new instance of VSCode should open. You will be prompted with "`[COURSE NAME HERE].cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
 
-> **IMPORTANT NOTE**: You may or may not be prompted to select the platform of the remote host `[COURSE NAME HERE].cs.ucr.edu`. If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution.
+**READ HERE, IMPORTANT NOTE**: You may or may not be prompted to select the platform of the remote host `[COURSE NAME HERE].cs.ucr.edu`. If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution. If you do not see this prompt, do not worry, you can skip this part.
 
 4. You will now be prompted to log in with your CS password (this may be different from your UCR password). Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
 
