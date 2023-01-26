@@ -20,14 +20,14 @@ RUN apt -y install vim build-essential git wget tmux
 # C++ DEV TOOLS
 RUN apt -y install valgrind doxygen cmake bison flex libboost-all-dev
 
-# RUST DEV TOOLS
+# RUST DEV TOOLS NOT WORKING
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y\
 RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
 
-# JAVA DEV TOOLS
+# JAVA DEV TOOLS NOT WORKING
 RUN apt -y install default-jre
 
-# C# DEV TOOLS
+# C# DEV TOOLS NOT WOKRING
 # Installed using Mono
 
 # Mono Dependencies
@@ -45,7 +45,7 @@ RUN apt -y install perl
 # GOLANG DEV TOOLS
 RUN apt -y install golang-go
 
-# ML DEV TOOLS
+# ML DEV TOOLS NOT WORKING
 RUN apt-get -y install libpolyml9
 
 # HASKELL DEV TOOLS
