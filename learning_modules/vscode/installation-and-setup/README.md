@@ -30,11 +30,13 @@ Now, we can SSH into UCR servers! To set up a connection to class servers, follo
 
     ``` ssh [YOUR UCR NETID HERE]@[COURSE NAME HERE].cs.ucr.edu ```
 
+> Note: If you are in a lower division course, you must include the leading '0'. For example, to SSH into CS010B or CS010C, you must use [UCR NET ID]@cs010c.ucr.edu.
+
 For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.edu`.
 
 > Note: If you are prompted to select the SSH configuration to edit, we recommend to select the option that starts with `C:\Users` if you are on Windows, and if you are on Mac, pick the one that starts with `/Users/`, and if you are on Linux, select the one that starts with `/home/`. 
 
-3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again, then click "Connect to Host". You should see `[COURSE NAME HERE].cs.ucr.edu` is a saved host. Click on `[COURSE NAME HERE].cs.ucr.edu`, and a new instance of VSCode should open. You will be prompted with "`[COURSE NAME HERE].cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
+3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again, then click "Connect to Host". You should see `[COURSE NAME HERE].cs.ucr.edu` is a saved host. Click on `[COURSE NAME HERE].cs.ucr.edu`, and a new instance of VSCode will open. Use this new instance from now on, the other may be closed. You will be prompted with "`[COURSE NAME HERE].cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
 
 4. You will see a prompt asking you to "Select the platform of the remote host `[COURSE NAME HERE].cs.ucr.edu`". If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution. If you do not see this prompt, do not worry, you can skip this step.
 
