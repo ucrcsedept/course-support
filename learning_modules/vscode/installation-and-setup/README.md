@@ -32,13 +32,13 @@ Now, we can SSH into UCR servers! To set up a connection to class servers, follo
 
 For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.edu`.
 
-> Note: If you are prompted to select the SSH configuration to edit, select the one that starts with `C:\Users` if you are on Windows, and if you are on Mac, pick the one that starts with `/Users/`, and if you are on Linux, select the one that starts with `/home/`
+> Note: If you are prompted to select the SSH configuration to edit, we recommend to select the option that starts with `C:\Users` if you are on Windows, and if you are on Mac, pick the one that starts with `/Users/`, and if you are on Linux, select the one that starts with `/home/`. 
 
 3. Now you have saved the address as a known host. Click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) again, then click "Connect to Host". You should see `[COURSE NAME HERE].cs.ucr.edu` is a saved host. Click on `[COURSE NAME HERE].cs.ucr.edu`, and a new instance of VSCode should open. You will be prompted with "`[COURSE NAME HERE].cs.ucr.edu` has fingerprint" followed a very long string. Click Continue.
 
-**READ HERE, IMPORTANT NOTE**: You may or may not be prompted to select the platform of the remote host `[COURSE NAME HERE].cs.ucr.edu`. If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution. If you do not see this prompt, do not worry, you can skip this part.
+4. You will see a prompt asking you to "Select the platform of the remote host `[COURSE NAME HERE].cs.ucr.edu`". If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution. If you do not see this prompt, do not worry, you can skip this step.
 
-4. You will now be prompted to log in with your CS password (this may be different from your UCR password). Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
+5. You will now be prompted to log in with your CS password (this may be different from your UCR password). Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
 
 <p align="center">
     <img src="images/cppextension.png" alt="C++ Extension">
@@ -48,7 +48,7 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
 
 Now, you have a fully configured workspace on VSCode while connected to school servers!
 
-In order to close the connection, click the bottom left corner (it should say `SSH: [COURSE NAME HERE].cs.ucr.edu`). It should pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
+In order to close the connection, click the bottom left corner (it should say `SSH: [COURSE NAME HERE].cs.ucr.edu`). It will pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
 If you are having trouble, click on the picture below for a video example:
 
