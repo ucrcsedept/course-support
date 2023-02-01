@@ -40,10 +40,10 @@ For example, the command would look something like `ssh jbieb001@cs010b.cs.ucr.e
 
 4. You will see a prompt asking you to "Select the platform of the remote host `[COURSE NAME HERE].cs.ucr.edu`". If you are, select **Linux**, **regardless of your operating system.** This is because the UCR servers run on a Linux distribution. If you do not see this prompt, do not worry, you can skip this step.
 
-5. You will now be prompted to log in with your CS password (this may be different from your UCR password). Now that you're connected, go to the extensions marketplace and install the C++ extension. It should look like this:
+5. You will now be prompted to log in with your CS password (this may be different from your UCR password). Once connected, go to the extensions marketplace and install the C/C++ extension. It looks like this:
 
 <p align="center">
-    <img src="images/cppextension.png" alt="C++ Extension">
+    <img src="images/cppextension.png" alt="C/C++ Extension">
 </p>
 
 **Do not skip step 5**. Some students skip this step because they have the C/C++ extension installed *locally*, but you must install the extension on the server as well.
@@ -54,7 +54,11 @@ Now, you have a fully configured workspace on VSCode while connected to school s
 
 In order to close the connection, click the bottom left corner (it will say `SSH: [COURSE NAME HERE].cs.ucr.edu`). It will pull up the command palette, and to exit, press "Close remote connection". **PLEASE DON'T FORGET TO DO THIS WHENEVER YOU ARE DONE!** Closing out of VSCode without manually closing the connection doesn't log you out on the server, which consumes precious server resources.
 
-To reconnect, click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) in the bottom left corner, click "Connect to Host", then click the host you wish to connect to, and log back in. 
+To reconnect, click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshsymbol.png) in the bottom left corner, click "Connect to Host", then click the host you wish to connect to, and log back in.
+
+The next tutorial, which is how to use your new remote environment to create programs, can be found [here](../first-program/).
+
+Alternatively, [here](../key-based-login/) is an optional tutorial on how to set up key-based automatic login. 
 
 If you are having trouble, click on the picture below for a video example:
 

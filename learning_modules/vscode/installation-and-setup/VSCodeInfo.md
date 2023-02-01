@@ -19,7 +19,7 @@ VSCode is an incredibly popular IDE (<a target="_blank" rel="noopener noreferrer
 
 What we will be doing now is using VSCode to connect to UCR servers. The UCR servers already have a fully configured workspace for you (a compiler, and a way to save your work across devices), so combined with the graphical interface of VSCode, you will have everything you need for this class. Of course, if you feel comfortable, feel free to use your own personal environment if you have one configured/are willing to learn how.
 
-## Optional: Useful Features of VSCode
+## Useful Features of VSCode
 
 VSCode has many useful features that help increase your productivity. You will learn more about some of these features later (debugging, how to use your terminal, and other features when editing multiple files at once), but some of the editing features that will be useful to you right now are:
 
