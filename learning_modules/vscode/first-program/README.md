@@ -1,6 +1,6 @@
 To go back to the previous section, where we go over how to setup VSCode with SSH, click [here](../installation-and-setup/).
 
-Alternatively, if you want to set up key-based login so you don't have to enter your password every time you want to SSH, click [here](../key-based-login/) 
+Alternatively, if you want to set up key-based login so you don't have to enter your password every time you want to SSH, click [here](../key-based-login/).
 
 # Part 2: Working on a Remote Server
 
@@ -30,11 +30,11 @@ int main()
 }
 ```
 
-Now that you have your source code, lets compile it! Open up a terminal by using the shortcut `Ctrl + ~`. Now, type in and run the following command:
+Now that you have your source code, lets compile it! In the list of files and folders, right click the `example` folder and click `Open in Integrated Terminal`. This will open a terminal that is looking in all the files in the `example` folder. Put in the following command:
 
-``` g++ example/main.cpp ```
+``` g++ main.cpp ```
 
-Let's break down what this command is: `g++` is the compiler that we use for C++ source code. `example/main.cpp` is simply the path of the target source code file we want to compile.
+Let's break down what this command is: `g++` is the compiler that we use for C++ source code. `main.cpp` is simply the path/name of the target source code file we want to compile.
 
 > Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ example/m``` and press the Tab key, and it will autocomplete the name to ```example/main.cpp```. This will be useful for when you have longer file names.
 
