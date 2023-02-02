@@ -40,7 +40,7 @@ Now that you have your source code, lets compile it! In the list of files and fo
 
 Let's break down what this command is: `g++` is the compiler that we use for C++ source code. `main.cpp` is simply the path/name of the target source code file we want to compile.
 
-> Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ example/m``` and press the Tab key, and it will autocomplete the name to ```example/main.cpp```. This will be useful for when you have longer file names.
+> Note: The shell that we are using is called Bash. A useful feature of a lot of shells is that they support autocomplete. For example, you can type ```g++ m``` and press the Tab key, and it will autocomplete the name to ```main.cpp```. This will be useful for when you have longer file names.
 
 Now, if your program has no errors and compiles, there should be no input in your console, and just be awaiting your next input. If your program wasn't able to compile, you would see all your error messages here. You should see that there's a new file in your directory called `a.out`. This is your executable! In order to run it, type and run this following command.
 
@@ -55,3 +55,5 @@ By default, source files compiled by g++ are named ```a```, but usually we want 
 ``` g++ -o hello_world main.cpp ```
 
 This will compile ```main.cpp``` into an executable called ```hello_world```, and you can run it by running the command ```./hello_world``` in your console.
+
+A pro tip: It is a good idea to keep an organized workspace on your server by organizing each of your labs into their own folder. If you want to learn more about how the file system works, click [here](../linux-file-system-and-submission/) to learn about the Linux file system.

@@ -1,4 +1,6 @@
-## Optional (but recommended!): Key-Based Automatic Login
+To go back to the previous section, where we go over how to setup VSCode with SSH, click [here](../installation-and-setup/).
+
+# Optional (but recommended!): Key-Based Automatic Login
 
 Notice that when you want to open a folder, you are prompted to enter your password again. This essentially makes it so you have to input your password twice to log in, which gets very tedious. In this section, you can set up Remote-SSH to remember your password so you only have to input it once.
 
@@ -21,7 +23,7 @@ In order to set up key based login with SSH, we will first have to install an SS
 
 Now, we will generate something called a public/private key pair, which we will use to log into Remote-SSH.
 
-4. Open a Command Prompt by pressing (Windows Key + R) which opens the "Run" application, and then type in `cmd` which opens the command prompt.
+4. Open a *local* Command Prompt by pressing (Windows Key + R) which opens the "Run" application, and then type in `cmd` which opens the command prompt.
 5. Run the following command:
 
 ``` ssh-keygen -t rsa -b 4096 ```
@@ -92,7 +94,7 @@ Host cs010b.cs.ucr.edu
 <summary><b>MacOS/Linux (Debian-based)</b></summary>
 We will generate something called a public/private key pair, which we will use to log into Remote-SSH.
 
-1. Open a terminal, and run the following commands in this order:
+1. Open a *local* terminal on your Mac by pressing Cmd + Space and typing in "Terminal", and run the following commands in this order:
 ```
 cd .ssh
 ssh-keygen -t rsa -b 4096
