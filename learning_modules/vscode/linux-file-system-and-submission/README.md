@@ -1,3 +1,5 @@
+To go back to the previous section, where we went over how to work on a remote server and how to compile your programs, click [here](../first-program/).
+
 # Introduction to the Linux File System + Submitting to ZyBooks
 
 > Authors: Victor Hill and Joshua Candelaria (special thanks to Neftali Watkinson and Kris Miller)
