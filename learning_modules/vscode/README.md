@@ -3,7 +3,9 @@
 This set of learning modules has content on how to set up and use Visual Studio Code as an IDE, and use it in CS courses. Much of the current content is focused on C++, content on how to use VS Code with other languages will be added over time. Some advanced topics are included for anyone who is interested.
  
 - [Installing and Setting Up Visual Studio Code](/learning_modules/vscode/installation-and-setup/README.md)
+- [Working on a Remote Server and Creating your First Program](/learning_modules/vscode/first-program/README.md)
 - [Introduction to the Linux Filesystem and Submitting Code to Zybooks](/learning_modules/vscode/linux-file-system-and-submission/README.md)
+- [Optional but Recommended: Key-Based SSH Login](/learning_modules/vscode/key-based-login/README.md)
 
 C++ Specific
 
