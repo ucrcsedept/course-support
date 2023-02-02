@@ -2,7 +2,7 @@ To go back to the previous section, where we go over how to setup VSCode with SS
 
 Alternatively, if you want to set up key-based login so you don't have to enter your password every time you want to SSH, click [here](../key-based-login/).
 
-# Part 2: Working on a Remote Server
+# Working on a Remote Server and Compiling a Program
 
 > Note: In order to make your life easier, turn on Auto Save by going to File > Auto Save, and toggle the setting on. A very common error is forgetting to save but compiling, and you get errors such as "undefined reference to `main()`" due to the file not being saved.
 
