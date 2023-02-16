@@ -12,11 +12,16 @@ int main()
 }
 ```
 
+Compile with: `g++ main.cpp`
+Run with: `./a.out`
+
 ## Python
 
 ```py
 print("Hello World!\n")
 ```
+
+Run with: `python3 main.py`
 
 ## Java
 
@@ -29,12 +34,17 @@ print("Hello World!\n")
 ```ruby
 puts "Hello World!"
 ```
+
+Run with: `ruby main.rb`
+
 ## Perl
 
 ```perl
 use warnings;
 print("Hello World!\n");
 ```
+
+Run with: `perl main.pl`
 
 ## Golang
 
@@ -49,6 +59,9 @@ func main()
 }
 ```
 
+Build with: `go build main.go`
+Run with: `./main`
+
 ## ML
 
 ## Haskell
@@ -57,4 +70,7 @@ func main()
 main :: IO ()
 main = putStrLn "Hello World!"
 ```
+
+Run with: `runhaskell main.hs`
+
 ## Mono
