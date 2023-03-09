@@ -44,6 +44,14 @@ Enter passphrase (empty for no passphrase):
 
 **If you want to log in automatically without entering a password, then do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase.
 
+6. Run the following command, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`
+
+```
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh {COURSE ADDRESS HERE} "cat >> .ssh/authorized_keys" 
+```
+
+You will be prompted to log into the server with your password. After this, you will be able to log onto this class server without needing to enter your password.
+
 </details>
 
 <details>
