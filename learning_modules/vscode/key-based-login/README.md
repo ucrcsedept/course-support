@@ -34,7 +34,7 @@ Generating public/private rsa key pair.
 Enter file in which to save the key [your path here]:
 ```
 
-The name of the file can be whatever you want it to be.
+The name of the file can be whatever you want it to be, and you can simply press `Enter` if you wish to use the default path.
 
 Now, you will be prompted with this:
 
@@ -44,13 +44,21 @@ Enter passphrase (empty for no passphrase):
 
 **If you want to log in automatically without entering a password, then do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase.
 
+<p align="center">
+    <img src="images/keygen.gif" alt="Using powershell to generate ssh key">
+</p>
+
 6. Run the following command, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`
 
 ```
-type $env:USERPROFILE\.ssh\id_rsa.pub | ssh {COURSE ADDRESS HERE} "cat >> .ssh/authorized_keys" 
+type "$env:USERPROFILE\.ssh\id_rsa.pub" | ssh {COURSE ADDRESS HERE} "cat >> .ssh/authorized_keys" 
 ```
 
 You will be prompted to log into the server with your password. After this, you will be able to log onto this class server without needing to enter your password.
+
+<p align="center">
+    <img src="images/keylink.gif" alt="Linking key to remote server with powershell command">
+</p>
 
 </details>
 
