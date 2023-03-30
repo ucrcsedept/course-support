@@ -11,7 +11,7 @@ Instructions vary based on operating system:
 
 In order to set up key based login with SSH, we will first have to install an SSH client.
 
-> NOTE: If you are on Windows 11, you can skip steps 1-3.
+> NOTE: Steps 1-3 are for users who are on Windows 10. If you are on Windows 11, you can skip steps 1-3 and start from step 4.
 
 1. Go to the Start Menu and search for "Add an Optional Feature"
 2. Click "Add a feature"
@@ -21,12 +21,12 @@ In order to set up key based login with SSH, we will first have to install an SS
     <img src="images/openssh.gif" alt="Installing SSH client on Windows">
 </p>
 
-Now, we will generate something called a public/private key pair, which we will use to log into Remote-SSH.
+Now, we will generate something called a public/private key pair, which we will use to log into the class server.
 
-4. Open a *local* Command Prompt by pressing (Windows Key + R) which opens the "Run" application, and then type in `cmd` which opens the command prompt.
+4. Open a PowerShell terminal by pressing (Windows Key + R) which opens the "Run" application, and then type in `powershell` which opens a PowerShell terminal.
 5. Run the following command:
 
-``` ssh-keygen -t rsa -b 4096 ```
+``` ssh-keygen ```
 
 The output should be the following:
 ```
@@ -34,7 +34,7 @@ Generating public/private rsa key pair.
 Enter file in which to save the key [your path here]:
 ```
 
-The name of the file can be whatever you want it to be. For the purposes of the tutorial, the name we will be using is ```mysshkey```. If you use something else, substitute the name wherever we use ```mysshkey```.
+The name of the file can be whatever you want it to be, and you can simply press `Enter` if you wish to use the default path.
 
 Now, you will be prompted with this:
 
@@ -42,50 +42,22 @@ Now, you will be prompted with this:
 Enter passphrase (empty for no passphrase):
 ```
 
-**Do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase.
+**If you want to log in automatically without entering a password, then do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase.
 
 <p align="center">
-    <img src="images/generatekey.gif" alt="Generating RSA key">
+    <img src="images/keygen.gif" alt="Using powershell to generate ssh key">
 </p>
 
-Now, we need to navigate to our generated keys. Go to your user folder, which should be in the path `C:\Users\[your windows username]`. You should see two files named `mysshkey` (or whatever you named your keys). The one without a file extension is your *private* key, **which you should never, ever share with ANYONE**. The one with a file extension of `.pub` is your *public key*.
+6. Run the following command, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`
 
-We need to save our public key on the server.
+```
+type "$env:USERPROFILE\.ssh\id_rsa.pub" | ssh {COURSE ADDRESS HERE} "cat >> .ssh/authorized_keys" 
+```
 
-6. Open the public key file `mysshkey.pub` with Notepad. Copy the contents.
-7. SSH into UCR servers using the method outlined in "Part 1: Installation and Configuration" above.
-8. Make a new folder called `.ssh`, and in there create a file called `authorized_keys`. Paste in the public key, and save the file. For this to work, these must be the exact names of the folder and the file.
+You will be prompted to log into the server with your password. After this, you will be able to log onto this class server without needing to enter your password.
 
 <p align="center">
-    <img src="images/savingpublickey.gif" alt="Saving public key on server">
-</p>
-
-Now, we need to configure our Remote-SSH extension to use the private key. This will allow us to automatically log in.
-
-9. Go back to the folder with the keys (reminder: it should be `C:\Users\[your windows username]`). Select your private key file, which is `mysshkey` (no file extension). Copy the path using the `Copy Path` button at the top of the file explorer.
-10. Open a *local* instance of VSCode. Pull up the command palette (F1) and type in: "Remote-SSH: Open SSH Configuration File".
-
-Pick the one that starts with `C:\Users\[your windows username]`. You should see something like:
-
-```
-Host cs010b.cs.ucr.edu
-    HostName cs010b.cs.ucr.edu
-    User [your_ucr_netid]
-```
-
-11. Add the following line, so that your file looks like this:
-
-```
-Host cs010b.cs.ucr.edu
-    HostName cs010b.cs.ucr.edu
-    User [your_ucr_netid]
-    IdentityFile "YOUR PRIVATE KEY PATH"
-```
-
-...where you paste your private key path. **Make sure you remove the quotes!** Save the file. If everything worked properly, then you will no longer be prompted for your password when you SSH using the device you set this up on.
-
-<p align="center">
-    <img src="images/savingprivatekey.gif" alt="Setting up private key">
+    <img src="images/keylink.gif" alt="Linking key to remote server with powershell command">
 </p>
 
 </details>
