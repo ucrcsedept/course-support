@@ -66,10 +66,10 @@ You will be prompted to log into the server with your password. After this, you 
 <summary><b>MacOS/Linux (Debian-based)</b></summary>
 We will generate something called a public/private key pair, which we will use to log into Remote-SSH.
 
-1. Open a *local* terminal on your Mac by pressing Cmd + Space and typing in "Terminal", and run the following commands in this order:
+1. Open a *local* terminal on your Mac by pressing `Cmd + Space` and typing in "Terminal", or if on Linux, open a terminal with `Ctrl + Alt + T` and run the following command:
+
 ```
-cd .ssh
-ssh-keygen -t rsa -b 4096
+ssh-keygen
 ```
 
 The output should be the following:
@@ -77,7 +77,7 @@ The output should be the following:
 Generating public/private rsa key pair.
 Enter file in which to save the key [your path here]:
 ```
-The name of the file can be whatever you want it to be. For the purposes of the tutorial, the name we will be using is ```mysshkey```. If you use something else, substitute the name wherever we use ```mysshkey```.
+For this tutorial, we will keep this field empty, so press `Enter`, and the generated key will be saved in the default location. If you wish to save your key in a non-default location, you may do that.
 
 Now, you will be prompted with this:
 
@@ -87,30 +87,23 @@ Enter passphrase (empty for no passphrase):
 
 **Do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase. Note that there is a tradeoff between security and convenience with this method, as anyone with access with your device will be able to log into UCR servers.
 
-You should see two files in the `.ssh` directory named `mysshkey` (or whatever you named your keys). The one without a file extension is your *private* key, **which you should never, ever share with ANYONE**. The one with a file extension of `.pub` is your *public key*.
-
-2. Run the following command:
+2. Run the following command, substituting `[YOUR NET ID HERE]` with your UCR NetID, and `[YOUR CLASS SERVER]` with the class server you wish to use:
 
 ```
-cat mysshkey.pub
-```
-Copy the (very long) output using Ctrl+Shift+C, or Cmd+V+C on Mac. This is your public key.
-
-3. SSH into UCR servers using the method outlined in "Part 1: Installation and Configuration" above.
-4. Make a new folder called `.ssh`, and in there create a file called `authorized_keys`. Paste in the public key, and save the file. For this to work, these must be the exact names of the folder and the file.
-
-<p align="center">
-    <img src="images/savingpublickey.gif" alt="Saving public key on server">
-</p>
-
-5. Open another terminal, and run the following commands in this order:
-
-```
-cd .ssh
-echo -e '\tIdentityFile /home/~/.ssh/mysshkey' >> config
+ssh-copy-id [YOUR NET ID HERE]@[YOUR CLASS SERVER].cs.ucr.edu
 ```
 
-What the second command does is append a command to the end of your SSH config file that reads the private key, which authenticates you without the need for entering your password.
+For example, if my NetID is jcand014, and I wish to connect to the CS010B server, then I would run:
+
+```
+ssh-copy-id jcand014@cs010b.cs.ucr.edu
+```
+
+You will be prompted to log in after running this command.
+
+> Note: If you wish to save your key to a different, non-default path, you can specify it in this command by using `ssh-copy-id -i your/key/path/here [YOUR NET ID HERE]@[YOUR CLASS SERVER].cs.ucr.edu` instead.
+
+Now, the next time you SSH into your class server, you will not be prompted for a password.
 
 </details>
 
