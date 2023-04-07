@@ -47,8 +47,14 @@ Enter passphrase (empty for no passphrase):
 <p align="center">
     <img src="images/keygen.gif" alt="Using powershell to generate ssh key">
 </p>
-
-6. Run the following command, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`
+6. Run the following two commands, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`.
+ 
+```
+ssh {COURSE ADDRESS HERE} mkdir .ssh
+ssh {COURSE ADDRESS HERE} chmod 0700 .ssh
+```
+    
+7. Run the following command, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`
 
 ```
 type "$env:USERPROFILE\.ssh\id_rsa.pub" | ssh {COURSE ADDRESS HERE} "cat >> .ssh/authorized_keys" 
