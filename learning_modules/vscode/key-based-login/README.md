@@ -51,8 +51,7 @@ Enter passphrase (empty for no passphrase):
 6. Run the following two commands, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`.
  
 ```
-ssh {COURSE ADDRESS HERE} mkdir .ssh
-ssh {COURSE ADDRESS HERE} chmod 0700 .ssh
+ssh {COURSE ADDRESS HERE} mkdir -m 0700 .ssh
 ```
 
 Note that you may get an error message if the directory `.ssh` already exists. You can safely ignore this error message if you get it, and it looks like this:
