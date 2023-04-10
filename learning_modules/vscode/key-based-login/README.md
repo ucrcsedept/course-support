@@ -42,16 +42,22 @@ Now, you will be prompted with this:
 Enter passphrase (empty for no passphrase):
 ```
 
-**If you want to log in automatically without entering a password, then do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Press Enter twice to proceed without entering a passphrase.
+**If you want to log in automatically without entering a password, then do not enter a passphrase**. This will require you to enter your passphrase every time you want to log in, which defeats the purpose of automatically logging in with your public/private key pair. Note that there is a tradeoff between security and convenience with this method, as anyone with access with your device will be able to log into UCR servers. Press Enter twice to proceed without entering a passphrase.
 
 <p align="center">
     <img src="images/keygen.gif" alt="Using powershell to generate ssh key">
 </p>
+
 6. Run the following two commands, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`.
  
 ```
-ssh {COURSE ADDRESS HERE} mkdir .ssh
-ssh {COURSE ADDRESS HERE} chmod 0700 .ssh
+ssh {COURSE ADDRESS HERE} mkdir -m 0700 .ssh
+```
+
+Note that you may get an error message if the directory `.ssh` already exists. You can safely ignore this error message if you get it, and it looks like this:
+
+```
+mkdir: cannot create directory '.ssh': File exists
 ```
     
 7. Run the following command, substituting `{COURSE ADDRESS HERE}` with the name of the server you want to connect to. For example, if I wanted to connect to the CS010B server, I would use `jcand014@cs010b.cs.ucr.edu`
