@@ -58,7 +58,7 @@ To reconnect, click the Remote-SSH symbol ![Remote SSH Symbol](images/remotesshs
 
 The next tutorial, which is how to use your new remote environment to create programs, can be found [here](../first-program/).
 
-Alternatively, [here](../key-based-login/) is an optional tutorial on how to set up key-based automatic login. 
+[Here](../key-based-login/) is an optional tutorial on how to set up key-based automatic login. However, we highly recommend taking the 5-10 minutes this will take, as this will allow you to automatically log into UCR servers via SSH without having to enter in your password.
 
 If you are having trouble, click on the picture below for a video example:
 

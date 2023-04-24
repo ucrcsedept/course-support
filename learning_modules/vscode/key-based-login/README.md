@@ -34,7 +34,7 @@ Generating public/private rsa key pair.
 Enter file in which to save the key [your path here]:
 ```
 
-**Do not put a custom name**, and just press `Enter`. If you want a custom name, you will have to modify the command used later on slightly, so press `Enter` if you simply wish to copy and paste the command.
+**Do not put a custom name**, and just press `Enter` which will give your file a default name. If you want a custom name, you will have to modify the command used later on slightly, so press `Enter` if you simply wish to copy and paste the command.
 
 Now, you will be prompted with this:
 
