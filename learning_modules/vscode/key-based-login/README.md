@@ -1,10 +1,10 @@
 To go back to the previous section, where we go over how to setup VSCode with SSH, click [here](../installation-and-setup/).
 
-# Optional (but recommended!): Key-Based Automatic Login
+# Recommended: Key-Based Automatic Login
 
 Notice that when you want to open a folder, you are prompted to enter your password again. This essentially makes it so you have to input your password twice to log in, which gets very tedious. In this section, you can set up Remote-SSH to remember your password so you only have to input it once.
 
-Instructions vary based on operating system:
+Instructions vary based on operating system, so click on the dropdown menu that applies to you:
 
 <details>
 <summary><b>Windows 10/11</b></summary>
@@ -34,7 +34,7 @@ Generating public/private rsa key pair.
 Enter file in which to save the key [your path here]:
 ```
 
-The name of the file can be whatever you want it to be, and you can simply press `Enter` if you wish to use the default path.
+**Do not put a custom name**, and just press `Enter` which will give your file a default name. If you want a custom name, you will have to modify the command used later on slightly, so press `Enter` if you simply wish to copy and paste the command.
 
 Now, you will be prompted with this:
 
@@ -67,6 +67,8 @@ type "$env:USERPROFILE\.ssh\id_rsa.pub" | ssh {COURSE ADDRESS HERE} "cat >> .ssh
 ```
 
 You will be prompted to log into the server with your password. After this, you will be able to log onto this class server without needing to enter your password.
+
+> Note: If you used a custom name in step 5, replace "id_rsa.pub" with "{your filename here}.pub".
 
 <p align="center">
     <img src="images/keylink.gif" alt="Linking key to remote server with powershell command">
