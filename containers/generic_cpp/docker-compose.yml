@@ -6,4 +6,5 @@
 version: '3.9'
 services:
   generic_cpp:
+    platform: linux/amd64
     build: .
