@@ -14,7 +14,7 @@ actively using this repository for their software.
 
 ## Learning Modules for Technologies
 
-Some technologies such as <a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/">Visual Studio Code</a>, <a target-"_blank"
+Some technologies such as <a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/">Visual Studio Code</a>, <a target="_blank"
 rel="noopener noreferrer" href="https://podman.io/">Podman</a>, and 
 <a target="_blank" rel="noopener noreferrer" href="https://docs.docker.com/get-docker/">Docker</a> are widely used in industry, and also 
 available for use in CS courses. There's some content about how to use them in CS 
