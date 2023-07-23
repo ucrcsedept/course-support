@@ -1,0 +1,47 @@
+# Podman Installation -- macOS: Ventura 
+
+If you fall into any of the following categories, we recommend using this method and work with Podman:
+
+1. If you are simply curious about Podman and wish to explore it beyond the classroom setting.
+2. If you prefer working on a local machine instead of a remote one.
+3. If the remote method is not working as expected for you.
+
+However, in all other cases, we advise you to utilize the pre-configured containers available on the UCR servers. This will lead to a smoother and more optimized experience for your specific needs.
+
+## Prerequisites -- Xcode & Homebrew
+
+Before proceeding with the installation of Podman, it is essential to confirm that certain prerequisites are met. We will first check for Xcode and Homebrew, and if necessary, install them before moving forward. This will ensure a smooth and successful installation process.
+
+Navigate to your terminal, and run the following command
+>Note: You can open the terminal by either pressing cmd + space and searching for "terminal" or by navigating to your launchpad and searching for "terminal."
+```
+xcode-select --version
+```
+If Xcode is already installed, your terminal will return the current version. Otherwise, you can follow the steps provided in the drop-down list below.
+<details>
+<summary>Xcode Installation</summary>
+To install XCode, run the following command in your terminal
+```
+xcode-select --install
+```
+
+After running the command, a pop-up will appear. Choose the "Install" option and follw by clicking "Agree" to the license agreement. XCode will now begin installing. This may take a few minutes. Once the installation process is complete, simply click "Done" on the pop-up that confirms the software has been installed.
+
+To check if the installation was successful, run the following command
+```
+xcode-select --version
+```
+The terminal should output the current version of Xcode.
+
+</details>
+
+The second requirement for Podman is Homebrew. To check if you have Homebrew installed on your system, enter the following command in your terminal
+```
+brew --version
+``` 
+If Homebrew is already installed, your terminal will return the current version. Otherwise, you can follow the steps provided in the drop-down list below.
+
+<details>
+<summary>Homebrew Installation</summary>
+
+</details>
