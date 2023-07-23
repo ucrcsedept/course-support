@@ -18,6 +18,7 @@ Navigate to your terminal, and run the following command
 xcode-select --version
 ```
 If Xcode is already installed, your terminal will return the current version. Otherwise, you can follow the steps provided in the drop-down list below.
+>A clear indication that it is not installed is when you encounter the following error message: **zsh: command not found: XCode-select**
 <details>
 <summary>Xcode Installation</summary>
 To install XCode, run the following command in your terminal
@@ -35,13 +36,47 @@ The terminal should output the current version of Xcode.
 
 </details>
 
+
 The second requirement for Podman is Homebrew. To check if you have Homebrew installed on your system, enter the following command in your terminal
 ```
 brew --version
 ``` 
 If Homebrew is already installed, your terminal will return the current version. Otherwise, you can follow the steps provided in the drop-down list below.
+>A clear indication that it is not installed is when you encounter the following error message: **zsh: command not found: brew**
 
 <details>
 <summary>Homebrew Installation</summary>
 
+To begin the installation, navigate to the <a target="_blank" rel="noopener noreferrer" href="https://brew.sh/">Homebrew page</a>.
+
+You will now see the following:
+
+<p align="center">
+   <img src="images/homebrew.png" alt="Homebrew Paste Icon" width = "850" height = "300"> 
+</p>
+
+To copy the script, simply click on the clipboard icon located to the right of the command, and then paste it directly into your terminal.
+
+The terminal may prompt you for 'sudo access'. Enter the admin password to the terminal. You may not see the characters you are typing; this is normal.
+>Note: Your admin password is the same password you use to log into your Mac.
+
+After entering your password, a list will be displayed showing what is going to be installed and where. Press the **return** key on your keyboard to continue. The installation will now begin and may take a few minutes.
+
+Once Homebrew has been installed, locate the following lines
+```
+==> Next steps:
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew/ shellenv)"') >> /Users/kennythai/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+The two commands will vary slightly for every system. **DO NOT COPY** the commands from above, but instead the ones from your own terminal.
+
+Copy and paste the first line into your terminal. In this case, the first line is **(echo; echo 'eval "$(/opt/homebrew/bin/brew/ shellenv)"') >> /Users/kennythai/.zprofile**
+
+Copy and paste the second line into your terminal **eval "$(/opt/homebrew/bin/brew shellenv)"**
+
+Once you have completed the previous steps, confirm the successful installation of Homebrew by running the following command.
+```
+brew --version
+```
 </details>
