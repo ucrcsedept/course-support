@@ -1,14 +1,14 @@
 ## Installing podman
 1. Visit podman [website](https://podman.io) 
 2. Download podman desktop version. The download button is on the home page of the website
-3. Open the .dmg file and you will see a window like this. <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-18 at 6.25.52 PM.png">
+3. Open the .dmg file and you will see a window like this. <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanDesktopInstallation.png">
 4. Drag the Podman desktop icon to the application folder
 5. Close the .dmg file and open up the Podman desktop application
 6. It will say "'Podman Desktop' is an app downloaded from the internet. Are you sure you want to open it?" with the options "Cancel" or "Open". Click on open
 7. Upon opening Podman Desktop, you are greeted with a welcome screen. Click on "Go To Podman Desktop" to proceed to the home screen
 8. Now that Podman's desktop application is installed, we need to install podman
-9. Podman desktop's home screen will say that podman isn't detected, and gives a button to install the latest stable version of podman (4.5.1 in this case) <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-14 at 3.50.08 PM.png">
-10. Click the install button and click "Yes" on the prompt to install Podman and wait for Podman Desktop to finish installing podman <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-14 at 3.53.21 PM.png">
+9. Podman desktop's home screen will say that podman isn't detected, and gives a button to install the latest stable version of podman (4.5.1 in this case) <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanDesktopHomepage.png">
+10. Click the install button and click "Yes" on the prompt to install Podman and wait for Podman Desktop to finish installing podman <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanInstallation.png">
 
 ## Installing podman-compose
 #### Using Python
@@ -28,7 +28,7 @@
 1. Now that Podman is installed, we can create our first container.
 2. Podman requires a virtual machine to create and run containers. You can initialize this machine by running `podman machine init` in the terminal and then `podman machine start` in the terminal. Then, enter `podman machine info` in the terminal to confirm that the machine was started
 3. To create a Hello World container, open a terminal window, and type in the command `podman run --name hello-world-container hello-world`
-4. The `--name` flag sets the name of the container to `hello-world-container`.  This container will output: <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-18 at 6.24.39 PM.png">
+4. The `--name` flag sets the name of the container to `hello-world-container`.  This container will output: <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanHelloWorld.png">
 5. To save space/resources, remove the container using `podman rm hello-world-container` 
 
 ## Using Podman
@@ -53,8 +53,8 @@
 ## Developing using VSCode in a container
 1. Head to the extension tab and install the  "Dev Containers" extension in VSCode
 2. Click on the gear icon on the Dev Containers store page and click on "Extension Settings" to go to the settings for Dev Containers
-3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman` <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-16 at 3.02.31 PM.png"> Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `docker-compose` with `podman-compose` <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-18 at 7.01.11 PM.png">
-4. To attach to a running container, click on the button to the bottom right and click `Attach to Running Container...` and select to container you want to attach to.  <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-18 at 11.28.23 AM.png"> <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-18 at 11.27.15 AM.png"> Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, and under the `Dev Containers` section, find the container you want to connect to, right click and select `Attach in Current Window` or `Attach in New Window` <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-18 at 7.03.38 PM.png">
-	1. If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" <img title="screenshot" alt="Alt text" src="podman-setup-images/Screenshot 2023-07-19 at 12.12.59 PM.png">
+3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman` <img title="screenshot" alt="Alt text" src="podman-setup-images/dockerPath.png"> Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `docker-compose` with `podman-compose` <img title="screenshot" alt="Alt text" src="podman-setup-images/dockerComposePath.png">
+4. To attach to a running container, click on the button to the bottom right and click `Attach to Running Container...` and select to container you want to attach to.  <img title="screenshot" alt="Alt text" src="podman-setup-images/attachToContainer.png"> <img title="screenshot" alt="Alt text" src="podman-setup-images/selectContainer.png"> Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, and under the `Dev Containers` section, find the container you want to connect to, right click and select `Attach in Current Window` or `Attach in New Window` <img title="screenshot" alt="Alt text" src="podman-setup-images/attachUsingRemoteExplorer.png">
+	1. If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" <img title="screenshot" alt="Alt text" src="podman-setup-images/viewDevContainers.png">
 5. A new VSCode window will open, which will be connected to the selected container.
 6. To verify that the connection was successful, open a terminal and the user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container.
