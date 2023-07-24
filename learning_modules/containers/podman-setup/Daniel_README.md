@@ -1,43 +1,53 @@
-## Installing podman
-1. Visit podman [website](https://podman.io) 
-2. Download podman desktop version. The download button is on the home page of the website
-3. Open the .dmg file and you will see a window like this. <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanDesktopInstallation.png">
-4. Drag the Podman desktop icon to the application folder
-5. Close the .dmg file and open up the Podman desktop application
-6. It will say "'Podman Desktop' is an app downloaded from the internet. Are you sure you want to open it?" with the options "Cancel" or "Open". Click on open
-7. Upon opening Podman Desktop, you are greeted with a welcome screen. Click on "Go To Podman Desktop" to proceed to the home screen
-8. Now that Podman's desktop application is installed, we need to install podman
-9. Podman desktop's home screen will say that podman isn't detected, and gives a button to install the latest stable version of podman (4.5.1 in this case) <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanDesktopHomepage.png">
-10. Click the install button and click "Yes" on the prompt to install Podman and wait for Podman Desktop to finish installing podman <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanInstallation.png">
+## Installing podman on Mac
+Installing podman on Mac is simple using a package manager. For this tutorial, we'll be using Homebrew.
+
+First, verify if Homebrew is installed on your device by opening a terminal window and running this command:
+```
+brew --version
+```
+
+If Homebrew is installed, the command will print the version number of Homebrew that is installed. Otherwise, it will print an error message saying that the command is not found.  
+If it is not installed, refer to the installation tutorial below. 
+
+<details>
+<summary>Installing Homebrew</summary>
+
+1. First, visit the Homebrew [website](https://brew.sh).
+2. On the homepage, there is a section that says "Install Homebrew" with a textbox below it. Click the clipboard button on the right to copy the script in the textbox.
+3. Open a terminal window and run the command.
+4. This script installs Homebrew on your device, it will ask for your device's password and you will need to enter it to continue installation.
+5. Finally, verify that Homebrew is installed by running `brew --version`.
+
+</details> 
+
+Once Homebrew is installed, you can install podman by running `brew install podman` in the terminal.
 
 ## Installing podman-compose
-#### Using Python
-1. If Anaconda Python is installed on your device, simply run `conda install -c conda-forge podman-compose` to install podman-compose
-	1. If python is installed some other way, replace `conda` with either `pip` or `pip3` and run the same command.
-2. If Python is not installed, refer to the Homebrew installation section.
+#### Using Python/Conda
+1. If Anaconda Python is installed on your device, you can install podman-compose using this command:
+```
+conda install -c conda-forge podman-compose
+```
+>If python is installed some other way, replace `conda` with either `pip` or `pip3` and run the same command.
+
+2. Verify podman-compose successfully installed using `podman-compose --version`
 
 #### Using Homebrew
-1. Verify if Homebrew is installed on your device by running `brew` in the terminal. The terminal will output `zsh: command not found: brew` if Homebrew is not installed
-	1. If Homebrew is installed, simply run `brew install podman-compose` and you are finished
-2. If it's not installed, you will need to install it by first visiting the Homebrew [website](https://brew.sh).
-3. On the homepage, there will be a section that says "Install Homebrew" with a textbox below it. Click the clipboard button on the right to copy the script in the textbox and run it in your terminal.
-4. This script installs Homebrew on your device, it will ask for your device's password and you will need to enter it to continue installation.
-5. Now that Homebrew is installed, run `brew install podman-compose` to install podman-compose.
+1. podman-compose can be instaleld using Homebrew with the command: 
+```
+brew install podman-compose
+```
+2. 
 
-## Running a Hello World Container
+## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
 2. Podman requires a virtual machine to create and run containers. You can initialize this machine by running `podman machine init` in the terminal and then `podman machine start` in the terminal. Then, enter `podman machine info` in the terminal to confirm that the machine was started
 3. To create a Hello World container, open a terminal window, and type in the command `podman run --name hello-world-container hello-world`
-4. The `--name` flag sets the name of the container to `hello-world-container`.  This container will output: <img title="screenshot" alt="Alt text" src="podman-setup-images/podmanHelloWorld.png">
+4. The `--name` flag sets the name of the container to `hello-world-container`.  This container will output: 
+<p align="center">
+<img title="screenshot" alt="Alt text" src="podman-setup-images/podmanHelloWorld.png">
+</p>
 5. To save space/resources, remove the container using `podman rm hello-world-container` 
-
-## Using Podman
-1. Container images can be searched using the `podman search [options] TERM` command in the terminal. Ex. `podman search busybox` 
-	1. This command searches for images in registries. It can be used to search all default registries or specific registries
-2. Building an image from a containerfile is done using the `podman build [options] CONTEXT` command. The context is the specified directory where the files used to build the image are stored. It can be specified as a URL, git repository, or containerfile. Use the `-t NAME` option to assign a name to the resulting image
-3. Running an image is done using the `podman run [options] IMAGE` terminal command. Doing this command creates the container, which can now be seen in podman desktop. A preexisting container can be started using the `podman start [options] CONTAINER` command.
-	- Podman desktop allows for easy management of containers. One can view logs, run commands in the container's terminal, start and stop containers, etc. 
-	- Once a container is started in podman desktop, you can connect to it in the terminal using `podman attach [options] CONTAINER` 
 
 ## Creating a container using Dockerfiles Stored in a Github Repository
 1. First clone the GitHub repository to your computer using `git clone`. In this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git) 
