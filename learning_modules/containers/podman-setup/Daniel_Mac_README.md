@@ -59,16 +59,41 @@ podman run --name hello-world-container hello-world
 
 5. To save space/resources, remove the container using `podman rm hello-world-container`
 
-## Creating a container using Dockerfiles Stored in a Github Repository
-1. First clone the GitHub repository to your computer using `git clone`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git) 
+## Creating a container using Dockerfiles stored in a Github Repository
+1. First clone the GitHub repository to your computer using `git clone`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
 2. In the terminal, navigate to the repository using `cd`. 
-3. Navigate to the course you want to create a container for located in the `containers` folder. For this example, we'll use `cs100`.
+3. Navigate to the course directory you want to create a container for inside the `containers` folder. For this example, we'll use `cs100`.
 4. Now that we're in the `cs100` folder (or whichever class you chose) we can use either `podman build` or `podman-compose` to build an image using the files located inside the current directory.
-	1. Using `podman build`, run the command `podman build -t [name] .` The period at the end indicates that the context is the current directory. This means that podman will create an image using the files in the directory it is currently in. You can now run the new container using `podman run [options] IMAGE`, where `IMAGE` is the name you set in the build command.
-		1. The `--name` flag allows us to set a name for the container. Otherwise, the container will have a randomly generated name.
-	2. Using `podman-compose`, run the command `podman-compose up -d`. This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, and instead the container will run in the background. 
-5. The container should now be running, and will show up in Podman Desktop in the containers tab 
-6. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers.
+	<details>
+	<summary>podman build</summary>
+	Run the command:
+	
+	```
+	podman build -t [name] .
+	```
+	
+	The period at the end indicates that the build context is the current directory. This means that podman will create an image using the files in the directory it is currently in. You can now run the new container using: 
+	
+	```
+	podman run [options] IMAGE
+	```
+
+	`IMAGE` is the name you set in the build command.
+	>The `--name` flag allows us to set a name for the container. Otherwise, the container will have a randomly generated name.
+	</details>
+
+	<details>
+	<summary>podman-compose</summary>
+	Run the command:
+
+	```
+	podman-compose up -d
+	```
+
+	This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, and instead the container will run in the background.
+	</details>
+
+5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers.
 
 ## Developing using VSCode in a container
 1. Head to the extension tab and install the  "Dev Containers" extension in VSCode
