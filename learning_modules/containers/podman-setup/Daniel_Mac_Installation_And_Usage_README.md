@@ -30,7 +30,7 @@ Once Homebrew is installed, you can install podman by running `brew install podm
 ```
 conda install -c conda-forge podman-compose
 ```
->Note: If python is installed some other way, replace `conda` with either `pip` or `pip3` and run the same command.
+>Note: If python is installed some other way, you can use either `pip` or `pip3` to install podman-compose.
 
 #### Using Homebrew
 1. podman-compose can be instaleld using Homebrew with the command: 
@@ -43,7 +43,7 @@ Once podman-compose is installed, you can verify that it was successful by runni
 
 ## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
-2. On Macs, podman uses a virtual machine to create and run containers. You can initialize this machine by running:
+2. On Windows Devices Macs, podman uses a virtual machine to create and run containers. You can initialize this machine by running:
 
 ```
 podman machine init
@@ -140,3 +140,5 @@ Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, a
 
 5. This connects VSCode to your container, allowing you to work inside of it.
 6. To verify that the connection was successful, open a terminal and the user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container.
+
+You have now successfully created and entered a container for your course in VSCode!
