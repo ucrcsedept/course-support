@@ -1,7 +1,8 @@
-## Installing podman on Mac
+# Installing podman on Mac
 Installing podman on Mac is simple using a package manager. For this tutorial, we'll be using Homebrew.
 
 First, verify if Homebrew is installed on your device by opening a terminal window and running this command:
+
 ```
 brew --version
 ```
@@ -13,6 +14,7 @@ If it is not installed, refer to the installation tutorial below.
 <summary>Installing Homebrew</summary>
 
 1. First, visit the Homebrew [website](https://brew.sh).
+
 2. On the homepage, there is a section that says "Install Homebrew" with a textbox below it. Click the clipboard button on the right to copy the script in the textbox.
 3. Open a terminal window and run the command.
 4. This script installs Homebrew on your device, it will ask for your device's password and you will need to enter it to continue installation.
@@ -32,6 +34,7 @@ conda install -c conda-forge podman-compose
 
 #### Using Homebrew
 1. podman-compose can be instaleld using Homebrew with the command: 
+
 ```
 brew install podman-compose
 ```
@@ -41,16 +44,20 @@ Once podman-compose is installed, you can verify that it was successful by runni
 ## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
 2. On Macs, podman uses a virtual machine to create and run containers. You can initialize this machine by running:
+
 ```
 podman machine init
 podman machine start
 ``` 
+
 This creates a podman machine with the default name `podman-machine-default`. Run `podman machine info` in the terminal to confirm that the machine was started
 
 3. To create a Hello World container, open a terminal window, and type in the command:
+
 ```
 podman run --name hello-world-container hello-world
 ```
+
 4. The `--name` flag sets the name of the created container to `hello-world-container`. `hello-world` is the name of the image the container that podman uses to create the container. Running the container gives this output:
 
 <p align="center">
@@ -66,6 +73,7 @@ podman run --name hello-world-container hello-world
 4. Now that we're in the `cs100` folder (or whichever class you chose) we can use either `podman build` or `podman-compose` to build an image using the files located inside the current directory.
 	<details>
 	<summary>podman build</summary>
+
 	Run the command:
 	
 	```
@@ -84,6 +92,7 @@ podman run --name hello-world-container hello-world
 
 	<details>
 	<summary>podman-compose</summary>
+
 	Run the command:
 
 	```
