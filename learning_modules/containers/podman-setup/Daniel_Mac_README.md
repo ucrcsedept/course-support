@@ -28,7 +28,7 @@ Once Homebrew is installed, you can install podman by running `brew install podm
 ```
 conda install -c conda-forge podman-compose
 ```
->If python is installed some other way, replace `conda` with either `pip` or `pip3` and run the same command.
+>Note: If python is installed some other way, replace `conda` with either `pip` or `pip3` and run the same command.
 
 #### Using Homebrew
 1. podman-compose can be instaleld using Homebrew with the command: 
@@ -79,7 +79,7 @@ podman run --name hello-world-container hello-world
 	```
 
 	`IMAGE` is the name you set in the build command.
-	>The `--name` flag allows us to set a name for the container. Otherwise, the container will have a randomly generated name.
+	>Note: The `--name` flag sets a name for the container. Otherwise, the container will have a randomly generated name.
 	</details>
 
 	<details>
@@ -123,11 +123,11 @@ Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, a
 <img title="Attaching using Remote Explorer" alt="Attach Using Remote Explorer" src="podman-setup-images/attachUsingRemoteExplorer.png">
 </p>
 
->If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection at the top to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
+>Note: If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection at the top to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
 
 <p align="center">
 <img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="podman-setup-images/viewDevContainers.png">
 </p>
 
-5. A new VSCode window will open, which will be connected to the selected container.
+5. This connects VSCode to your container, allowing you to work inside of it.
 6. To verify that the connection was successful, open a terminal and the user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container.
