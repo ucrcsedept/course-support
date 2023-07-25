@@ -30,14 +30,13 @@ conda install -c conda-forge podman-compose
 ```
 >If python is installed some other way, replace `conda` with either `pip` or `pip3` and run the same command.
 
-2. Verify podman-compose successfully installed using `podman-compose --version`
-
 #### Using Homebrew
 1. podman-compose can be instaleld using Homebrew with the command: 
 ```
 brew install podman-compose
 ```
-2. 
+
+Once podman-compose is installed, you can verify that it was successful by running `podman-compose --version`
 
 ## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
@@ -77,31 +76,32 @@ podman run --name hello-world-container hello-world
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
 
 <p align="center">
-<img title="screenshot" alt="Alt text" src="podman-setup-images/dockerPath.png">
+<img title="DockerPath" alt="Docker Path Setting" src="podman-setup-images/dockerPath.png">
 </p>
 
 Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `docker-compose` with `podman-compose`:
 
 <p align="center">
-<img title="screenshot" alt="Alt text" src="podman-setup-images/dockerComposePath.png">
+<img title="Docker-Compose Path" alt="Docker-Compose Path Setting" src="podman-setup-images/dockerComposePath.png">
 </p>
 
 4. To attach to a running container, click on the button to the bottom right and click `Attach to Running Container...` and select to container you want to attach to:
 
 <p align="center">
-<img title="screenshot" alt="Alt text" src="podman-setup-images/attachToContainer.png"> <img title="screenshot" alt="Alt text" src="podman-setup-images/selectContainer.png">
+<img title="AttachingToContainer" alt="Attach to running container" src="podman-setup-images/attachToContainer.png"> 
+<img title="SelectingContainer" alt="Select Container from list" src="podman-setup-images/selectContainer.png">
 </p>
 
 Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, and under the `Dev Containers` section, find the container you want to connect to, right click and select `Attach in Current Window` or `Attach in New Window`:
 
 <p align="center">
-<img title="screenshot" alt="Alt text" src="podman-setup-images/attachUsingRemoteExplorer.png">
+<img title="Attaching using Remote Explorer" alt="Attach Using Remote Explorer" src="podman-setup-images/attachUsingRemoteExplorer.png">
 </p>
 
->If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
+>If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection at the top to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
 
 <p align="center">
-<img title="screenshot" alt="Alt text" src="podman-setup-images/viewDevContainers.png">
+<img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="podman-setup-images/viewDevContainers.png">
 </p>
 
 5. A new VSCode window will open, which will be connected to the selected container.
