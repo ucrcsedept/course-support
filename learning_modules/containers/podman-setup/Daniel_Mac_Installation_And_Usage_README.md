@@ -61,7 +61,7 @@ podman run --name hello-world-container hello-world
 4. The `--name` flag sets the name of the created container to `hello-world-container`. `hello-world` is the name of the image the container that podman uses to create the container. Running the container gives this output:
 
 <p align="center">
-<img title="HelloWorldContainer" alt="Podman Hello World Container" src="images/podmanHelloWorld.png">
+<img title="HelloWorldContainer" alt="Podman Hello World Container" src="images/podmanHelloWorld.png" width = "400" height = auto>
 </p>
 
 5. To save space/resources, remove the container using `podman rm hello-world-container`
@@ -110,32 +110,35 @@ podman run --name hello-world-container hello-world
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
 
 <p align="center">
-<img title="DockerPath" alt="Docker Path Setting" src="images/dockerPath.png">
+<img title="DockerPath" alt="Docker Path Setting" src="images/dockerPath.png" width = "550" height = auto>
 </p>
 
 Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `docker-compose` with `podman-compose`:
 
 <p align="center">
-<img title="Docker-Compose Path" alt="Docker-Compose Path Setting" src="images/dockerComposePath.png">
+<img title="Docker-Compose Path" alt="Docker-Compose Path Setting" src="images/dockerComposePath.png" width = "550" height = auto>
 </p>
 
 4. To attach to a running container, click on the button to the bottom right and click `Attach to Running Container...` and select to container you want to attach to:
 
 <p align="center">
-<img title="AttachingToContainer" alt="Attach to running container" src="images/attachToContainer.png"> 
-<img title="SelectingContainer" alt="Select Container from list" src="images/selectContainer.png">
+<img title="AttachingToContainer" alt="Attach to running container" src="images/attachToContainer.png" width = "600" height = auto>
+</p>
+
+<p align="center">
+<img title="SelectingContainer" alt="Select Container from list" src="images/selectContainer.png" width = "600" height = auto>
 </p>
 
 Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, and under the `Dev Containers` section, find the container you want to connect to, right click and select `Attach in Current Window` or `Attach in New Window`:
 
 <p align="center">
-<img title="Attaching using Remote Explorer" alt="Attach Using Remote Explorer" src="images/attachUsingRemoteExplorer.png">
+<img title="Attaching using Remote Explorer" alt="Attach Using Remote Explorer" src="images/attachUsingRemoteExplorer.png" width = auto height = "325">
 </p>
 
 >Note: If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection at the top to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
 
 <p align="center">
-<img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="images/viewDevContainers.png">
+<img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="images/viewDevContainers.png" width = "450" height = auto>
 </p>
 
 5. This connects VSCode to your container, allowing you to work inside of it.
