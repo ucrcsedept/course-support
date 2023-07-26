@@ -31,7 +31,7 @@
         
         - If this number is around 1000, follow these steps:
         
-        ![Untitled](Untitled.png)
+        ![ArchImage](ArchImage.png)
         
         - To install the user-mode networking software, run **`sudo pacman -S slirp4netns`**
         - Once that is done, reboot your system and you should be ready to use podman!
