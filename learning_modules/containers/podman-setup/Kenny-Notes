@@ -139,22 +139,20 @@ podman rm hello-world-container
 By following these steps, you will have initialized your machine, created and run your first container, and removed it when no longer needed.
 
 ## Creating a UCR-associated Container
-Each course will have its own unique container that needs to be built.
+For each course, there will be a distinct container that needs to be built.
 
-Before we begin, clone the UCRCSE course-support repository into your system. 
-https://github.com/ucrcsedept/course-support/tree/main/containers 
+Before proceeding, ensure you have cloned the <a target="_blank" rel="noopener noreferrer" href="https://github.com/ucrcsedept/course-support/tree/main ">UCR CSE Course Support repository</a> into your system.
 
-If you need a quick refresher on how to clone a repository follow the drop-down menu below:
-Go to link, go to the right hand side
-
-Once you are in the main directory of the respository, go into the containers directory
-```
-cd containers
-```
-run the commmand
+Once you are in the main directory of the repository, navigate to the "containers" directory using cd containers, and then `cd` to the directory for your registered course. Execute the following command to build the container specifically for your class:
 
 ```
 podman-compose up -d
+```
+>Note: This may take a few minutes.
+
+To verify the successful creation of the container, execute the following command:
+```
+podman ps
 ```
 
 ## VSCode Dev Containers Extension
