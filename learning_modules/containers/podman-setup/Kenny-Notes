@@ -156,15 +156,40 @@ podman ps
 ```
 
 ## VSCode Dev Containers Extension
-Open VSCode and navigate to the Extensions tab on the left. Search for the Dev Containers extension, and install it. Go to the VSCode gear on the botton left and click **Settings**. Find the drop-down for Extensions and click Docker. 
- the 3 images
 
-open the project you are current working on
+Open VSCode, and navigate to the **Extensions** tab on the left-hand side. Use the search bar to look for the **Dev Containers** extension and install it. 
 
-attach a container
+<p align="center">
+   <img src="images/ext.png" alt="VSCode Extensions" > 
+</p>
 
-open in container
+Click on the VSCode gear icon located at the bottom left corner and select **Extensions**. For reference, please see the image below: 
 
+<p align="center">
+   <img src="images/settings.png" alt="Settings" > 
+</p>
+
+In the search bar (or use "cmd + f"), look for **Docker Path** and replace `docker` with `podman`.
+<p align="center">
+   <img src="images/dockerpath.png" alt="dockerpath" > 
+</p>
+
+Go to the search bar again and search for **Docker Compose Path** and replace `docker-compose` with `podman-compose`
+<p align="center">
+   <img src="images/dockerpath.png" alt="dockercompose" > 
+</p>
+
+Now that you have completed the initial setup, you can proceed with attaching a container to your current project.
+
+Open your command pallete ("cmd + shift + p"), and search for `Attach to Running Container ...`. Click on it to initiate the process.
+
+<p align="center">
+   <img src="images/example.png" alt="example" > 
+</p>
+
+It will prompt you to open a new window, and once you do so, you will be developing within the attached container.
+
+By following these steps, you will be all set to efficiently work with containers in your VSCode environment, tailored to your respective course's requirements. Happy coding!
 ## Potential Errors and Troubleshooting
 
 ### <u><b>Podman Machine and Container Errors</b></u>
