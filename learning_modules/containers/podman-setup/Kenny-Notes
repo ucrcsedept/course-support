@@ -105,13 +105,38 @@ podman-compose --version
 
 This section serves as a tutorial on how to create your first container, which is especially useful for those who are curious about Podman. Additionally, the knowledge gained here will be valuable in effectively managing your future containers for your courses.
 
-Let's begin by intializing our machine with the following commands:
+Let's start by initializing our machine using the following commands:
 
 ```
 podman machine init
 podman machine start
 ```
+>Note: This process could take a couple minutes. 
 
+To confirm if the machine has been successfully started, execute the following command:
+
+```
+podman machine info
+```
+
+With the machine up and running, let's now create our first container! In this example, we'll create a "Hello World" container. Execute the following command:
+
+```
+podman run --name hello-world-container hello-world
+```
+
+Upon successful execution, you will see output similar to this:
+
+<p align="center">
+   <img src="images/hello_world.png" alt="Hello World Output" > 
+</p>
+
+To remove the container, simply run the following command:
+
+```
+podman rm hello-world-container
+```
+By following these steps, you will have initialized your machine, created and run your first container, and removed it when no longer needed.
 
 ## Creating a UCR-associated Container
 Each course will have its own unique container that needs to be built.
