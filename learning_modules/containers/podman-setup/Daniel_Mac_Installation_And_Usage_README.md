@@ -30,10 +30,10 @@ Once Homebrew is installed, you can install podman by running `brew install podm
 ```
 conda install -c conda-forge podman-compose
 ```
->Note: If python is installed some other way, you can use either `pip` or `pip3` to install podman-compose.
+>Note: If Python is installed some other way, you can use either `pip` or `pip3` to install podman-compose.
 
 #### Using Homebrew
-1. podman-compose can be instaleld using Homebrew with the command: 
+1. podman-compose can be installed using Homebrew with the command: 
 
 ```
 brew install podman-compose
@@ -43,7 +43,7 @@ Once podman-compose is installed, you can verify that it was successful by runni
 
 ## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
-2. On Windows Devices Macs, podman uses a virtual machine to create and run containers. You can initialize this machine by running:
+2. On Windows Devices and Macs, podman uses a virtual machine to create and run containers. You can initialize this machine by running:
 
 ```
 podman machine init
@@ -58,7 +58,7 @@ This creates a podman machine with the default name `podman-machine-default`. Ru
 podman run --name hello-world-container hello-world
 ```
 
-4. The `--name` flag sets the name of the created container to `hello-world-container`. `hello-world` is the name of the image the container that podman uses to create the container. Running the container gives this output:
+4. The `--name` flag sets the name of the created container to `hello-world-container`. `hello-world` is the name of the image that podman uses to create the container. Running the container gives this output:
 
 <p align="center">
 <img title="HelloWorldContainer" alt="Podman Hello World Container" src="images/podmanHelloWorld.png" width = "400" height = auto>
@@ -66,7 +66,7 @@ podman run --name hello-world-container hello-world
 
 5. To save space/resources, remove the container using `podman rm hello-world-container`
 
-## Creating a container using Dockerfiles stored in a Github Repository
+## Creating a container using Dockerfiles stored in a GitHub Repository
 1. First clone the GitHub repository to your computer using `git clone`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
 2. In the terminal, navigate to the repository using `cd`. 
 3. Navigate to the course directory you want to create a container for inside the `containers` folder. For this example, we'll use `cs100`.
