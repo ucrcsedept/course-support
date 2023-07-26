@@ -20,7 +20,7 @@ xcode-select --version
 If Xcode is already installed, your terminal will return the current version. Otherwise, you can follow the steps provided in the drop-down list below.
 >A clear indication that it is not installed is when you encounter the following error message: **zsh: command not found: XCode-select**
 <details>
-<summary>Xcode Installation</summary>
+<summary> <b>Xcode Installation</b></summary>
 To install XCode, run the following command in your terminal
 ```
 xcode-select --install
@@ -45,7 +45,7 @@ If Homebrew is already installed, your terminal will return the current version.
 >A clear indication that it is not installed is when you encounter the following error message: **zsh: command not found: brew**
 
 <details>
-<summary>Homebrew Installation</summary>
+<summary> <b>Homebrew Installation</b> </summary>
 
 To begin the installation, navigate to the <a target="_blank" rel="noopener noreferrer" href="https://brew.sh/">Homebrew page</a>.
 
@@ -80,3 +80,55 @@ Once you have completed the previous steps, confirm the successful installation 
 brew --version
 ```
 </details>
+
+## Installing Podman
+
+With our prerequisites completed, we can now proceed to install Podman. To get started, navigate to your terminal and execute the following command:
+ 
+```
+brew install podman
+```
+
+After the prior installation has finished, proceed to run this command:
+
+```
+brew install podman-compose
+```
+
+By following these steps, you will have successfully installed Podman and Podman Compose on your system. To double-check, execute the following two commands and check if they produce any output:
+
+```
+podman --version
+podman-compose --version
+```
+## Container Tutorial
+This section is a tutorial on how to create your first container if you are 
+
+## Creating a UCR-associated Container
+Each course will have its own unique container that needs to be built.
+
+Before we begin, clone the UCRCSE course-support repository into your system. 
+https://github.com/ucrcsedept/course-support/tree/main/containers 
+
+If you need a quick refresher on how to clone a repository follow the drop-down menu below:
+Go to link, go to the right hand side
+
+Once you are in the main directory of the respository, go into the containers directory
+```
+cd containers
+```
+run the commmand
+
+```
+podman-compose up -d
+```
+
+## VSCode Dev Containers Extension
+Open VSCode and navigate to the Extensions tab on the left. Search for the Dev Containers extension, and install it. Go to the VSCode gear on the botton left and click **Settings**. Find the drop-down for Extensions and click Docker. 
+ the 3 images
+
+open the project you are current working on
+
+attach a container
+
+open in container
