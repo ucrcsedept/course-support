@@ -210,11 +210,15 @@ int main() {
 7. Click the Terminal dropdown button in the menu bar and create a new terminal window. This will create a new terminal screen at the bottom of the VSCode window.
 
 <p align="center">
-<img title="Open New Terminal" alt="Open New Terminal" src="images/createNewTerminal.png" width = "525" height = auto>
+<img title="Open New Terminal" alt="Open New Terminal" src="images/createNewTerminal.png" width = "550" height = auto>
 </p>
 
 8. In this terminal, enter the command `g++ main.cpp`. This command will compile your Hello World program and create a new file in the same directory named `a.out`.
 
 9. In the terminal window again, type the command `./a.out`. This will run the program you just made, the only output should be `Hello World!`.
 
-10. If you see that output in the terminal, you have successfully created a Hello World program within your container.
+10. If you see that output in the terminal, you have successfully created a Hello World program within your container. Once completed, this is what your terminal should look like:
+
+<p align="center">
+<img title="Final Hello World Terminal" alt="Final Hello World Terminal" src="images/helloWorldTerminal.png" width = "550" height = auto>
+</p>
