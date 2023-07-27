@@ -19,7 +19,7 @@ If it is not installed, refer to the installation tutorial below.
 2. On the homepage, there is a section that says "Install Homebrew" with a textbox below it. Click the clipboard button on the right to copy the script in the textbox:
 
 <p align="center">
-<img title="HomebrewInstallation" alt="Homebrew Installation Script" src="images/HomebrewInstallationScript.png" width = "600" height = auto>
+<img title="Homebrew Installation" alt="Homebrew Installation Script" src="images/HomebrewInstallationScript.png" width = "600" height = auto>
 </p>
 
 3. Open a terminal window and run the command.
@@ -67,7 +67,7 @@ podman run --name hello-world-container hello-world
 4. The `--name` flag sets the name of the created container to `hello-world-container`. `hello-world` is the name of the image that podman uses to create the container. Running the container gives this output:
 
 <p align="center">
-<img title="HelloWorldContainer" alt="Podman Hello World Container" src="images/podmanHelloWorld.png" width = "400" height = auto>
+<img title="Hello World Container" alt="Podman Hello World Container" src="images/podmanHelloWorld.png" width = "400" height = auto>
 </p>
 
 5. To save space/resources, remove the container using `podman rm hello-world-container`
@@ -125,7 +125,7 @@ podman run --name hello-world-container hello-world
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
 
 <p align="center">
-<img title="DockerPath" alt="Docker Path Setting" src="images/dockerPath.png" width = "550" height = auto>
+<img title="Docker Path" alt="Docker Path Setting" src="images/dockerPath.png" width = "550" height = auto>
 </p>
 
 Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `docker-compose` with `podman-compose`:
@@ -137,11 +137,11 @@ Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `d
 4. To attach to a running container, click on the button to the bottom right and click `Attach to Running Container...` and select to container you want to attach to:
 
 <p align="center">
-<img title="AttachingToContainer" alt="Attach to running container" src="images/attachToContainer.png" width = "600" height = auto>
+<img title="Attaching To Container" alt="Attach to running container" src="images/attachToContainer.png" width = "600" height = auto>
 </p>
 
 <p align="center">
-<img title="SelectingContainer" alt="Select Container from list" src="images/selectContainer.png" width = "600" height = auto>
+<img title="Selecting Container" alt="Select Container from list" src="images/selectContainer.png" width = "600" height = auto>
 </p>
 
 Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, and under the `Dev Containers` section, find the container you want to connect to, right click and select `Attach in Current Window` or `Attach in New Window`:
@@ -163,3 +163,27 @@ You have now successfully created and entered a container for your course in VSC
 
 
 ## Creating Your First C++ Program in a Container
+1. Upon opening the container for the first time, VSCode will show a home page with no folder opened:
+
+<p align="center">
+<img title="Container Initial Screen" alt="Container Initial Screen" src="images/VSCodeContainerInitialScreen.png" width = "550" height = auto>
+</p>
+
+2. Click the "Open" button with a folder next to it located at the middle of the welcome screen. 
+3. Clicking that will open a window to select a folder to open. The window will display the `/root/` directory. First. click the two dots ".." to move up to the parent directory. Then, locate the `home` file and open it. 
+
+<p align="center">
+<img title="Switch to Parent Directory" alt="Switch to Parent Directory" src="images/dotParentDirectory.png" width = "400" height = auto>
+</p>
+
+<p align="center">
+<img title="Open Home Directory" alt="Open Home Directory" src="images/homeFolder.png" width = "400" height = auto>
+</p>
+
+4. Once you open the Home directory, the sidebar will display that you are in the home directory, which is currently empty.
+
+<p align="center">
+<img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="images/sidebarView.png" width = "350" height = auto>
+</p>
+
+5. 
