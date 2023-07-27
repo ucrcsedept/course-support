@@ -1,7 +1,8 @@
 # Installing podman on Mac
 Installing podman on Mac is simple using a package manager. For this tutorial, we'll be using Homebrew.
 
-First, verify if Homebrew is installed on your device by opening a terminal window and running this command:
+First, verify if Homebrew is installed on your device by opening a terminal window and typing in and entering this command:
+>Note: You can open a terminal window by pressing the ⌘CMD + SPACE hotkey to open Spotlight Search, and searching for the "Terminal" application
 
 ```
 brew --version
@@ -15,10 +16,15 @@ If it is not installed, refer to the installation tutorial below.
 
 1. First, visit the Homebrew [website](https://brew.sh).
 
-2. On the homepage, there is a section that says "Install Homebrew" with a textbox below it. Click the clipboard button on the right to copy the script in the textbox.
+2. On the homepage, there is a section that says "Install Homebrew" with a textbox below it. Click the clipboard button on the right to copy the script in the textbox:
+
+<p align="center">
+<img title="HomebrewInstallation" alt="Homebrew Installation Script" src="images/HomebrewInstallationScript.png" width = "600" height = auto>
+</p>
+
 3. Open a terminal window and run the command.
 4. This script installs Homebrew on your device, it will ask for your device's password and you will need to enter it to continue installation.
-5. Finally, verify that Homebrew is installed by running `brew --version`.
+5. Finally, verify that Homebrew is installed by running `brew --version`
 
 </details> <br />
 
@@ -50,7 +56,7 @@ podman machine init
 podman machine start
 ``` 
 
-This creates a podman machine with the default name `podman-machine-default`. Run `podman machine info` in the terminal to confirm that the machine was started
+This creates a podman machine with the default name `podman-machine-default`. Run `podman machine info` in the terminal to confirm that the machine was started.
 
 3. To create a Hello World container, open a terminal window, and type in the command:
 
@@ -67,8 +73,17 @@ podman run --name hello-world-container hello-world
 5. To save space/resources, remove the container using `podman rm hello-world-container`
 
 ## Creating a container using Dockerfiles stored in a GitHub Repository
-1. First clone the GitHub repository to your computer using `git clone`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
-2. In the terminal, navigate to the repository using `cd`. 
+1. First clone the GitHub repository to your computer using `git clone REPOSITORY`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
+>Note: Git is typically preinstaleld on Macs. You can verify that it is installed by running `git --version` in the terminal. if it is not installed, refer to the guide today.
+
+<details>
+<summary>Installing Git</summary>
+
+1. If you don't have Git installed on your device, runnign `git --version` may have prompted you to install Git. In this scenario, simply follow along the instructions 
+
+</details>
+
+2. In the terminal, navigate to the repository using `cd DIRECTORY`. 
 3. Navigate to the course directory you want to create a container for inside the `containers` folder. For this example, we'll use `cs100`.
 4. Now that we're in the `cs100` folder (or whichever class you chose) we can use either `podman build` or `podman-compose` to build an image using the files located inside the current directory.
 	<details>
@@ -102,7 +117,7 @@ podman run --name hello-world-container hello-world
 	This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, and instead the container will run in the background.
 	</details>
 
-5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers.
+5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers. If your container is in the list, you have successfully started your container. 
 
 ## Developing using VSCode in a container
 1. Head to the extension tab and install the  "Dev Containers" extension in VSCode
@@ -145,3 +160,6 @@ Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, a
 6. To verify that the connection was successful, open a terminal and the user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container.
 
 You have now successfully created and entered a container for your course in VSCode!
+
+
+## Creating Your First C++ Program in a Container

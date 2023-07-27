@@ -1,12 +1,12 @@
 # Installing Podman on Windows
 1. First, visit the Podman releases page on Podman's [GitHub](https://github.com/containers/podman/releases).
-2. Find the most recent stable release of Podman (indicated by the green "Latest" tag next to the version number) and scroll down to the "Assets" section
+2. Find the most recent stable release of Podman (indicated by the green "Latest" tag next to the version number) and scroll down to the "Assets" section.
 
 <p align="center">
 <img title="Podman GitHub" alt="Podman GitHub" src="images/podmanReleaseGitHub.png" width = "1100" height = auto>
 </p>
 
-3. Under the Assets tab, download the setup.exe file and run it.
+3. Under the Assets tab, download the setup.exe file and run the file.
 
 <p align="center">
 <img title="Podman Win10 Installation" alt="Podman Win10 Installation" src="images/podmanInstallerDownload.png">
