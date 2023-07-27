@@ -74,7 +74,7 @@ podman run --name hello-world-container hello-world
 
 ## Creating a container using Dockerfiles stored in a GitHub Repository
 1. First clone the GitHub repository to your computer using `git clone REPOSITORY`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
->Note: Git is typically preinstaleld on Macs. You can verify that it is installed by running `git --version` in the terminal. if it is not installed, refer to the guide today.
+>Note: Git is typically preinstaleld on Macs. You can verify that it is installed by running `git --version` in the terminal. if it is not installed, refer to the guide below.
 
 <details>
 <summary>Installing Git</summary>
@@ -210,7 +210,7 @@ int main() {
 7. Click the Terminal dropdown button in the menu bar and create a new terminal window. This will create a new terminal screen at the bottom of the VSCode window.
 
 <p align="center">
-<img title="Open New Terminal" alt="Open New Terminal" src="images/createNewTerminal.png" width = "550" height = auto>
+<img title="Open New Terminal" alt="Open New Terminal" src="images/createNewTerminal.png" width = "525" height = auto>
 </p>
 
 8. In this terminal, enter the command `g++ main.cpp`. This command will compile your Hello World program and create a new file in the same directory named `a.out`.
