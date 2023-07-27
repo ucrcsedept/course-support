@@ -97,7 +97,7 @@
   - This command starts a new container with the name and image given in the docker compose file, then detaches it from the terminal into a background process
 
 ## Running a Hello World Program
-- To start this process, reopen your terminal and type **`git clone https://github.com/ucrcsedept/course-support/tree/kthai025podman`**
+- To start this process, reopen your terminal and type **`git clone https://github.com/ucrcsedept/course-support/`**
 ### Python
 - In order to run a barebones python container, in your terminal type **`cd containers/cs009a`** which will change our current directory of the terminal into the CS009A course directory
 - Run `podman-compose up -d` to start the container
