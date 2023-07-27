@@ -170,7 +170,7 @@ You have now successfully created and entered a container for your course in VSC
 </p>
 
 2. Click the "Open" button with a folder next to it located at the middle of the welcome screen. 
-3. Clicking that will open a window to select a folder to open. The window will display the `/root/` directory. First. click the two dots ".." to move up to the parent directory. Then, locate the `home` file and open it. 
+3. Clicking that will open a window to select a folder to open. The window will display the `/root/` directory. First. click the two dots `..` to move up to the parent directory. Then, locate the `home` file and open it. 
 
 <p align="center">
 <img title="Switch to Parent Directory" alt="Switch to Parent Directory" src="images/dotParentDirectory.png" width = "400" height = auto>
@@ -183,7 +183,38 @@ You have now successfully created and entered a container for your course in VSC
 4. Once you open the Home directory, the sidebar will display that you are in the home directory, which is currently empty.
 
 <p align="center">
-<img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="images/sidebarView.png" width = "350" height = auto>
+<img title="File Explorer view" alt="File Explorer View" src="images/sidebarView.png" width = "350" height = auto>
 </p>
 
-5. 
+5. Click the leftmost button on the file editor bar to create a new file and name it `main.cpp`. 
+
+<p align="center">
+<img title="Create main.cpp" alt="Create main.cpp" src="images/createMain.png" width = "350" height = auto>
+</p>
+
+6. View the file, and copy and paste this code snippet into the file. 
+
+```
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    cout << "Hello world!" << endl;
+
+    return 0;
+}
+```
+
+7. Click the Terminal dropdown button in the menu bar and create a new terminal window. This will create a new terminal screen at the bottom of the VSCode window.
+
+<p align="center">
+<img title="Open New Terminal" alt="Open New Terminal" src="images/createNewTerminal.png" width = "550" height = auto>
+</p>
+
+8. In this terminal, enter the command `g++ main.cpp`. This command will compile your Hello World program and create a new file in the same directory named `a.out`.
+
+9. In the terminal window again, type the command `./a.out`. This will run the program you just made, the only output should be `Hello World!`.
+
+10. If you see that output in the terminal, you have successfully created a Hello World program within your container.
