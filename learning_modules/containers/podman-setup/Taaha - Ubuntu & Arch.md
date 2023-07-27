@@ -38,7 +38,7 @@
 
     ![Extensions Icon](images/VSCodeExtensions.png)
     
-    And then search for "C/C++"
+    And then search for "C/C++" and "C/C++ Extension Pack"
 
 ### Issues
 
@@ -60,11 +60,11 @@
         
         ![ArchImage](images/ArchIncreaseGuid.png)
         
-        - To install the user-mode networking software, run **`sudo pacman -S slirp4netns`**
+        - To install the user-mode networking software, run **`sudo pacman -S slirp4netns`** which installs `slirp4netns` and lets the user perform unprivileged network namespaces
         - Once that is done, reboot your system and you should be ready to use podman!
 - On starting the container, if you get an issue like
     - fix: WARN[0000] aardvark-dns binary not found, container dns will not be enabled
-        - In order to fix this, simply run **`sudo pacman -S aardvark-dns`**
+        - In order to fix this, simply run **`sudo pacman -S aardvark-dns`** which installs `aarvark-dns` and runs an authoritative dns server for A/AAAA container records.
 
 
 
@@ -85,7 +85,7 @@
 
     ![Extensions Icon](images/VSCodeExtensions.png)
     
-    And then search for "C/C++"
+    And then search for "C/C++" and "C/C++ Extension Pack"
 
 
 ## Common Issues
@@ -117,3 +117,27 @@ if __name__ == "__main__":
     print("Hello world!")
 ```
 - Ctrl + S to save this file, then return to your terminal and run the file by typing **`python3 main.py`**
+### C++
+- In order to run a barebones C++ container, in your terminal type **`cd containers/cs010b`** which will change our current directory of the terminal into the CS010b course directory
+- Run `podman-compose up -d` to start the container
+- Click F1 and type Attach, and you will see the following show:
+![Attach to container](images/VSCodeAttach.png)
+- Click on it, and you should see the `cs010b_cs010b_1` container, and click on that, and it should open a new window
+- At the top of the new window, click `Terminal` and then `New Terminal`, and it should open a terminal at the bottom
+- From here, type `mkdir YouCanPutWhateverYouWantHere` and it will create a new directory depending on whatever you named it in the current directory you are in. 
+- Then type `cd WhateverYouNamedYourFolder` but remember it is **case-sensitive**
+- Now return to your workspace area, click `Open Folder`
+![Open folder](images/VSCodeOpenFolder.png) and then click on the folder you created.
+- From there, hover over the folder name in your hiearchy and click on the New File icon
+![New file](images/VSCodeNewFile.png)
+- Name this `main.cpp` and paste this code:
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, world!" << endl;
+    return 0;
+}
+```
+- Ctrl + S to save this file, then return to your terminal and run the file by typing **`g++ main.cpp && ./a.out`**
