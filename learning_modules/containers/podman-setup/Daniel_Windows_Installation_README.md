@@ -57,7 +57,14 @@ Installing podman-compose on Windows requires a package manager. For this tutori
 <img title="Anaconda Installation Options" alt="Anaconda Installation Options" src="images/anacondaAddPath.png" width = "450" height = auto>
 </p>
 
-7. Click the install button and wait for Anaconda to finish installing.
+7. Click the install button and wait for Anaconda to finish installing. It will show this screen once installation is finished:
+
+<p align="center">
+<img title="Anaconda Installation Completed" alt="Anaconda Installation Completed" src="images/anacondaCompletion.png" width = "450" height = auto>
+</p>
+
+Opening the Anaconda Navigator or the Getting Started guide is not necessary, so you can exit the installer now.
+
 8. Verify that Anaconda was successfully installed by opening a new command prompt window and running `conda --version`
 
 #### Installing podman-compose
