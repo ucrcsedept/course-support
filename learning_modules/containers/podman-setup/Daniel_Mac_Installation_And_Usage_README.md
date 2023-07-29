@@ -2,7 +2,7 @@
 Installing podman on Mac is simple using a package manager. For this tutorial, we'll be using Homebrew.
 
 First, verify if Homebrew is installed on your device by opening a terminal window and typing in and entering this command:
->Note: You can open a terminal window by pressing the ⌘CMD + SPACE hotkey to open Spotlight Search, and searching for the "Terminal" application
+>Note: You can open a terminal window by pressing the `⌘CMD + SPACE` hotkey to open Spotlight Search, and searching for the "Terminal" application
 
 ```
 brew --version
@@ -120,8 +120,8 @@ podman run --name hello-world-container hello-world
 5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers. If your container is in the list, you have successfully started your container. 
 
 ## Developing using VSCode in a container
-1. Head to the extension tab and install the  "Dev Containers" extension in VSCode
-2. Click on the gear icon on the Dev Containers store page and click on "Extension Settings" to go to the settings for Dev Containers
+1. Head to the extension tab and install the "Dev Containers" extension in VSCode.
+2. Click on the gear icon on the Dev Containers store page and click on "Extension Settings" to go to the settings for Dev Containers.
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
 
 <p align="center">
