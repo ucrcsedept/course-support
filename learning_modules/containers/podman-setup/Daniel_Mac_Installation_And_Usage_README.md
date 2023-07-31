@@ -9,7 +9,7 @@ brew --version
 ```
 
 If Homebrew is installed, the command will print the version number of Homebrew that is installed. Otherwise, it will print an error message saying that the command is not found.  
-If it is not installed, refer to the installation tutorial below. 
+If it is not installed, refer to the installation tutorial below:
 
 <details>
 <summary>Installing Homebrew</summary>
@@ -28,22 +28,25 @@ If it is not installed, refer to the installation tutorial below.
 
 </details> <br />
 
-Once Homebrew is installed, you can install podman by running `brew install podman` in the terminal.
+Once Homebrew is installed, you can install podman by running `brew install podman` in the terminal. Finally, verify that podman successfully installed by running `podman --version`.
 
 ## Installing podman-compose
-#### Using Python/Conda
-1. If Anaconda Python is installed on your device, you can install podman-compose using this command:
+To install podman-compose, we'll be using a different package manager, Conda. 
+
+1. If Anaconda Python is already installed on your device, you can install podman-compose using this command:
+
 ```
 conda install -c conda-forge podman-compose
 ```
->Note: If Python is installed some other way, you can use either `pip` or `pip3` to install podman-compose.
 
-#### Using Homebrew
-1. podman-compose can be installed using Homebrew with the command: 
+If Anaconda is not installed, refer to the guide below:
 
-```
-brew install podman-compose
-```
+<details>
+<summary>Installing Anaconda</summary>
+
+*Tutorial to be added*
+
+</details> <br />
 
 Once podman-compose is installed, you can verify that it was successful by running `podman-compose --version`
 
