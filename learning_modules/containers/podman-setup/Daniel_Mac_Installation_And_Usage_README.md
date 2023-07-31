@@ -19,7 +19,7 @@ If it is not installed, refer to the installation tutorial below:
 2. On the homepage, there is a section that says "Install Homebrew" with a textbox below it. Click the clipboard button on the right to copy the script in the textbox:
 
 <p align="center">
-<img title="Homebrew Installation" alt="Homebrew Installation Script" src="images/HomebrewInstallationScript.png" width = "600" height = auto>
+<img title="Homebrew Installation" alt="Homebrew Installation Script" src="images/podman/HomebrewInstallationScript.png" width = "600" height = auto>
 </p>
 
 3. Open a terminal window and run the command.
@@ -70,7 +70,7 @@ podman run --name hello-world-container hello-world
 4. The `--name` flag sets the name of the created container to `hello-world-container`. `hello-world` is the name of the image that podman uses to create the container. Running the container gives this output:
 
 <p align="center">
-<img title="Hello World Container" alt="Podman Hello World Container" src="images/podmanHelloWorld.png" width = "400" height = auto>
+<img title="Hello World Container" alt="Podman Hello World Container" src="images/podman/podmanHelloWorld.png" width = "400" height = auto>
 </p>
 
 5. To save space/resources, remove the container using `podman rm hello-world-container`
@@ -128,35 +128,35 @@ podman run --name hello-world-container hello-world
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
 
 <p align="center">
-<img title="Docker Path" alt="Docker Path Setting" src="images/dockerPath.png" width = "550" height = auto>
+<img title="Docker Path" alt="Docker Path Setting" src="images/devcontainers/dockerPath.png" width = "550" height = auto>
 </p>
 
 Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `docker-compose` with `podman-compose`:
 
 <p align="center">
-<img title="Docker-Compose Path" alt="Docker-Compose Path Setting" src="images/dockerComposePath.png" width = "550" height = auto>
+<img title="Docker-Compose Path" alt="Docker-Compose Path Setting" src="images/devcontainers/dockerComposePath.png" width = "550" height = auto>
 </p>
 
 4. To attach to a running container, click on the button to the bottom right and click `Attach to Running Container...` and select to container you want to attach to:
 
 <p align="center">
-<img title="Attaching To Container" alt="Attach to running container" src="images/attachToContainer.png" width = "600" height = auto>
+<img title="Attaching To Container" alt="Attach to running container" src="images/devcontainers/attachToContainer.png" width = "600" height = auto>
 </p>
 
 <p align="center">
-<img title="Selecting Container" alt="Select Container from list" src="images/selectContainer.png" width = "600" height = auto>
+<img title="Selecting Container" alt="Select Container from list" src="images/devcontainers/selectContainer.png" width = "600" height = auto>
 </p>
 
 Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, and under the `Dev Containers` section, find the container you want to connect to, right click and select `Attach in Current Window` or `Attach in New Window`:
 
 <p align="center">
-<img title="Attaching using Remote Explorer" alt="Attach Using Remote Explorer" src="images/attachUsingRemoteExplorer.png" width = auto height = "325">
+<img title="Attaching using Remote Explorer" alt="Attach Using Remote Explorer" src="images/devcontainers/attachUsingRemoteExplorer.png" width = auto height = "325">
 </p>
 
 >Note: If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection at the top to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
 
 <p align="center">
-<img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="images/viewDevContainers.png" width = "450" height = auto>
+<img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="images/devcontainers/viewDevContainers.png" width = "450" height = auto>
 </p>
 
 5. This connects VSCode to your container, allowing you to work inside of it.
@@ -169,30 +169,30 @@ You have now successfully created and entered a container for your course in VSC
 1. Upon opening the container for the first time, VSCode will show a home page with no folder opened:
 
 <p align="center">
-<img title="Container Initial Screen" alt="Container Initial Screen" src="images/VSCodeContainerInitialScreen.png" width = "550" height = auto>
+<img title="Container Initial Screen" alt="Container Initial Screen" src="images/devcontainers/VSCodeContainerInitialScreen.png" width = "550" height = auto>
 </p>
 
 2. Click the "Open" button with a folder next to it located at the middle of the welcome screen. 
 3. Clicking that will open a window to select a folder to open. The window will display the `/root/` directory. First. click the two dots `..` to move up to the parent directory. Then, locate the `home` file and open it. 
 
 <p align="center">
-<img title="Switch to Parent Directory" alt="Switch to Parent Directory" src="images/dotParentDirectory.png" width = "400" height = auto>
+<img title="Switch to Parent Directory" alt="Switch to Parent Directory" src="images/containerprogramming/dotParentDirectory.png" width = "400" height = auto>
 </p>
 
 <p align="center">
-<img title="Open Home Directory" alt="Open Home Directory" src="images/homeFolder.png" width = "400" height = auto>
+<img title="Open Home Directory" alt="Open Home Directory" src="images/containerprogramming/homeFolder.png" width = "400" height = auto>
 </p>
 
 4. Once you open the Home directory, the sidebar will display that you are in the home directory, which is currently empty.
 
 <p align="center">
-<img title="File Explorer view" alt="File Explorer View" src="images/sidebarView.png" width = "350" height = auto>
+<img title="File Explorer view" alt="File Explorer View" src="images/containerprogramming/sidebarView.png" width = "350" height = auto>
 </p>
 
 5. Click the leftmost button on the file editor bar to create a new file and name it `main.cpp`. 
 
 <p align="center">
-<img title="Create main.cpp" alt="Create main.cpp" src="images/createMain.png" width = "350" height = auto>
+<img title="Create main.cpp" alt="Create main.cpp" src="images/containerprogramming/createMain.png" width = "350" height = auto>
 </p>
 
 6. View the file, and copy and paste this code snippet into the file. 
@@ -213,7 +213,7 @@ int main() {
 7. Click the Terminal dropdown button in the menu bar and create a new terminal window. This will create a new terminal screen at the bottom of the VSCode window.
 
 <p align="center">
-<img title="Open New Terminal" alt="Open New Terminal" src="images/createNewTerminal.png" width = "550" height = auto>
+<img title="Open New Terminal" alt="Open New Terminal" src="images/containerprogramming/createNewTerminal.png" width = "550" height = auto>
 </p>
 
 8. In this terminal, enter the command `g++ main.cpp`. This command will compile your Hello World program and create a new file in the same directory named `a.out`.
@@ -223,5 +223,5 @@ int main() {
 10. If you see that output in the terminal, you have successfully created a Hello World program within your container. Once completed, this is what your terminal should look like:
 
 <p align="center">
-<img title="Final Hello World Terminal" alt="Final Hello World Terminal" src="images/helloWorldTerminal.png" width = "550" height = auto>
+<img title="Final Hello World Terminal" alt="Final Hello World Terminal" src="images/containerprogramming/helloWorldTerminal.png" width = "550" height = auto>
 </p>

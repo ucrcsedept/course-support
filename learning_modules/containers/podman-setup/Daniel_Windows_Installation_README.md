@@ -3,19 +3,19 @@
 2. Find the most recent stable release of Podman (indicated by the green "Latest" tag next to the version number) and scroll down to the "Assets" section.
 
 <p align="center">
-<img title="Podman GitHub" alt="Podman GitHub" src="images/podmanReleaseGitHub.png" width = "1100" height = auto>
+<img title="Podman GitHub" alt="Podman GitHub" src="images/podman/podmanReleaseGitHub.png" width = "1100" height = auto>
 </p>
 
 3. Under the Assets tab, download the setup.exe file and run the file.
 
 <p align="center">
-<img title="Podman Win10 Installation" alt="Podman Win10 Installation" src="images/podmanInstallerDownload.png">
+<img title="Podman Win10 Installation" alt="Podman Win10 Installation" src="images/podman/podmanInstallerDownload.png">
 </p>
 
 4. Once inside the Podman installer, there is a checkbox to install the Windows Subsystem for Linux (WSL). Installing this is necessary to use Podman, so ensure the box is checked.
 
 <p align="center">
-<img title="Podman Win10 Installation" alt="Podman Win10 Installation" src="images/podmanInstallationWindows.png" width = "450" height = auto>
+<img title="Podman Win10 Installation" alt="Podman Win10 Installation" src="images/podman/podmanInstallationWindows.png" width = "450" height = auto>
 </p>
 
 5. Click the install button to begin the installation process and wait for the installer to finish.
@@ -33,19 +33,19 @@ Installing podman-compose on Windows requires a package manager. For this tutori
 2. On the home screen, there will be a download button with the windows icon. Click that button to download the Anaconda installer.
 
 <p align="center">
-<img title="Anaconda Website" alt="Anaconda Website" src="images/anacondaHomeScreen.png" width = "600" height = auto>
+<img title="Anaconda Website" alt="Anaconda Website" src="images/anaconda/anacondaHomeScreen.png" width = "600" height = auto>
 </p>
 
 3. Once the installer is finished downloading, open the file. You will be greeted by this screen:
 
 <p align="center">
-<img title="Anaconda Installer" alt="Anaconda Installer" src="images/anacondaInstaller.png" width = "450" height = auto>
+<img title="Anaconda Installer" alt="Anaconda Installer" src="images/anaconda/anacondaInstaller.png" width = "450" height = auto>
 </p>
 
 4. Click the next button until you reach a screen that asks you to select installation type that looks like this:
 
 <p align="center">
-<img title="Anaconda Installation Type" alt="Anaconda Installation Type" src="images/anacondaInstallationType.png" width = "450" height = auto>
+<img title="Anaconda Installation Type" alt="Anaconda Installation Type" src="images/anaconda/anacondaInstallationType.png" width = "450" height = auto>
 </p>
 
 5. Don't change any settings on this page, as it is unnecessary to install Anaconda for other users.
@@ -54,13 +54,13 @@ Installing podman-compose on Windows requires a package manager. For this tutori
 >Note: While The installer does recommend using this settings, using that settings is necessary for us to use Anaconda outside of the Anaconda Prompt
 
 <p align="center">
-<img title="Anaconda Installation Options" alt="Anaconda Installation Options" src="images/anacondaAddPath.png" width = "450" height = auto>
+<img title="Anaconda Installation Options" alt="Anaconda Installation Options" src="images/anaconda/anacondaAddPath.png" width = "450" height = auto>
 </p>
 
 7. Click the install button and wait for Anaconda to finish installing. It will show this screen once installation is finished:
 
 <p align="center">
-<img title="Anaconda Installation Completed" alt="Anaconda Installation Completed" src="images/anacondaCompletion.png" width = "450" height = auto>
+<img title="Anaconda Installation Completed" alt="Anaconda Installation Completed" src="images/anaconda/anacondaCompletion.png" width = "450" height = auto>
 </p>
 
 Opening the Anaconda Navigator or the Getting Started guide is not necessary, so you can exit the installer now.
