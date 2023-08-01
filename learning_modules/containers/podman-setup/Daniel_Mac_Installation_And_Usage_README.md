@@ -8,7 +8,7 @@ First, verify if Homebrew is installed on your device by opening a terminal wind
 brew --version
 ```
 
-If Homebrew is installed, the command will print the version number of Homebrew that is installed. Otherwise, it will print an error message saying that the command is not found.  
+If Homebrew is installed, the command will print the version number of Homebrew that is installed. Otherwise, it will print an error message saying the command is not found.  
 If it is not installed, refer to the installation tutorial below:
 
 <details>
@@ -23,15 +23,15 @@ If it is not installed, refer to the installation tutorial below:
 </p>
 
 3. Open a terminal window and run the command.
-4. This script installs Homebrew on your device, it will ask for your device's password and you will need to enter it to continue installation.
+4. This script installs Homebrew on your device, it will ask for your device's password. You will need to enter it to continue the installation.
 5. Finally, verify that Homebrew is installed by running `brew --version`
 
 </details> <br />
 
-Once Homebrew is installed, you can install podman by running `brew install podman` in the terminal. Finally, verify that podman successfully installed by running `podman --version`.
+Once Homebrew is installed, you can install podman by running `brew install podman` in the terminal. Finally, verify that podman is successfully installed by running `podman --version`.
 
 ## Installing podman-compose
-To install podman-compose, we'll be using a different package manager, Conda. 
+To install podman-compose, we are using a different package manager, Conda. 
 
 1. If Anaconda Python is already installed on your device, you can install podman-compose using this command:
 
@@ -44,14 +44,14 @@ If Anaconda is not installed, refer to the guide below:
 <details>
 <summary>Installing Anaconda</summary>
 
-1. Visit to the Anaconda [website](https://www.anaconda.com). 
+1. Visit the Anaconda [website](https://www.anaconda.com). 
 2. On the home screen, there will be a download button with the Apple icon. Click that button to download the Anaconda installer.
 
 <p align="center">
 <img title="Anaconda Website" alt="Anaconda Website" src="images/anaconda/anacondaHomeScreenMac.png" width = "600" height = auto>
 </p>
 
-3. The website will show two options to install, one for Intel chips and another for Apple Silicon chips. Be sure to download the version that matches your Mac's CPU. If you are unsure what chip you have, refer to the guide below:
+3. The website will show two installers, one for Intel chips and another for Apple Silicon chips. Be sure to download the version that matches your Mac's CPU. If you are unsure what chip you have, refer to the guide below:
 
 <p align="center">
 <img title="Anaconda Installer Version" alt="Anaconda Installer Version" src="images/anaconda/anacondaSelectVersion.png" width = "400" height = auto>
@@ -60,7 +60,7 @@ If Anaconda is not installed, refer to the guide below:
 <details>
 <summary>Figuring out what Chip you have</summary>
 
-1. On the top left of your screen, there will be an Apple logo in the menu bar. Click on that, and click on `About This Mac` in the drop-down menu. 
+1. On the top left of your screen, there is an Apple logo in the menu bar. Click on that, and click `About This Mac` in the drop-down menu. 
 
 <p align="center">
 <img title="About This Mac" alt="About This Mac" src="images/anaconda/aboutThisMac.png" width = "400" height = auto>
@@ -74,13 +74,13 @@ If Anaconda is not installed, refer to the guide below:
 
 </details> <br />
 
-4. Once the installer is finished downloading, open the file. You will be greeted by this screen:
+4. Once the installer is finished downloading, open the file. This screen will greet you:
 
 <p align="center">
 <img title="Anaconda Installer Screen" alt="Anaconda Installer Screen" src="images/anaconda/anacondaMacInstaller.png" width = "400" height = auto>
 </p>
 
-5. Once in the installer, click the continue button to move to the next screen until you reach the install screen. You do not need to change any settings for the Anaconda installation, so don't worry about missing any changes. Click the install button and wait for Anaconda to finish installing. When it it finished installing, you will see this screen:
+5. Once in the installer, click the continue button to move to the next screen until you reach the install screen. You do not need to change any settings for the Anaconda installation, so don't worry about missing any changes. Click the install button and wait for Anaconda to finish installing. When it is finished installing, you will see this screen:
 
 <p align="center">
 <img title="Anaconda Installed" alt="Anaconda Installed" src="images/anaconda/anacondaMacInstallerComplete.png" width = "350" height = auto>
@@ -92,7 +92,7 @@ If Anaconda is not installed, refer to the guide below:
 <img title="Anaconda Delete Installer" alt="Anaconda Delete Installer" src="images/anaconda/anacondaDeleteInstaller.png" width = "300" height = auto>
 </p>
 
-7. Run `anaconda --version` in the terminal to verify that anaconda was succesfully installed.
+7. Run `anaconda --version` in the terminal to verify that Anaconda was successfully installed.
 
 8. Now, run this command to install podman-compose:
 
@@ -106,7 +106,7 @@ Once podman-compose is installed, you can verify that it was successfully instal
 
 ## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
-2. On Windows Devices and Macs, podman uses a virtual machine to create and run containers. You can initialize this machine by running:
+2. On Windows devices and Macs, podman uses a virtual machine to create and run containers. You can initialize this machine by running:
 
 ```
 podman machine init
@@ -115,7 +115,7 @@ podman machine start
 
 This creates a podman machine with the default name `podman-machine-default`. Run `podman machine info` in the terminal to confirm that the machine was started.
 
-3. To create a Hello World container, open a terminal window, and type in the command:
+3. To create a Hello World container, open a terminal window and type in the command:
 
 ```
 podman run --name hello-world-container hello-world
@@ -130,19 +130,19 @@ podman run --name hello-world-container hello-world
 5. To save space/resources, remove the container using `podman rm hello-world-container`
 
 ## Creating a container using Dockerfiles stored in a GitHub Repository
-1. First clone the GitHub repository to your computer using `git clone REPOSITORY`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
->Note: Git is typically preinstaleld on Macs. You can verify that it is installed by running `git --version` in the terminal. if it is not installed, refer to the guide below.
+1. First, clone the GitHub repository to your computer using `git clone REPOSITORY`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
+>Note: Git is typically preinstalled on Macs. You can verify that it is installed by running `git --version` in the terminal. If it is not installed, refer to the guide below.
 
 <details>
 <summary>Installing Git</summary>
 
-1. If you don't have Git installed on your device, runnign `git --version` may have prompted you to install Git. In this scenario, simply follow along the instructions 
+1. If you don't have Git installed on your device, running `git --version` may have prompted you to install Git. In this scenario, follow the instructions given to you in the terminal.
 
 </details>
 
 2. In the terminal, navigate to the repository using `cd DIRECTORY`. 
 3. Navigate to the course directory you want to create a container for inside the `containers` folder. For this example, we'll use `cs100`.
-4. Now that we're in the `cs100` folder (or whichever class you chose) we can use either `podman build` or `podman-compose` to build an image using the files located inside the current directory.
+4. Now that we're in the `cs100` folder (or whichever class you chose), we can use either `podman build` or `podman-compose` to build an image using the files inside the current directory.
 	<details>
 	<summary>podman build</summary>
 
@@ -152,7 +152,7 @@ podman run --name hello-world-container hello-world
 	podman build -t [name] .
 	```
 	
-	The period at the end indicates that the build context is the current directory. This means that podman will create an image using the files in the directory it is currently in. You can now run the new container using: 
+	The period at the end indicates that the build context is the current directory. This means that podman will create an image using the files in the directory it is currently in. You can run the new container using: 
 	
 	```
 	podman run [options] IMAGE
@@ -171,10 +171,10 @@ podman run --name hello-world-container hello-world
 	podman-compose up -d
 	```
 
-	This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, and instead the container will run in the background.
+	This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, instead, the container will run in the background.
 	</details>
 
-5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers. If your container is in the list, you have successfully started your container. 
+5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers. If your container is on the list, you have successfully started your container. 
 
 ## Developing using VSCode in a container
 1. Head to the extension tab and install the "Dev Containers" extension in VSCode.
@@ -207,14 +207,14 @@ Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, a
 <img title="Attaching using Remote Explorer" alt="Attach Using Remote Explorer" src="images/devcontainers/attachUsingRemoteExplorer.png" width = auto height = "325">
 </p>
 
->Note: If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down selection at the top to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
+>Note: If the Remote Explorer tab isn't showing "Dev Containers", you may be in the "Remotes (Tunnels/SSH)" tab instead. Switch over by clicking the drop-down menu at the top to the right of "REMOTE EXPLORER" at the top of the sidebar and select "Dev Containers" 
 
 <p align="center">
 <img title="View Dev Containers" alt="Switch to viewing Dev Containers" src="images/devcontainers/viewDevContainers.png" width = "450" height = auto>
 </p>
 
-5. This connects VSCode to your container, allowing you to work inside of it.
-6. To verify that the connection was successful, open a terminal and the user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container.
+5. This connects VSCode to your container, allowing you to work inside it.
+6. To verify that the connection was successful, open a terminal in VSCode. The user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container.
 
 You have now successfully created and entered a container for your course in VSCode!
 
@@ -225,8 +225,8 @@ You have now successfully created and entered a container for your course in VSC
 <img title="Container Initial Screen" alt="Container Initial Screen" src="images/containerprogramming/VSCodeContainerInitialScreen.png" width = "550" height = auto>
 </p>
 
-2. Click the "Open" button with a folder next to it located at the middle of the welcome screen. 
-3. Clicking that will open a window to select a folder to open. The window will display the `/root/` directory. First. click the two dots `..` to move up to the parent directory. Then, locate the `home` file and open it. 
+2. Click the "Open" button in the middle of the welcome screen with a folder next to it. 
+3. Clicking that will open a window to select a folder to open. The window will display the `/root/` directory. First, click the two dots `..` to move up to the parent directory. Then, locate the `home` file and open it. 
 
 <p align="center">
 <img title="Switch to Parent Directory" alt="Switch to Parent Directory" src="images/containerprogramming/dotParentDirectory.png" width = "400" height = auto>
