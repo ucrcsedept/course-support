@@ -44,11 +44,65 @@ If Anaconda is not installed, refer to the guide below:
 <details>
 <summary>Installing Anaconda</summary>
 
-*Tutorial to be added*
+1. Visit to the Anaconda [website](https://www.anaconda.com). 
+2. On the home screen, there will be a download button with the Apple icon. Click that button to download the Anaconda installer.
+
+<p align="center">
+<img title="Anaconda Website" alt="Anaconda Website" src="images/anaconda/anacondaHomeScreenMac.png" width = "600" height = auto>
+</p>
+
+3. The website will show two options to install, one for Intel chips and another for Apple Silicon chips. Be sure to download the version that matches your Mac's CPU. If you are unsure what chip you have, refer to the guide below:
+
+<p align="center">
+<img title="Anaconda Installer Version" alt="Anaconda Installer Version" src="images/anaconda/anacondaSelectVersion.png" width = "400" height = auto>
+</p>
+
+<details>
+<summary>Figuring out what Chip you have</summary>
+
+1. On the top left of your screen, there will be an Apple logo in the menu bar. Click on that, and click on `About This Mac` in the drop-down menu. 
+
+<p align="center">
+<img title="About This Mac" alt="About This Mac" src="images/anaconda/aboutThisMac.png" width = "400" height = auto>
+</p>
+
+2. Clicking this will open a new window showing the details of your Mac. You can see what chip you have next to the "Chip" or "Processor" label:
+
+<p align="center">
+<img title="View Mac Details" alt="View Mac Details" src="images/anaconda/deviceDetails.png" width = "300" height = auto>
+</p>
 
 </details> <br />
 
-Once podman-compose is installed, you can verify that it was successful by running `podman-compose --version`
+4. Once the installer is finished downloading, open the file. You will be greeted by this screen:
+
+<p align="center">
+<img title="Anaconda Installer Screen" alt="Anaconda Installer Screen" src="images/anaconda/anacondaMacInstaller.png" width = "400" height = auto>
+</p>
+
+5. Once in the installer, click the continue button to move to the next screen until you reach the install screen. You do not need to change any settings for the Anaconda installation, so don't worry about missing any changes. Click the install button and wait for Anaconda to finish installing. When it it finished installing, you will see this screen:
+
+<p align="center">
+<img title="Anaconda Installed" alt="Anaconda Installed" src="images/anaconda/anacondaMacInstallerComplete.png" width = "350" height = auto>
+</p>
+
+6. Now that Anaconda is installed, you will be prompted to delete the installer. It is no longer needed, so you can delete it to save storage.
+
+<p align="center">
+<img title="Anaconda Delete Installer" alt="Anaconda Delete Installer" src="images/anaconda/anacondaDeleteInstaller.png" width = "300" height = auto>
+</p>
+
+7. Run `anaconda --version` in the terminal to verify that anaconda was succesfully installed.
+
+8. Now, run this command to install podman-compose:
+
+```
+conda install -c conda-forge podman-compose
+```
+
+</details> <br />
+
+Once podman-compose is installed, you can verify that it was successfully installed by running `podman-compose --version`
 
 ## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
@@ -164,12 +218,11 @@ Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, a
 
 You have now successfully created and entered a container for your course in VSCode!
 
-
 ## Creating Your First C++ Program in a Container
 1. Upon opening the container for the first time, VSCode will show a home page with no folder opened:
 
 <p align="center">
-<img title="Container Initial Screen" alt="Container Initial Screen" src="images/devcontainers/VSCodeContainerInitialScreen.png" width = "550" height = auto>
+<img title="Container Initial Screen" alt="Container Initial Screen" src="images/containerprogramming/VSCodeContainerInitialScreen.png" width = "550" height = auto>
 </p>
 
 2. Click the "Open" button with a folder next to it located at the middle of the welcome screen. 
