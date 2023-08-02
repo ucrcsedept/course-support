@@ -33,7 +33,7 @@ Once Homebrew is installed, you can install podman by running `brew install podm
 ## Installing podman-compose
 To install podman-compose, we are using a different package manager, Conda. 
 
-1. If Anaconda Python is already installed on your device, you can install podman-compose using this command:
+1. If Anaconda is already installed on your device, you can install podman-compose using this command:
 
 ```
 conda install -c conda-forge podman-compose
@@ -114,6 +114,7 @@ podman machine start
 ``` 
 
 This creates a podman machine with the default name `podman-machine-default`. Run `podman machine info` in the terminal to confirm that the machine was started.
+Now that your machine is started, it can be started/stopped at anytime using `podman machine start` or `podman machine stop`
 
 3. To create a Hello World container, open a terminal window and type in the command:
 
@@ -159,7 +160,7 @@ brew install git
 5. Click install and wait for Git to finish installing. 
 6. Once Git is finished installing, you can close out of the installer.
 
-</details> <br />
+</details>
 
 Finally, verify that Git was successfully installed using the `git --version` command.
 
@@ -171,9 +172,21 @@ Finally, verify that Git was successfully installed using the `git --version` co
 git clone https://github.com/ucrcsedept/course-support.git
 ```
 
-3. In the terminal, navigate to the cloned repository using the command: `cd DIRECTORYNAME`. 
-4. Change directories to the `containers` directory using `cd` once again and choose a class you would like to create a container for. For this example, we'll use `cs100`.
-5. Now that we're in the `cs100` folder (or whichever class you chose), we can use either `podman build` or `podman-compose` to build an image using the files inside the current directory.
+3. In the terminal, navigate to the cloned repository using the command: `cd DIRECTORYNAME`. For the course support repository, the directory name will be `course-support`.
+4. Change directories to the `containers` directory using `cd` once again. For this tutorial, we'll be creating a container using the cs100 dockerfile, so now use the command `cd cs100` to change directories into the cs100 folder.
+5. Now that we're in the `cs100` folder, we can use either `podman-compose` or `podman build` to build an image using the files inside the current directory.
+	
+	<details>
+	<summary>podman-compose</summary>
+
+	Run the command:
+
+	```
+	podman-compose up -d
+	```
+
+	This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, instead, the container will run in the background.
+	</details>
 	<details>
 	<summary>podman build</summary>
 
@@ -186,28 +199,18 @@ git clone https://github.com/ucrcsedept/course-support.git
 	The period at the end indicates that the build context is the current directory. This means that podman will create an image using the files in the directory it is currently in. You can run the new container using: 
 	
 	```
-	podman run [options] IMAGE
+	podman run -d IMAGE
 	```
 
 	`IMAGE` is the name you set in the build command.
-	>Note: The `--name` flag sets a name for the container. Otherwise, the container will have a randomly generated name.
-	</details>
-
-	<details>
-	<summary>podman-compose</summary>
-
-	Run the command:
-
-	```
-	podman-compose up -d
-	```
-
-	This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, instead, the container will run in the background.
+	>Note: You can add the `--name` flag to set a name for the container. Otherwise, the container will have a randomly generated name.
 	</details>
 
 5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers. If your container is on the list, you have successfully started your container. 
+6. Now that your container is created, you can use the commands `podman start CONTAINERNAME` and `podman stop CONTAINERNAME` to start/stop your container whenever you need.
 
 ## Developing using VSCode in a container
+Now that we've successfully created and started a container, we need to attach to it in order to develop inside of it. 
 1. Head to the extension tab and install the "Dev Containers" extension in VSCode.
 2. Click on the gear icon on the Dev Containers store page and click on "Extension Settings" to go to the settings for Dev Containers.
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
@@ -221,6 +224,8 @@ Additionally, in the `Dev > Containers: Docker Compose Path` setting, replace `d
 <p align="center">
 <img title="Docker-Compose Path" alt="Docker-Compose Path Setting" src="images/devcontainers/dockerComposePath.png" width = "550" height = auto>
 </p>
+
+**Dev Containers will not work with Podman if these settings are not adjusted, so ensure that they are correctly changed.**
 
 4. To attach to a running container, click on the button to the bottom right and click `Attach to Running Container...` and select to container you want to attach to:
 
@@ -245,7 +250,7 @@ Alternatively, You can also use the *Remote Explorer* tab on the left sidebar, a
 </p>
 
 5. This connects VSCode to your container, allowing you to work inside it.
-6. To verify that the connection was successful, open a terminal in VSCode. The user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container.
+6. To verify that the connection was successful, open a new terminal in VSCode by clicking the `Terminal` button in the top menu bar and clicking `New Terminal`. The user will look similar to `root@24aef0be3792:~#`. The characters after `root@` will be the ID of the container. VSCode will also say that you are connected to remote in the sidebar. 
 
 You have now successfully created and entered a container for your course in VSCode!
 
@@ -253,7 +258,7 @@ You have now successfully created and entered a container for your course in VSC
 1. Upon opening the container for the first time, VSCode will show a home page with no folder opened:
 
 <p align="center">
-<img title="Container Initial Screen" alt="Container Initial Screen" src="images/containerprogramming/VSCodeContainerInitialScreen.png" width = "550" height = auto>
+<img title="Container Initial Screen" alt="Container Initial Screen" src="images/containerprogramming/VSCodeContainerInitialScreen.png" width = "600" height = auto>
 </p>
 
 2. Click the "Open" button in the middle of the welcome screen with a folder next to it. 
@@ -294,7 +299,7 @@ int main() {
 }
 ```
 
-7. Click the Terminal dropdown button in the menu bar and create a new terminal window. This will create a new terminal screen at the bottom of the VSCode window.
+7. Click the Terminal dropdown button in the menu bar and create a new terminal window. This will create a new terminal screen at the bottom of the VSCode window. On Windows, the Menu may be a hamburger icon (☰) instead.
 
 <p align="center">
 <img title="Open New Terminal" alt="Open New Terminal" src="images/containerprogramming/createNewTerminal.png" width = "550" height = auto>
@@ -311,4 +316,38 @@ int main() {
 </p>
 
 ## Coding Using Git in a Container
->Note: This section requires git to be installed on your device. If you didn't install it before, follow the instructions for installing git under [Creating a container using Dockerfiles stored in a GitHub Repository](#creating-a-container-using-dockerfiles-stored-in-a-github-repository)
+>Note: This section requires having git installed on your device. If you didn't install it before, follow the instructions for installing git under [Creating a container using Dockerfiles stored in a GitHub Repository](#creating-a-container-using-dockerfiles-stored-in-a-github-repository)
+1. In order to code using Git, you will first need a GitHub account. If you don't have a GitHub account already, visit the GitHub [website](https://github.com/) and create an account. 
+2. Now that you have a GitHub account, you need to create a repository. Click on your profile icon in the top-right of the screen, and click on "Your Repositories"
+
+<p align="center">
+<img title="Creating a GitHub Repository" alt="Creating a GitHub Repository" src="images/github/githubYourRepositories.png" width = "400" height = auto>
+</p>
+
+3. On this next screen, click the green "New" button to create a new repository. You can give it any name and you do not need to change any settings.
+4. To clone your GitHub repository into your container, first copy the URL of your GitHub repository.
+5. Then, open a new terminal in VSCode and enter the command:
+
+```
+git clone REPOSITORYURL
+```
+
+6. This creates a copy of the repository in your container. The folder will have the same name as your repository. Open this new folder in VSCode.
+7. Now that you are in your repository, you are free to create any program you like. You can use the same [Hello World C++ program](#creating-your-first-c-program-in-a-container) you created before if you'd like.
+8. With a program created, now you need to push those changes to your repository on GitHub.
+9. First, you need to config your GitHub username and email. In a terminal, enter the commands:
+
+```
+git config user.name YOURUSERNAME
+git config user.email YOUREMAIL
+```
+
+Using the username and email used for your GitHub account.
+10. To stage your changes, use the command `git add --a`. This stages every change you've made to be added to your GitHub repository.
+11. To commit these changes, use the command `git commit -m COMMITMESSAGE`. 
+12. Finally, to push your local changes to the GitHub repository using `git push`. 
+13. Now, head back to your repository on GitHub. You should see the files you created in the container added to the repository.
+
+<p align="center">
+<img title="GitHub Repository After Pushing" alt="GitHub Repository After Pushing" src="images/github/githubRepoWithFiles.png" width = "850" height = auto>
+</p>
