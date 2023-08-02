@@ -339,7 +339,7 @@ git clone REPOSITORYURL
 6. This creates a copy of the repository in your container. The folder will have the same name as your repository. Open this new folder in VSCode.
 7. Now that you are in your repository, you are free to create any program you like. You can use the same [Hello World C++ program](#creating-your-first-c-program-in-a-container) you created before if you'd like.
 8. With a program created, now you need to push those changes to your repository on GitHub.
-9. First, you need to config your GitHub username and email. In a terminal, enter the commands:
+9. First, you need to configure your GitHub username and email. In a terminal, enter the commands:
 
 ```
 git config user.name YOURUSERNAME
@@ -357,4 +357,4 @@ Using the username and email used for your GitHub account.
 <img title="GitHub Repository After Pushing" alt="GitHub Repository After Pushing" src="images/github/githubRepoWithFiles.png" width = "1150" height = auto>
 </p>
 
-If you see your files added to your GitHub repository, congratulations! You've successfully developed inside of a container and pushed your code to an online repository. 
+If you see your files added to your GitHub repository, congratulations! You've successfully developed inside of a container and pushed your code to an online repository. Storing code in a GitHub repository allows our work to persist across different containers, so we're able to pickup where we left off in any container.
