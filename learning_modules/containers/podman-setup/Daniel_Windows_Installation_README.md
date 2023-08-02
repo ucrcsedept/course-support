@@ -26,7 +26,7 @@
 >Note: You can open up a command prompt window by pressing `Windows Key + R`. This will open up a window in the corner of your screen. In this window, type in `cmd` and press enter to run a new command prompt window. It will look like a black box. 
 
 ## Installing podman-compose 
-Installing podman-compose on Windows requires a package manager. For this tutorial, we'll be using Conda.
+Installing podman-compose on Windows requires a package manager. For this tutorial, we'll be using Conda, which is included in Anaconda.
 
 #### Installing Anaconda
 1. Visit the Anaconda [website](https://www.anaconda.com/). 

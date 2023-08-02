@@ -102,7 +102,7 @@ conda install -c conda-forge podman-compose
 
 </details>
 
-Once podman-compose is installed, you can verify that it was successfully installed by running `podman-compose --version`
+Once podman-compose is installed, you can verify that it was successfully installed by running `podman-compose --version` in a terminal.
 
 ## Running Your First Container
 1. Now that Podman is installed, we can create our first container.
@@ -166,13 +166,13 @@ Finally, verify that Git was successfully installed using the `git --version` co
 
 </details>
 
-2. Clone the course-support repository onto your device using the command:
+2. Clone the course-support repository onto your device into the current directory using the command:
 
 ```
 git clone https://github.com/ucrcsedept/course-support.git
 ```
 
-3. In the terminal, navigate to the cloned repository using the command: `cd DIRECTORYNAME`. For the course support repository, the directory name will be `course-support`.
+3. In the terminal/comamand prompt, navigate to the cloned repository using the command: `cd DIRECTORYNAME`. For the course support repository, the directory name will be `course-support`. You are able to change directories to the parent directory using `cd ..` if needed.
 4. Change directories to the `containers` directory using `cd` once again. For this tutorial, we'll be creating a container using the cs100 dockerfile, so now use the command `cd cs100` to change directories into the cs100 folder.
 5. Now that we're in the `cs100` folder, we can use either `podman-compose` or `podman build` to build an image using the files inside the current directory.
 	
@@ -213,6 +213,11 @@ git clone https://github.com/ucrcsedept/course-support.git
 Now that we've successfully created and started a container, we need to attach to it in order to develop inside of it. 
 1. Head to the extension tab and install the `Dev Containers` extension in VSCode.
 2. Click on the gear icon on the Dev Containers store page and click on `Extension Settings` to go to the settings for Dev Containers.
+
+<p align="center">
+<img title="Extension Settings" alt="Extension Settings" src="images/devcontainers/extensionSettings.png" width = "550" height = auto>
+</p>
+
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
 
 <p align="center">
@@ -316,7 +321,6 @@ int main() {
 </p>
 
 ## Coding Using Git in a Container
->Note: This section requires having git installed on your device. If you didn't install it before, follow the instructions for installing git under [Creating a container using Dockerfiles stored in a GitHub Repository](#creating-a-container-using-dockerfiles-stored-in-a-github-repository)
 1. In order to code using Git, you will first need a GitHub account. If you don't have a GitHub account already, visit the GitHub [website](https://github.com/) and create an account. 
 2. Now that you have a GitHub account, you need to create a repository. Click on your profile icon in the top-right of the screen, and click on "Your Repositories"
 
