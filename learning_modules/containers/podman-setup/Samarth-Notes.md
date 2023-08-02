@@ -256,6 +256,8 @@ podman-compose up -d
 
 This should open up a new VScode instance that will allow you to code within the podman container! You can check to see if the containers are running by going to the podman app and checking your containers: 
 
+</br>
+
 <p align="center">
   <img src="images\image10.png">
 </p>
