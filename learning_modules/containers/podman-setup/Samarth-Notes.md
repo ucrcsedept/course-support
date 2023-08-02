@@ -21,7 +21,7 @@ Click on the "download" button, which should prompt you to either download a pod
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image2.png">
 </p>
 
 </br>
@@ -31,7 +31,7 @@ Clicking on "Podman Desktop for macOS" should prompt you to download this file w
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image3.png">
 </p>
 
 </br>
@@ -41,7 +41,7 @@ Click "Save". Now that it is downloaded, go into the "Finder" app, and locate th
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image4.png">
 </p>
 
 </br>
@@ -51,7 +51,7 @@ Now you are able to use the podman desktop app! Now, find the app on your laptop
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image5.png">
 </p>
 
 </br>
@@ -61,7 +61,7 @@ Now we can check to verify if podman is running on your computer. Navigate to th
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image6.png">
 </p>
 
 </br>
@@ -71,7 +71,7 @@ Click on that icon, which should give you a search bar, where you can type in "t
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image7.png">
 </p>
 
 </br>
@@ -81,7 +81,7 @@ click on that black box that appears under the search, and that should open up a
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image8.png">
 </p>
 
 > **_Quick_Tip:_** You can increase/decrease the font of the terminal by pressing command + at the same time or command - at the same time
@@ -97,7 +97,7 @@ This command should give you something like this:
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image9.png">
 </p>
 
 </br>
@@ -111,7 +111,7 @@ The first thing you need to install is HomeBrew, an installer for Apple. First, 
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image10.png">
 </p>
 
 </br>
@@ -121,13 +121,13 @@ Now, copy that command under "Install Homebrew", either manually or by clicking 
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image11.png">
 </p>
 
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image12.png">
 </p>
 
 </br>
@@ -137,7 +137,7 @@ It may ask you for your mac password, which you will have to enter to download i
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image13.png">
 </p>
 
 </br>
@@ -153,7 +153,7 @@ Which should give you this message:
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image14.png">
 </p>
 
 </br>
@@ -174,39 +174,90 @@ you should see something similar to this come up, which means it is correctly in
 </br>
 
 <p align="center">
-  <img src="images\image1.png">
+  <img src="images\image15.png">
 </p>
 
 </br>
 
 Now, open VScode, and open up your course folder with the docker-compose.yml and the DockerFile.txt files: 
 
+</br>
+
 <p align="center">
-  <img src="images\image5.png">
+  <img src="images\image16.png">
 </p>
+
+</br>
 
 In order to containerize, you have to also download the VScode extension called dev containers, which you can find by typing "dev containers" in the four blocks icon in the top left, it should look like this: 
 
-<p align="center">
-  <img src="images\image3.png">
-</p>
-
-Now that you have installed this extension, go into settings, search for dev > Containers: Docker Path, and set that path to podman: 
+</br>
 
 <p align="center">
-  <img src="images\image2.png">
+  <img src="images\image17.png">
 </p>
 
-Now go back to the VScode file, and within this VScode instance, open up the terminal within VScode, and now, making sure that you are in the right class folder where the DockerFile and the yml file is, run this command: 
+</br>
+
+Now that you have installed this extension, go into settings, in the bottom left corner: 
+
+</br>
+
+<p align="center">
+  <img src="images\image18.png">
+</p>
+
+</br>
+
+Click on the settings button, and search for dev > Containers: Docker Compose Path, and set that path to podman-compose: 
+
+
+</br>
+
+<p align="center">
+  <img src="images\image19.png">
+</p>
+
+</br>
+
+Do the same by scrolling down to dev > Containers: Docker Path, and set that path to podman: 
+
+</br>
+
+<p align="center">
+  <img src="images\image20.png">
+</p>
+
+</br>
+
+Now go back to the VScode file, and within this VScode instance, open up the terminal within VScode like this: 
+
+</br>
+
+<p align="center">
+  <img src="images\image21.png">
+</p>
+
+</br>
+
+and now, making sure that you are in the right class folder where the DockerFile and the yml file is, run this command: 
 
 ```
 podman-compose up -d
 ```
 
+</br>
+
+<p align="center">
+  <img src="images\image22.png">
+</p>
+
+</br>
+
 This should open up a new VScode instance that will allow you to code within the podman container! You can check to see if the containers are running by going to the podman app and checking your containers: 
 
 <p align="center">
-  <img src="images\image6.png">
+  <img src="images\image23.png">
 </p>
 
 
