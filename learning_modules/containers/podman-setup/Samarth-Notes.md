@@ -4,17 +4,76 @@ Prerequisite: Makes sure to have homebrew installed on your mac: https://brew.sh
 
 Step 1: Download Podman from this website: https://podman.io/
 
-When you install and run this app, it should look like this: 
+The website should look like this: 
 
 <p align="center">
   <img src="images\image1.png">
 </p>
 
-You can check if podman is installed by running this command in your terminal, which should give you the podman version that you installed: 
+Click on the "download" button, which should prompt you to either download a podman desktop version, or a podman CLI for macOS: 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+Clicking on "Podman Desktop for macOS" should prompt you to download this file within your mac folder, as so: 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+Click "Save". Now that it is downloaded, go into the "Finder" app, and locate this dmg file. Open the file, and move the app into your applications folder: 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+Now you are able to use the podman desktop app! Now, find the app on your laptop, and click it. When you install and run this app, it should look like this: 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+Now we can check to verify if podman is running on your computer. Navigate to the top right corner of your screen, where you should see a little magnifying glass that allows you to search for all apps: 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+Click on that icon, which should give you a search bar, where you can type in "terminal": 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+click on that black box that appears under the search, and that should open up a new terminal window, which should look something like this: 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+> **_Quick_Tip:_** You can increase/decrease the font of the terminal by pressing command + at the same time or command - at the same time
+
+You can check if podman is installed by running this command in your terminal (which just means typing the following command in terminal), which should give you the podman version that you installed: 
 
 ```
 podman -v
 ```
+
+This command should give you something like this: 
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+
+
+
+
+
+
+
+
 Now, with homebrew installed, run this command within your terminal:
 
 ```
