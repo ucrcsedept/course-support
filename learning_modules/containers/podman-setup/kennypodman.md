@@ -184,7 +184,7 @@ Now that you have completed the initial setup, you can proceed with attaching a 
 Open your command pallete ("cmd + shift + p"), and search for `Attach to Running Container ...`. Click on it to initiate the process.
 
 <p align="center">
-   <img src="images/example.png" alt="example" > 
+   <img src="images/example.png" alt="example" width= " " height = " "> 
 </p>
 
 It will prompt you to open a new window, and once you do so, you will be developing within the attached container.
