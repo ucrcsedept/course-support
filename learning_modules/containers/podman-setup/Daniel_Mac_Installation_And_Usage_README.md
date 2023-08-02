@@ -114,7 +114,7 @@ podman machine start
 ``` 
 
 This creates a podman machine with the default name `podman-machine-default`. Run `podman machine info` in the terminal to confirm that the machine was started.
-Now that your machine is started, it can be started/stopped at anytime using `podman machine start` or `podman machine stop`
+Now that your machine is started, it can be started/stopped at any time using `podman machine start` or `podman machine stop`
 
 3. To create a Hello World container, open a terminal window and type in the command:
 
@@ -132,14 +132,14 @@ podman run --name hello-world-container hello-world
 
 ## Creating a container using Dockerfiles stored in a GitHub Repository
 1. First, clone the GitHub repository to your computer using the command `git clone REPOSITORY`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
->Note: Git is typically preinstalled on Macs, however, it is not preinstalled on Windows devices.. You can check if it is installed by running `git --version` in a terminal or command prompt window. If it is not installed, refer to the guide below.
+>Note: Git is typically preinstalled on Macs, however, it is not preinstalled on Windows devices. You can check if it is installed by running `git --version` in a terminal or command prompt window. If it is not installed, refer to the guide below.
 
 <details>
 <summary>Installing Git</summary>
 
 <details>
 <summary>Macs</summary>
-If you don't have Git installed on your Mac, running `git --version` will prompt you to install/activate Git on most version of macOS. In this scenario, follow the instructions given to you in the terminal.
+If you don't have Git installed on your Mac, running `git --version` will prompt you to install/activate Git on most versions of macOS. In this scenario, follow the instructions given to you in the terminal.
 
 Otherwise, if you were not prompted to install Git, you can instead install Git using Homebrew. Run the command:
 
@@ -151,13 +151,13 @@ brew install git
 <details>
 <summary>Windows</summary>
 
-1. Visit the Git windows installer download page [here](https://git-scm.com/download/win).
+1. Visit the Git Windows installer download page [here](https://git-scm.com/download/win).
 2. Download the standalone installer for the version of Windows you have (64-bit or 32-bit).
 > Note: If you are unsure which version of Windows you have, press the hotkey `Windows Key + I` to open up your system settings. Select the `System` setting and scroll to the bottom of the left panel until u see an `About` section. Click on it. Under `Device Specifications`, there will be a `System Type` label that says whether you have a 64-bit or 32-bit device.
 
 3. Open the installer.
 4. You do not need to change any installation settings for Git, so you can click `Continue` in the bottom right of the installer until you are prompted to install Git.
-5. Click install and wait for Git to finish installing. 
+5. Click Install and wait for Git to finish installing. 
 6. Once Git is finished installing, you can close out of the installer.
 
 </details>
@@ -344,9 +344,9 @@ git config user.email YOUREMAIL
 
 Using the username and email used for your GitHub account.
 
-10. To stage your changes, use the command `git add --a`. This stages every change you've made to be added to your GitHub repository.
+10. To stage your changes to be added to the repository, use the command `git add --a`. This stages every change you've made to be added to your GitHub repository.
 11. To commit these changes, use the command `git commit -m COMMITMESSAGE`. 
-12. Finally, to push your local changes to the GitHub repository using `git push`. 
+12. Finally, push your local changes to the GitHub repository using `git push`. 
 13. Now, head back to your repository on GitHub. You should see the files you created in the container added to the repository.
 
 <p align="center">
