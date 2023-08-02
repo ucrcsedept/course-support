@@ -130,19 +130,51 @@ podman run --name hello-world-container hello-world
 5. To save space/resources, remove the container using `podman rm hello-world-container`
 
 ## Creating a container using Dockerfiles stored in a GitHub Repository
-1. First, clone the GitHub repository to your computer using `git clone REPOSITORY`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
->Note: Git is typically preinstalled on Macs. You can verify that it is installed by running `git --version` in the terminal. If it is not installed, refer to the guide below.
+1. First, clone the GitHub repository to your computer using the command `git clone REPOSITORY`. For this example, we'll be cloning the CSE [course-support repository](https://github.com/ucrcsedept/course-support.git).
+>Note: Git is typically preinstalled on Macs, however, it is not preinstalled on Windows devices.. You can check if it is installed by running `git --version` in a terminal or command prompt window. If it is not installed, refer to the guide below.
 
 <details>
 <summary>Installing Git</summary>
 
-1. If you don't have Git installed on your device, running `git --version` may have prompted you to install Git. In this scenario, follow the instructions given to you in the terminal.
+<details>
+<summary>Macs</summary>
+If you don't have Git installed on your Mac, running `git --version` will prompt you to install/activate Git on most version of macOS. In this scenario, follow the instructions given to you in the terminal.
+
+Otherwise, if you were not prompted to install Git, you can instead install Git using Homebrew. Run the command:
+
+```
+brew install git
+```
 
 </details>
 
-2. In the terminal, navigate to the repository using `cd DIRECTORY`. 
-3. Navigate to the course directory you want to create a container for inside the `containers` folder. For this example, we'll use `cs100`.
-4. Now that we're in the `cs100` folder (or whichever class you chose), we can use either `podman build` or `podman-compose` to build an image using the files inside the current directory.
+<details>
+<summary>Windows</summary>
+
+1. Visit the Git windows installer download page [here](https://git-scm.com/download/win).
+2. Download the standalone installer for the version of Windows you have (64-bit or 32-bit).
+> Note: If you are unsure which version of Windows you have, press the hotkey `Windows Key + I` to open up your system settings. Select the `System` setting and scroll to the bottom of the left panel until u see an `About` section. Click on it. Under `Device Specifications`, there will be a `System Type` label that says whether you have a 64-bit or 32-bit device.
+
+3. Open the installer.
+4. You do not need to change any installation settings for Git, so you can click `Continue` in the bottom right of the installer until you are prompted to install Git.
+5. Click install and wait for Git to finish installing. 
+6. Once Git is finished installing, you can close out of the installer.
+
+</details> <br />
+
+Finally, verify that Git was successfully installed using the `git --version` command.
+
+</details> <br />
+
+2. Clone the course-support repository onto your device using the command:
+
+```
+git clone https://github.com/ucrcsedept/course-support.git
+```
+
+3. In the terminal, navigate to the cloned repository using the command: `cd DIRECTORYNAME`. 
+4. Change directories to the `containers` directory using `cd` once again and choose a class you would like to create a container for. For this example, we'll use `cs100`.
+5. Now that we're in the `cs100` folder (or whichever class you chose), we can use either `podman build` or `podman-compose` to build an image using the files inside the current directory.
 	<details>
 	<summary>podman build</summary>
 
@@ -278,3 +310,6 @@ int main() {
 <p align="center">
 <img title="Final Hello World Terminal" alt="Final Hello World Terminal" src="images/containerprogramming/helloWorldTerminal.png" width = "550" height = auto>
 </p>
+
+## Coding Using Git in a Container
+>Note: This section requires git to be installed on your device. If you didn't install it before, follow the instructions for installing git under [Creating a container using Dockerfiles stored in a GitHub Repository](#creating-a-container-using-dockerfiles-stored-in-a-github-repository)

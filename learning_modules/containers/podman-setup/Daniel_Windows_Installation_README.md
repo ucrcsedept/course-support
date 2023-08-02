@@ -81,4 +81,4 @@ This command installs podman-compose on your device.
 
 3. Once the installation process is finished, enter the command `podman-compose --version` to verify that it was successfully installed.
 
-[//]: # (Podman usage is essentially the same as in Mac, so the instructions for that are in the Mac readme file)
+***(Comment to be removed when instructions are merged: Using podman is the same on Windows as it is on Mac, so my instructions for using and developing with podman are in the Mac readme file)***
