@@ -343,6 +343,7 @@ git config user.email YOUREMAIL
 ```
 
 Using the username and email used for your GitHub account.
+
 10. To stage your changes, use the command `git add --a`. This stages every change you've made to be added to your GitHub repository.
 11. To commit these changes, use the command `git commit -m COMMITMESSAGE`. 
 12. Finally, to push your local changes to the GitHub repository using `git push`. 
