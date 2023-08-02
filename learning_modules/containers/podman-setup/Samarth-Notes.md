@@ -1,52 +1,84 @@
 ## Accessing Containers using Podman - MacBook Pro macOS Ventura 13.2.1 
 
+### Part 1: Podman Installation and Verification
+
 Prerequisite: Makes sure to have homebrew installed on your mac: https://brew.sh/
 
 Step 1: Download Podman from this website: https://podman.io/
 
 The website should look like this: 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
+
+</br>
 
 Click on the "download" button, which should prompt you to either download a podman desktop version, or a podman CLI for macOS: 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
+
+</br>
 
 Clicking on "Podman Desktop for macOS" should prompt you to download this file within your mac folder, as so: 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
+
+</br>
 
 Click "Save". Now that it is downloaded, go into the "Finder" app, and locate this dmg file. Open the file, and move the app into your applications folder: 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
+
+</br>
 
 Now you are able to use the podman desktop app! Now, find the app on your laptop, and click it. When you install and run this app, it should look like this: 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
+
+</br>
 
 Now we can check to verify if podman is running on your computer. Navigate to the top right corner of your screen, where you should see a little magnifying glass that allows you to search for all apps: 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
+
+</br>
 
 Click on that icon, which should give you a search bar, where you can type in "terminal": 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
 
+</br>
+
 click on that black box that appears under the search, and that should open up a new terminal window, which should look something like this: 
+
+</br>
 
 <p align="center">
   <img src="images\image1.png">
@@ -62,17 +94,69 @@ podman -v
 
 This command should give you something like this: 
 
+</br>
+
 <p align="center">
   <img src="images\image1.png">
 </p>
 
+</br>
 
+### Part 2: Podman-compose installation 
 
+</br>
 
+The first thing you need to install is HomeBrew, an installer for Apple. First, go to the homebrew website: https://brew.sh/ :
 
+</br>
 
+<p align="center">
+  <img src="images\image1.png">
+</p>
 
+</br>
 
+Now, copy that command under "Install Homebrew", either manually or by clicking that little clipboard icon on the left, and paste that command into terminal: 
+
+</br>
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+</br>
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+</br>
+
+It may ask you for your mac password, which you will have to enter to download it: 
+
+</br>
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+</br>
+
+It may take a while for HomeBrew to install, but once done, you should be able to type normally in the terminal again. To confirm that Homebrew was installed correctly, type this in the terminal: 
+
+```
+brew -v
+```
+
+Which should give you this message: 
+
+</br>
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+</br>
 
 Now, with homebrew installed, run this command within your terminal:
 
@@ -80,12 +164,20 @@ Now, with homebrew installed, run this command within your terminal:
 brew install podman-compose
 ```
 
-Now when you run:
+Now when you run this in the terminal:
 ```
-podman-compose
+podman-compose -v
 ```
 
-you should see options come up, which means it is correctly installed. 
+you should see something similar to this come up, which means it is correctly installed: 
+
+</br>
+
+<p align="center">
+  <img src="images\image1.png">
+</p>
+
+</br>
 
 Now, open VScode, and open up your course folder with the docker-compose.yml and the DockerFile.txt files: 
 
