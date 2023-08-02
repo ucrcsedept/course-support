@@ -89,7 +89,7 @@ Once you have completed the previous steps, confirm the successful installation 
 </p>
 </details>
 
-## Installing Podman
+## Installing Podman & Podman Compose
 
 With our prerequisites completed, we can now proceed to install Podman. To get started, navigate to your terminal and run <code><b>brew install podman</b></code>
 
