@@ -2,8 +2,6 @@
 
 ### Part 1: Podman Installation and Verification
 
-Prerequisite: Makes sure to have homebrew installed on your mac: https://brew.sh/
-
 Step 1: Download Podman from this website: https://podman.io/
 
 The website should look like this: 
