@@ -26,7 +26,7 @@ If it is not installed, refer to the installation tutorial below:
 4. This script installs Homebrew on your device, it will ask for your device's password. You will need to enter it to continue the installation.
 5. Finally, verify that Homebrew is installed by running `brew --version`
 
-</details> <br />
+</details>
 
 Once Homebrew is installed, you can install podman by running `brew install podman` in the terminal. Finally, verify that podman is successfully installed by running `podman --version`.
 
@@ -72,7 +72,7 @@ If Anaconda is not installed, refer to the guide below:
 <img title="View Mac Details" alt="View Mac Details" src="images/anaconda/deviceDetails.png" width = "300" height = auto>
 </p>
 
-</details> <br />
+</details>
 
 4. Once the installer is finished downloading, open the file. This screen will greet you:
 
@@ -100,7 +100,7 @@ If Anaconda is not installed, refer to the guide below:
 conda install -c conda-forge podman-compose
 ```
 
-</details> <br />
+</details>
 
 Once podman-compose is installed, you can verify that it was successfully installed by running `podman-compose --version`
 
@@ -147,7 +147,6 @@ brew install git
 ```
 
 </details>
-
 <details>
 <summary>Windows</summary>
 
@@ -164,7 +163,7 @@ brew install git
 
 Finally, verify that Git was successfully installed using the `git --version` command.
 
-</details> <br />
+</details>
 
 2. Clone the course-support repository onto your device using the command:
 
