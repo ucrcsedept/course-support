@@ -51,7 +51,7 @@ Installing podman-compose on Windows requires a package manager. For this tutori
 5. Don't change any settings on this page, as it is unnecessary to install Anaconda for other users.
 
 6. Click next to the Advanced Installation Options. On this screen, click the checkbox next to the `Add Anaconda3 to my PATH environment variable` option, highlighted in the image below. 
->Note: While The installer does recommend using this setting, using that setting is necessary for us to use Anaconda outside of the Anaconda Prompt
+>Note: While The installer does recommend using this setting, using that setting is necessary for us to use Anaconda and packages installed using Conda outside of the Anaconda Prompt
 
 <p align="center">
 <img title="Anaconda Installation Options" alt="Anaconda Installation Options" src="images/anaconda/anacondaAddPath.png" width = "450" height = auto>
@@ -81,4 +81,4 @@ This command installs podman-compose on your device.
 
 3. Once the installation process is finished, enter the command `podman-compose --version` to verify that it was successfully installed.
 
-***(Comment to be removed when instructions are merged: Using podman is the same on Windows as it is on Mac, so my instructions for using and developing with podman are in the Mac readme file)***
+***(Comment to be removed when instructions are merged: Using and developing with podman is the same on Windows as it is on Mac, so my instructions for using and developing with podman are in the Mac readme file)***

@@ -211,8 +211,8 @@ git clone https://github.com/ucrcsedept/course-support.git
 
 ## Developing using VSCode in a container
 Now that we've successfully created and started a container, we need to attach to it in order to develop inside of it. 
-1. Head to the extension tab and install the "Dev Containers" extension in VSCode.
-2. Click on the gear icon on the Dev Containers store page and click on "Extension Settings" to go to the settings for Dev Containers.
+1. Head to the extension tab and install the `Dev Containers` extension in VSCode.
+2. Click on the gear icon on the Dev Containers store page and click on `Extension Settings` to go to the settings for Dev Containers.
 3. Once in the settings, scroll down to the `Dev > Containers: Docker Path` section and replace `docker` with `podman`:
 
 <p align="center">
@@ -345,10 +345,12 @@ git config user.email YOUREMAIL
 Using the username and email used for your GitHub account.
 
 10. To stage your changes to be added to the repository, use the command `git add --a`. This stages every change you've made to be added to your GitHub repository.
-11. To commit these changes, use the command `git commit -m COMMITMESSAGE`. 
-12. Finally, push your local changes to the GitHub repository using `git push`. 
+11. To commit these changes, use the command `git commit -m "COMMITMESSAGE"`. 
+12. Finally, to push your local changes to the GitHub repository using `git push`. 
 13. Now, head back to your repository on GitHub. You should see the files you created in the container added to the repository.
 
 <p align="center">
-<img title="GitHub Repository After Pushing" alt="GitHub Repository After Pushing" src="images/github/githubRepoWithFiles.png" width = "850" height = auto>
+<img title="GitHub Repository After Pushing" alt="GitHub Repository After Pushing" src="images/github/githubRepoWithFiles.png" width = "1150" height = auto>
 </p>
+
+If you see your files added to your GitHub repository, congratulations! You've successfully developed inside of a container and pushed your code to an online repository. 
