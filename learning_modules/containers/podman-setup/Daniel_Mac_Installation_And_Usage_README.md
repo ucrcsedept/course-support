@@ -174,40 +174,17 @@ git clone https://github.com/ucrcsedept/course-support.git
 
 3. In the terminal/comamand prompt, navigate to the cloned repository using the command: `cd DIRECTORYNAME`. For the course support repository, the directory name will be `course-support`. You are able to change directories to the parent directory using `cd ..` if needed.
 4. Change directories to the `containers` directory using `cd` once again. For this tutorial, we'll be creating a container using the cs100 dockerfile, so now use the command `cd cs100` to change directories into the cs100 folder.
-5. Now that we're in the `cs100` folder, we can use either `podman-compose` or `podman build` to build an image using the files inside the current directory.
-	
-	<details>
-	<summary>podman-compose</summary>
+5. Now that we're in the `cs100` folder, we can use either `podman-compose` to create a container using the files inside the current directory.
+6. In the terminal, run the command:
 
-	Run the command:
+```
+podman-compose up -d
+```
 
-	```
-	podman-compose up -d
-	```
+This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, instead, the container will run in the background.
 
-	This command will build AND run the container using the files in the current directory. the `-d` flag indicates that the container will run in detached mode. This means that the current terminal window will not attach to the container, instead, the container will run in the background.
-	</details>
-	<details>
-	<summary>podman build</summary>
-
-	Run the command:
-	
-	```
-	podman build -t [name] .
-	```
-	
-	The period at the end indicates that the build context is the current directory. This means that podman will create an image using the files in the directory it is currently in. You can run the new container using: 
-	
-	```
-	podman run -d IMAGE
-	```
-
-	`IMAGE` is the name you set in the build command.
-	>Note: You can add the `--name` flag to set a name for the container. Otherwise, the container will have a randomly generated name.
-	</details>
-
-5. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers. If your container is on the list, you have successfully started your container. 
-6. Now that your container is created, you can use the commands `podman start CONTAINERNAME` and `podman stop CONTAINERNAME` to start/stop your container whenever you need.
+7. You can verify the container is running using `podman ps`, which outputs a list of all currently running containers. If you see a container on the list, you have successfully started your container!
+8. Now that your container is created, you can use the commands `podman start CONTAINERNAME` and `podman stop CONTAINERNAME` to start/stop your container whenever you need.
 
 ## Developing using VSCode in a container
 Now that we've successfully created and started a container, we need to attach to it in order to develop inside of it. 
