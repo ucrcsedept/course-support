@@ -14,7 +14,7 @@ RUN ln -snf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && echo Ameri
 RUN \
     apt-get -y update && apt-get -y upgrade \
     # Install packages needed for the class
-    && apt-get -y --no-install-recommends install \
+    && apt-get install -y --no-install-recommends \
         # Configurable text editor
         vim \
         # C/C++ compilers, development libraries, and header files
