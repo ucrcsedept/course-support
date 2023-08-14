@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 # Set up environment variables used during the build and
 # when the container is run afterward.
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV TZ="America/Los_Angeles"
@@ -15,7 +15,7 @@ RUN \
     apt-get -y update && apt-get -y upgrade \
     # Install packages needed for the class
     && apt-get -y --no-install-recommends install \
-    # Configurable text editor
+        # Configurable text editor
         vim \
         # C/C++ compilers, development libraries, and header files
         build-essential \
@@ -35,8 +35,9 @@ RUN \
         cmake \
         # General-purpose parser generator
         bison \
-    # Generates scanners used to recognize lexical patterns in text
-    flex; \
+        # Generates scanners used to recognize lexical patterns in text
+        flex \
+    ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
 
