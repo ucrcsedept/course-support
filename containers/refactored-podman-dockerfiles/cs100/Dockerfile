@@ -15,6 +15,7 @@ RUN \
     apt-get -y update && apt-get -y upgrade \
     # Install packages needed for the class
     && apt-get install -y --no-install-recommends \
+        # Basic software that should be available in all containers.
         # Configurable text editor
         vim \
         # C/C++ compilers, development libraries, and header files
