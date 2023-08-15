@@ -101,7 +101,7 @@ Once the installation is finished, click **Close** to exit the setup.
 
 To verify that we have successfully installed Podman, run <code><b>podman --version</b></code> in your terminal.
 
-The next step is to install Podman Compose. If you have not installed Anaconda yet, please refer to the instructions [here](#prerequisites----anaconda).
+The next step is to install Podman Compose. If you have not installed Anaconda yet, please refer to the instructions  [here](#prerequisites----anaconda).
 
 In your terminal, run the following command to install Podman Compose:
 
@@ -109,7 +109,7 @@ In your terminal, run the following command to install Podman Compose:
 conda install -c conda-forge podman-compose
 ```
 
->Note: If the above command does not work, it is recommended to uninstall Anaconda and then reinstall it using the steps outlined[here](#prerequisites----anaconda)
+>Note: If the above command does not work, it is recommended to uninstall Anaconda and then reinstall it using the steps outlined [here](#prerequisites----anaconda)
 
 During the installation, you might encounter a prompt similar to the screenshot below. Type **y** into the terminal to continue:
 <p align="center">
