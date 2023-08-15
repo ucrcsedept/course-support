@@ -23,7 +23,7 @@ Navigate to your terminal, and run <code><b>conda --version</b></code>. If Anaco
 <summary> <b><font size="3">Anaconda Installation</font></b></summary>
 To begin the installation, navigate to the <a target="_blank" rel="noopener noreferrer" href="https://www.anaconda.com"> Anaconda homepage </a>.
 
-Click the **Download** button with the Windows Icon. 
+On the home screen, click the **Download** button with the Windows Icon.  This will download the Anaconda installer. 
 <p align="center">
    <img src="images/anaconda.png" alt="Anaconda Windows Download Button"> 
 </p>
