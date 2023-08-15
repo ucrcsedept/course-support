@@ -15,9 +15,18 @@ We advise you to utilize the pre-configured containers available on the UCR serv
 
 Before proceeding with the installation of Podman, it is essential to confirm that certain prerequisites are met. Installing podman-compose on Windows requres a package manager.  This tutorial uses the package manager Conda, which is included in the development platform Anaconda. We will first check for Anaconda, and if necessary, install it before moving forward. This will ensure a smooth and successful installation process. 
 
-Navigate to your terminal, and run <code><b>conda --version</b></code>. If Anaconda is already installed, your terminal will return the current version. Otherwise, you can follow the steps provided in the drop-down list below.
-
+Navigate to your terminal, and run <code><b>conda --version</b></code>. 
 >Note: You can open your terminal by going to your Windows Search Bar and searching "terminal".
+
+If Anaconda is already installed, your terminal will return the current version. Like this:
+
+<p align="center">
+   <img src="images/condaversion.png" alt="Anaconda Version Output"> 
+</p>
+
+Otherwise, you can follow the steps provided in the drop-down list below.
+
+
 
 <details>
 <summary> <b><font size="3">Anaconda Installation</font></b></summary>
@@ -26,14 +35,14 @@ To begin the installation, navigate to the <a target="_blank" rel="noopener nore
 
 Next, on the home screen, click the **Download** button with the Windows Icon.  This will download the Anaconda installer. 
 <p align="center">
-   <img src="images/anaconda.png" alt="Anaconda Windows Download Button"> 
+   <img src="images/anacondaHomeScreen.png" alt="Anaconda Windows Download Button"> 
 </p>
 
 Once the download has finished, open the installer (the .exe file) from your downloads. After you open the installer, you will be greeted by this screen:
 >Note: You can find your downloads by pressing (ctrl + j) on your keyboard.
 
 <p align="center">
-   <img src="images/anaconda.png" alt="Anaconda Windows Download Button"> 
+   <img src="images/anacondaInstaller.png" alt="Anaconda Windows Download Button"> 
 </p>
 
 
@@ -43,30 +52,26 @@ Follow the steps below:
    <li>Choose the <b>I Agree</b> option for the license agreement.</li>
    <li>Bubble the <b>Just Me (recommended)</b> option on the Select Installation Type screen. You will want to choose this option as it is unnecessary to install Anaconda for other users</li>
    <p align="center">
-   <img src="images/anaconda.png" alt="Anaconda Windows Download Button"> 
+   <img src="images/anacondaInstallationType.png" alt="Anaconda Windows Download Button"> 
 </p>
    <li>Choose the <b>Next ></b> option on the Choose Install Location page.</li>
    <li>Check the <b> Add Anaconda3 to my PATH environment variable</b> option on the Advanced Installation Options page.  While the installer does not recoomend using this setting, this setting is necessary for us to use Anaconda and packages installed using Conda outside of the Anaconda Prompt.
     <ol>
         <p align="center">
-         <img src="images/added.png" alt="Anaconda PATH Option"> 
+         <img src="images/anacondaAddPath.png" alt="Anaconda PATH Option"> 
         </p>
     </ol>
-    <li>Click <b>Install</b> on the same page.</li></li>
-    <li>Once the installation has finished, click <b>Finish</b> on the final screen shown below.
+    <li>Click <b>Install</b> on the same page.</li>
+    <li>Once the installation has finished, it is not necessary to open the Anaconda Navigator or the Getting Started Guide.  Therefore, click <b>Finish</b> on the final screen shown below.
+       <ol>
        <p align="center">
-         <img src="images/added.png" alt="Anaconda PATH Option"> 
+         <img src="images/anacondaCompletion.png" alt="Anaconda PATH Option"> 
         </p>
-    </li>
 </ol>
 </details>
+   
+Verify the Anaconda was successfully installed by opening a new command prompt window and running <code><b>conda --version</b></code>
 
-<details>
-<summary> <font size="3"> <b>Version Output</b></font></summary>
-<p align="center">
-   <img src="images/condaversion.png" alt="Anaconda Version Output"> 
-</p>
-</details>
 
 ## Installing Podman & Podman Compose
 
