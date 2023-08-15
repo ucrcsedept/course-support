@@ -79,7 +79,7 @@ With our prerequisites completed, we can now proceed to install Podman. Let's ge
 
 Find the most recent stable release of Podman (indicated by the green "Latest" tag next to the version number).
 <p align="center">
-   <img src="images/podmanReleaseGithub.png" alt="Podman Github Assets"> 
+   <img src="images/podmanReleaseGitHub.png" alt="Podman Github Assets"> 
 </p>
 
 Once there, scroll down until you find the **Assets** drop-down tab:
