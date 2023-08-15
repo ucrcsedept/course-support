@@ -1,16 +1,19 @@
 # Podman Installation -- Windows 11
 
+This tutorial will walk you through the steps to install Podman and Podmam-Compose.  You will use Podman and Podman-Compose for container management.
+
 If you fall into any of the following categories, we recommend working with Podman:
 
 1. If you are simply curious about Podman and wish to explore it beyond the classroom setting.
 2. If you prefer working on a local machine instead of a remote one.
 3. If the remote method is not working as expected for you.
+4. If your course instructor has directed you to use Podman.
 
 We advise you to utilize the pre-configured containers available on the UCR servers. This will lead to a smoother and more optimized experience for your specific needs.
 
 ## Prerequisites -- Anaconda
 
-Before proceeding with the installation of Podman, it is essential to confirm that certain prerequisites are met. We will first check for Anaconda, and if necessary, install it before moving forward. This will ensure a smooth and successful installation process. 
+Before proceeding with the installation of Podman, it is essential to confirm that certain prerequisites are met. Installing podman-compose on Windows requres a package manager.  This tutorial uses the package manager Conda, which is included in the development platform Anaconda. We will first check for Anaconda, and if necessary, install it before moving forward. This will ensure a smooth and successful installation process. 
 
 Navigate to your terminal, and run <code><b>conda --version</b></code>. If Anaconda is already installed, your terminal will return the current version. Otherwise, you can follow the steps provided in the drop-down list below.
 
