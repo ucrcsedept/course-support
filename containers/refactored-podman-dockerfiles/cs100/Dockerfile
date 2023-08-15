@@ -26,8 +26,7 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
-        \
-        # Software specific to CS 100
+    # Software specific to CS 100
         # Debugging tool used to detect memory leaks
         valgrind \
         # Documentation Generator

@@ -32,7 +32,7 @@ RUN \
         # Allows multiple terminal "sessions" in one window
         tmux \
         # Cross-platform build system
-    #Software specific to CS 142
+    # Software specific to CS 142
         cmake \
         # Intel Cilk Plus runtime library
         libcilkrts5 \

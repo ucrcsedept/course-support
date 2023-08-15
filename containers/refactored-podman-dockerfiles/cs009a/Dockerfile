@@ -27,11 +27,10 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
-        \
-        # Software specific to CS 009A
-        # Includes header files needed for python extensions 
+    # Software specific to CS 009A
+        # Development files for Python 3 
         python3-dev \
-        # Python package manager used for managing python software
+        # Package installer for Python 3
         python3-pip \
     ; \
     # Clean up apt cache

@@ -26,7 +26,7 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
-#Software specific to CS 152
+    # Software specific to CS 152
         # Parser generator for context-free grammars
         bison \
         # Fast lexical analyzer generator
