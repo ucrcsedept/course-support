@@ -68,14 +68,19 @@ Follow the steps below:
          <img src="images/anacondaCompletion.png" alt="Anaconda PATH Option"> 
         </p>
 </ol>
-</details>
+
    
 Verify the Anaconda was successfully installed by opening a new command prompt window and running <code><b>conda --version</b></code>
-
+</details>
 
 ## Installing Podman & Podman Compose
 
 With our prerequisites completed, we can now proceed to install Podman. Let's get started by navigating to the <a target="_blank" rel="noopener noreferrer" href="https://github.com/containers/podman/releases"> Podman Github releases page </a>.
+
+Find the most recent stable release of Podman (indicated by the green "Latest" tag next to the version number).
+<p align="center">
+   <img src="images/assets.png" alt="Podman Github Assets"> 
+</p>
 
 Once there, scroll down until you find the **Assets** drop-down tab:
 <p align="center">
@@ -84,7 +89,7 @@ Once there, scroll down until you find the **Assets** drop-down tab:
 
 Look for the file that ends in **setup.exe**, and click on it to download the Podman installer. Once the download is complete, go to your downloads folder and run the file.
 
-In the pop-up, check the box that reads **Install WSL if not present**, and then click **Install**:
+In the pop-up, there is a checkbox to isntall the Windows Subsystem for Linux (WSL).  This is necessary to use Podman.  So, check the box that reads **Install WSL if not present**, and then click **Install**:
 
 <p align="center">
    <img src="images/wslinstall.png" alt="WSL"> 
