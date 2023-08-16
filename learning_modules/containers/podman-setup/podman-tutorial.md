@@ -108,24 +108,22 @@ Once VSCode is installed, we need to be setup to attach the container so we can 
    <img src="images/ext.png" alt="VSCode Extensions" > 
 </p>
 
-Use the search bar to look for the **Dev Containers** extension and install it. 
-
-
-Click on the VSCode gear icon located at the bottom left corner and select **Extensions**. For reference, please see the image below: 
-
+Use the search bar to look for the **Dev Containers** extension and install it. After it is installed, click on the VSCode gear icon located to the right of the `Switch to Pre-Release Version` button and select **Extension Settings**. For reference, please see the image below: 
 <p align="center">
-   <img src="images/settings.png" alt="Settings" > 
+   <img src="images/extensionSettings.png" alt="VSCode Extensions" > 
 </p>
 
-In the search bar (or use "cmd + f"), look for **Docker Path** and replace `docker` with `podman`.
+In the search bar at the top (or use "cmd + f"), look for **Dev > Containers: Docker Path** and replace `docker` with `podman`.
 <p align="center">
    <img src="images/dockerpath.png" alt="dockerpath" > 
 </p>
 
-Go to the search bar again and search for **Docker Compose Path** and replace `docker-compose` with `podman-compose`
+Go to the search bar again and search for **Dev > Containers: Docker Compose Path** and replace `docker-compose` with `podman-compose`
 <p align="center">
    <img src="images/dockerpath.png" alt="dockercompose" > 
 </p>
+
+Dev Containers will not work with Podman if these settings are not adjusted, so ensure that they are correctly changed.
 
 Now that you have completed the initial setup, you can proceed with attaching a container projects you wish to work on.
 
@@ -146,29 +144,41 @@ By following these steps, you will be all set to efficiently work with container
 ## Developing in a Container
 The following tutorial will guide you through creating a simple "Hello World!" program from scratch in your new VSCode Container Window.
 
-First, ensure that you are developing in a container. Check the bottom left corner of your screen; you should see something similar below:
+When you open a container for the first time, VSCode will show a home page with no folders opened:
 <p align="center">
    <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
 </p>
 
-The above commands will navigate you to the home directory and create a `main.cpp` file.
+Click the `Open` button in the middle of the welcome sreen with a folder next to it.  This will open a window to slect a folder to open.  The window will displaye the `/root/` directory.
+<p align="center">
+   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+</p>
 
-Next, copy and paste the following snippet of code for a "Hello World!" program:
+Click on the two dots `..` to move up to the parent directory.  Then locate the `home` file and open it.
+<p align="center">
+   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+</p>
 
-```
-cd home
-touch main.cpp
-```
+Once you open the Home directory, the sidebar will display that you are in the home directory, which is currently empty.
+<p align="center">
+   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+</p>
 
-The above commands will put you in the home directory and create a `main.cpp` file.
+Click the leftmost button on the file editor bar to create a new file and name it `main.cpp`.
+<p align="center">
+   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+</p>
 
-Copy and paste the following for a simple Hello World! program.
+Next, copy and paste the following snippet of code into the file you just created.
 ```
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    cout << "Hello World!" << endl;
+    return 0;
 }
 ```
 
