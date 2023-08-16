@@ -88,7 +88,7 @@ For the course support repository, the directory name will be <code><b>course-su
 Change directories to the `containers` directory using `cd` once again.  For this tutorial, we'll be creating a container using the cs100 dockerfile, so use the command `cs100` to change directories into the cs100 folder.
 >Note: You can replicate these steps for any course by simply using the name of the course you are taking.  
 
-From the `cs100` folder, use `podman-compose` to create a container using the files inside the current directory.  TO do this, run the command:
+From the `cs100` folder, use `podman-compose` to create a container using the files inside the current directory.  To do this, run the command:
 ```
 podman-compose up -d
 ```
@@ -101,7 +101,7 @@ To verify the successful creation of the container, run the following command: <
 To start and stop the container, you can run <code><b>podman start `<coursename>`</b></code> and <code><b>podman stop `<coursename>`</b></code> whenever necessary.
 
 ## VSCode Dev Containers Extension
-ADD DOCUMENTATION FOR HOW TO GET VSCODE on machine
+Now that a container is running, you will need to do something with it.  Usually, this will be running or testing code you wrote  To do this, you will use an enviornment to write your code.  We suggeest VSCode.  If you don't currently have VSCode installed or are not familiar with VSCode, please view the `README` file in the vscode folder in the `course-support` repository located <a href="https://git-scm.com/download/win">here</a>. 
 
 Open VSCode, and navigate to the **Extensions** tab on the left-hand side. Use the search bar to look for the **Dev Containers** extension and install it. 
 
