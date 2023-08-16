@@ -79,21 +79,29 @@ After you have created the folder, clone the course-support repository onto your
 git clone https://github.com/ucrcsedept/course-support.git
 ```
 
-Once you are in the main directory of the repository, run the following commands:
+In the terminal/command prompt, navigate to the cloned repository using the command:
 ```
-cd containers
-ls
-cd <class>
+cd DIRECTORYNAME
+```
+For the course support repository, the directory name will be <code><b>course-support</b></code>. 
+
+Change directories to the `containers` directory using `cd` once again.  For this tutorial, we'll be creating a container using the cs100 dockerfile, so use the command `cs100` to change directories into the cs100 folder.
+>Note: You can replicate these steps for any course by simply using the name of the course you are taking.  
+
+From the `cs100` folder, use `podman-compose` to create a container using the files inside the current directory.  TO do this, run the command:
+```
+podman-compose up -d
 ```
 
-Execute the following command to build the container specifically for your class: <code><b>podman-compose up -d</b></code>
+This command will build AND run the container. The `-d` flag indicates that the container will run in detached mode.  This means that the current terminal window ill not attach to the container, instead, the container will run in the background.
 >Note: This may take a few minutes.
 
-To verify the successful creation of the container, run the following command: <code><b>podman ps</b></code>
+To verify the successful creation of the container, run the following command: <code><b>podman ps</b></code>, which outputs a list of all currently running containers.  If you see a container on the list, you have successfully created your container!
 
-To start and stop the container, you can run <code><b>podman start `<coursename>`</b></code> and <code><b>podman stop `<coursename>`</b></code> respectively.
+To start and stop the container, you can run <code><b>podman start `<coursename>`</b></code> and <code><b>podman stop `<coursename>`</b></code> whenever necessary.
 
 ## VSCode Dev Containers Extension
+ADD DOCUMENTATION FOR HOW TO GET VSCODE on machine
 
 Open VSCode, and navigate to the **Extensions** tab on the left-hand side. Use the search bar to look for the **Dev Containers** extension and install it. 
 
