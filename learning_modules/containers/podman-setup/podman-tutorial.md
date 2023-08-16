@@ -50,35 +50,31 @@ Otherwise, you will need to install Git.  The installation process is different 
 If you don't have Git installed on your Mac, running <code><b>git --version</b></code> will prompt you to install/activate Git on most versions of macOS.  In this scenarion, follow the insturcitons given to you in the terminal.
 
 Otherwise, if you were not prompted to install Git, you can install Git using Homewbrew.  Run the command <code><b>brew install git</b></code>
+
+Verify that Git was successfully installed using the <code><b>git --version</b></code> command.
 </details>
 
 <details>
 <summary><font size="3"><b>Git Installation for Windows</b></font></summary>  
    
-Visit the <a href="https://git-scm.com/download/win">Git Windows Installer download</a>.
+Visit the <a href="https://git-scm.com/download/win">Git Windows Installer download</a> and download the standalone installer for the version of Windows you have (64-bit or 32-bit).
+>Note: If you are unsure which version of Windows you have, press the hotkey 'Windoes Key + I' to open your stystem settings.  Select the 'System' setting and scroll to the bottom of the left panel until you see an 'About' section. Click on it.  Under 'Device Specifications', there will be a 'System Type' label that says whether you have have a 64-bit or 32-bit device.
 
+Open the installer.
 
-</details>
+You do not need to change any installation settings for Git, so you click 'Continue' in the bottom right of the installer until you are prompted to install Git.
 
+Click 'Install' and wait for Git to finish installing.
 
-
-
-
-
-
-run <code><b>brew install git</b></code>
-
-In terminal or command prompt windows, you may need to navigate to the location where files are stored. To navigate your system, the two main commands you will use will be <code><b>cd</b></code> which stands for change directory and <code><b>ls</b></code> which lists the files and directories(folders) in your current directory.
-
-For this section, I recommend creating a folder on your Desktop.
+Once Git is infinished installing, you can close out of the installer and verify that Git was successfully installed using the <code><b>git --version</b></code> command.
 
 </details>
 
-For each course, there will be a distinct container that needs to be built. It is recommended to create a folder on your Desktop for the following steps.
+The next part requires that you navigate to the location where files are stored using a termintal. To navigate your system, the two main commands you will use will be <code><b>cd</b></code> which stands for change directory and <code><b>ls</b></code> which lists the files and directories(folders) in your current directory.
 
-Before proceeding, ensure you have cloned the <a target="_blank" rel="noopener noreferrer" href="https://github.com/ucrcsedept/course-support/tree/main ">UCR CSE Course Support repository</a> into your system.
+For each course, there will be a distinct container that needs to be built.  It is reommended to create a folder on your Desktop to put the cloned repository.
 
-You can do the above by navigating into your directory of choice and running the code below:
+After you have created the folder, clone the course-support repository onto your device into the current directory using the command:
 ```
 git clone https://github.com/ucrcsedept/course-support.git
 ```
