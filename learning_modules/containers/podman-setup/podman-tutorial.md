@@ -101,13 +101,15 @@ To verify the successful creation of the container, run the following command: <
 To start and stop the container, you can run <code><b>podman start `<coursename>`</b></code> and <code><b>podman stop `<coursename>`</b></code> whenever necessary.
 
 ## VSCode Dev Containers Extension
-Now that a container is running, you will need to do something with it.  Usually, this will be running or testing code you wrote  To do this, you will use an enviornment to write your code.  We suggeest VSCode.  If you don't currently have VSCode installed or are not familiar with VSCode, please view the `README` file in the vscode folder in the `course-support` repository located <a href="learning_modules/vscode/README.md">here</a>. 
+Now that a container is running, you will need to do something with it.  Usually, this will be running or testing code you wrote. To do this, you will use an enviornment to write your code.  We suggeest VSCode.  If you don't currently have VSCode installed or are not familiar with VSCode, please view the `README` file in the vscode folder in the `course-support` repository. 
 
-Open VSCode, and navigate to the **Extensions** tab on the left-hand side. Use the search bar to look for the **Dev Containers** extension and install it. 
-
+Once VSCode is installed, we need to be setup to attach the container so we can develop inside of it. To do this open VSCode, and navigate to the **Extensions** tab on the left-hand side. The Extensions tab looks like :
 <p align="center">
    <img src="images/ext.png" alt="VSCode Extensions" > 
 </p>
+
+Use the search bar to look for the **Dev Containers** extension and install it. 
+
 
 Click on the VSCode gear icon located at the bottom left corner and select **Extensions**. For reference, please see the image below: 
 
