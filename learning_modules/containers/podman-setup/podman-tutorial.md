@@ -36,21 +36,36 @@ By following these steps, you will have initialized your machine, created and ru
 
 ## Creating a UCR-associated Container using files stored in a GitHub Repository
 
-For this section, it is required to have **git** installed.  Git is typcially preinstalled on Macs.  However, it is not preinstalled on Windows devices.  You can check if it is installed by running <code><b>git --version</b></code> in a terminal or command prompt window.  If you need to instal git, please refer to the drop-down list below.
+For this section, it is required to have **git** installed.  Git is a powerful tool to have as you will need it to interact with UCR's courses GitHub files.  Git is typcially preinstalled on Macs.  However, it is not preinstalled on Windows devices.  To check if you have git installed, run <code><b>git --version</b></code> in your terminal.
 
-<details>
-<summary><font size="3"><b>Git Installation & Mini Tutorial</b></font></summary>
-To check if you have git installed, run <code><b>git --version</b></code> in your terminal.
-
-If git is already installed, your terminal will return the current version. Otherwise, run <code><b>brew install git</b></code>
-<details>
-<summary><font size="3"><b>Version Output</b></font></summary>
+If git is already installed, your terminal will return the current version, similar to this:
 <p align="center">
    <img src="images/git_version.png" alt="Git Successful Output"> 
 </p>
+
+Otherwise, you will need to install Git.  The installation process is different for Macs and Windows.  Please refer to the drop-down list below.
+
+<details>
+<summary><font size="3"><b>Git Installation for Macs</b></font></summary>
+If you don't have Git installed on your Mac, running <code><b>git --version</b></code> will prompt you to install/activate Git on most versions of macOS.  In this scenarion, follow the insturcitons given to you in the terminal.
+
+Otherwise, if you were not prompted to install Git, you can install Git using Homewbrew.  Run the command <code><b>brew install git</b></code>
 </details>
 
-To navigate your system, the two main commands you will use will be <code><b>cd</b></code> which stands for change directory and <code><b>ls</b></code> which lists the files and directories(folders) in your current directory.
+<details>
+<summary><font size="3"><b>Git Installation for Windows</b></font></summary>   
+Visit the Git Windows Installer download [page](https://git-scm.com/download/win).
+</details>
+
+
+
+
+
+
+
+run <code><b>brew install git</b></code>
+
+In terminal or command prompt windows, you may need to navigate to the location where files are stored. To navigate your system, the two main commands you will use will be <code><b>cd</b></code> which stands for change directory and <code><b>ls</b></code> which lists the files and directories(folders) in your current directory.
 
 For this section, I recommend creating a folder on your Desktop.
 
