@@ -101,7 +101,7 @@ To verify the successful creation of the container, run the following command: <
 To start and stop the container, you can run <code><b>podman start `<coursename>`</b></code> and <code><b>podman stop `<coursename>`</b></code> whenever necessary.
 
 ## VSCode Dev Containers Extension
-Now that a container is running, you will need to do something with it.  Usually, this will be running or testing code you wrote  To do this, you will use an enviornment to write your code.  We suggeest VSCode.  If you don't currently have VSCode installed or are not familiar with VSCode, please view the `README` file in the vscode folder in the `course-support` repository located <a href="https://git-scm.com/download/win">here</a>. 
+Now that a container is running, you will need to do something with it.  Usually, this will be running or testing code you wrote  To do this, you will use an enviornment to write your code.  We suggeest VSCode.  If you don't currently have VSCode installed or are not familiar with VSCode, please view the `README` file in the vscode folder in the `course-support` repository located <a href="learning_modules/vscode/README.md">here</a>. 
 
 Open VSCode, and navigate to the **Extensions** tab on the left-hand side. Use the search bar to look for the **Dev Containers** extension and install it. 
 
