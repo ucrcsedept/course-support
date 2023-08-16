@@ -53,8 +53,11 @@ Otherwise, if you were not prompted to install Git, you can install Git using Ho
 </details>
 
 <details>
-<summary><font size="3"><b>Git Installation for Windows</b></font></summary>   
-Visit the Git Windows Installer download [page](https://git-scm.com/download/win).
+<summary><font size="3"><b>Git Installation for Windows</b></font></summary>  
+   
+Visit the <a href="https://git-scm.com/download/win">Git Windows Installer download</a>.
+
+
 </details>
 
 
