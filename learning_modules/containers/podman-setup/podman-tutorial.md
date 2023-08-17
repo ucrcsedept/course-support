@@ -183,7 +183,14 @@ int main()
 ```
 
 
-To compile our program, you need to open a terminal.  Click the Terminal dropdown button in the menu bar and create a new terminal.  This will createa  new terminal screen at the bottom run `g++ main.cpp`, then `./a.out`. You should see the output **Hello World!** displayed in your terminal:
+To compile our program, you need to open a terminal.  Click the Terminal dropdown button in the menu bar and create a new terminal.  
+<p align="center">
+   <img src="images/createNewTerminal.png" alt="helloworldexample" width= " " height = " "> 
+</p>
+
+In the terminal, run `g++ main.cpp`.  g++ is the compiler and this will compile your code.  The compiled code will be placed in a new file, named `a.out`, in the same directory. 
+
+To run the executable file, type `./a.out` in the terminal. You should see the output **Hello World!** displayed in your terminal:
 <p align="center">
    <img src="images/helloworld.png" alt="helloworldexample" width= " " height = " "> 
 </p>
