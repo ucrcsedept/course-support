@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM --platform=arm64 ubuntu:22.04
 
 # CILK is not included in more recent versions of Ubuntu.
 

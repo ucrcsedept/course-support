@@ -36,7 +36,7 @@ RUN \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
 
-# Software specific to CS 105
+# Python
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh && \
