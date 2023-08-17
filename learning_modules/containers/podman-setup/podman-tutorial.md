@@ -146,27 +146,27 @@ The following tutorial will guide you through creating a simple "Hello World!" p
 
 When you open a container for the first time, VSCode will show a home page with no folders opened:
 <p align="center">
-   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+   <img src="images/VSCodeContainerInitialScreen.png" alt="containerleftexample" width= " " height = " "> 
 </p>
 
 Click the `Open` button in the middle of the welcome sreen with a folder next to it.  This will open a window to slect a folder to open.  The window will displaye the `/root/` directory.
 <p align="center">
-   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+   <img src="images/dotParentDirectory.png" alt="containerleftexample" width= " " height = " "> 
 </p>
 
 Click on the two dots `..` to move up to the parent directory.  Then locate the `home` file and open it.
 <p align="center">
-   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+   <img src="images/homeFolder.png" alt="containerleftexample" width= " " height = " "> 
 </p>
 
 Once you open the Home directory, the sidebar will display that you are in the home directory, which is currently empty.
 <p align="center">
-   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+   <img src="images/sidebarView.png" alt="containerleftexample" width= " " height = " "> 
 </p>
 
 Click the leftmost button on the file editor bar to create a new file and name it `main.cpp`.
 <p align="center">
-   <img src="images/container_check.png" alt="containerleftexample" width= " " height = " "> 
+   <img src="images/createMain.png" alt="containerleftexample" width= " " height = " "> 
 </p>
 
 Next, copy and paste the following snippet of code into the file you just created.
@@ -182,7 +182,8 @@ int main()
 }
 ```
 
-To compile our program, run `g++ main.cpp`, then `./a.out`. You should see the output **Hello World!** displayed in your terminal:
+
+To compile our program, you need to open a terminal.  Click the Terminal dropdown button in the menu bar and create a new terminal.  This will createa  new terminal screen at the bottom run `g++ main.cpp`, then `./a.out`. You should see the output **Hello World!** displayed in your terminal:
 <p align="center">
    <img src="images/helloworld.png" alt="helloworldexample" width= " " height = " "> 
 </p>
