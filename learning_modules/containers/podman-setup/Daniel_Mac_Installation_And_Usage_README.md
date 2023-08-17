@@ -335,3 +335,21 @@ Using the username and email used for your GitHub account.
 </p>
 
 If you see your files added to your GitHub repository, congratulations! You've successfully developed inside of a container and pushed your code to an online repository. Storing code in a GitHub repository allows our work to persist across different containers, so we're able to pickup where we left off in any container.
+
+## Troubleshooting Guide
+- The error message: `Error: failed to connect: dial tcp 127.0.0.1:61475: connect: connection refused`, while running certain podman commands can be resolved by running the commands:
+```
+pkill podman
+pkill qemu
+podman machine stop
+podman machine start
+```
+- The error message: "Error: unable to start container "[Container Id]": crun: setrlimit `RLIMIT_NPROC`: Operation not permitted: OCI permission denied" is resolved by deleting the podman machine. This will unfortunately delete all the containers and images you have on your computer, however.
+    - Run the commands:
+    ```
+    podman machine stop
+    podman machine rm
+    podman machine init
+    podman machine start
+    ```
+To completely recreate your podman machine. 
