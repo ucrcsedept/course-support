@@ -1,4 +1,15 @@
-## Accessing Containers using Podman - MacBook Pro macOS Ventura 13.2.1 
+## Podman Installation -- macOS Ventura 13.2.1 
+This tutorial will walk you through the steps to install Podman and Podmam-Compose.  You will use Podman and Podman-Compose for container management.
+
+If you fall into any of the following categories, we recommend working with Podman:
+
+1. If you are simply curious about Podman and wish to explore it beyond the classroom setting.
+2. If you prefer working on a local machine instead of a remote one.
+3. If the remote method is not working as expected for you.
+4. If your course instructor has directed you to use Podman.
+
+We advise you to utilize the pre-configured containers available on the UCR servers. This will lead to a smoother and more optimized experience for your specific needs.
+
 
 ### Part 1: Podman Installation and Verification
 
