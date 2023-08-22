@@ -85,7 +85,7 @@ Click on that icon, which should give you a search bar, where you can type in "t
 
 </br>
 
-click on that black box that appears under the search, and that should open up a new terminal window, which should look something like this: 
+Click on the black box that appears under the search. This should open up a new terminal window, which should look something like this: 
 
 </br>
 
