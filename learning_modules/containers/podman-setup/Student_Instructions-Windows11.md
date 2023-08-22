@@ -73,7 +73,7 @@ Follow the steps below:
 Verify the Anaconda was successfully installed by opening a new command prompt window and running <code><b>conda --version</b></code>
 </details>
 
-## Installing Podman & Podman Compose
+## Installing Podman
 
 With our prerequisites completed, we can now proceed to install Podman. Let's get started by navigating to the <a target="_blank" rel="noopener noreferrer" href="https://github.com/containers/podman/releases"> Podman Github releases page </a>.
 
@@ -100,6 +100,11 @@ In the pop-up, there is a checkbox to isntall the Windows Subsystem for Linux (W
 Once the installation is finished, click **Close** to exit the setup. 
 
 To verify that we have successfully installed Podman, run <code><b>podman --version</b></code> in your terminal.
+
+## Podman Compose
+Podman containers are used for running applications in an isolated environment. It's quite common nowadays to see application deployments done in Podman for the numerous benefits it brings. However, it's often not as simple as just running a single container. Usually you may have many containers coming together to act as one cohesive service made up of many moving parts. Managing all of these at deployment time is messy, so to clean it up, Podman provides Podman Compose, a configuration tool used for running multiple containers at once. You can define all of the configuration in one YAML file, and then start all the containers with one command.
+
+You will need to install Podman-compose to run your container.
 
 The next step is to install Podman Compose. If you have not installed Anaconda yet, please refer to the instructions  [here](#prerequisites----anaconda).
 
