@@ -11,9 +11,11 @@ If you fall into any of the following categories, we recommend working with Podm
 We advise you to utilize the pre-configured containers available on the UCR servers. This will lead to a smoother and more optimized experience for your specific needs.
 
 
-### Part 1: Podman Installation and Verification
+### Podman Installation and Verification
 
-Step 1: Download Podman from this website: https://podman.io/
+On Mac, each Podman machine is backed by a QEMU based virtual machine. To create and start a virtual machine, you must install Podman.  
+
+Download Podman from this website: https://podman.io/
 
 The website should look like this: 
 
@@ -85,7 +87,7 @@ Click on that icon, which should give you a search bar, where you can type in "t
 
 </br>
 
-Click on the black box that appears under the search. This should open up a new terminal window, which should look something like this: 
+Click on the black box that appears under the search. This will open up a new terminal window, which should look something like this: 
 
 </br>
 
@@ -95,13 +97,12 @@ Click on the black box that appears under the search. This should open up a new 
 
 > **_Quick_Tip:_** You can increase/decrease the font of the terminal by pressing command + at the same time or command - at the same time
 
-You can check if podman is installed by running this command in your terminal (which just means typing the following command in terminal), which should give you the podman version that you installed: 
-
+You can check if podman is installed by running this command in your terminal (which just means typing the following command in terminal). 
 ```
 podman -v
 ```
 
-This command should give you something like this: 
+This command will display the podman version that you have installed. This output should be something like this: 
 
 </br>
 
@@ -109,11 +110,15 @@ This command should give you something like this:
   <img src="images\macOS\image20.png">
 </p>
 
+Once installed, the podman command can be run directly from the Unix shell in Terminal, where it remotely communicates with the podman service running in the Machine VM.
 </br>
 
-### Part 2: Podman-compose installation 
+### Podman-compose installation 
 
 </br>
+Podman containers are used for running applications in an isolated environment. It's quite common nowadays to see application deployments done in Podman for the numerous benefits it brings. However, it's often not as simple as just running a single container. Usually you may have many containers coming together to act as one cohesive service made up of many moving parts. Managing all of these at deployment time is messy, so to clean it up, Podman provides Podman Compose, a configuration tool used for running multiple containers at once. You can define all of the configuration in one YAML file, and then start all the containers with one command. 
+
+You will need to install Podman-compose to run your container.
 
 The first thing you need to install is HomeBrew, an installer for Apple. First, go to the homebrew website: https://brew.sh/ :
 
@@ -178,7 +183,7 @@ Now when you run this in the terminal:
 podman-compose -v
 ```
 
-you should see something similar to this come up, which means it is correctly installed: 
+To verify that Podman-compose was installed correctly, you should see something similar to this come up: 
 
 </br>
 
