@@ -30,7 +30,7 @@ RUN \
     # Software specific to CS 100
         # Glew with MX
         libglewmx1.13 \
-        libglewmx-dev \
+        #libglewmx-dev \
         # More modern GLEW 
         libglew2.2 \
         libglew-dev \
