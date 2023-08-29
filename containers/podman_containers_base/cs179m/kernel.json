@@ -1,0 +1,11 @@
+{
+ "language": "python",
+ "argv": [
+   "/usr/local/bin/cs179m_kernel.sh",
+   "-f",
+   "{connection_file}"
+ ],
+ "display_name": "CS 179M"
+}
+
+
