@@ -2,7 +2,7 @@
 
 ### <u><b>Podman Machine and Container Errors</b></u>
 
-This first part will include errors you may receive when starting your machine or container. If your error is unrelated to this and related to an issue in VSCode navigate [here](#vscode-extension-errors).
+This section will cover errors you may receive when starting your machine or container. If your error is unrelated to this and related to an issue in VSCode navigate [here](#vscode-extension-errors).
 
 Here are some common errors you may encounter and the corresponding troubleshooting steps:
 * <b>Error: failed to connect: dial tcp 127.0.0.1:53132: connect: connection refused</b>
@@ -39,3 +39,13 @@ podman machine start
 ```
 
 Keep in mind that you may need to rebuild any containers that were lost during this process. You can find a reminder on how to do this [here](#creating-a-ucr-associated-container).
+
+Some errors will need more specific actions.  If you see 
+
+- The error message: `Error: failed to connect: dial tcp 127.0.0.1:61475: connect: connection refused`, while running certain podman commands can be resolved by running the commands:
+```
+pkill podman
+pkill qemu
+podman machine stop
+podman machine start
+```
