@@ -21,4 +21,3 @@ RUN apt -y install valgrind doxygen cmake bison flex
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
-

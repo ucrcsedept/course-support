@@ -1,0 +1,18 @@
+# Docker compose files for courses where students use containers to compile code and run software
+# are typically simple.
+# Docker compose files for courses where students run containers that run services, that students
+# then interact with (eg Hadoop) are much more complex.
+
+version: '3.9'
+services:
+  cs205:
+    build: .
+  arch_amd64:
+    # Source: https://wiki.archlinux.org/index.php/docker#Arch_Linux
+    # There is no arm* image available, only amd64 architecture is supported
+    platform: linux/amd64
+    image: archlinux
+    hostname: arch_amd64
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
