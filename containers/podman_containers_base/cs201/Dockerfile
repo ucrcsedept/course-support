@@ -26,6 +26,15 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
+    # Software specific to CS 201
+        # Parser generator for context-free grammars
+        bison \
+        # Fast lexical analyzer generator
+        flex \
+        # Modern programming language for the Java Virtual Machine
+        scala \
+        # Java Compiler Compiler, generates parsers for Java-like grammars
+        javacc \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*

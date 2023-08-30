@@ -6,6 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV TZ="America/Los_Angeles"
+ENV PATH="/opt/conda/bin:${PATH}"
 
 # Set up time zone related info so later commands in build will work reliably
 RUN ln -snf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && echo America/Los_Angeles > /etc/timezone
@@ -26,6 +27,15 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
+    # Software specific to CS 202
+        # Development files for Python 3
+        python3-dev \
+        # Package installer for Python 3
+        python3-pip \
+        # Debugger for C and C++ programs
+        gdb \
+        # QEMU emulator for i386 architecture
+        qemu-system-i386 \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
