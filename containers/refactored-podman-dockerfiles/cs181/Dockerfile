@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM --platform=linux/amd64 ubuntu:18.04
 
 # Ubuntu 18.04 is the last version of Ubuntu to have tcl and tk 8.5 for ruby-tk.  
 
