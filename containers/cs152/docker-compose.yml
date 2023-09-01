@@ -6,4 +6,5 @@
 version: '3.9'
 services:
   cs152:
+    platform: linux/amd64
     build: .
