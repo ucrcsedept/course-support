@@ -5,5 +5,5 @@ export APPTAINER_BIND=/usr/local
 
 # All the software for the course is available in the container, so start a 
 # shell in it to do work.
-singularity shell /usr/local/containers/cs010b.sif
+singularity shell /usr/local/containers/cs287.sif
 
