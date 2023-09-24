@@ -28,7 +28,7 @@ RUN \
         tmux \
     # Software specific to CS 166
         # Java Database Connectivity (JDBC) driver for PostgreSQL
-        libpostgresql-jdbc-javax \
+        libpostgresql-jdbc-java \
         # Object-relational database system
         postgresql \
         # Additional utilities and libraries for PostgreSQL
