@@ -38,7 +38,7 @@ RUN \
     rm -rf /var/lib/apt/lists/*
 
 # Python
-RUN if [ "$TARGETARCH" = "arm64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2023.07-2-Linux-aarch64.sh -O ~/anaconda.sh; \
+RUN if [ "$TARGETARCH" = "arm64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.04-Linux-aarch64.sh -O ~/anaconda.sh; \
     elif [ "$TARGETARCH" = "amd64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh; fi && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh && \
