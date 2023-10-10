@@ -37,7 +37,7 @@ RUN apt -y install libgsl-dev
 RUN apt -y install libatlas-base-dev
 
 # Scons and other software
-RUN apt -y install scons scons-doc gdb valgrind emacs unzip unrar imagemagick
+RUN apt -y install scons scons-doc gdb valgrind emacs unzip unrar imagemagick zip
 
 # Python
 RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
