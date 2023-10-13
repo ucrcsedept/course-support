@@ -1,8 +1,9 @@
-FROM --platform=linux/amd64 ubuntu:22.04
+FROM ubuntu:22.04
 
 # Set up environment variables used during the build and
 # when the container is run afterward.
 ARG DEBIAN_FRONTEND=noninteractive
+ARG TARGETARCH
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV TZ="America/Los_Angeles"
@@ -37,14 +38,15 @@ RUN \
     rm -rf /var/lib/apt/lists/*
 
 # Software specific to CS 234
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
-  /bin/bash ~/anaconda.sh -b -p /opt/conda && \
-  rm ~/anaconda.sh && \
-  ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-  echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-  find /opt/conda/ -follow -type f -name '*.a' -delete && \
-  find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
-  /opt/conda/bin/conda clean -afy
+RUN if [ "$TARGETARCH" = "arm64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.04-Linux-aarch64.sh -O ~/anaconda.sh; \
+    elif [ "$TARGETARCH" = "amd64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh; fi && \
+    /bin/bash ~/anaconda.sh -b -p /opt/conda && \
+    rm ~/anaconda.sh && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    find /opt/conda/ -follow -type f -name '*.a' -delete && \
+    find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
+    /opt/conda/bin/conda clean -afy
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
