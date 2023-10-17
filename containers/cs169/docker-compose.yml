@@ -1,0 +1,9 @@
+# Docker compose files for courses where students use containers to compile code and run software
+# are typically simple.
+# Docker compose files for courses where students run containers that run services, that students
+# then interact with (eg Hadoop) are much more complex.
+
+version: '3.9'
+services:
+  cs169:
+    build: .
