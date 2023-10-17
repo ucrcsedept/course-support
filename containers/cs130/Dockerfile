@@ -56,6 +56,7 @@ RUN \
         unzip \
         unrar \
         imagemagick \
+        zip \
         # Development files for Python 3 
         python3-dev \
         # Package installer for Python 3
