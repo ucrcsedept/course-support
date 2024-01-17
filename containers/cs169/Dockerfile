@@ -34,6 +34,8 @@ RUN \
         tshark \
         # Certificates bundle
         ca-certificates \
+        # Python 3
+        python3-dev \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
