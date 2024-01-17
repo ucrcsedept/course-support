@@ -30,6 +30,10 @@ RUN \
         cmake \
         # Wireshark for reviewing pre-existing traces
         wireshark \
+        # Tshark for command line Wireshark access
+        tshark \
+        # Certificates bundle
+        ca-certificates \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
