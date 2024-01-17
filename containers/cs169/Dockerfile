@@ -26,6 +26,10 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
+        # Course specific software for CS 169 - cmake for ns3 compilation
+        cmake \
+        # Wireshark for reviewing pre-existing traces
+        wireshark \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
