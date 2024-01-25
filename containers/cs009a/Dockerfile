@@ -13,33 +13,26 @@ ENV PATH="/opt/conda/bin:${PATH}"
 RUN ln -snf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && echo America/Los_Angeles > /etc/timezone
 
 # Update software
-RUN \
-    apt-get -y update && apt-get -y upgrade \
-    # Install packages needed for the class
-    && apt-get install -y --no-install-recommends \
-        # Basic software that should be available in all containers.
-        # Configurable text editor
+RUN apt-get -y update && apt-get -y upgrade
+# Basic software that should be available in all containers.
+RUN apt-get -y update && apt-get install -y --no-install-recommends \
         vim \
-        # C/C++ compilers, development libraries, and header files
         build-essential \
-        # Git commands
         git \
-        # Enables pulling files from a URL
         wget \
-        # Allows multiple terminal "sessions" in one window
-        tmux \
-    # Software specific to CS 009A
-        # Development files for Python 3 
+        tmux
+        
+# Software specific to CS 009A: basic Python install
+RUN apt-get -y update && apt-get install -y --no-install-recommends \
         python3-dev \
-        # Package installer for Python 3
-        python3-pip \
-    ; \
-    # Clean up apt cache
-    rm -rf /var/lib/apt/lists/*
+        python3-pip
 
-# Python
-RUN if [ "$TARGETARCH" = "arm64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.04-Linux-aarch64.sh -O ~/anaconda.sh; \
-    elif [ "$TARGETARCH" = "amd64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh; fi && \
+# Clean up apt cache
+RUN rm -rf /var/lib/apt/lists/*
+
+# Python for CS 009A
+RUN if [ "$TARGETARCH" = "arm64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-aarch64.sh -O ~/anaconda.sh; \
+    elif [ "$TARGETARCH" = "amd64" ]; then wget --quiet https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh -O ~/anaconda.sh; fi && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
