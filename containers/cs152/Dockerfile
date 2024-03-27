@@ -35,6 +35,8 @@ RUN \
         scala \
         # Java Compiler Compiler, generates parsers for Java-like grammars
         javacc \
+        # Rust compiler, for CS 152 Spring 2024
+        rustc \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
