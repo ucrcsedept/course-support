@@ -26,6 +26,8 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
+        # GDB for debugging
+        gdb \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
