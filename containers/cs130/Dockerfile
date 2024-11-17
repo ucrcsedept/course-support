@@ -58,7 +58,7 @@ RUN \
         zip \
         # Install ffmpeg and octave, and gnuplot for graphics toolkit
         ffmpeg \
-        octave \
+        octave octave-control octave-image octave-io octave-optim octave-signal octave-statistics \
         gnuplot \
         # Development files for Python 3 
         python3-dev \
