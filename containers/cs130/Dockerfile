@@ -56,9 +56,10 @@ RUN \
         unrar \
         imagemagick \
         zip \
-        # Install ffmpeg and octave 
+        # Install ffmpeg and octave, and gnuplot for graphics toolkit
         ffmpeg \
         octave \
+        gnuplot \
         # Development files for Python 3 
         python3-dev \
         # Package installer for Python 3
