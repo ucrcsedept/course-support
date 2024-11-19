@@ -26,7 +26,7 @@ RUN \
         wget \
         # Allows multiple terminal "sessions" in one window
         tmux \
-    # Software specific to CS 100
+    # Software specific to CS 130
         # Glew with MX
         libglewmx1.13 \
         #libglewmx-dev \
@@ -61,6 +61,10 @@ RUN \
         fonts-freefont-otf \
         octave octave-control octave-image octave-io octave-optim octave-signal octave-statistics \
         gnuplot \
+        # Install Ghostscript
+        ghostscript \
+        # Install Epstool
+        epstool \
         # Development files for Python 3 
         python3-dev \
         # Package installer for Python 3
