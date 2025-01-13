@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM riscv64/ubuntu:22.04
 
 # Set up environment variables used during the build and
 # when the container is run afterward.
@@ -33,8 +33,8 @@ RUN \
         python3-pip \
         # Debugger for C and C++ programs
         gdb \
-        # QEMU emulator for i386 architecture
-        qemu-system-i386 \
+        # QEMU emulator for riscv64 architecture
+        qemu-system-riscv64 \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
