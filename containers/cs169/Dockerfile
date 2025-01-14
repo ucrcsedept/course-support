@@ -39,11 +39,11 @@ RUN \
         # SQLite
         sqlite \
         # SQLite 3
-        sqlite3
+        sqlite3 \
         # SQLite 3 development files
-        libsqlite3-dev
-        # Eigen3
-        libeigen3-dev
+        libsqlite3-dev \
+        # Eigen3 
+        libeigen3-dev \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
