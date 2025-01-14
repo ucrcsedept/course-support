@@ -10,6 +10,9 @@ ENV TZ="America/Los_Angeles"
 # Set up time zone related info so later commands in build will work reliably
 RUN ln -snf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && echo America/Los_Angeles > /etc/timezone
 
+# Install debconf to fully automate wireshark
+RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
+
 # Update software
 RUN \
     apt-get -y update && apt-get -y upgrade \
