@@ -11,7 +11,7 @@ ENV TZ="America/Los_Angeles"
 RUN ln -snf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && echo America/Los_Angeles > /etc/timezone
 
 # Install debconf to fully automate wireshark
-RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
+RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
 
 # Update software
 RUN \
