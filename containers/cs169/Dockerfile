@@ -36,6 +36,14 @@ RUN \
         ca-certificates \
         # Python 3
         python3-dev \
+        # SQLite
+        sqlite \
+        # SQLite 3
+        sqlite3
+        # SQLite 3 development files
+        libsqlite3-dev
+        # Eigen3
+        libeigen3-dev
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
