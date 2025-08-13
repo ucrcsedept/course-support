@@ -24,6 +24,7 @@ RUN \
         git \
         # Enables pulling files from a URL
         wget \
+        curl \
         # Allows multiple terminal "sessions" in one window
         tmux \
     # Software specific to CS 130
@@ -75,4 +76,5 @@ RUN \
 
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
+
 
