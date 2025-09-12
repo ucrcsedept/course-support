@@ -44,8 +44,9 @@ If you would rather have the VSCode interface when accessing a VM for a course s
 
 2. On your personal machine, copy your public SSH key. By default, they are located in the following places:
 
-Linux/Mac: ~/.ssh/id_rsa.pub
-Windows: C:\Users\[your user]\.ssh\id_rsa.pub
+Linux/Mac: `~/.ssh/id_rsa.pub`
+
+Windows: `C:\Users\[your user]\.ssh\id_rsa.pub`
 
 Copy the contents of the `id_rsa.pub` file.
 
