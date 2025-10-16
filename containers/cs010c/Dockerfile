@@ -30,6 +30,8 @@ RUN \
         gdb \
         # CMAKE as a dependency for building CS 010C software
         cmake \
+        # ca-certificates to support operations in the container that require secure connections
+        ca-certificates \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
