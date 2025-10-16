@@ -28,6 +28,8 @@ RUN \
         tmux \
         # GDB for debugging
         gdb \
+        # CMAKE as a dependency for building CS 010C software
+        cmake \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
