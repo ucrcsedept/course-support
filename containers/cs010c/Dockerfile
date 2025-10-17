@@ -35,7 +35,9 @@ RUN \
     ; \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
-
+RUN \
+    cd /tmp && git clone https://github.com/google/googletest.git -b v1.17.0 && cd googletest && \
+    mkdir build && cd build && cmake .. && make && make install && cd /tmp && rm -rf googletest
 # Command to run when a container starts
 CMD ["sleep", "infinity"]
 
