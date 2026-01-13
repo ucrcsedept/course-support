@@ -1,0 +1,21 @@
+# Docker compose files for courses where students use containers to compile code and run software
+# are typically simple.
+# Docker compose files for courses where students run containers that run services, that students
+# then interact with (eg Hadoop) are much more complex.
+
+version: "3.9"
+services:
+  cs265a:
+    build: .
+    # This limits the port to the loopback interface (localhost)
+    ports:
+      - "127.0.0.1:6080:6080"
+    environment:
+      - VNC_PW=${VNC_PW:-password}
+    # Shared memory limit (can help with browser and similar app performance inside the container)
+    shm_size: "512mb"
+    # Sharing files from the host to the container
+    volumes:
+      - ./workspace:/workspace
+    # Optional: set the container's working directory to the mount point
+    working_dir: /workspace

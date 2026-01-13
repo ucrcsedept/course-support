@@ -5,3 +5,9 @@ main
 .vscode
 Singularity
 *.sif
+.devcontainers
+.DS_Store
+supervisord.log
+supervisord.pid
+workspace/*
+!workspace/README.md
