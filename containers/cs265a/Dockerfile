@@ -36,6 +36,9 @@ RUN \
         # CS 265A specific packages
         # The ROS desktop full package includes the Ignition version of Gazebo
         ros-jazzy-desktop-full \
+        # More Python packages for the course
+        python3-numpy \
+        python3-pip \
         # XFCE4 window manager, needs dbus for components to communicate with each other
         xfce4 \
         xfce4-goodies \
