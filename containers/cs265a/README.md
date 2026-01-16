@@ -67,6 +67,11 @@ podman machine init
 podman machine start
 ```
 
+The output should look similar to this once completed:
+
+<img width="1139" height="651" alt="image" src="https://github.com/user-attachments/assets/c7a42326-cfe3-4fdb-b8bd-52faf8c29a83" />
+
+
 #### Installing Podman and Podman Compose on Windows
 
 Follow the instructions on this page:
@@ -107,11 +112,20 @@ This works the same in Linux, macOS, and Windows 11.
 (Note on a prerequisite): If you have not already done so, download Visual Studio Code from their website, and install it:
 https://code.visualstudio.com/download
 
+<img width="927" height="319" alt="image" src="https://github.com/user-attachments/assets/6aee47aa-a2ed-484d-aad0-4da9945abc99" />
+
+
 First, run Visual Studio Code, and install the Dev Containers extension from https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 
 Dev Containers will allow you to connect to a running container.  If you have followed the instructions so far, your container will already be running Podman and be able to be connected to:
 
-To attach to your running Podman container, select `Dev Containers: Attach to Running Container...` from the Command Palette (F1). You should see a list of running containers.  If you are only using Podman for this course, then the only running container should have `cs265a` in the name.
+To attach to your running Podman container, select `Dev Containers: Attach to Running Container...` from the Command Palette (F1). You should see a list of running containers.  If you are only using Podman for this course, then the only running container should have `cs265a` in the name.  You may see a warning message about security and trust, click through to continue.
+
+<img width="1106" height="393" alt="Visual_Studio_Code01" src="https://github.com/user-attachments/assets/916d54cc-f9de-40dd-9e59-40d21c2dcbc6" />
+
+<img width="285" height="327" alt="image" src="https://github.com/user-attachments/assets/2e29bd02-2fb3-408a-96c4-5feff1d64536" />
+
+
 
 In the container:
 - Save any files you want to keep in `/workspace`. All other files will go away when the container is exited! `/workspace` corresponds to the `workspace` folder in the directory you ran `podman compose up` in.
