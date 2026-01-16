@@ -87,8 +87,12 @@ The files needed to build and run the container are in a Git repository. The ste
 3. In the terminal, run the following command to build the container:
 `podman compose build`
 The build should take some minutes depending on your network connection speed and how fast your computer is.  It should complete without errors.
-4. Start the container by running the following commmand in a terminal:
+<img width="2154" height="890" alt="image" src="https://github.com/user-attachments/assets/699ec7e4-db34-43b6-99d9-84bee26d792b" />
+
+5. Start the container by running the following commmand in a terminal:
 `podman compose up`
+It will start the container and do not close/exit the terminal or the container will also be closed
+<img width="1142" height="327" alt="image" src="https://github.com/user-attachments/assets/ab6efc53-1024-48b4-ad6f-9662a4b15005" />
 
 Optional: if you want to run the container with a different password to access it from a web browser, you can set the VNC_PW environment variable in your shell before running `podman compose up`.  Here is an example of how to do so in most common shells like zsh or bash:
 `export VNC_PW=x3Se9U3B`
@@ -99,10 +103,17 @@ This works the same in Linux, macOS and Windows 11.
 
 Once the container is running, you should be able to go to http://127.0.0.1:6080/vnc.html?resize=remote in a browser and see a "noVNC" site with the option to "Connect".
 
+<img width="709" height="408" alt="image" src="https://github.com/user-attachments/assets/58f16b22-2315-45a6-ad62-105309f1b895" />
+
 Click on "Connect" and enter your password. The default will be 'password' with no single quotes, unless you have set it to be something different per the optional part of the section above.
 
-Once you do so, you should see a full Linux graphical desktop in your browser.  You can run applications there as you would on a normal desktop.  Some details:
-- Save any files you want to keep in `/workspace`. All other files will go away when the container is exited! `/workspace` corresponds to the `workspace` folder in the directory you ran `podman compose up` in.
+Once you do so, you should see a full Linux graphical desktop in your browser.  The very first time you connect, it may take a little while for it to load and you may see a blank black screen until everything comes up.  You can run applications there as you would on a normal desktop.  
+<img width="1288" height="838" alt="image" src="https://github.com/user-attachments/assets/cae7cd6d-9870-4fc9-b3bc-11473c2f1d76" />
+
+
+Some details:
+- **Save any files you want to keep in `/workspace`**. All other files will GO AWAY when the container is exited!
+  `/workspace` corresponds to the `workspace` folder in the directory you ran `podman compose up` in.
 - Don't log out of the container. There's no need to do so.
 
 ### Access the container from Visual Studio Code
