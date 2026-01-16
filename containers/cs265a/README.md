@@ -55,12 +55,17 @@ First, install Brew following the instructions on the following site:
 https://brew.sh/
 
 Next, run the following commands in a terminal to install Podman and Podman Compose:
-`brew install podman`
-`brew install podman-compose`
+
+```
+brew install podman
+brew install podman-compose
+```
 
 After doing so, you need to initialize a Podman machine and start it, by running these commands in a terminal:
-`podman machine init`
-`podman machine start`
+```
+podman machine init
+podman machine start
+```
 
 #### Installing Podman and Podman Compose on Windows
 
@@ -150,4 +155,4 @@ Keep in mind that you may need to rebuild any containers that were lost during t
 
 ### How to obtain help
 
-Your TA and instructor can assist with issues related to your code and assignments.  For errors related to the container, please follow the troubleshooting steps above first. If those don't work, please send email to the CSE IT staff - systems [at] cs.ucr.edu, and please CC your instructor when you do so.  When you do so, clearly describe the issue and provide a screenshot for troubleshooting purposes.
+Your TA and instructor can assist with issues related to your code and assignments.  For errors related to the container, please follow the troubleshooting steps above first. If those do not work, please send email to the CSE IT staff - systems [at] cs.ucr.edu, and please CC your instructor when you do so.  When you do so, clearly describe the issue and provide a screenshot for troubleshooting purposes.
