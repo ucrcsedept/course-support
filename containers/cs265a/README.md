@@ -151,7 +151,9 @@ To attach to your running Podman container, select `Dev Containers: Attach to Ru
 
 
 In the container:
-- Save any files you want to keep in `/workspace`. All other files will go away when the container is exited! `/workspace` corresponds to the `workspace` folder in the directory you ran `podman compose up` in.
+- **Save any files you want to keep in `/workspace`.** All other files will GO AWAY when the container is exited! `/workspace` corresponds to the `workspace` folder in the directory you ran `podman compose up` in.
+  <img width="1113" height="702" hspace="40" alt="image" src="https://github.com/user-attachments/assets/f08cc4e3-ad0a-4ae5-a9f6-d8127e4a86e7" />
+
 
 ### Troubleshooting Tips
 
