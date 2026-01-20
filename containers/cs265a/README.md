@@ -69,7 +69,7 @@ podman machine start
 
 The output should look similar to this once completed:
 
-<img width="1139" height="651" alt="image" src="https://github.com/user-attachments/assets/c7a42326-cfe3-4fdb-b8bd-52faf8c29a83" />
+<img width="1139" height="651" hspace="40" alt="image" src="https://github.com/user-attachments/assets/c7a42326-cfe3-4fdb-b8bd-52faf8c29a83" />
 
 
 #### Installing Podman and Podman Compose on Windows
@@ -87,12 +87,12 @@ The files needed to build and run the container are in a Git repository. The ste
 3. In the terminal, run the following command to build the container:
 `podman compose build`
 The build should take some minutes depending on your network connection speed and how fast your computer is.  It should complete without errors.
-<img width="2154" height="890" alt="image" src="https://github.com/user-attachments/assets/699ec7e4-db34-43b6-99d9-84bee26d792b" />
+<img width="2154" height="890" hspace="40" alt="image" src="https://github.com/user-attachments/assets/699ec7e4-db34-43b6-99d9-84bee26d792b" />
 
 5. Start the container by running the following commmand in a terminal:
 `podman compose up`
 It will start the container and do not close/exit the terminal or the container will also be closed
-<img width="1142" height="327" alt="image" src="https://github.com/user-attachments/assets/ab6efc53-1024-48b4-ad6f-9662a4b15005" />
+<img width="1142" height="327" hspace="40" alt="image" src="https://github.com/user-attachments/assets/ab6efc53-1024-48b4-ad6f-9662a4b15005" />
 
 Optional: if you want to run the container with a different password to access it from a web browser, you can set the VNC_PW environment variable in your shell before running `podman compose up`.  Here is an example of how to do so in most common shells like zsh or bash:
 `export VNC_PW=x3Se9U3B`
@@ -103,12 +103,12 @@ This works the same in Linux, macOS and Windows 11.
 
 Once the container is running, you should be able to go to http://127.0.0.1:6080/vnc.html?resize=remote in a browser and see a "noVNC" site with the option to "Connect".
 
-<img width="709" height="408" alt="image" src="https://github.com/user-attachments/assets/58f16b22-2315-45a6-ad62-105309f1b895" />
+<img width="709" height="408" hspace="40" alt="image" src="https://github.com/user-attachments/assets/58f16b22-2315-45a6-ad62-105309f1b895" />
 
 Click on "Connect" and enter your password. The default will be 'password' with no single quotes, unless you have set it to be something different per the optional part of the section above.
 
 Once you do so, you should see a full Linux graphical desktop in your browser.  The very first time you connect, it may take a little while for it to load and you may see a blank black screen until everything comes up.  You can run applications there as you would on a normal desktop.  
-<img width="1288" height="838" alt="image" src="https://github.com/user-attachments/assets/cae7cd6d-9870-4fc9-b3bc-11473c2f1d76" />
+<img width="1288" height="838" hspace="40" alt="image" src="https://github.com/user-attachments/assets/cae7cd6d-9870-4fc9-b3bc-11473c2f1d76" />
 
 
 Some details:
@@ -123,18 +123,30 @@ This works the same in Linux, macOS, and Windows 11.
 (Note on a prerequisite): If you have not already done so, download Visual Studio Code from their website, and install it:
 https://code.visualstudio.com/download
 
-<img width="927" height="319" alt="image" src="https://github.com/user-attachments/assets/6aee47aa-a2ed-484d-aad0-4da9945abc99" />
+<img width="927" height="319" hspace="40" alt="image" src="https://github.com/user-attachments/assets/6aee47aa-a2ed-484d-aad0-4da9945abc99" />
 
 
 First, run Visual Studio Code, and install the Dev Containers extension from https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 
 Dev Containers will allow you to connect to a running container.  If you have followed the instructions so far, your container will already be running Podman and be able to be connected to:
 
+**Configure VS Code settings:**</br>
+By Default VS Code is configured to use Docker, you will need to change this to Podman
+- Open VS Code settings (Ctrl, or Cmd,). Or click on the gear icon on the bottom left and select "Settings"
+- Search for Dev Containers: Docker Path (dev.containers.dockerPath).
+- Set the value to podman or the path to your Podman executable.
+- Restart VS Code for the changes to take effect.
+
+<img width="361" height="294" hspace="40" alt="image" src="https://github.com/user-attachments/assets/1ee9b309-4851-4ef0-9aa3-2d81d841845b" />
+<img width="846" height="575" hspace="40" alt="image" src="https://github.com/user-attachments/assets/dc47edaf-8e15-421c-9c82-4a2dca795bbc" />
+</p>
+
+
 To attach to your running Podman container, select `Dev Containers: Attach to Running Container...` from the Command Palette (F1). You should see a list of running containers.  If you are only using Podman for this course, then the only running container should have `cs265a` in the name.  You may see a warning message about security and trust, click through to continue.
 
-<img width="1106" height="393" alt="Visual_Studio_Code01" src="https://github.com/user-attachments/assets/916d54cc-f9de-40dd-9e59-40d21c2dcbc6" />
+<img width="1106" height="393" hspace="40" alt="Visual_Studio_Code01" src="https://github.com/user-attachments/assets/916d54cc-f9de-40dd-9e59-40d21c2dcbc6" />
 
-<img width="285" height="327" alt="image" src="https://github.com/user-attachments/assets/2e29bd02-2fb3-408a-96c4-5feff1d64536" />
+<img width="285" height="327" hspace="40" alt="image" src="https://github.com/user-attachments/assets/2e29bd02-2fb3-408a-96c4-5feff1d64536" />
 
 
 
