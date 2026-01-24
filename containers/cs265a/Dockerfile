@@ -58,6 +58,9 @@ RUN \
         # To start and manage services in container
         supervisor \
         tini \
+        # TurtleBot4
+        ros-jazzy-turtlebot4-simulator \
+        ros-jazzy-irobot-create-nodes \
     && \
     # Firefox!
     install -d -m 0755 /etc/apt/keyrings && \
@@ -74,6 +77,15 @@ RUN \
     # Clean up apt cache
     rm -rf /var/lib/apt/lists/*
 
+# Gazebo from the OSRF Apt repo
+RUN apt-get -y install curl && \
+    curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg && \
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null && \
+    apt-get update && \
+    apt-get -y install gz-harmonic && \
+    rm -rf /var/lib/apt/lists/*
+
+
 # Supervisord runs services - web, VNC, and X session - as 'ubuntu' user
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY entrypoint.sh /entrypoint.sh
@@ -81,6 +93,7 @@ RUN chmod +x /entrypoint.sh
 # The 'ubuntu' user is used in the container
 RUN echo 'ubuntu ALL=(root) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu
 RUN echo 'source /opt/ros/jazzy/local_setup.sh' >> /home/ubuntu/.bashrc
+RUN echo 'source /opt/ros/jazzy/setup.bash' >> /home/ubuntu/.bashrc
 RUN mkdir /workspace && ln -sf /workspace /home/ubuntu/workspace
 # Expose the noVNC port
 EXPOSE 6080
